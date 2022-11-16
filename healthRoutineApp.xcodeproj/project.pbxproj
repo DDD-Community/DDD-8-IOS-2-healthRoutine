@@ -32,6 +32,106 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6340F9229249093009FF50E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B6340F9329249099009FF50E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B6340F94292490AB009FF50E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B6340F9E29249E91009FF50E /* Localizables */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B6340F95292490C0009FF50E /* Scence */ = {
+			isa = PBXGroup;
+			children = (
+				B6340F9629249DCE009FF50E /* Main */,
+				B6340F9729249DE4009FF50E /* Record */,
+				B6340F9829249DE8009FF50E /* Timer */,
+				B6340F9929249DEC009FF50E /* More */,
+			);
+			path = Scence;
+			sourceTree = "<group>";
+		};
+		B6340F9629249DCE009FF50E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B6340F9A29249E15009FF50E /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B6340F9729249DE4009FF50E /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				B6340F9B29249E26009FF50E /* Views */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		B6340F9829249DE8009FF50E /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				B6340F9C29249E2C009FF50E /* Views */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		B6340F9929249DEC009FF50E /* More */ = {
+			isa = PBXGroup;
+			children = (
+				B6340F9D29249E30009FF50E /* Views */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		B6340F9A29249E15009FF50E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6340F9B29249E26009FF50E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6340F9C29249E2C009FF50E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6340F9D29249E30009FF50E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6340F9E29249E91009FF50E /* Localizables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localizables;
+			sourceTree = "<group>";
+		};
 		B6D8CEC72917D86200420E8E = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +151,10 @@
 		B6D8CED22917D86200420E8E /* healthRoutineApp */ = {
 			isa = PBXGroup;
 			children = (
+				B6340F95292490C0009FF50E /* Scence */,
+				B6340F94292490AB009FF50E /* Resources */,
+				B6340F9329249099009FF50E /* Extensions */,
+				B6340F9229249093009FF50E /* Domain */,
 				B6D8CED32917D86200420E8E /* healthRoutineAppApp.swift */,
 				B6D8CED52917D86200420E8E /* ContentView.swift */,
 				B6D8CED72917D86400420E8E /* Assets.xcassets */,
