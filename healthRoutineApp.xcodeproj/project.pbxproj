@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B6D8CED42917D86200420E8E /* healthRoutineAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED32917D86200420E8E /* healthRoutineAppApp.swift */; };
+		B68B4F22292E627400A9AE99 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F21292E627400A9AE99 /* MyPageView.swift */; };
+		B68B4F24292E62B800A9AE99 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F23292E62B800A9AE99 /* TimerView.swift */; };
+		B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */; };
+		B68B4F29292E64E400A9AE99 /* MyPageHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */; };
+		B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */; };
+		B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED32917D86200420E8E /* healthRoutineApp.swift */; };
 		B6D8CED62917D86200420E8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED52917D86200420E8E /* ContentView.swift */; };
 		B6D8CED82917D86400420E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D8CED72917D86400420E8E /* Assets.xcassets */; };
 		B6D8CEDB2917D86400420E8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D8CEDA2917D86400420E8E /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B68B4F21292E627400A9AE99 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		B68B4F23292E62B800A9AE99 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileView.swift; sourceTree = "<group>"; };
+		B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHistoryView.swift; sourceTree = "<group>"; };
+		B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBadgeView.swift; sourceTree = "<group>"; };
 		B6D8CED02917D86200420E8E /* healthRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6D8CED32917D86200420E8E /* healthRoutineAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthRoutineAppApp.swift; sourceTree = "<group>"; };
+		B6D8CED32917D86200420E8E /* healthRoutineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthRoutineApp.swift; sourceTree = "<group>"; };
 		B6D8CED52917D86200420E8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B6D8CED72917D86400420E8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6D8CEDA2917D86400420E8E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -32,104 +42,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B6340F9229249093009FF50E /* Domain */ = {
+		B68B4F1A292E61EE00A9AE99 /* Scence */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		B6340F9329249099009FF50E /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B6340F94292490AB009FF50E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B6340F9E29249E91009FF50E /* Localizables */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		B6340F95292490C0009FF50E /* Scence */ = {
-			isa = PBXGroup;
-			children = (
-				B6340F9629249DCE009FF50E /* Main */,
-				B6340F9729249DE4009FF50E /* Record */,
-				B6340F9829249DE8009FF50E /* Timer */,
-				B6340F9929249DEC009FF50E /* More */,
+				B68B4F20292E621A00A9AE99 /* MyPage */,
+				B68B4F1F292E621400A9AE99 /* Timer */,
+				B68B4F1E292E620600A9AE99 /* Report */,
+				B68B4F1D292E620000A9AE99 /* Main */,
 			);
 			path = Scence;
 			sourceTree = "<group>";
 		};
-		B6340F9629249DCE009FF50E /* Main */ = {
+		B68B4F1D292E620000A9AE99 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B6340F9A29249E15009FF50E /* Views */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		B6340F9729249DE4009FF50E /* Record */ = {
+		B68B4F1E292E620600A9AE99 /* Report */ = {
 			isa = PBXGroup;
 			children = (
-				B6340F9B29249E26009FF50E /* Views */,
 			);
-			path = Record;
+			path = Report;
 			sourceTree = "<group>";
 		};
-		B6340F9829249DE8009FF50E /* Timer */ = {
+		B68B4F1F292E621400A9AE99 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				B6340F9C29249E2C009FF50E /* Views */,
+				B68B4F23292E62B800A9AE99 /* TimerView.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
 		};
-		B6340F9929249DEC009FF50E /* More */ = {
+		B68B4F20292E621A00A9AE99 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				B6340F9D29249E30009FF50E /* Views */,
+				B68B4F25292E633500A9AE99 /* Views */,
+				B68B4F21292E627400A9AE99 /* MyPageView.swift */,
 			);
-			path = More;
+			path = MyPage;
 			sourceTree = "<group>";
 		};
-		B6340F9A29249E15009FF50E /* Views */ = {
+		B68B4F25292E633500A9AE99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */,
+				B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */,
+				B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		B6340F9B29249E26009FF50E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B6340F9C29249E2C009FF50E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B6340F9D29249E30009FF50E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B6340F9E29249E91009FF50E /* Localizables */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Localizables;
 			sourceTree = "<group>";
 		};
 		B6D8CEC72917D86200420E8E = {
@@ -151,11 +113,8 @@
 		B6D8CED22917D86200420E8E /* healthRoutineApp */ = {
 			isa = PBXGroup;
 			children = (
-				B6340F95292490C0009FF50E /* Scence */,
-				B6340F94292490AB009FF50E /* Resources */,
-				B6340F9329249099009FF50E /* Extensions */,
-				B6340F9229249093009FF50E /* Domain */,
-				B6D8CED32917D86200420E8E /* healthRoutineAppApp.swift */,
+				B68B4F1A292E61EE00A9AE99 /* Scence */,
+				B6D8CED32917D86200420E8E /* healthRoutineApp.swift */,
 				B6D8CED52917D86200420E8E /* ContentView.swift */,
 				B6D8CED72917D86400420E8E /* Assets.xcassets */,
 				B6D8CED92917D86400420E8E /* Preview Content */,
@@ -241,8 +200,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68B4F29292E64E400A9AE99 /* MyPageHistoryView.swift in Sources */,
 				B6D8CED62917D86200420E8E /* ContentView.swift in Sources */,
-				B6D8CED42917D86200420E8E /* healthRoutineAppApp.swift in Sources */,
+				B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */,
+				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,
+				B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */,
+				B68B4F24292E62B800A9AE99 /* TimerView.swift in Sources */,
+				B68B4F22292E627400A9AE99 /* MyPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +345,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -416,7 +380,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
