@@ -12,6 +12,18 @@ struct ContentView: View {
         
         TabView {
             
+            MainView()
+                .tabItem {
+                    Image(systemName: "heart")
+                    Text("타이머")
+                }
+            
+            ReportView()
+                .tabItem {
+                    Image(systemName: "heart")
+                    Text("타이머")
+                }
+            
             TimerView()
                 .tabItem {
                     Image(systemName: "heart")

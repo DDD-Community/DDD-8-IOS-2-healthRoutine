@@ -42,7 +42,6 @@ struct MyPageProfileView: View {
         .frame(maxWidth: .infinity, minHeight: 200)
         .background(.yellow)
         .cornerRadius(20)
-        .padding(20)
     }
 }
 

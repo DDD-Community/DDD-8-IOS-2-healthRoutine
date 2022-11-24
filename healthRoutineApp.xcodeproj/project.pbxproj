@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */; };
+		B623B0F3292F165100BA7BA7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F2292F165100BA7BA7 /* MainView.swift */; };
+		B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F6292F16AE00BA7BA7 /* ReportView.swift */; };
 		B68B4F22292E627400A9AE99 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F21292E627400A9AE99 /* MyPageView.swift */; };
 		B68B4F24292E62B800A9AE99 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F23292E62B800A9AE99 /* TimerView.swift */; };
 		B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */; };
@@ -19,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuVeiw.swift; sourceTree = "<group>"; };
+		B623B0EF292F12DB00BA7BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B623B0F2292F165100BA7BA7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B623B0F6292F16AE00BA7BA7 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		B68B4F21292E627400A9AE99 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		B68B4F23292E62B800A9AE99 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileView.swift; sourceTree = "<group>"; };
@@ -42,13 +49,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B609BEF2292EFB60008045CE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B623B0F5292F169300BA7BA7 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B623B0F4292F167900BA7BA7 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				B623B0F6292F16AE00BA7BA7 /* ReportView.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		B623B0F5292F169300BA7BA7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B623B0F9292F17B200BA7BA7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B623B0EF292F12DB00BA7BA7 /* Info.plist */,
+				B6D8CED72917D86400420E8E /* Assets.xcassets */,
+				B623B0FA292F17B200BA7BA7 /* Localizables */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B623B0FA292F17B200BA7BA7 /* Localizables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localizables;
+			sourceTree = "<group>";
+		};
 		B68B4F1A292E61EE00A9AE99 /* Scence */ = {
 			isa = PBXGroup;
 			children = (
-				B68B4F20292E621A00A9AE99 /* MyPage */,
-				B68B4F1F292E621400A9AE99 /* Timer */,
-				B68B4F1E292E620600A9AE99 /* Report */,
 				B68B4F1D292E620000A9AE99 /* Main */,
+				B623B0F4292F167900BA7BA7 /* Report */,
+				B68B4F1F292E621400A9AE99 /* Timer */,
+				B68B4F20292E621A00A9AE99 /* MyPage */,
 			);
 			path = Scence;
 			sourceTree = "<group>";
@@ -56,15 +104,9 @@
 		B68B4F1D292E620000A9AE99 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B623B0F2292F165100BA7BA7 /* MainView.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		B68B4F1E292E620600A9AE99 /* Report */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Report;
 			sourceTree = "<group>";
 		};
 		B68B4F1F292E621400A9AE99 /* Timer */ = {
@@ -114,9 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				B68B4F1A292E61EE00A9AE99 /* Scence */,
+				B609BEF2292EFB60008045CE /* Common */,
+				B623B0F9292F17B200BA7BA7 /* Resources */,
 				B6D8CED32917D86200420E8E /* healthRoutineApp.swift */,
 				B6D8CED52917D86200420E8E /* ContentView.swift */,
-				B6D8CED72917D86400420E8E /* Assets.xcassets */,
 				B6D8CED92917D86400420E8E /* Preview Content */,
 			);
 			path = healthRoutineApp;
@@ -203,10 +246,13 @@
 				B68B4F29292E64E400A9AE99 /* MyPageHistoryView.swift in Sources */,
 				B6D8CED62917D86200420E8E /* ContentView.swift in Sources */,
 				B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */,
+				B623B0F3292F165100BA7BA7 /* MainView.swift in Sources */,
 				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,
 				B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */,
 				B68B4F24292E62B800A9AE99 /* TimerView.swift in Sources */,
 				B68B4F22292E627400A9AE99 /* MyPageView.swift in Sources */,
+				B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */,
+				B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +384,7 @@
 				DEVELOPMENT_TEAM = FUV2GHVQ46;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = healthRoutineApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "득근득근";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -373,6 +420,7 @@
 				DEVELOPMENT_TEAM = FUV2GHVQ46;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = healthRoutineApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "득근득근";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

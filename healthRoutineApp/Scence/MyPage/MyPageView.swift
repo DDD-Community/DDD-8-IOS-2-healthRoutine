@@ -11,26 +11,16 @@ struct MyPageView: View {
     
     var body: some View {
         
-        VStack(alignment: .center) {
-            
-            Spacer().frame(height: 1)
-            
-            Text("마이페이지")
-            
-            Spacer()
-            
-            MyPageProfileView()
-            
-            Spacer()
-            
-            MyPageHistoryView()
-            
-            Spacer()
-            
-            MyPageBadgeView()
-            
-            Spacer().frame(height: 1)
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .center) {
+                
+                TopMenuVeiw(mainTitle: "마이페이지")
+                MyPageProfileView()
+                MyPageHistoryView()
+                MyPageBadgeView()
+            }
         }
+        .padding(20)
     }
 }
 
