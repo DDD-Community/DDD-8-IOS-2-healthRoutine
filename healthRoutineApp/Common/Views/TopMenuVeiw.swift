@@ -23,7 +23,7 @@ struct TopMenuVeiw: View {
             
             Image(systemName: "bell")
         }
-        .padding(20)
+        .padding([.leading, .trailing], 20)
     }
 }
 

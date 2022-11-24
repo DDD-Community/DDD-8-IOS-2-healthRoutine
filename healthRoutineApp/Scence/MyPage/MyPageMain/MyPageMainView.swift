@@ -11,16 +11,20 @@ struct MyPageMainView: View {
     
     var body: some View {
         
-        ScrollView(showsIndicators: false) {
-            VStack(alignment: .center) {
+        VStack {
+            
+            TopMenuVeiw(mainTitle: "마이페이지")
+            
+            ScrollView(showsIndicators: false) {
                 
-                TopMenuVeiw(mainTitle: "마이페이지")
-                MyPageProfileView()
-                MyPageHistoryView()
-                MyPageBadgeView()
+                VStack(alignment: .center) {
+                    
+                    MyPageProfileView()
+                    MyPageHistoryView()
+                    MyPageBadgeView()
+                }
             }
         }
-        .padding(20)
     }
 }
 

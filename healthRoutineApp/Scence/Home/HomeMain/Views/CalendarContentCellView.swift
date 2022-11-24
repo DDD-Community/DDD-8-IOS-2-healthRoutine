@@ -7,6 +7,27 @@
 
 import SwiftUI
 
+// MARK: Mock
+enum Level {
+    
+    case never
+    case rarely
+    case sometime
+    case often
+    case always
+    
+    var background: Color {
+        
+        switch self {
+        case .never: return Color(UIColor.green.withAlphaComponent(0.2))
+        case .rarely: return Color(UIColor.green.withAlphaComponent(0.4))
+        case .sometime: return Color(UIColor.green.withAlphaComponent(0.6))
+        case .often: return Color(UIColor.green.withAlphaComponent(0.8))
+        case .always: return Color(UIColor.green.withAlphaComponent(1.0))
+        }
+    }
+}
+
 struct CalendarContentCellView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
@@ -18,7 +39,41 @@ struct CalendarContentCellView: View {
     
     var body: some View {
         
-        Text("Hello")
+        ZStack {
+            
+            Circle()
+//                .fill(self.backgroundColor(type: .rarely))
+                .fill(monthStruct().setLevel().background)
+                .frame(width: 30, height: 30)
+            
+            Text(monthStruct().getDay())
+                .foregroundColor(textColor(type: monthStruct().monthType))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+    }
+    
+    private func textColor(type: MonthType) -> Color {
+        
+        return type == .current ? .black : .gray
+    }
+    
+    private func monthStruct() -> Month {
+        
+        let start = startingSpaces == 0 ? startingSpaces + 7 : startingSpaces
+        
+        if count <= start {
+            
+            let day = daysInMonth + count - start
+            return Month(monthType: MonthType.previous, dayInt: day)
+            
+        } else if count - start > daysInMonth {
+            
+            let day = count - start - daysInMonth
+            return Month(monthType: MonthType.next, dayInt: day)
+        }
+        
+        let day = count - start
+        return Month(monthType: MonthType.current, dayInt: day)
     }
 }
 

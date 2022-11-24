@@ -13,13 +13,13 @@ struct CalendarContentWeekRowView: View {
         
         HStack(spacing: 1) {
             
-            Text("Sun").dayOfWeek()
-            Text("Mon").dayOfWeek()
-            Text("Tue").dayOfWeek()
-            Text("WED").dayOfWeek()
-            Text("THU").dayOfWeek()
-            Text("FRI").dayOfWeek()
-            Text("SAT").dayOfWeek()
+            Text("일").bold().dayOfWeek().foregroundColor(.red)
+            Text("월").bold().dayOfWeek()
+            Text("화").bold().dayOfWeek()
+            Text("수").bold().dayOfWeek()
+            Text("목").bold().dayOfWeek()
+            Text("금").bold().dayOfWeek()
+            Text("토").bold().dayOfWeek().foregroundColor(.blue)
         }
     }
 }

@@ -20,21 +20,22 @@ struct CalendarTopView: View {
             Button(action: self.goToPrevMonth) {
                 
                 Image(systemName: "arrow.left")
-                    .imageScale(.large)
+                    .imageScale(.medium)
                     .font(Font.title.weight(.bold))
+                    .foregroundColor(.black)
             }
             
             Text(CalendarHelper().monthYearString(dateHolder.date))
                 .font(.title)
-                .bold()
                 .animation(.none)
                 .frame(maxWidth: .infinity)
             
             Button(action: self.gotToNextMonth) {
                 
                 Image(systemName: "arrow.right")
-                    .imageScale(.large)
+                    .imageScale(.medium)
                     .font(Font.title.weight(.bold))
+                    .foregroundColor(.black)
             }
             
             Spacer()

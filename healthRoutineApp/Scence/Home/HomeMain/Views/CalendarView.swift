@@ -13,7 +13,12 @@ struct CalendarView: View {
         
         VStack(spacing: 10) {
             
-            CalendarTopView() 
+            Text("DDD님 오늘도 움직여 볼까요!")
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding([.leading], 20)
+            
+            CalendarTopView()
+            
             CalendarContentWeekRowView() // 요일
             CalendarContentDayRowView() // 날짜
             

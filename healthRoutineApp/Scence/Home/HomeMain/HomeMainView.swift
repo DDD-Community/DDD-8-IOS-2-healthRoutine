@@ -9,7 +9,24 @@ import SwiftUI
 
 struct HomeMainView: View {
     var body: some View {
-        CalendarView()
+        
+        VStack {
+            
+            TopMenuVeiw(mainTitle: "득근득근")
+            
+            Spacer()
+            
+            VStack {
+                
+                CalendarView()
+                    .frame(maxWidth: .infinity, maxHeight: 300)
+                    .padding(20)
+            }
+            .background(.yellow)
+            .cornerRadius(20)
+            
+            Spacer()
+        }
     }
 }
 
