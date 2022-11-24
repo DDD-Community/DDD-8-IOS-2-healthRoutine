@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         
         TabView {
             
-            MainView()
+            HomeMainView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("타이머")
@@ -24,13 +25,13 @@ struct ContentView: View {
                     Text("타이머")
                 }
             
-            TimerView()
+            TimerMainView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("타이머")
                 }
             
-            MyPageView()
+            MyPageMainView()
                 .tabItem {
                     Image(systemName: "heart")
                     Text("마이 페이지")

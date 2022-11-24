@@ -1,5 +1,5 @@
 //
-//  MyPageView.swift
+//  MyPageMainView.swift
 //  healthRoutineApp
 //
 //  Created by geonhui Yu on 2022/11/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MyPageView: View {
+struct MyPageMainView: View {
     
     var body: some View {
         
@@ -26,6 +26,6 @@ struct MyPageView: View {
 
 struct MyPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPageView()
+        MyPageMainView()
     }
 }
