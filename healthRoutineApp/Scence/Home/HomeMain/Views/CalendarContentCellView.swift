@@ -42,7 +42,6 @@ struct CalendarContentCellView: View {
         ZStack {
             
             Circle()
-//                .fill(self.backgroundColor(type: .rarely))
                 .fill(monthStruct().setLevel().background)
                 .frame(width: 30, height: 30)
             

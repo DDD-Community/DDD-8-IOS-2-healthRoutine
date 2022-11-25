@@ -14,8 +14,6 @@ struct HomeMainView: View {
             
             TopMenuVeiw(mainTitle: "득근득근")
             
-            Spacer()
-            
             VStack {
                 
                 CalendarView()

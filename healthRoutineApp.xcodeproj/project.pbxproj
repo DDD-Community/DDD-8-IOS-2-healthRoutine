@@ -19,11 +19,13 @@
 		B623B12B292F508A00BA7BA7 /* CalendarContentDayRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12A292F508A00BA7BA7 /* CalendarContentDayRowView.swift */; };
 		B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */; };
 		B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12E292F5C5F00BA7BA7 /* Month.swift */; };
+		B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641A4512930582100022A58 /* MyPageViewStrings.swift */; };
 		B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F21292E627400A9AE99 /* MyPageMainView.swift */; };
 		B68B4F24292E62B800A9AE99 /* TimerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F23292E62B800A9AE99 /* TimerMainView.swift */; };
 		B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */; };
 		B68B4F29292E64E400A9AE99 /* MyPageHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */; };
 		B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */; };
+		B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */; };
 		B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED32917D86200420E8E /* healthRoutineApp.swift */; };
 		B6D8CED62917D86200420E8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED52917D86200420E8E /* ContentView.swift */; };
 		B6D8CED82917D86400420E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D8CED72917D86400420E8E /* Assets.xcassets */; };
@@ -44,11 +46,13 @@
 		B623B12A292F508A00BA7BA7 /* CalendarContentDayRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContentDayRowView.swift; sourceTree = "<group>"; };
 		B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContentCellView.swift; sourceTree = "<group>"; };
 		B623B12E292F5C5F00BA7BA7 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		B641A4512930582100022A58 /* MyPageViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewStrings.swift; sourceTree = "<group>"; };
 		B68B4F21292E627400A9AE99 /* MyPageMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainView.swift; sourceTree = "<group>"; };
 		B68B4F23292E62B800A9AE99 /* TimerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerMainView.swift; sourceTree = "<group>"; };
 		B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileView.swift; sourceTree = "<group>"; };
 		B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHistoryView.swift; sourceTree = "<group>"; };
 		B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBadgeView.swift; sourceTree = "<group>"; };
+		B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeView.swift; sourceTree = "<group>"; };
 		B6D8CED02917D86200420E8E /* healthRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D8CED32917D86200420E8E /* healthRoutineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthRoutineApp.swift; sourceTree = "<group>"; };
 		B6D8CED52917D86200420E8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				B623B124292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift */,
 				B623B12A292F508A00BA7BA7 /* CalendarContentDayRowView.swift */,
 				B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */,
+				B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */,
 			);
 			name = Views;
 			path = HomeMain/Views;
@@ -212,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				B623B119292F48B700BA7BA7 /* MyPageMain */,
+				B641A4512930582100022A58 /* MyPageViewStrings.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -345,7 +351,9 @@
 				B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */,
 				B623B118292F47B500BA7BA7 /* Date+Ext.swift in Sources */,
 				B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */,
+				B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */,
 				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,
+				B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */,
 				B623B123292F4B2300BA7BA7 /* DateHolder.swift in Sources */,
 				B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */,
 				B68B4F24292E62B800A9AE99 /* TimerMainView.swift in Sources */,
