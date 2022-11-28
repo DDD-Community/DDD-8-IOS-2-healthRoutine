@@ -20,5 +20,4 @@ jobs:
       run: echo Hello, world!
     - name: Run tests
       run: | 
-        echo Add other actions to build,
-        echo test, and edploy your project
+        xcodebuild clean test -project healthRoutine.xcodeproj -scheme healthRoutine -destination "platform=iOS Simulator,name=iPhone 13"
