@@ -53,7 +53,7 @@
 		B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBadgeView.swift; sourceTree = "<group>"; };
 		B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeView.swift; sourceTree = "<group>"; };
 		B6ADAB7729344A870014277B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B6ADAB7C29344DB10014277B /* HealthRoutine */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = HealthRoutine; path = ../../Development/HealthRoutine; sourceTree = "<group>"; };
+		B6ADAB7D29344EA30014277B /* HealthRoutine */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HealthRoutine; sourceTree = "<group>"; };
 		B6D8CED02917D86200420E8E /* healthRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D8CED32917D86200420E8E /* healthRoutineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthRoutineApp.swift; sourceTree = "<group>"; };
 		B6D8CED52917D86200420E8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -220,6 +220,7 @@
 		B6D8CEC72917D86200420E8E = {
 			isa = PBXGroup;
 			children = (
+				B6ADAB7D29344EA30014277B /* HealthRoutine */,
 				B6D8CED22917D86200420E8E /* healthRoutineApp */,
 				B6D8CED12917D86200420E8E /* Products */,
 			);
@@ -236,7 +237,6 @@
 		B6D8CED22917D86200420E8E /* healthRoutineApp */ = {
 			isa = PBXGroup;
 			children = (
-				B6ADAB7C29344DB10014277B /* HealthRoutine */,
 				B68B4F1A292E61EE00A9AE99 /* Scence */,
 				B623B116292F47A900BA7BA7 /* Extension */,
 				B623B113292F3EB800BA7BA7 /* Tools */,
