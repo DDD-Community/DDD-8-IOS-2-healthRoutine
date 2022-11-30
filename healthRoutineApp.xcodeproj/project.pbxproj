@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		912523912937A41800003C87 /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238B2937A41800003C87 /* TimerData.swift */; };
+		912523922937A41800003C87 /* TimerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238C2937A41800003C87 /* TimerMainView.swift */; };
+		912523932937A41800003C87 /* TimerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238E2937A41800003C87 /* TimerInfoView.swift */; };
+		912523942937A41800003C87 /* TimerCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238F2937A41800003C87 /* TimerCountView.swift */; };
+		912523952937A41800003C87 /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912523902937A41800003C87 /* TimerButtonView.swift */; };
 		B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */; };
 		B6197CFA2937342E006A535D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6197CF92937342E006A535D /* LogInView.swift */; };
 		B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F2292F165100BA7BA7 /* HomeMainView.swift */; };
@@ -34,6 +39,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9125238B2937A41800003C87 /* TimerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
+		9125238C2937A41800003C87 /* TimerMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerMainView.swift; sourceTree = "<group>"; };
+		9125238E2937A41800003C87 /* TimerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInfoView.swift; sourceTree = "<group>"; };
+		9125238F2937A41800003C87 /* TimerCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCountView.swift; sourceTree = "<group>"; };
+		912523902937A41800003C87 /* TimerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerButtonView.swift; sourceTree = "<group>"; };
 		B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuVeiw.swift; sourceTree = "<group>"; };
 		B6197CF92937342E006A535D /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		B623B0EF292F12DB00BA7BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +84,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		912523892937A41800003C87 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				9125238A2937A41800003C87 /* ViewData */,
+				9125238C2937A41800003C87 /* TimerMainView.swift */,
+				9125238D2937A41800003C87 /* Views */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		9125238A2937A41800003C87 /* ViewData */ = {
+			isa = PBXGroup;
+			children = (
+				9125238B2937A41800003C87 /* TimerData.swift */,
+			);
+			path = ViewData;
+			sourceTree = "<group>";
+		};
+		9125238D2937A41800003C87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9125238E2937A41800003C87 /* TimerInfoView.swift */,
+				9125238F2937A41800003C87 /* TimerCountView.swift */,
+				912523902937A41800003C87 /* TimerButtonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B609BEF2292EFB60008045CE /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,20 +128,6 @@
 				B6197CF92937342E006A535D /* LogInView.swift */,
 			);
 			path = LogIn;
-			sourceTree = "<group>";
-		};
-		B6197CF7293733E9006A535D /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SignUp;
-			sourceTree = "<group>";
-		};
-		B6197CF8293733E9006A535D /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Splash;
 			sourceTree = "<group>";
 		};
 		B623B0F4292F167900BA7BA7 /* Report */ = {
@@ -197,12 +221,10 @@
 		B68B4F1A292E61EE00A9AE99 /* Scence */ = {
 			isa = PBXGroup;
 			children = (
+				912523892937A41800003C87 /* Timer */,
 				B6197CF6293733E9006A535D /* LogIn */,
-				B6197CF7293733E9006A535D /* SignUp */,
-				B6197CF8293733E9006A535D /* Splash */,
 				B68B4F1D292E620000A9AE99 /* Home */,
 				B623B0F4292F167900BA7BA7 /* Report */,
-				B68B4F1F292E621400A9AE99 /* Timer */,
 				B68B4F20292E621A00A9AE99 /* MyPage */,
 			);
 			path = Scence;
@@ -216,13 +238,6 @@
 				B623B112292F3D3000BA7BA7 /* HomeDetail */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		B68B4F1F292E621400A9AE99 /* Timer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Timer;
 			sourceTree = "<group>";
 		};
 		B68B4F20292E621A00A9AE99 /* MyPage */ = {
@@ -355,11 +370,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912523922937A41800003C87 /* TimerMainView.swift in Sources */,
 				B68B4F29292E64E400A9AE99 /* MyPageHistoryView.swift in Sources */,
 				B6D8CED62917D86200420E8E /* ContentView.swift in Sources */,
+				912523942937A41800003C87 /* TimerCountView.swift in Sources */,
 				B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */,
 				B623B129292F4F4E00BA7BA7 /* CalendarView.swift in Sources */,
 				B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */,
+				912523932937A41800003C87 /* TimerInfoView.swift in Sources */,
 				B623B12B292F508A00BA7BA7 /* CalendarContentDayRowView.swift in Sources */,
 				B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */,
 				B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */,
@@ -374,7 +392,9 @@
 				B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */,
 				B623B125292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift in Sources */,
 				B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */,
+				912523912937A41800003C87 /* TimerData.swift in Sources */,
 				B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */,
+				912523952937A41800003C87 /* TimerButtonView.swift in Sources */,
 				B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
