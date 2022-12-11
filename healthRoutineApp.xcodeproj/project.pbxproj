@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911E0906294496D2000555D8 /* TimerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E0905294496D2000555D8 /* TimerDetailView.swift */; };
+		911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E090729449A3A000555D8 /* TimerPatternView.swift */; };
+		911E090A29449E50000555D8 /* TimerPatternButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E090929449E50000555D8 /* TimerPatternButtonView.swift */; };
 		912523912937A41800003C87 /* TimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238B2937A41800003C87 /* TimerData.swift */; };
 		912523922937A41800003C87 /* TimerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238C2937A41800003C87 /* TimerMainView.swift */; };
 		912523932937A41800003C87 /* TimerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238E2937A41800003C87 /* TimerInfoView.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		911E0905294496D2000555D8 /* TimerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDetailView.swift; sourceTree = "<group>"; };
+		911E090729449A3A000555D8 /* TimerPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPatternView.swift; sourceTree = "<group>"; };
+		911E090929449E50000555D8 /* TimerPatternButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPatternButtonView.swift; sourceTree = "<group>"; };
 		9125238B2937A41800003C87 /* TimerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerData.swift; sourceTree = "<group>"; };
 		9125238C2937A41800003C87 /* TimerMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerMainView.swift; sourceTree = "<group>"; };
 		9125238E2937A41800003C87 /* TimerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInfoView.swift; sourceTree = "<group>"; };
@@ -84,11 +90,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		911E090329449655000555D8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9125238C2937A41800003C87 /* TimerMainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		911E090429449662000555D8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				911E0905294496D2000555D8 /* TimerDetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		912523892937A41800003C87 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				911E090429449662000555D8 /* Detail */,
+				911E090329449655000555D8 /* Main */,
 				9125238A2937A41800003C87 /* ViewData */,
-				9125238C2937A41800003C87 /* TimerMainView.swift */,
 				9125238D2937A41800003C87 /* Views */,
 			);
 			path = Timer;
@@ -108,6 +131,8 @@
 				9125238E2937A41800003C87 /* TimerInfoView.swift */,
 				9125238F2937A41800003C87 /* TimerCountView.swift */,
 				912523902937A41800003C87 /* TimerButtonView.swift */,
+				911E090729449A3A000555D8 /* TimerPatternView.swift */,
+				911E090929449E50000555D8 /* TimerPatternButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -378,12 +403,15 @@
 				B623B129292F4F4E00BA7BA7 /* CalendarView.swift in Sources */,
 				B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */,
 				912523932937A41800003C87 /* TimerInfoView.swift in Sources */,
+				911E090A29449E50000555D8 /* TimerPatternButtonView.swift in Sources */,
 				B623B12B292F508A00BA7BA7 /* CalendarContentDayRowView.swift in Sources */,
 				B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */,
 				B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */,
 				B623B118292F47B500BA7BA7 /* Date+Ext.swift in Sources */,
 				B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */,
 				B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */,
+				911E0906294496D2000555D8 /* TimerDetailView.swift in Sources */,
+				911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */,
 				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,
 				B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */,
 				B623B123292F4B2300BA7BA7 /* DateHolder.swift in Sources */,

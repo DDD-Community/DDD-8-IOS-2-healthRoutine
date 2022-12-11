@@ -9,15 +9,23 @@ import SwiftUI
 
 struct TopMenuVeiw: View {
     
-    @State var mainTitle: String
+    @State var mainTitle: String = ""
+    var isMainView: Bool = true
     
     var body: some View {
         
         HStack {
-            
-            Text(mainTitle)
-                .fontWeight(.bold)
-                .font(.title)
+            if isMainView {
+                Text(mainTitle)
+                    .fontWeight(.bold)
+                    .font(.title)
+            }
+            else {
+                Button(action: pop){
+                    Image(systemName: "arrow.backward")
+                        .foregroundColor(.black)
+                }
+            }
             
             Spacer()
             
@@ -26,6 +34,10 @@ struct TopMenuVeiw: View {
         .padding([.leading, .trailing], 20)
         
         Spacer()
+    }
+    
+    func pop() {
+        // pop
     }
 }
 
