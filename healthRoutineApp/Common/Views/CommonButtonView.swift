@@ -17,7 +17,6 @@ struct CommonButtonView: ButtonStyle {
             .foregroundColor(.black)
             .background(Color(.darkGray))
             .cornerRadius(10)
-            .padding(20)
     }
 }
 

@@ -38,6 +38,7 @@
 		B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AB2948079600C58869 /* CommonButtonView.swift */; };
 		B69878AE29480B1B00C58869 /* CommonInputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AD29480B1B00C58869 /* CommonInputFieldView.swift */; };
 		B69878B0294810CA00C58869 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AF294810CA00C58869 /* SplashView.swift */; };
+		B69878B22948197000C58869 /* LogInMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878B12948197000C58869 /* LogInMainView.swift */; };
 		B6ADAB7829344A870014277B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ADAB7729344A870014277B /* Preview Assets.xcassets */; };
 		B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED32917D86200420E8E /* healthRoutineApp.swift */; };
 		B6D8CED62917D86200420E8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED52917D86200420E8E /* ContentView.swift */; };
@@ -78,6 +79,7 @@
 		B69878AB2948079600C58869 /* CommonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonView.swift; sourceTree = "<group>"; };
 		B69878AD29480B1B00C58869 /* CommonInputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInputFieldView.swift; sourceTree = "<group>"; };
 		B69878AF294810CA00C58869 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		B69878B12948197000C58869 /* LogInMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInMainView.swift; sourceTree = "<group>"; };
 		B6ADAB7729344A870014277B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B6ADAB7D29344EA30014277B /* HealthRoutine */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HealthRoutine; sourceTree = "<group>"; };
 		B6D8CED02917D86200420E8E /* healthRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 		B6197CF6293733E9006A535D /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				B69878B12948197000C58869 /* LogInMainView.swift */,
 				B6197CF92937342E006A535D /* LogInView.swift */,
 			);
 			path = LogIn;
@@ -434,6 +437,7 @@
 				B6197CFA2937342E006A535D /* LogInView.swift in Sources */,
 				B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */,
 				B623B125292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift in Sources */,
+				B69878B22948197000C58869 /* LogInMainView.swift in Sources */,
 				B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */,
 				912523912937A41800003C87 /* TimerData.swift in Sources */,
 				B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */,
