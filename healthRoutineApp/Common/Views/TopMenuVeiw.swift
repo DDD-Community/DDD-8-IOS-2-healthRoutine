@@ -31,7 +31,7 @@ struct TopMenuVeiw: View {
             
             Image(systemName: "bell")
         }
-        .padding([.leading, .trailing], 20)
+        .padding(.horizontal, 20)
         
         Spacer()
     }
