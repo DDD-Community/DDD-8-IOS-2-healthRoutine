@@ -15,6 +15,10 @@
 		912523932937A41800003C87 /* TimerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238E2937A41800003C87 /* TimerInfoView.swift */; };
 		912523942937A41800003C87 /* TimerCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238F2937A41800003C87 /* TimerCountView.swift */; };
 		912523952937A41800003C87 /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912523902937A41800003C87 /* TimerButtonView.swift */; };
+		91C856E62948BB80000385C7 /* SignUpMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C856E52948BB80000385C7 /* SignUpMainView.swift */; };
+		91C856EA2948C077000385C7 /* SignUpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C856E92948C077000385C7 /* SignUpManager.swift */; };
+		91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C856ED2948C49B000385C7 /* Color+Ext.swift */; };
+		91C856F12948C514000385C7 /* SignUpInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C856F02948C514000385C7 /* SignUpInputView.swift */; };
 		B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */; };
 		B6197CFA2937342E006A535D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6197CF92937342E006A535D /* LogInView.swift */; };
 		B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F2292F165100BA7BA7 /* HomeMainView.swift */; };
@@ -34,6 +38,11 @@
 		B68B4F29292E64E400A9AE99 /* MyPageHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */; };
 		B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */; };
 		B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */; };
+		B69878AA2948068F00C58869 /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878A92948068E00C58869 /* BottomButtonView.swift */; };
+		B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AB2948079600C58869 /* CommonButtonView.swift */; };
+		B69878AE29480B1B00C58869 /* CommonInputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AD29480B1B00C58869 /* CommonInputFieldView.swift */; };
+		B69878B0294810CA00C58869 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AF294810CA00C58869 /* SplashView.swift */; };
+		B69878B22948197000C58869 /* LogInMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878B12948197000C58869 /* LogInMainView.swift */; };
 		B6ADAB7829344A870014277B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ADAB7729344A870014277B /* Preview Assets.xcassets */; };
 		B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED32917D86200420E8E /* healthRoutineApp.swift */; };
 		B6D8CED62917D86200420E8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED52917D86200420E8E /* ContentView.swift */; };
@@ -50,6 +59,10 @@
 		9125238E2937A41800003C87 /* TimerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInfoView.swift; sourceTree = "<group>"; };
 		9125238F2937A41800003C87 /* TimerCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCountView.swift; sourceTree = "<group>"; };
 		912523902937A41800003C87 /* TimerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerButtonView.swift; sourceTree = "<group>"; };
+		91C856E52948BB80000385C7 /* SignUpMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMainView.swift; sourceTree = "<group>"; };
+		91C856E92948C077000385C7 /* SignUpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpManager.swift; sourceTree = "<group>"; };
+		91C856ED2948C49B000385C7 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		91C856F02948C514000385C7 /* SignUpInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInputView.swift; sourceTree = "<group>"; };
 		B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuVeiw.swift; sourceTree = "<group>"; };
 		B6197CF92937342E006A535D /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		B623B0EF292F12DB00BA7BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +83,11 @@
 		B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHistoryView.swift; sourceTree = "<group>"; };
 		B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBadgeView.swift; sourceTree = "<group>"; };
 		B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeView.swift; sourceTree = "<group>"; };
+		B69878A92948068E00C58869 /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
+		B69878AB2948079600C58869 /* CommonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonView.swift; sourceTree = "<group>"; };
+		B69878AD29480B1B00C58869 /* CommonInputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInputFieldView.swift; sourceTree = "<group>"; };
+		B69878AF294810CA00C58869 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		B69878B12948197000C58869 /* LogInMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInMainView.swift; sourceTree = "<group>"; };
 		B6ADAB7729344A870014277B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B6ADAB7D29344EA30014277B /* HealthRoutine */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HealthRoutine; sourceTree = "<group>"; };
 		B6D8CED02917D86200420E8E /* healthRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +155,40 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		91C856E42948BB6F000385C7 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				91C856EF2948C508000385C7 /* Views */,
+				91C856E82948C045000385C7 /* SignUpManager */,
+				91C856E72948C03C000385C7 /* Main */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		91C856E72948C03C000385C7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				91C856E52948BB80000385C7 /* SignUpMainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		91C856E82948C045000385C7 /* SignUpManager */ = {
+			isa = PBXGroup;
+			children = (
+				91C856E92948C077000385C7 /* SignUpManager.swift */,
+			);
+			path = SignUpManager;
+			sourceTree = "<group>";
+		};
+		91C856EF2948C508000385C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91C856F02948C514000385C7 /* SignUpInputView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B609BEF2292EFB60008045CE /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +202,7 @@
 		B6197CF6293733E9006A535D /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				B69878B12948197000C58869 /* LogInMainView.swift */,
 				B6197CF92937342E006A535D /* LogInView.swift */,
 			);
 			path = LogIn;
@@ -167,6 +220,9 @@
 			isa = PBXGroup;
 			children = (
 				B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */,
+				B69878A92948068E00C58869 /* BottomButtonView.swift */,
+				B69878AB2948079600C58869 /* CommonButtonView.swift */,
+				B69878AD29480B1B00C58869 /* CommonInputFieldView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				B623B117292F47B500BA7BA7 /* Date+Ext.swift */,
+				91C856ED2948C49B000385C7 /* Color+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -246,6 +303,7 @@
 		B68B4F1A292E61EE00A9AE99 /* Scence */ = {
 			isa = PBXGroup;
 			children = (
+				91C856E42948BB6F000385C7 /* SignUp */,
 				912523892937A41800003C87 /* Timer */,
 				B6197CF6293733E9006A535D /* LogIn */,
 				B68B4F1D292E620000A9AE99 /* Home */,
@@ -305,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				B68B4F1A292E61EE00A9AE99 /* Scence */,
+				B69878AF294810CA00C58869 /* SplashView.swift */,
 				B623B116292F47A900BA7BA7 /* Extension */,
 				B623B113292F3EB800BA7BA7 /* Tools */,
 				B609BEF2292EFB60008045CE /* Common */,
@@ -400,6 +459,7 @@
 				B6D8CED62917D86200420E8E /* ContentView.swift in Sources */,
 				912523942937A41800003C87 /* TimerCountView.swift in Sources */,
 				B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */,
+				91C856F12948C514000385C7 /* SignUpInputView.swift in Sources */,
 				B623B129292F4F4E00BA7BA7 /* CalendarView.swift in Sources */,
 				B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */,
 				912523932937A41800003C87 /* TimerInfoView.swift in Sources */,
@@ -408,7 +468,9 @@
 				B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */,
 				B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */,
 				B623B118292F47B500BA7BA7 /* Date+Ext.swift in Sources */,
+				B69878AE29480B1B00C58869 /* CommonInputFieldView.swift in Sources */,
 				B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */,
+				91C856EA2948C077000385C7 /* SignUpManager.swift in Sources */,
 				B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */,
 				911E0906294496D2000555D8 /* TimerDetailView.swift in Sources */,
 				911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */,
@@ -416,11 +478,17 @@
 				B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */,
 				B623B123292F4B2300BA7BA7 /* DateHolder.swift in Sources */,
 				B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */,
+				91C856E62948BB80000385C7 /* SignUpMainView.swift in Sources */,
+				B69878AA2948068F00C58869 /* BottomButtonView.swift in Sources */,
+				B69878B0294810CA00C58869 /* SplashView.swift in Sources */,
 				B6197CFA2937342E006A535D /* LogInView.swift in Sources */,
 				B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */,
 				B623B125292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift in Sources */,
+				B69878B22948197000C58869 /* LogInMainView.swift in Sources */,
+				91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */,
 				B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */,
 				912523912937A41800003C87 /* TimerData.swift in Sources */,
+				B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */,
 				B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */,
 				912523952937A41800003C87 /* TimerButtonView.swift in Sources */,
 				B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */,
