@@ -15,7 +15,7 @@ struct SplashView: View {
         
         if isActive {
             
-            ContentView()
+            LogInMainView()
             
         } else {
             

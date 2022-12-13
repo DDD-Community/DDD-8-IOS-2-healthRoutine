@@ -30,12 +30,11 @@ struct LogInMainView: View {
                 
                 // MARK: - 회원가입 뷰 이동 처리
                 NavigationLink(isActive: $openSignUpView) {
-                    
-                    // 회원가입 화면 넣어주세요!
+                    SignUpMainView()
                     
                 } label: {
                     Button("회원가입") {
-                        debugPrint("go To SignUp")
+                        self.openSignUpView = true
                     }
                     .buttonStyle(CommonButtonView())
                 }

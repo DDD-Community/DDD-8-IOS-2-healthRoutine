@@ -16,8 +16,8 @@ struct LogInView: View {
         
         VStack(spacing: 30) {
             
-            InputView(title: "아이디", placeholder: "아이디를 입력해 주세요.", value: $id)
-            InputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $password)
+            LoginInputView(title: "아이디", placeholder: "아이디를 입력해 주세요.", value: $id)
+            LoginInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $password)
             
             Button("로그인") {
              
@@ -35,7 +35,7 @@ struct LogInView: View {
     }
 }
 
-struct InputView: View {
+struct LoginInputView: View {
 
     var title: String
     var placeholder: String
