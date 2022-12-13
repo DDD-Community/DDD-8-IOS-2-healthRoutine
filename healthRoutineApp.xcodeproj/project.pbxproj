@@ -262,7 +262,6 @@
 				B68B4F1D292E620000A9AE99 /* Home */,
 				B623B0F4292F167900BA7BA7 /* Report */,
 				B68B4F20292E621A00A9AE99 /* MyPage */,
-				B69878AF294810CA00C58869 /* SplashView.swift */,
 			);
 			path = Scence;
 			sourceTree = "<group>";
@@ -317,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				B68B4F1A292E61EE00A9AE99 /* Scence */,
+				B69878AF294810CA00C58869 /* SplashView.swift */,
 				B623B116292F47A900BA7BA7 /* Extension */,
 				B623B113292F3EB800BA7BA7 /* Tools */,
 				B609BEF2292EFB60008045CE /* Common */,
