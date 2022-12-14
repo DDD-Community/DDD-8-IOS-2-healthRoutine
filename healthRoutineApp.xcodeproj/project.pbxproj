@@ -33,6 +33,16 @@
 		B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */; };
 		B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12E292F5C5F00BA7BA7 /* Month.swift */; };
 		B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641A4512930582100022A58 /* MyPageViewStrings.swift */; };
+		B65208BC294963470095DAB4 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208BB294963470095DAB4 /* LogInViewModel.swift */; };
+		B65208BF2949712D0095DAB4 /* healthRoutineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208BE2949712D0095DAB4 /* healthRoutineRepository.swift */; };
+		B65208CA294979760095DAB4 /* AccountAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208C9294979760095DAB4 /* AccountAPIs.swift */; };
+		B65208CC29497B480095DAB4 /* HealthRoutineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208CB29497B480095DAB4 /* HealthRoutineAPI.swift */; };
+		B65208CE29498D1E0095DAB4 /* AccountErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208CD29498D1E0095DAB4 /* AccountErrors.swift */; };
+		B65208D22949BC130095DAB4 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208D12949BC130095DAB4 /* CustomNavigationBarView.swift */; };
+		B65208D42949BE710095DAB4 /* CustomNavigationBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208D32949BE710095DAB4 /* CustomNavigationBarContainerView.swift */; };
+		B65208D62949C0F60095DAB4 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208D52949C0F60095DAB4 /* CustomNavigationView.swift */; };
+		B65208D92949C2AA0095DAB4 /* CustomNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208D82949C2AA0095DAB4 /* CustomNavigationLink.swift */; };
+		B65208DB2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208DA2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift */; };
 		B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F21292E627400A9AE99 /* MyPageMainView.swift */; };
 		B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */; };
 		B68B4F29292E64E400A9AE99 /* MyPageHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */; };
@@ -78,6 +88,16 @@
 		B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContentCellView.swift; sourceTree = "<group>"; };
 		B623B12E292F5C5F00BA7BA7 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		B641A4512930582100022A58 /* MyPageViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewStrings.swift; sourceTree = "<group>"; };
+		B65208BB294963470095DAB4 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		B65208BE2949712D0095DAB4 /* healthRoutineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthRoutineRepository.swift; sourceTree = "<group>"; };
+		B65208C9294979760095DAB4 /* AccountAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIs.swift; sourceTree = "<group>"; };
+		B65208CB29497B480095DAB4 /* HealthRoutineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRoutineAPI.swift; sourceTree = "<group>"; };
+		B65208CD29498D1E0095DAB4 /* AccountErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountErrors.swift; sourceTree = "<group>"; };
+		B65208D12949BC130095DAB4 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
+		B65208D32949BE710095DAB4 /* CustomNavigationBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarContainerView.swift; sourceTree = "<group>"; };
+		B65208D52949C0F60095DAB4 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
+		B65208D82949C2AA0095DAB4 /* CustomNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationLink.swift; sourceTree = "<group>"; };
+		B65208DA2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarPreferenceKey.swift; sourceTree = "<group>"; };
 		B68B4F21292E627400A9AE99 /* MyPageMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainView.swift; sourceTree = "<group>"; };
 		B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileView.swift; sourceTree = "<group>"; };
 		B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHistoryView.swift; sourceTree = "<group>"; };
@@ -204,6 +224,7 @@
 			children = (
 				B69878B12948197000C58869 /* LogInMainView.swift */,
 				B6197CF92937342E006A535D /* LogInView.swift */,
+				B65208BB294963470095DAB4 /* LogInViewModel.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -219,6 +240,7 @@
 		B623B0F5292F169300BA7BA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B65208D72949C2980095DAB4 /* Navigation */,
 				B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */,
 				B69878A92948068E00C58869 /* BottomButtonView.swift */,
 				B69878AB2948079600C58869 /* CommonButtonView.swift */,
@@ -300,6 +322,60 @@
 			path = HomeMain/Views;
 			sourceTree = "<group>";
 		};
+		B65208BD294970E00095DAB4 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B65208BE2949712D0095DAB4 /* healthRoutineRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		B65208C12949728A0095DAB4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B65208C6294975350095DAB4 /* Account */,
+				B65208CB29497B480095DAB4 /* HealthRoutineAPI.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B65208C6294975350095DAB4 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				B65208D0294992120095DAB4 /* Model */,
+				B65208CF2949920A0095DAB4 /* Response */,
+				B65208C9294979760095DAB4 /* AccountAPIs.swift */,
+				B65208CD29498D1E0095DAB4 /* AccountErrors.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		B65208CF2949920A0095DAB4 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		B65208D0294992120095DAB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B65208D72949C2980095DAB4 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B65208D12949BC130095DAB4 /* CustomNavigationBarView.swift */,
+				B65208D32949BE710095DAB4 /* CustomNavigationBarContainerView.swift */,
+				B65208D52949C0F60095DAB4 /* CustomNavigationView.swift */,
+				B65208D82949C2AA0095DAB4 /* CustomNavigationLink.swift */,
+				B65208DA2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		B68B4F1A292E61EE00A9AE99 /* Scence */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +438,8 @@
 		B6D8CED22917D86200420E8E /* healthRoutineApp */ = {
 			isa = PBXGroup;
 			children = (
+				B65208C12949728A0095DAB4 /* Domain */,
+				B65208BD294970E00095DAB4 /* Repository */,
 				B68B4F1A292E61EE00A9AE99 /* Scence */,
 				B69878AF294810CA00C58869 /* SplashView.swift */,
 				B623B116292F47A900BA7BA7 /* Extension */,
@@ -457,6 +535,7 @@
 				912523922937A41800003C87 /* TimerMainView.swift in Sources */,
 				B68B4F29292E64E400A9AE99 /* MyPageHistoryView.swift in Sources */,
 				B6D8CED62917D86200420E8E /* ContentView.swift in Sources */,
+				B65208D42949BE710095DAB4 /* CustomNavigationBarContainerView.swift in Sources */,
 				912523942937A41800003C87 /* TimerCountView.swift in Sources */,
 				B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */,
 				91C856F12948C514000385C7 /* SignUpInputView.swift in Sources */,
@@ -465,8 +544,12 @@
 				912523932937A41800003C87 /* TimerInfoView.swift in Sources */,
 				911E090A29449E50000555D8 /* TimerPatternButtonView.swift in Sources */,
 				B623B12B292F508A00BA7BA7 /* CalendarContentDayRowView.swift in Sources */,
+				B65208D22949BC130095DAB4 /* CustomNavigationBarView.swift in Sources */,
+				B65208CC29497B480095DAB4 /* HealthRoutineAPI.swift in Sources */,
 				B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */,
 				B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */,
+				B65208CA294979760095DAB4 /* AccountAPIs.swift in Sources */,
+				B65208D62949C0F60095DAB4 /* CustomNavigationView.swift in Sources */,
 				B623B118292F47B500BA7BA7 /* Date+Ext.swift in Sources */,
 				B69878AE29480B1B00C58869 /* CommonInputFieldView.swift in Sources */,
 				B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */,
@@ -474,6 +557,8 @@
 				B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */,
 				911E0906294496D2000555D8 /* TimerDetailView.swift in Sources */,
 				911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */,
+				B65208DB2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift in Sources */,
+				B65208CE29498D1E0095DAB4 /* AccountErrors.swift in Sources */,
 				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,
 				B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */,
 				B623B123292F4B2300BA7BA7 /* DateHolder.swift in Sources */,
@@ -482,15 +567,18 @@
 				B69878AA2948068F00C58869 /* BottomButtonView.swift in Sources */,
 				B69878B0294810CA00C58869 /* SplashView.swift in Sources */,
 				B6197CFA2937342E006A535D /* LogInView.swift in Sources */,
+				B65208BF2949712D0095DAB4 /* healthRoutineRepository.swift in Sources */,
 				B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */,
 				B623B125292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift in Sources */,
 				B69878B22948197000C58869 /* LogInMainView.swift in Sources */,
 				91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */,
 				B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */,
+				B65208D92949C2AA0095DAB4 /* CustomNavigationLink.swift in Sources */,
 				912523912937A41800003C87 /* TimerData.swift in Sources */,
 				B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */,
 				B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */,
 				912523952937A41800003C87 /* TimerButtonView.swift in Sources */,
+				B65208BC294963470095DAB4 /* LogInViewModel.swift in Sources */,
 				B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

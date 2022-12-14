@@ -9,12 +9,9 @@ import SwiftUI
 
 struct LogInMainView: View {
     
-    @State var openSignUpView: Bool = false
-    @State var openLogInView: Bool = false
-    
     var body: some View {
         
-        NavigationView {
+        CustomNavigationView {
             
             VStack(spacing: 16) {
                 
@@ -29,30 +26,69 @@ struct LogInMainView: View {
                 .background(Color.gray)
                 
                 // MARK: - 회원가입 뷰 이동 처리
-                NavigationLink(isActive: $openSignUpView) {
-                    SignUpMainView()
-                    
-                } label: {
-                    Button("회원가입") {
-                        self.openSignUpView = true
-                    }
-                    .buttonStyle(CommonButtonView())
+                CustomNavigationLink(destination: SignUpMainView().customNavigationTitle("회원가입")
+                ) {
+                    Text("회원가입")
+                        .frame(maxWidth: .infinity, minHeight: 60)
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.black)
+                        .background(Color(.darkGray))
+                        .cornerRadius(10)
                 }
-
+                
                 // MARK: - 로그인 뷰 이동 처리
-                NavigationLink(isActive: $openLogInView) {
-                    
-                    LogInView()
-                    
-                } label: {
-                    Button("로그인") {
-                        self.openLogInView = true
-                    }
-                    .buttonStyle(CommonButtonView())
+                CustomNavigationLink(destination: LogInView()) {
+                    Text("로그인")
+                        .frame(maxWidth: .infinity, minHeight: 60)
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.black)
+                        .background(Color(.darkGray))
+                        .cornerRadius(10)
                 }
             }
+            .customNavigationBarBackButtonHidden(true)
             .padding(20)
         }
+        
+//        NavigationView {
+//
+//            VStack(spacing: 16) {
+//
+//                TabView {
+//                    Text("1")
+//                    Text("2")
+//                    Text("3")
+//                    Text("4")
+//                }
+//                .frame(maxWidth: .infinity, maxHeight: 540)
+//                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+//                .background(Color.gray)
+//
+//                // MARK: - 회원가입 뷰 이동 처리
+//                NavigationLink(isActive: $openSignUpView) {
+//                    SignUpMainView()
+//
+//                } label: {
+//                    Button("회원가입") {
+//                        self.openSignUpView = true
+//                    }
+//                    .buttonStyle(CommonButtonView())
+//                }
+//
+//                // MARK: - 로그인 뷰 이동 처리
+//                NavigationLink(isActive: $openLogInView) {
+//
+//                    LogInView()
+//
+//                } label: {
+//                    Button("로그인") {
+//                        self.openLogInView = true
+//                    }
+//                    .buttonStyle(CommonButtonView())
+//                }
+//            }
+//            .padding(20)
+//        }
     }
 }
 
