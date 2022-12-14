@@ -6,16 +6,17 @@
 //
 
 import Foundation
+import Combine
 
 class LogInViewModel: ObservableObject {
     
     @Published var id: String = ""
     @Published var password: String = ""
     
-    // MARK: Output
-//    let sigIn
- 
-    func signIn() {
-        
+    private let _signIn = PassthroughSubject<(String?, String?), Never>()
+    func signIn(_ email: String?, _ password: String?) {
+        self._signIn.send((email, password))
     }
+    
+    
 }

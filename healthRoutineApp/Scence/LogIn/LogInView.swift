@@ -16,17 +16,18 @@ struct LogInView: View {
         VStack(spacing: 30) {
             
             Image(systemName: "heart.fill")
+                .font(.system(size: 200))
             
             LoginInputView(title: "아이디", placeholder: "아이디를 입력해 주세요.", value: $viewModel.id)
             LoginInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $viewModel.password)
             
             Button("로그인") {
-                viewModel.signIn()
+//                viewModel.signIn()
             }
             .buttonStyle(CommonButtonView())
             
-            HStack {
-                
+            HStack(alignment: .center) {
+            
                 Text("회원가입")
                 
                 Divider().frame(height: 15)
@@ -37,6 +38,8 @@ struct LogInView: View {
                 
                 Text("비밀번호 찾기")
             }
+            
+            Spacer()
         }
         .padding(.top, 100)
         .padding([.leading, .trailing], 20)
