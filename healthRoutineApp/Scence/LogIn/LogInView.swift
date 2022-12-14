@@ -9,26 +9,34 @@ import SwiftUI
 
 struct LogInView: View {
     
-    @State var id: String = ""
-    @State var password: String = ""
+    @ObservedObject var viewModel = LogInViewModel()
     
     var body: some View {
         
         VStack(spacing: 30) {
             
-            LoginInputView(title: "아이디", placeholder: "아이디를 입력해 주세요.", value: $id)
-            LoginInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $password)
+            Image(systemName: "heart.fill")
+            
+            LoginInputView(title: "아이디", placeholder: "아이디를 입력해 주세요.", value: $viewModel.id)
+            LoginInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $viewModel.password)
             
             Button("로그인") {
-             
+                viewModel.signIn()
             }
-            .frame(maxWidth: .infinity, minHeight: 50)
-            .font(.body)
-            .foregroundColor(.black)
-            .background(Color(.systemGray4))
-            .cornerRadius(20)
+            .buttonStyle(CommonButtonView())
             
-            Spacer()
+            HStack {
+                
+                Text("회원가입")
+                
+                Divider().frame(height: 15)
+                
+                Text("이메일 찾기")
+                
+                Divider().frame(height: 15)
+                
+                Text("비밀번호 찾기")
+            }
         }
         .padding(.top, 100)
         .padding([.leading, .trailing], 20)
