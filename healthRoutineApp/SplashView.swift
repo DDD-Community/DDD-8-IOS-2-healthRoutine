@@ -15,8 +15,12 @@ struct SplashView: View {
         
         if isActive {
             
-            LogInMainView()
+            // 로그인이 완료 된 경우
+            // ContentView()
             
+            // 로그인이 완료되지 않은 경우
+            LogInMainView()
+                
         } else {
             
             VStack {
