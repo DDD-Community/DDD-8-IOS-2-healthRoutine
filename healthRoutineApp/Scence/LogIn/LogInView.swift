@@ -22,7 +22,7 @@ struct LogInView: View {
             LoginInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $viewModel.password)
             
             Button("로그인") {
-//                viewModel.signIn()
+//                viewModel.signIn($viewModel.id, $viewModel.password)
             }
             .buttonStyle(CommonButtonView())
             
