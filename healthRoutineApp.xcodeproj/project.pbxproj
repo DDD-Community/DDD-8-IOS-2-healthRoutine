@@ -56,6 +56,7 @@
 		B6ADAB7829344A870014277B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ADAB7729344A870014277B /* Preview Assets.xcassets */; };
 		B6D2889D294AB0370072C347 /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2889C294AB0370072C347 /* RegExp.swift */; };
 		B6D2889F294AB1010072C347 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2889E294AB1010072C347 /* String+Ext.swift */; };
+		B6D288A1294AED7B0072C347 /* AccountAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D288A0294AED7B0072C347 /* AccountAPIWorker.swift */; };
 		B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED32917D86200420E8E /* healthRoutineApp.swift */; };
 		B6D8CED62917D86200420E8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED52917D86200420E8E /* ContentView.swift */; };
 		B6D8CED82917D86400420E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D8CED72917D86400420E8E /* Assets.xcassets */; };
@@ -114,6 +115,7 @@
 		B6ADAB7D29344EA30014277B /* HealthRoutine */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HealthRoutine; sourceTree = "<group>"; };
 		B6D2889C294AB0370072C347 /* RegExp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegExp.swift; sourceTree = "<group>"; };
 		B6D2889E294AB1010072C347 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		B6D288A0294AED7B0072C347 /* AccountAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIWorker.swift; sourceTree = "<group>"; };
 		B6D8CED02917D86200420E8E /* healthRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D8CED32917D86200420E8E /* healthRoutineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthRoutineApp.swift; sourceTree = "<group>"; };
 		B6D8CED52917D86200420E8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				B65208CF2949920A0095DAB4 /* Response */,
 				B65208C9294979760095DAB4 /* AccountAPIs.swift */,
 				B65208CD29498D1E0095DAB4 /* AccountErrors.swift */,
+				B6D288A0294AED7B0072C347 /* AccountAPIWorker.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				B69878AE29480B1B00C58869 /* CommonInputFieldView.swift in Sources */,
 				B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */,
 				91C856EA2948C077000385C7 /* SignUpManager.swift in Sources */,
+				B6D288A1294AED7B0072C347 /* AccountAPIWorker.swift in Sources */,
 				B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */,
 				911E0906294496D2000555D8 /* TimerDetailView.swift in Sources */,
 				911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */,

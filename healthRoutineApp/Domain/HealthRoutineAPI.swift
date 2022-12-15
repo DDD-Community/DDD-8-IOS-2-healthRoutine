@@ -7,6 +7,12 @@
 
 import Foundation
 
+protocol APIParameter {
+
+    var key: String { get }
+    var value: Any? { get }
+}
+
 enum HealthRoutineAPI {
     
     static let baseURL: String = "http://rest-api.xyz/api/v1"

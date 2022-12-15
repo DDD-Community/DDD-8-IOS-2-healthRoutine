@@ -21,7 +21,7 @@ enum AccountAPI {
         }
     }
     
-    enum Parm {
+    enum Param: APIParameter {
         
         case email(String)
         case password(String)
