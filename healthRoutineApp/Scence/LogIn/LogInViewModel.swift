@@ -18,5 +18,14 @@ class LogInViewModel: ObservableObject {
         self._signIn.send((email, password))
     }
     
+    init() {
+        self.bindView()
+    }
     
+    private func bindView() {
+//        
+//        $id
+//            .filter { $0. }
+//            .sink { }
+    }
 }

@@ -13,7 +13,6 @@ struct healthRoutineApp: App {
 //    init() {
 //        Thread.sleep(forTimeInterval: 3)
 //    }
-    
     var body: some Scene {
         
         WindowGroup {
