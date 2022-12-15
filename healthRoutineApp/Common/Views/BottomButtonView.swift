@@ -20,9 +20,8 @@ struct BottomButtonView: View {
             Button(buttonTitle) {
                 debugPrint("Button Action")
             }
-            .padding(20)
             .buttonStyle(CommonButtonView())
-            .frame(minHeight: 88)
+            .frame(minHeight: 60)
 //            .background(Color.yellow)
         }
 //        .edgesIgnoringSafeArea(.bottom)
