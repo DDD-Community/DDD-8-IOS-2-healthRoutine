@@ -37,7 +37,7 @@ struct LogInMainView: View {
                 }
                 
                 // MARK: - 로그인 뷰 이동 처리
-                CustomNavigationLink(destination: LogInView()) {
+                CustomNavigationLink(destination: SignInView()) {
                     Text("로그인")
                         .frame(maxWidth: .infinity, minHeight: 60)
                         .font(.system(size: 18, weight: .bold))

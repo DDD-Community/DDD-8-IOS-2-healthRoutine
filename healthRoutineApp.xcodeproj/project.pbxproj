@@ -22,7 +22,7 @@
 		912523952937A41800003C87 /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912523902937A41800003C87 /* TimerButtonView.swift */; };
 		91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C856ED2948C49B000385C7 /* Color+Ext.swift */; };
 		B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */; };
-		B6197CFA2937342E006A535D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6197CF92937342E006A535D /* LogInView.swift */; };
+		B6197CFA2937342E006A535D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6197CF92937342E006A535D /* SignInView.swift */; };
 		B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F2292F165100BA7BA7 /* HomeMainView.swift */; };
 		B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F6292F16AE00BA7BA7 /* ReportView.swift */; };
 		B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B114292F3EC400BA7BA7 /* CalendarHelper.swift */; };
@@ -35,7 +35,7 @@
 		B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */; };
 		B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12E292F5C5F00BA7BA7 /* Month.swift */; };
 		B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641A4512930582100022A58 /* MyPageViewStrings.swift */; };
-		B65208BC294963470095DAB4 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208BB294963470095DAB4 /* LogInViewModel.swift */; };
+		B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208BB294963470095DAB4 /* SignInViewModel.swift */; };
 		B65208BF2949712D0095DAB4 /* healthRoutineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208BE2949712D0095DAB4 /* healthRoutineRepository.swift */; };
 		B65208CA294979760095DAB4 /* AccountAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208C9294979760095DAB4 /* AccountAPIs.swift */; };
 		B65208CC29497B480095DAB4 /* HealthRoutineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208CB29497B480095DAB4 /* HealthRoutineAPI.swift */; };
@@ -81,7 +81,7 @@
 		912523902937A41800003C87 /* TimerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerButtonView.swift; sourceTree = "<group>"; };
 		91C856ED2948C49B000385C7 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuVeiw.swift; sourceTree = "<group>"; };
-		B6197CF92937342E006A535D /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		B6197CF92937342E006A535D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		B623B0EF292F12DB00BA7BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B623B0F2292F165100BA7BA7 /* HomeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainView.swift; sourceTree = "<group>"; };
 		B623B0F6292F16AE00BA7BA7 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContentCellView.swift; sourceTree = "<group>"; };
 		B623B12E292F5C5F00BA7BA7 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		B641A4512930582100022A58 /* MyPageViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewStrings.swift; sourceTree = "<group>"; };
-		B65208BB294963470095DAB4 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		B65208BB294963470095DAB4 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		B65208BE2949712D0095DAB4 /* healthRoutineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthRoutineRepository.swift; sourceTree = "<group>"; };
 		B65208C9294979760095DAB4 /* AccountAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIs.swift; sourceTree = "<group>"; };
 		B65208CB29497B480095DAB4 /* HealthRoutineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRoutineAPI.swift; sourceTree = "<group>"; };
@@ -243,8 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				B69878B12948197000C58869 /* LogInMainView.swift */,
-				B6197CF92937342E006A535D /* LogInView.swift */,
-				B65208BB294963470095DAB4 /* LogInViewModel.swift */,
+				B6197CF92937342E006A535D /* SignInView.swift */,
+				B65208BB294963470095DAB4 /* SignInViewModel.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -592,7 +592,7 @@
 				B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */,
 				B69878AA2948068F00C58869 /* BottomButtonView.swift in Sources */,
 				B69878B0294810CA00C58869 /* SplashView.swift in Sources */,
-				B6197CFA2937342E006A535D /* LogInView.swift in Sources */,
+				B6197CFA2937342E006A535D /* SignInView.swift in Sources */,
 				8084406C294B2927005A1F75 /* SignUpMainView.swift in Sources */,
 				B65208BF2949712D0095DAB4 /* healthRoutineRepository.swift in Sources */,
 				B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */,
@@ -606,7 +606,7 @@
 				8084406A294B2927005A1F75 /* SignUpMainViewModel.swift in Sources */,
 				B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */,
 				912523952937A41800003C87 /* TimerButtonView.swift in Sources */,
-				B65208BC294963470095DAB4 /* LogInViewModel.swift in Sources */,
+				B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */,
 				B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,7 +736,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"healthRoutineApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FUV2GHVQ46;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = healthRoutineApp/Info.plist;
@@ -752,7 +752,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = E1I4.healthRoutineApp;
+				PRODUCT_BUNDLE_IDENTIFIER = E1I4.healthRoutine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
