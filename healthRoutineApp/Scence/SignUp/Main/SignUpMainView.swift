@@ -9,21 +9,35 @@ import SwiftUI
 
 
 struct SignUpMainView: View {
+    var signUpVM: SignUpMainViewModel = SignUpMainViewModel()
+
     var body: some View {
         VStack {
-            SignUpInputView(SignUpManager: SignUpManager(inputType: .email))
-            SignUpInputView(SignUpManager: SignUpManager(inputType: .password))
-            SignUpInputView(SignUpManager: SignUpManager(inputType: .passwordconfirm))
+            SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .email))
+            SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .password))
+            SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .passwordconfirm))
+            Spacer()
+            /*
+            BottomButtonView(buttonTitle: "다음")
+                .padding(.bottom, 24)*/
+            // MARK: - 회원가입 뷰 이동 처리
+            CustomNavigationLink(destination: NickNameView().customNavigationTitle("회원가입")
+            ) {
+                Text("다음")
+                    .frame(maxWidth: .infinity, minHeight: 60)
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundColor(.black)
+                    .background(Color(.darkGray))
+                    .cornerRadius(10)
+            }
+            .padding(.bottom, 24)
         }
         .padding([.leading, .trailing], 20)
     }
 }
  
-
-
 struct SignUpMainView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpMainView()
     }
 }
-

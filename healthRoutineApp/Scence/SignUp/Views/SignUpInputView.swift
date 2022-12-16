@@ -8,18 +8,27 @@
 import SwiftUI
 
 struct SignUpInputView: View {
-    @ObservedObject var SignUpManager: SignUpManager
+    @ObservedObject var signUpInputVM: SignUpInputViewModel
 
     var body: some View {
-        HStack {
-            VStack {
-                HStack {
-                    TextField(SignUpManager.inputType.getPlaceHolderStr(), text: $SignUpManager.inputStr)
-                    Image(systemName: "checkmark")
+        VStack(alignment: .leading) {
+            HStack {
+                if signUpInputVM.inputType == .email || signUpInputVM.inputType == .nickname {
+                    TextField(signUpInputVM.inputType.getPlaceHolderStr(), text: $signUpInputVM.inputStr)
+                        .foregroundColor(signUpInputVM.getInputColor())
+                        .font(.system(size: 16, weight: .medium))
                 }
-                Divider()
-                    .background(Color(hex: "888888"))
+                else {
+                    SecureField(signUpInputVM.inputType.getPlaceHolderStr(), text: $signUpInputVM.inputStr)
+                        .foregroundColor(signUpInputVM.getInputColor())
+                        .font(.system(size: 16, weight: .medium))
+                }
             }
+            Divider()
+                .background(signUpInputVM.getInputColor())
+            Text(signUpInputVM.getInfoStr())
+                .foregroundColor(signUpInputVM.getInputState().getInfoStateColor())
+                .font(.system(size: 13, weight: .regular))
         }
         .padding(.top, 24)
     }
@@ -27,6 +36,6 @@ struct SignUpInputView: View {
 
 struct SignUpInputView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpInputView(SignUpManager: SignUpManager(inputType: .email))
+        SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .email))
     }
 }

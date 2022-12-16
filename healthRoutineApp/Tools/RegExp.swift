@@ -17,8 +17,8 @@ protocol RegExpRulesType {
 struct RegExpRules: RegExpRulesType {
     
     let email: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    let password: String = ""
-    let nickname: String = ""
+    let password: String = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,50}"
+    let nickname: String = "^[가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9]{2,8}"
 }
 
 
