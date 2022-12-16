@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LogInView: View {
     
-    @ObservedObject var viewModel = LogInViewModel()
+    @ObservedObject private var viewModel = LogInViewModel()
     
     var body: some View {
         
@@ -18,26 +18,14 @@ struct LogInView: View {
             Image(systemName: "heart.fill")
                 .font(.system(size: 200))
             
-            LoginInputView(title: "아이디", placeholder: "아이디를 입력해 주세요.", value: $viewModel.id)
-            LoginInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $viewModel.password)
+            LoginInputView(title: "아이디", placeholder: "아이디를 입력해 주세요.", value: $viewModel.email, isAble: $viewModel.isEamilAble)
+            LoginInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $viewModel.password, isAble: $viewModel.isPasswordAble)
             
             Button("로그인") {
-//                viewModel.signIn($viewModel.id, $viewModel.password)
+                print("버튼이 활성되면 클릭 버트")
             }
             .buttonStyle(CommonButtonView())
-            
-            HStack(alignment: .center) {
-            
-                Text("회원가입")
-                
-                Divider().frame(height: 15)
-                
-                Text("이메일 찾기")
-                
-                Divider().frame(height: 15)
-                
-                Text("비밀번호 찾기")
-            }
+            .disabled(!viewModel.isValidButton)
             
             Spacer()
         }
@@ -52,6 +40,7 @@ struct LoginInputView: View {
     var placeholder: String
     
     @Binding var value: String
+    @Binding var isAble: Bool
     
     var body: some View {
         
@@ -63,8 +52,10 @@ struct LoginInputView: View {
                 Spacer()
             }
             
-            TextField(placeholder, text: $value)
+            TextField(placeholder, text: $value).background(self.isAble ? .gray : .red)
+                
             Divider()
+                .background(self.isAble ? .gray : .red)
         }
     }
 }
