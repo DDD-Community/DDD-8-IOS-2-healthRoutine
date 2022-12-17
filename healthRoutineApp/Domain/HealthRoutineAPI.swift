@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 protocol APIParameter {
 
@@ -22,4 +23,19 @@ enum HealthRoutineAPI {
         let status: String?
         let code: Int?
     }
+
+    // 아래에 api호출 리스트 정의? 이런식으로 하는게 좋을까여
+    // sample
+    static func sample() -> AnyPublisher<DI_Sample, ApiError> {
+        return ApiManager.request("\(baseURL)/samplelele")
+    }
+}
+
+class ResultBase: Decodable {
+    var resultCode: String?
+    var resultMsg: String?
+}
+
+class DI_Sample: ResultBase {
+    var data: Any?
 }

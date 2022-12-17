@@ -7,11 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80307691294C5BD200EFF277 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80307690294C5BD200EFF277 /* ApiRepository.swift */; };
 		80844069294B2927005A1F75 /* SignUpInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844061294B2927005A1F75 /* SignUpInputViewModel.swift */; };
 		8084406A294B2927005A1F75 /* SignUpMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844062294B2927005A1F75 /* SignUpMainViewModel.swift */; };
 		8084406B294B2927005A1F75 /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844064294B2927005A1F75 /* NickNameView.swift */; };
 		8084406C294B2927005A1F75 /* SignUpMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844066294B2927005A1F75 /* SignUpMainView.swift */; };
 		8084406D294B2927005A1F75 /* SignUpInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844068294B2927005A1F75 /* SignUpInputView.swift */; };
+		8088193A294C027700420788 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881931294C027600420788 /* Pretendard-ExtraBold.otf */; };
+		8088193B294C027700420788 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881932294C027600420788 /* Pretendard-Black.otf */; };
+		8088193C294C027700420788 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881933294C027600420788 /* Pretendard-ExtraLight.otf */; };
+		8088193D294C027700420788 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881934294C027600420788 /* Pretendard-Medium.otf */; };
+		8088193E294C027700420788 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881935294C027600420788 /* Pretendard-Regular.otf */; };
+		8088193F294C027700420788 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881936294C027600420788 /* Pretendard-SemiBold.otf */; };
+		80881940294C027700420788 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881937294C027600420788 /* Pretendard-Thin.otf */; };
+		80881941294C027700420788 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881938294C027600420788 /* Pretendard-Light.otf */; };
+		80881942294C027700420788 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881939294C027700420788 /* Pretendard-Bold.otf */; };
+		80881949294C057900420788 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80881948294C057900420788 /* Font+Ext.swift */; };
+		8088194C294C07B100420788 /* AppColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088194B294C07B100420788 /* AppColorSet.swift */; };
+		80881950294C07DA00420788 /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8088194F294C07DA00420788 /* AppColors.xcassets */; };
+		80881953294C2CCE00420788 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80881952294C2CCE00420788 /* Alamofire */; };
+		80881957294C37BE00420788 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80881956294C37BE00420788 /* ApiManager.swift */; };
 		911E0906294496D2000555D8 /* TimerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E0905294496D2000555D8 /* TimerDetailView.swift */; };
 		911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E090729449A3A000555D8 /* TimerPatternView.swift */; };
 		911E090A29449E50000555D8 /* TimerPatternButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E090929449E50000555D8 /* TimerPatternButtonView.swift */; };
@@ -22,7 +37,7 @@
 		912523952937A41800003C87 /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912523902937A41800003C87 /* TimerButtonView.swift */; };
 		91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C856ED2948C49B000385C7 /* Color+Ext.swift */; };
 		B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */; };
-		B6197CFA2937342E006A535D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6197CF92937342E006A535D /* LogInView.swift */; };
+		B6197CFA2937342E006A535D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6197CF92937342E006A535D /* SignInView.swift */; };
 		B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F2292F165100BA7BA7 /* HomeMainView.swift */; };
 		B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F6292F16AE00BA7BA7 /* ReportView.swift */; };
 		B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B114292F3EC400BA7BA7 /* CalendarHelper.swift */; };
@@ -35,7 +50,7 @@
 		B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */; };
 		B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12E292F5C5F00BA7BA7 /* Month.swift */; };
 		B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641A4512930582100022A58 /* MyPageViewStrings.swift */; };
-		B65208BC294963470095DAB4 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208BB294963470095DAB4 /* LogInViewModel.swift */; };
+		B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208BB294963470095DAB4 /* SignInViewModel.swift */; };
 		B65208BF2949712D0095DAB4 /* healthRoutineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208BE2949712D0095DAB4 /* healthRoutineRepository.swift */; };
 		B65208CA294979760095DAB4 /* AccountAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208C9294979760095DAB4 /* AccountAPIs.swift */; };
 		B65208CC29497B480095DAB4 /* HealthRoutineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208CB29497B480095DAB4 /* HealthRoutineAPI.swift */; };
@@ -66,11 +81,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80307690294C5BD200EFF277 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
 		80844061294B2927005A1F75 /* SignUpInputViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInputViewModel.swift; sourceTree = "<group>"; };
 		80844062294B2927005A1F75 /* SignUpMainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpMainViewModel.swift; sourceTree = "<group>"; };
 		80844064294B2927005A1F75 /* NickNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
 		80844066294B2927005A1F75 /* SignUpMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpMainView.swift; sourceTree = "<group>"; };
 		80844068294B2927005A1F75 /* SignUpInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInputView.swift; sourceTree = "<group>"; };
+		80881931294C027600420788 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		80881932294C027600420788 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		80881933294C027600420788 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		80881934294C027600420788 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		80881935294C027600420788 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		80881936294C027600420788 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		80881937294C027600420788 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		80881938294C027600420788 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		80881939294C027700420788 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		80881948294C057900420788 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
+		8088194B294C07B100420788 /* AppColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorSet.swift; sourceTree = "<group>"; };
+		8088194F294C07DA00420788 /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
+		80881956294C37BE00420788 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		911E0905294496D2000555D8 /* TimerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDetailView.swift; sourceTree = "<group>"; };
 		911E090729449A3A000555D8 /* TimerPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPatternView.swift; sourceTree = "<group>"; };
 		911E090929449E50000555D8 /* TimerPatternButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPatternButtonView.swift; sourceTree = "<group>"; };
@@ -81,7 +110,7 @@
 		912523902937A41800003C87 /* TimerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerButtonView.swift; sourceTree = "<group>"; };
 		91C856ED2948C49B000385C7 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuVeiw.swift; sourceTree = "<group>"; };
-		B6197CF92937342E006A535D /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		B6197CF92937342E006A535D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		B623B0EF292F12DB00BA7BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B623B0F2292F165100BA7BA7 /* HomeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainView.swift; sourceTree = "<group>"; };
 		B623B0F6292F16AE00BA7BA7 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
@@ -95,7 +124,7 @@
 		B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContentCellView.swift; sourceTree = "<group>"; };
 		B623B12E292F5C5F00BA7BA7 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		B641A4512930582100022A58 /* MyPageViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewStrings.swift; sourceTree = "<group>"; };
-		B65208BB294963470095DAB4 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		B65208BB294963470095DAB4 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		B65208BE2949712D0095DAB4 /* healthRoutineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthRoutineRepository.swift; sourceTree = "<group>"; };
 		B65208C9294979760095DAB4 /* AccountAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIs.swift; sourceTree = "<group>"; };
 		B65208CB29497B480095DAB4 /* HealthRoutineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRoutineAPI.swift; sourceTree = "<group>"; };
@@ -132,12 +161,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80881953294C2CCE00420788 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80307686294C42CD00EFF277 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				80881956294C37BE00420788 /* ApiManager.swift */,
+				80307690294C5BD200EFF277 /* ApiRepository.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		8084405F294B2927005A1F75 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +219,39 @@
 				80844068294B2927005A1F75 /* SignUpInputView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		80881930294C026B00420788 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				80881943294C027F00420788 /* Pretendard */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		80881943294C027F00420788 /* Pretendard */ = {
+			isa = PBXGroup;
+			children = (
+				80881932294C027600420788 /* Pretendard-Black.otf */,
+				80881939294C027700420788 /* Pretendard-Bold.otf */,
+				80881931294C027600420788 /* Pretendard-ExtraBold.otf */,
+				80881933294C027600420788 /* Pretendard-ExtraLight.otf */,
+				80881938294C027600420788 /* Pretendard-Light.otf */,
+				80881934294C027600420788 /* Pretendard-Medium.otf */,
+				80881935294C027600420788 /* Pretendard-Regular.otf */,
+				80881936294C027600420788 /* Pretendard-SemiBold.otf */,
+				80881937294C027600420788 /* Pretendard-Thin.otf */,
+			);
+			path = Pretendard;
+			sourceTree = "<group>";
+		};
+		8088194A294C078B00420788 /* AppColors */ = {
+			isa = PBXGroup;
+			children = (
+				8088194B294C07B100420788 /* AppColorSet.swift */,
+				8088194F294C07DA00420788 /* AppColors.xcassets */,
+			);
+			path = AppColors;
 			sourceTree = "<group>";
 		};
 		911E090329449655000555D8 /* Main */ = {
@@ -243,8 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				B69878B12948197000C58869 /* LogInMainView.swift */,
-				B6197CF92937342E006A535D /* LogInView.swift */,
-				B65208BB294963470095DAB4 /* LogInViewModel.swift */,
+				B6197CF92937342E006A535D /* SignInView.swift */,
+				B65208BB294963470095DAB4 /* SignInViewModel.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -272,6 +344,8 @@
 		B623B0F9292F17B200BA7BA7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8088194A294C078B00420788 /* AppColors */,
+				80881930294C026B00420788 /* Fonts */,
 				B6ADAB7729344A870014277B /* Preview Assets.xcassets */,
 				B623B0EF292F12DB00BA7BA7 /* Info.plist */,
 				B6D8CED72917D86400420E8E /* Assets.xcassets */,
@@ -309,6 +383,7 @@
 				B623B117292F47B500BA7BA7 /* Date+Ext.swift */,
 				91C856ED2948C49B000385C7 /* Color+Ext.swift */,
 				B6D2889E294AB1010072C347 /* String+Ext.swift */,
+				80881948294C057900420788 /* Font+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -355,6 +430,7 @@
 		B65208C12949728A0095DAB4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				80307686294C42CD00EFF277 /* Network */,
 				B65208C6294975350095DAB4 /* Account */,
 				B65208CB29497B480095DAB4 /* HealthRoutineAPI.swift */,
 			);
@@ -500,6 +576,9 @@
 			dependencies = (
 			);
 			name = healthRoutineApp;
+			packageProductDependencies = (
+				80881952294C2CCE00420788 /* Alamofire */,
+			);
 			productName = healthRoutineApp;
 			productReference = B6D8CED02917D86200420E8E /* healthRoutineApp.app */;
 			productType = "com.apple.product-type.application";
@@ -528,6 +607,9 @@
 				Base,
 			);
 			mainGroup = B6D8CEC72917D86200420E8E;
+			packageReferences = (
+				80881951294C2CCE00420788 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = B6D8CED12917D86200420E8E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -542,9 +624,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80881950294C07DA00420788 /* AppColors.xcassets in Resources */,
+				8088193D294C027700420788 /* Pretendard-Medium.otf in Resources */,
+				80881942294C027700420788 /* Pretendard-Bold.otf in Resources */,
+				80881940294C027700420788 /* Pretendard-Thin.otf in Resources */,
+				8088193C294C027700420788 /* Pretendard-ExtraLight.otf in Resources */,
 				B6D8CEDB2917D86400420E8E /* Preview Assets.xcassets in Resources */,
 				B6ADAB7829344A870014277B /* Preview Assets.xcassets in Resources */,
+				80881941294C027700420788 /* Pretendard-Light.otf in Resources */,
+				8088193A294C027700420788 /* Pretendard-ExtraBold.otf in Resources */,
+				8088193E294C027700420788 /* Pretendard-Regular.otf in Resources */,
+				8088193F294C027700420788 /* Pretendard-SemiBold.otf in Resources */,
 				B6D8CED82917D86400420E8E /* Assets.xcassets in Resources */,
+				8088193B294C027700420788 /* Pretendard-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +655,7 @@
 				912523942937A41800003C87 /* TimerCountView.swift in Sources */,
 				B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */,
 				B623B129292F4F4E00BA7BA7 /* CalendarView.swift in Sources */,
+				80307691294C5BD200EFF277 /* ApiRepository.swift in Sources */,
 				B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */,
 				912523932937A41800003C87 /* TimerInfoView.swift in Sources */,
 				911E090A29449E50000555D8 /* TimerPatternButtonView.swift in Sources */,
@@ -572,12 +665,14 @@
 				B65208CC29497B480095DAB4 /* HealthRoutineAPI.swift in Sources */,
 				B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */,
 				B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */,
+				8088194C294C07B100420788 /* AppColorSet.swift in Sources */,
 				B65208CA294979760095DAB4 /* AccountAPIs.swift in Sources */,
 				B65208D62949C0F60095DAB4 /* CustomNavigationView.swift in Sources */,
 				B6D2889F294AB1010072C347 /* String+Ext.swift in Sources */,
 				B623B118292F47B500BA7BA7 /* Date+Ext.swift in Sources */,
 				B69878AE29480B1B00C58869 /* CommonInputFieldView.swift in Sources */,
 				B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */,
+				80881957294C37BE00420788 /* ApiManager.swift in Sources */,
 				B6D288A1294AED7B0072C347 /* AccountAPIWorker.swift in Sources */,
 				80844069294B2927005A1F75 /* SignUpInputViewModel.swift in Sources */,
 				B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */,
@@ -592,13 +687,14 @@
 				B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */,
 				B69878AA2948068F00C58869 /* BottomButtonView.swift in Sources */,
 				B69878B0294810CA00C58869 /* SplashView.swift in Sources */,
-				B6197CFA2937342E006A535D /* LogInView.swift in Sources */,
+				B6197CFA2937342E006A535D /* SignInView.swift in Sources */,
 				8084406C294B2927005A1F75 /* SignUpMainView.swift in Sources */,
 				B65208BF2949712D0095DAB4 /* healthRoutineRepository.swift in Sources */,
 				B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */,
 				B623B125292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift in Sources */,
 				B69878B22948197000C58869 /* LogInMainView.swift in Sources */,
 				91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */,
+				80881949294C057900420788 /* Font+Ext.swift in Sources */,
 				B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */,
 				B65208D92949C2AA0095DAB4 /* CustomNavigationLink.swift in Sources */,
 				912523912937A41800003C87 /* TimerData.swift in Sources */,
@@ -606,7 +702,7 @@
 				8084406A294B2927005A1F75 /* SignUpMainViewModel.swift in Sources */,
 				B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */,
 				912523952937A41800003C87 /* TimerButtonView.swift in Sources */,
-				B65208BC294963470095DAB4 /* LogInViewModel.swift in Sources */,
+				B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */,
 				B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,7 +832,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"healthRoutineApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FUV2GHVQ46;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = healthRoutineApp/Info.plist;
@@ -752,7 +848,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = E1I4.healthRoutineApp;
+				PRODUCT_BUNDLE_IDENTIFIER = E1I4.healthRoutine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -820,6 +916,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		80881951294C2CCE00420788 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		80881952294C2CCE00420788 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80881951294C2CCE00420788 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B6D8CEC82917D86200420E8E /* Project object */;
 }
