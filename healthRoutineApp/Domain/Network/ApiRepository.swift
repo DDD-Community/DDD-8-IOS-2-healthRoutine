@@ -8,7 +8,7 @@
 import Foundation
 
 enum ApiRepository {
-    static func requestSample() -> DI_Sample {
-        
-    }
+//    static func requestSample() -> DI_Sample {
+//        
+//    }
 }

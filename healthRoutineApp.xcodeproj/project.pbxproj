@@ -49,6 +49,9 @@
 		B623B12B292F508A00BA7BA7 /* CalendarContentDayRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12A292F508A00BA7BA7 /* CalendarContentDayRowView.swift */; };
 		B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */; };
 		B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12E292F5C5F00BA7BA7 /* Month.swift */; };
+		B639D135294F5B49009AE6C9 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639D134294F5B49009AE6C9 /* Account.swift */; };
+		B639D139294F5BE8009AE6C9 /* AccountSignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639D138294F5BE8009AE6C9 /* AccountSignInRequest.swift */; };
+		B639D13B294F5C07009AE6C9 /* AccountSignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639D13A294F5C07009AE6C9 /* AccountSignInResponse.swift */; };
 		B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641A4512930582100022A58 /* MyPageViewStrings.swift */; };
 		B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208BB294963470095DAB4 /* SignInViewModel.swift */; };
 		B65208BF2949712D0095DAB4 /* healthRoutineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208BE2949712D0095DAB4 /* healthRoutineRepository.swift */; };
@@ -123,6 +126,9 @@
 		B623B12A292F508A00BA7BA7 /* CalendarContentDayRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContentDayRowView.swift; sourceTree = "<group>"; };
 		B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContentCellView.swift; sourceTree = "<group>"; };
 		B623B12E292F5C5F00BA7BA7 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		B639D134294F5B49009AE6C9 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		B639D138294F5BE8009AE6C9 /* AccountSignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSignInRequest.swift; sourceTree = "<group>"; };
+		B639D13A294F5C07009AE6C9 /* AccountSignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSignInResponse.swift; sourceTree = "<group>"; };
 		B641A4512930582100022A58 /* MyPageViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewStrings.swift; sourceTree = "<group>"; };
 		B65208BB294963470095DAB4 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		B65208BE2949712D0095DAB4 /* healthRoutineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthRoutineRepository.swift; sourceTree = "<group>"; };
@@ -419,6 +425,30 @@
 			path = HomeMain/Views;
 			sourceTree = "<group>";
 		};
+		B639D133294F5B39009AE6C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B639D134294F5B49009AE6C9 /* Account.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B639D136294F5BC6009AE6C9 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				B639D138294F5BE8009AE6C9 /* AccountSignInRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		B639D137294F5BD2009AE6C9 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				B639D13A294F5C07009AE6C9 /* AccountSignInResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		B65208BD294970E00095DAB4 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,27 +470,14 @@
 		B65208C6294975350095DAB4 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				B65208D0294992120095DAB4 /* Model */,
-				B65208CF2949920A0095DAB4 /* Response */,
+				B639D137294F5BD2009AE6C9 /* Response */,
+				B639D136294F5BC6009AE6C9 /* Request */,
+				B639D133294F5B39009AE6C9 /* Model */,
 				B65208C9294979760095DAB4 /* AccountAPIs.swift */,
 				B65208CD29498D1E0095DAB4 /* AccountErrors.swift */,
 				B6D288A0294AED7B0072C347 /* AccountAPIWorker.swift */,
 			);
 			path = Account;
-			sourceTree = "<group>";
-		};
-		B65208CF2949920A0095DAB4 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		B65208D0294992120095DAB4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B65208D72949C2980095DAB4 /* Navigation */ = {
@@ -656,6 +673,7 @@
 				B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */,
 				B623B129292F4F4E00BA7BA7 /* CalendarView.swift in Sources */,
 				80307691294C5BD200EFF277 /* ApiRepository.swift in Sources */,
+				B639D135294F5B49009AE6C9 /* Account.swift in Sources */,
 				B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */,
 				912523932937A41800003C87 /* TimerInfoView.swift in Sources */,
 				911E090A29449E50000555D8 /* TimerPatternButtonView.swift in Sources */,
@@ -704,6 +722,8 @@
 				912523952937A41800003C87 /* TimerButtonView.swift in Sources */,
 				B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */,
 				B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */,
+				B639D13B294F5C07009AE6C9 /* AccountSignInResponse.swift in Sources */,
+				B639D139294F5BE8009AE6C9 /* AccountSignInRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

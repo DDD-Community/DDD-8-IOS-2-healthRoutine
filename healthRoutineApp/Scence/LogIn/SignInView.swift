@@ -24,8 +24,12 @@ struct SignInView: View {
             SignInInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $viewModel.password, isAble: $viewModel.isActivePasswordField)
             
             Button("로그인") {
-                self.viewModel.signInWith()
-                self.showingAlert = true
+                
+                self.viewModel.signInWith { succes in
+                    if succes {
+                        self.showingAlert = true
+                    }
+                }
             }
             .buttonStyle(CommonButtonView())
             .disabled(!viewModel.canSubmit)
