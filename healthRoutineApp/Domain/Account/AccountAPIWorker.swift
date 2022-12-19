@@ -22,19 +22,26 @@ final class AccountAPIWorker {
     
     func createAccount(accountSignInRequest: AccountSignInRequest, completion: @escaping (Result<AccountSignInResponse, NetworkError>) -> Void) {
         
+        let param = ["email": accountSignInRequest.email, "password": accountSignInRequest.password] // JSON 객체로 변환할 딕셔너리 준비
+        let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])
+
         guard let url = URL(string: _API.signIn.url) else {
             return completion(.failure(.badUrl))
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try? JSONEncoder().encode(accountSignInRequest)
-        
+        request.httpBody = paramData
+               
         URLSession.shared.dataTask(with: request) { data, response, error in
             
             guard let data = data, error == nil else {
                 return completion(.failure(.noData))
+            }
+            
+            if let str = String(data: data, encoding: .utf8) {
+                debugPrint("str : \(str)")
             }
             
             let signInResponse = try? JSONDecoder().decode(AccountSignInResponse.self, from: data)
@@ -46,5 +53,9 @@ final class AccountAPIWorker {
             }
             
         }.resume()
+    }
+    
+    func signInWith() {
+        
     }
 }

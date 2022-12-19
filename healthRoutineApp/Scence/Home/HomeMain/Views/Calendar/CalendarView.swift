@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CalendarView: View {
     
+    @EnvironmentObject var dateHolder: DateHolder
+    
     var body: some View {
         
         VStack(spacing: 10) {

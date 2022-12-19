@@ -11,7 +11,8 @@ struct SignInView: View {
     
     @ObservedObject private var viewModel = SignInViewModel()
     
-    @State var showingAlert: Bool = false
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var hasToken: Bool
     
     var body: some View {
         
@@ -27,22 +28,22 @@ struct SignInView: View {
                 
                 self.viewModel.signInWith { succes in
                     if succes {
-                        self.showingAlert = true
+                        
+                        DispatchQueue.main.async {
+                            self.hasToken = true
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
+                        
                     }
                 }
             }
             .buttonStyle(CommonButtonView())
             .disabled(!viewModel.canSubmit)
-            .alert("Alert Title", isPresented: $showingAlert) {
-                Button("Ok") {}
-            } message: {
-                Text("This is alert dialog sample")
-            }
             
             Spacer()
         }
         .padding(.top, 100)
-        .padding([.leading, .trailing], 20)
+        .padding(.horizontal, 20)
     }
 }
 
@@ -75,6 +76,6 @@ struct SignInInputView: View {
 
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(hasToken: .constant(false))
     }
 }

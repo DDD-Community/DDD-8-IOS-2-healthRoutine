@@ -12,10 +12,10 @@ class SignInViewModel: ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = []
     
-    @Published var email: String = "ddd@ddd.com"
+    @Published var email: String = "test@test.com"
     @Published var isActiveEmailField: Bool = false
     
-    @Published var password: String = "test123!"
+    @Published var password: String = "Rjsgml!3246%"
     @Published var isActivePasswordField: Bool = false
     
     @Published var canSubmit: Bool = false

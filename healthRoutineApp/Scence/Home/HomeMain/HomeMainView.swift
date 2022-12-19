@@ -16,12 +16,18 @@ struct HomeMainView: View {
             
             VStack {
                 
-                CalendarView()
-                    .frame(maxWidth: .infinity, maxHeight: 300)
-                    .padding(20)
+//                CalendarView()
+//                    .frame(maxWidth: .infinity, maxHeight: 300)
+//                    .padding(20)
+                
+                WaterIntakeView()
+                
+                BadgeRowView()
             }
-            .background(.yellow)
             .cornerRadius(20)
+            .padding(20)
+            .background(.yellow)
+            
             
             Spacer()
         }

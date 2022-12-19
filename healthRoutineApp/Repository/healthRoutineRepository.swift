@@ -15,6 +15,7 @@ enum HealthRoutine {
     
     final class Repository {
         
+        @AppStorage("token") var token: String = ""
     }
 }
 

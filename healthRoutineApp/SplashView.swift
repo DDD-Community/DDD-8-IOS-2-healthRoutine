@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SplashView: View {
     
+   
     @State private var isActive: Bool = false
     
     var body: some View {
@@ -19,14 +20,14 @@ struct SplashView: View {
             // ContentView()
             
             // 로그인이 완료되지 않은 경우
-            LogInMainView()
+            LogInMainView(hasToken: self.$isActive)
                 
         } else {
             
             VStack {
                 
                 VStack(spacing: 20) {
-                    
+                
                     Image(systemName: "heart.fill")
                         .font(.system(size: 100))
                     

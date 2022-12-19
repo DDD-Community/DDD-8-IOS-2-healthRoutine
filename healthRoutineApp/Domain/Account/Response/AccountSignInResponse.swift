@@ -11,7 +11,7 @@ struct AccountSignInResponse: Decodable {
     
     let code: Int
     let message: String
-    let reuslt: AccountResult
+    let result: AccountResult
     let status: String
     let token: String
 }
