@@ -20,10 +20,8 @@ struct CalendarView: View {
                 .padding([.leading], 20)
             
             CalendarTopView()
-            
             CalendarContentWeekRowView() // 요일
             CalendarContentDayRowView() // 날짜
-            
         }
     }
 }
