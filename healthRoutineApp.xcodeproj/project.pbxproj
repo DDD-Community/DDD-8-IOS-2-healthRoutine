@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80307691294C5BD200EFF277 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80307690294C5BD200EFF277 /* ApiService.swift */; };
+		807D4D282950430000F757C0 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D4D272950430000F757C0 /* KeychainService.swift */; };
 		80844069294B2927005A1F75 /* SignUpInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844061294B2927005A1F75 /* SignUpInputViewModel.swift */; };
 		8084406A294B2927005A1F75 /* SignUpMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844062294B2927005A1F75 /* SignUpMainViewModel.swift */; };
 		8084406B294B2927005A1F75 /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844064294B2927005A1F75 /* NickNameView.swift */; };
@@ -87,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		80307690294C5BD200EFF277 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		807D4D272950430000F757C0 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		80844061294B2927005A1F75 /* SignUpInputViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInputViewModel.swift; sourceTree = "<group>"; };
 		80844062294B2927005A1F75 /* SignUpMainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpMainViewModel.swift; sourceTree = "<group>"; };
 		80844064294B2927005A1F75 /* NickNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				B623B0F5292F169300BA7BA7 /* Views */,
 				B623B122292F4B2300BA7BA7 /* DateHolder.swift */,
 				B623B12E292F5C5F00BA7BA7 /* Month.swift */,
+				807D4D272950430000F757C0 /* KeychainService.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */,
 				911E0906294496D2000555D8 /* TimerDetailView.swift in Sources */,
 				911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */,
+				807D4D282950430000F757C0 /* KeychainService.swift in Sources */,
 				B65208DB2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift in Sources */,
 				B65208CE29498D1E0095DAB4 /* AccountErrors.swift in Sources */,
 				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,

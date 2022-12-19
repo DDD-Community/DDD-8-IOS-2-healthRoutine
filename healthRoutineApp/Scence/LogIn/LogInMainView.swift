@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct LogInMainView: View {
+
+    #warning("키체인 토큰 유효 체크")
+    // KeychainService.shared.isTokenValidate()
     
     @State var hasToken: Bool = false
     @EnvironmentObject var dateHolder: DateHolder
