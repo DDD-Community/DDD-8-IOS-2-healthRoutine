@@ -1,5 +1,5 @@
 //
-//  ApiManager.swift
+//  APIManager.swift
 //  healthRoutineApp
 //
 //  Created by 유지은(파트너) - 서비스개발담당App개발팀 on 2022/12/16.
@@ -10,7 +10,7 @@ import Combine
 import Alamofire
 
 
-enum ApiError: Error {
+enum APIError: Error {
     case http(ErrorData)
     case parsing(String, String)
     case unknown
@@ -21,7 +21,7 @@ struct ErrorData: Codable {
     var errorDescription: String?
 }
 
-enum ApiManager {
+enum APIManager {
     private static let REQUEST_TIMEOUT = TimeInterval(40) // 서버 타임아웃
 
     static func request<T: Decodable>(_ url: String,
@@ -29,7 +29,7 @@ enum ApiManager {
                                       parameters: Parameters? = nil,
                                       encoding: ParameterEncoding = JSONEncoding.default,
                                       headers: HTTPHeaders? = nil,
-                                      decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<T, ApiError> {
+                                      decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<T, APIError> {
         let request = AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers) { urlRequest in
             urlRequest.timeoutInterval = REQUEST_TIMEOUT
         }
@@ -42,7 +42,7 @@ enum ApiManager {
                     throw error
                 }
             }
-            .mapError({ (error) -> ApiError in
+            .mapError({ (error) -> APIError in
                 return handleError(error)
             })
             .receive(on: DispatchQueue.main)
@@ -54,7 +54,7 @@ enum ApiManager {
         print(result.debugDescription)
         if let error = result.error {
             if let responseCode = error.responseCode {
-                throw ApiError.http(ErrorData(errorCode: responseCode, errorDescription: error.errorDescription))
+                throw APIError.http(ErrorData(errorCode: responseCode, errorDescription: error.errorDescription))
             }
             else {
                 throw error
@@ -62,7 +62,7 @@ enum ApiManager {
         }
         if let data = result.data {
             guard let value = try? decoder.decode(T.self, from: data) else {
-                throw ApiError.parsing("에러", "파싱오류") // 임시 하드코딩
+                throw APIError.parsing("에러", "파싱오류") // 임시 하드코딩
             }
             return value
         }
@@ -71,8 +71,8 @@ enum ApiManager {
         }
     }
 
-    private static func handleError(_ error: Error) -> ApiError {
-        if let apiError = error as? ApiError {
+    private static func handleError(_ error: Error) -> APIError {
+        if let apiError = error as? APIError {
             return apiError
         }
         else {

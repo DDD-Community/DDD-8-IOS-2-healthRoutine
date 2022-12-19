@@ -26,8 +26,8 @@ enum HealthRoutineAPI {
 
     // 아래에 api호출 리스트 정의? 이런식으로 하는게 좋을까여
     // sample
-    static func sample() -> AnyPublisher<DI_Sample, ApiError> {
-        return ApiManager.request("\(baseURL)/samplelele")
+    static func sample() -> AnyPublisher<DI_Sample, APIError> {
+        return APIManager.request("\(baseURL)/samplelele")
     }
 }
 
