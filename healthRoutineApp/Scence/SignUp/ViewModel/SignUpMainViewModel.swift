@@ -6,14 +6,42 @@
 //
 
 import Foundation
-
-class DI_SignUp {
-    var email: String = ""
-    var password: String = ""
-}
+import Combine
 
 class SignUpMainViewModel: ObservableObject {
-    var signUpData: DI_SignUp = DI_SignUp()
+    var something = Set<AnyCancellable>()
+
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var passwordconfirm: String = ""
+    @Published var nickname: String = ""
+
+    init() {
+        test()
+    }
+
+    func test() {
+        /*
+        $email.map {
+            $0.em
+        }*/
+    }
+
+    func requestTest() {
+        ApiService.signIn("test@test.com", "Rjsgml!3246%")
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    print("\(err)")
+                case .finished:
+                    print("Finish")
+                }
+            } receiveValue: { (value: AccountSignInResponse?) in
+                print("dddddd")
+                print(value)
+            }
+            .store(in: &something)
+    }
 
     func requestSignup() {
 

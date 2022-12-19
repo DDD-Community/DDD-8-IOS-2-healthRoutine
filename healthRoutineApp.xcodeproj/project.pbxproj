@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80307691294C5BD200EFF277 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80307690294C5BD200EFF277 /* ApiRepository.swift */; };
+		80307691294C5BD200EFF277 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80307690294C5BD200EFF277 /* ApiService.swift */; };
 		80844069294B2927005A1F75 /* SignUpInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844061294B2927005A1F75 /* SignUpInputViewModel.swift */; };
 		8084406A294B2927005A1F75 /* SignUpMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844062294B2927005A1F75 /* SignUpMainViewModel.swift */; };
 		8084406B294B2927005A1F75 /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844064294B2927005A1F75 /* NickNameView.swift */; };
@@ -85,7 +85,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		80307690294C5BD200EFF277 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
+		80307690294C5BD200EFF277 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		80844061294B2927005A1F75 /* SignUpInputViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInputViewModel.swift; sourceTree = "<group>"; };
 		80844062294B2927005A1F75 /* SignUpMainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpMainViewModel.swift; sourceTree = "<group>"; };
 		80844064294B2927005A1F75 /* NickNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				80881956294C37BE00420788 /* ApiManager.swift */,
-				80307690294C5BD200EFF277 /* ApiRepository.swift */,
+				80307690294C5BD200EFF277 /* ApiService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -683,7 +683,7 @@
 				912523942937A41800003C87 /* TimerCountView.swift in Sources */,
 				B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */,
 				B623B129292F4F4E00BA7BA7 /* CalendarView.swift in Sources */,
-				80307691294C5BD200EFF277 /* ApiRepository.swift in Sources */,
+				80307691294C5BD200EFF277 /* ApiService.swift in Sources */,
 				B639D135294F5B49009AE6C9 /* Account.swift in Sources */,
 				B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */,
 				912523932937A41800003C87 /* TimerInfoView.swift in Sources */,

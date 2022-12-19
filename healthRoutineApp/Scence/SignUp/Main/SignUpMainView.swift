@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 
 struct SignUpMainView: View {
@@ -17,6 +18,9 @@ struct SignUpMainView: View {
             SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .password))
             SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .passwordconfirm))
             Spacer()
+            Button("통신테스트", action: test)
+                .frame(width: 60, height: 60)
+
             /*
             BottomButtonView(buttonTitle: "다음")
                 .padding(.bottom, 24)*/
@@ -33,6 +37,11 @@ struct SignUpMainView: View {
             .padding(.bottom, 24)
         }
         .padding([.leading, .trailing], 20)
+    }
+
+    func test() {
+        signUpVM.requestTest()
+
     }
 }
  
