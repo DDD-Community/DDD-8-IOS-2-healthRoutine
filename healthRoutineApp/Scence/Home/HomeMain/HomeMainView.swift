@@ -24,10 +24,7 @@ struct HomeMainView: View {
                 
                 BadgeRowView()
             }
-            .cornerRadius(20)
             .padding(20)
-            .background(.yellow)
-            
             
             Spacer()
         }

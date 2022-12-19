@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LogInMainView: View {
     
-    @Binding var hasToken: Bool
+    @State var hasToken: Bool = false
     @EnvironmentObject var dateHolder: DateHolder
     
     var body: some View {
@@ -65,6 +65,6 @@ struct LogInMainView: View {
 
 struct LogInMainView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInMainView(hasToken: .constant(false))
+        LogInMainView()
     }
 }

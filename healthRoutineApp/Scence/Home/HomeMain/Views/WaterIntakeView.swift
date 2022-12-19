@@ -34,9 +34,9 @@ struct WaterIntakeView: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: 140)
-        .cornerRadius(16)
         .padding(24)
         .background(Color.cyan)
+        .cornerRadius(30)
     }
 }
 
