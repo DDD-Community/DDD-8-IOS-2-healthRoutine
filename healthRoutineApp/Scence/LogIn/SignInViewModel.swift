@@ -18,6 +18,8 @@ class SignInViewModel: ObservableObject {
     @Published var password: String = "Rjsgml!3246%"
     @Published var isActivePasswordField: Bool = false
     
+    @Published var errrorMsg: String = ""
+    
     @Published var canSubmit: Bool = false
     
     let apiWorker = AccountAPIWorker()
@@ -44,39 +46,22 @@ class SignInViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func signInWith(completion: @escaping (Bool) -> Void) {
+    func signInWith() {
         
-        if !canSubmit { return completion(false) }
+        let request = AccountSignInRequest(email: self.email, password: self.password)
         
-        let signInReq = AccountSignInRequest(email: self.email, password: self.password)
-        
-        AccountAPIWorker.shared.createAccount(accountSignInRequest: signInReq) { result in
-            
-            switch result {
-                
-            case .success(let response):
-            
-                // 성공계정 테스트
-                // email : ddd@ddd.com
-                // password : test123!!
-                if response.status == "OK" && response.code == 200 {
-                    completion(true)
+        APIService.signIn(request)
+            .sink { completion in
+                switch completion {
+                case .failure:
+                    self.errrorMsg = "회원정보 조회에 실패했습니다."
+                case .finished:
+                    print("Finish")
                 }
-//                    if response.success {
-//                        completion(true)
-//                    } else {
-//                        if let error = response.error {
-//                            DispatchQueue.main.async {
-//                                self.errorMessage = error
-//                            }
-//                            completion(false)
-//                        }
-//                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
+            } receiveValue: { (value: AccountSignInResponse?) in
+                
+                print(value)
             }
-        }
-        
-        
+            .store(in: &cancellables)
     }
 }
