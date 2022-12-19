@@ -27,6 +27,7 @@
 		80881950294C07DA00420788 /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8088194F294C07DA00420788 /* AppColors.xcassets */; };
 		80881953294C2CCE00420788 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80881952294C2CCE00420788 /* Alamofire */; };
 		80881957294C37BE00420788 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80881956294C37BE00420788 /* ApiManager.swift */; };
+		809FB26E29503C3E000E2EC6 /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FB26D29503C3E000E2EC6 /* Encodable+Ext.swift */; };
 		911E0906294496D2000555D8 /* TimerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E0905294496D2000555D8 /* TimerDetailView.swift */; };
 		911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E090729449A3A000555D8 /* TimerPatternView.swift */; };
 		911E090A29449E50000555D8 /* TimerPatternButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E090929449E50000555D8 /* TimerPatternButtonView.swift */; };
@@ -104,6 +105,7 @@
 		8088194B294C07B100420788 /* AppColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorSet.swift; sourceTree = "<group>"; };
 		8088194F294C07DA00420788 /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
 		80881956294C37BE00420788 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		809FB26D29503C3E000E2EC6 /* Encodable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
 		911E0905294496D2000555D8 /* TimerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDetailView.swift; sourceTree = "<group>"; };
 		911E090729449A3A000555D8 /* TimerPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPatternView.swift; sourceTree = "<group>"; };
 		911E090929449E50000555D8 /* TimerPatternButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPatternButtonView.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				91C856ED2948C49B000385C7 /* Color+Ext.swift */,
 				B6D2889E294AB1010072C347 /* String+Ext.swift */,
 				80881948294C057900420788 /* Font+Ext.swift */,
+				809FB26D29503C3E000E2EC6 /* Encodable+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -728,6 +731,7 @@
 				B65208D92949C2AA0095DAB4 /* CustomNavigationLink.swift in Sources */,
 				912523912937A41800003C87 /* TimerData.swift in Sources */,
 				B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */,
+				809FB26E29503C3E000E2EC6 /* Encodable+Ext.swift in Sources */,
 				8084406A294B2927005A1F75 /* SignUpMainViewModel.swift in Sources */,
 				B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */,
 				912523952937A41800003C87 /* TimerButtonView.swift in Sources */,

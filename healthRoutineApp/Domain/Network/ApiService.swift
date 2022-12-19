@@ -24,12 +24,8 @@ class ApiService {
         return ApiManager.request("http://rest-api.xyz/user/validate/email", method: .post, parameters: parameters)
     }
 
-    static func signIn(_ email: String,_ password: String)  -> AnyPublisher<AccountSignInResponse, ApiError> {
-        var parameters = Parameters()
-        parameters["email"] = email
-        parameters["password"] = password
-
-        return ApiManager.request("http://rest-api.xyz/api/v1/user/login", method: .post, parameters: parameters)
+    static func signIn(_ param: AccountSignInRequest)  -> AnyPublisher<AccountSignInResponse, ApiError> {
+        return ApiManager.request("http://rest-api.xyz/api/v1/user/login", method: .post, parameters: param.dictionary)
     }
 }
 

@@ -28,7 +28,8 @@ class SignUpMainViewModel: ObservableObject {
     }
 
     func requestTest() {
-        ApiService.signIn("test@test.com", "Rjsgml!3246%")
+        var sample = AccountSignInRequest(email: "test@test.com", password: "Rjsgml!3246%")
+        ApiService.signIn(sample)
             .sink { completion in
                 switch completion {
                 case .failure(let err):
