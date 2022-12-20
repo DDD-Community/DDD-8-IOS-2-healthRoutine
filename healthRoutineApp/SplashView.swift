@@ -20,7 +20,7 @@ struct SplashView: View {
             // ContentView()
             
             // 로그인이 완료되지 않은 경우
-            LogInMainView()
+            AccountMainView()
                 
         } else {
             

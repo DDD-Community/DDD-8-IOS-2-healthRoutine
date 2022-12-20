@@ -8,23 +8,32 @@
 import SwiftUI
 
 struct HomeMainView: View {
+    
+    private var mainViews: [any View] = [WaterIntakeView(), BadgeRowView()]
+    
     var body: some View {
         
         VStack {
             
             TopMenuVeiw(mainTitle: "득근득근")
             
-            VStack {
+            CustomNavigationView {
                 
-//                CalendarView()
-//                    .frame(maxWidth: .infinity, maxHeight: 300)
-//                    .padding(20)
-                
-                WaterIntakeView()
-                
-                BadgeRowView()
+                ScrollView {
+                    
+                    VStack {
+                        
+                        CustomNavigationLink(destination: HomeDetailView()) {
+                            WaterIntakeView()
+                        }
+                        
+                        CustomNavigationLink(destination: HomeDetailView()) {
+                            BadgeRowView()
+                        }
+                    }
+                    .padding(20)
+                }
             }
-            .padding(20)
             
             Spacer()
         }

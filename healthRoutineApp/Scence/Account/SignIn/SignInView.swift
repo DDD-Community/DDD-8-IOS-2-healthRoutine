@@ -24,18 +24,12 @@ struct SignInView: View {
             SignInInputView(title: "아이디", placeholder: "아이디를 입력해 주세요.", value: $viewModel.email, isAble: $viewModel.isActiveEmailField)
             SignInInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $viewModel.password, isAble: $viewModel.isActivePasswordField)
             
+            Text(self.viewModel.errrorMsg)
+                .font(.system(size: 13, weight: .regular))
+                .foregroundColor(.red)
+            
             Button("로그인") {
-                
-                self.viewModel.signInWith { succes in
-                    if succes {
-                        
-                        DispatchQueue.main.async {
-                            self.hasToken = true
-                            self.presentationMode.wrappedValue.dismiss()
-                        }
-                        
-                    }
-                }
+                self.viewModel.signInWith()
             }
             .buttonStyle(CommonButtonView())
             .disabled(!viewModel.canSubmit)
@@ -59,11 +53,8 @@ struct SignInInputView: View {
         
         VStack {
             
-            HStack {
-                
-                Text(title)
-                Spacer()
-            }
+            Text(title)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             TextField(placeholder, text: $value)
                 
