@@ -1,5 +1,5 @@
 //
-//  LogInMainView.swift
+//  AccountMainView.swift
 //  healthRoutineApp
 //
 //  Created by geonhui Yu on 2022/12/13.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LogInMainView: View {
+struct AccountMainView: View {
 
     #warning("키체인 토큰 유효 체크")
     // KeychainService.shared.isTokenValidate()
