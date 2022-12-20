@@ -15,7 +15,7 @@ struct SignUpMainView: View {
 
     var body: some View {
         VStack {
-            SignUpInputView(placeholder: "이메일 주소", inputStr: $viewModel.email, infoStr: viewModel.emailInfo, inputStateType: viewModel.emailState)
+            SignUpInputView(isAuthButtonVisible: true, placeholder: "이메일 주소", inputStr: $viewModel.email, infoStr: viewModel.emailInfo, inputStateType: viewModel.emailState)
             SignUpInputView(isSecureMode: true, placeholder: "비밀번호", inputStr: $viewModel.password, infoStr: viewModel.passwordInfo, inputStateType: viewModel.passwordState)
             SignUpInputView(isSecureMode: true, placeholder: "비밀번호 확인", inputStr: $viewModel.passwordConfirm, infoStr: viewModel.passwordConfirmInfo, inputStateType: viewModel.passwordConfirmState)
             Spacer()
@@ -33,6 +33,7 @@ struct SignUpMainView: View {
             .padding(.bottom, 24)
         }
         .padding([.leading, .trailing], 20)
+        .background(Color(hex:"18171d"))
     }
 }
  

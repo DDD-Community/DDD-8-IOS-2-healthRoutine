@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct SignUpInputView: View {
-    var isSecureMode: Bool = false
-    var isAuthButtonVisible: Bool = false
+    var isSecureMode: Bool = false // 비밀번호 모드인지 여부값
+    var isAuthButtonVisible: Bool = false // 인증하기 버튼 노출여부값
+    
     var placeholder: String
-
     @Binding var inputStr: String
+    
     var infoStr: String
     var inputStateType: SignUpInputStateType
 
@@ -20,14 +21,30 @@ struct SignUpInputView: View {
         VStack(alignment: .leading) {
             HStack {
                 if isSecureMode {
-                    SecureField(placeholder, text: $inputStr)
+                    SecureField("", text: $inputStr)
+                        .placeholder(when: inputStr.isEmpty) {
+                            Text(placeholder).foregroundColor(inputStateType.getInputColor())
+                    }
                         .foregroundColor(inputStateType.getInputColor())
                         .font(.system(size: 16, weight: .medium))
                 }
                 else {
-                    TextField(placeholder, text: $inputStr)
+                    TextField("", text: $inputStr)
+                        .placeholder(when: inputStr.isEmpty) {
+                            Text(placeholder).foregroundColor(inputStateType.getInputColor())
+                    }
                         .foregroundColor(inputStateType.getInputColor())
                         .font(.system(size: 16, weight: .medium))
+                }
+                if isAuthButtonVisible {
+                    Button("인증하기") {
+                        print("인증하기")
+                    }
+                    .frame(width: 63, height: 36)
+                    .font(.system(size: 13, weight: .regular))
+                    .foregroundColor(.black)
+                    .background(Color(.darkGray))
+                    .cornerRadius(6)
                 }
             }
             Divider()
@@ -39,10 +56,3 @@ struct SignUpInputView: View {
         .padding(.top, 24)
     }
 }
-
-/*struct SignUpInputView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignUpInputView()
-    }
-}
-*/

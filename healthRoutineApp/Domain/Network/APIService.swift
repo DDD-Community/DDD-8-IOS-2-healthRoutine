@@ -18,7 +18,7 @@ import Combine
 
 
 class APIService {
-    static func checkEmailValidation(_ email: String) -> AnyPublisher<APIResult, APIError> {
+    static func checkEmailValidation(_ email: String) -> AnyPublisher<DI_Base, APIError> {
         var parameters = Parameters()
         parameters["email"] = email
         return APIManager.request("http://rest-api.xyz/user/validate/email", method: .post, parameters: parameters)

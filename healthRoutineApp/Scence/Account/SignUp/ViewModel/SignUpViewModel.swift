@@ -18,9 +18,9 @@ enum SignUpInputStateType: String {
     func getInputColor() -> Color {
         switch self {
         case .empty:
-            return Color(hex: "C9C9C9")
-        default:
             return Color(hex: "888888")
+        default:
+            return Color(hex: "C9C9C9")
         }
     }
 
@@ -58,7 +58,7 @@ enum SignUpStringType: String, CaseIterable {
     func getHelpStr() -> String {
         switch self {
         case .email:
-            return "*비밀번호 분실에 안내 메일이 발송됩니다."
+            return "*이메일 형식으로 입력해주세요."
         case .password:
             return "*영문, 숫자, 특수문자 조합 8자리 이상"
         case .nickname:
@@ -84,7 +84,7 @@ enum SignUpStringType: String, CaseIterable {
     func getSuccessStr() -> String {
         switch self {
         case .email:
-            return "*사용 가능한 아이디입니다."
+            return "*사용 가능한 이메일입니다."
         case .password:
             return "*사용 가능한 비밀번호입니다."
         case .passwordconfirm:
@@ -92,6 +92,10 @@ enum SignUpStringType: String, CaseIterable {
         case .nickname:
             return "사용가능한 닉네임입니다."
         }
+    }
+    
+    func getAuthCompleteStr() -> String {
+        return "*인증이 완료되었습니다."
     }
 }
 
@@ -146,22 +150,85 @@ class SignUpViewModel: ObservableObject {
 
             })
             .store(in: &cancellables)
+        
+        $password
+            .sink(receiveValue: { str in
+                if str.isValid {
+                    if str.isValidPassword {
+                        self.passwordState = .available
+                        self.passwordInfo = SignUpStringType.password.getSuccessStr()
+                    }
+                    else {
+                        self.passwordState = .unavailable
+                        self.passwordInfo = SignUpStringType.password.getWarningStr()
+                    }
+                }
+                else {
+                    self.passwordInfo = SignUpStringType.password.getHelpStr()
+                    self.passwordState = .empty
+                }
+
+            })
+            .store(in: &cancellables)
+        
+        $passwordConfirm
+            .sink(receiveValue: { str in
+                if str.isValid {
+                    if str == self.password {
+                        self.passwordConfirmState = .available
+                        self.passwordConfirmInfo = SignUpStringType.passwordconfirm.getSuccessStr()
+                    }
+                    else {
+                        self.passwordConfirmState = .unavailable
+                        self.passwordConfirmInfo = SignUpStringType.passwordconfirm.getWarningStr()
+                    }
+                }
+                else {
+                    self.passwordConfirmInfo = SignUpStringType.passwordconfirm.getHelpStr()
+                    self.passwordConfirmState = .empty
+                }
+
+            })
+            .store(in: &cancellables)
 
         /*
-        $email
-            .map { $0.count > 0 } // 입력되면 활성화로 기획되어 있음
-            .assign(to: \.isActiveEmailField, on: self)
-            .store(in: &cancellables)
-
-        $password
-            .map { $0.count > 0 } // 입력되면 활성화로 기획되어 있음
-            .assign(to: \.isActivePasswordField, on: self)
-            .store(in: &cancellables)
-
         Publishers.CombineLatest($isActiveEmailField, $isActivePasswordField) // 둘중에 하나의 값이라도 바뀌면 해당 구문 실행
             .map { $0 && $1 }
             .assign(to: \.canSubmit, on: self)
             .store(in: &cancellables)
          */
     }
+    
+    func requestEmailValidation() {
+        APIService.checkEmailValidation(self.email)
+            .sink { completion in
+                switch completion {
+                case .failure:
+                    print("fail")
+//                    self.errrorMsg = "회원정보 조회에 실패했습니다."
+                case .finished:
+                    print("Finish")
+                }
+            } receiveValue: { _ in
+                print("success")
+            }
+            .store(in: &cancellables)
+    }
+    
+//    func requestTest() {
+//        var sample = AccountSignInRequest(email: "test@test.com", password: "Rjsgml!3246%")
+//        APIService.signIn(sample)
+//            .sink { completion in
+//                switch completion {
+//                case .failure(let err):
+//                    print("\(err)")
+//                case .finished:
+//                    print("Finish")
+//                }
+//            } receiveValue: { (value: AccountSignInResponse?) in
+//                print("dddddd")
+//                print(value)
+//            }
+//            .store(in: &something)
+//    }
 }
