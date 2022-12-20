@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80307691294C5BD200EFF277 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80307690294C5BD200EFF277 /* ApiService.swift */; };
+		80307691294C5BD200EFF277 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80307690294C5BD200EFF277 /* APIService.swift */; };
 		807D4D282950430000F757C0 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D4D272950430000F757C0 /* KeychainService.swift */; };
 		80844069294B2927005A1F75 /* SignUpInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844061294B2927005A1F75 /* SignUpInputViewModel.swift */; };
 		8084406A294B2927005A1F75 /* SignUpMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844062294B2927005A1F75 /* SignUpMainViewModel.swift */; };
@@ -27,7 +27,7 @@
 		8088194C294C07B100420788 /* AppColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088194B294C07B100420788 /* AppColorSet.swift */; };
 		80881950294C07DA00420788 /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8088194F294C07DA00420788 /* AppColors.xcassets */; };
 		80881953294C2CCE00420788 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80881952294C2CCE00420788 /* Alamofire */; };
-		80881957294C37BE00420788 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80881956294C37BE00420788 /* ApiManager.swift */; };
+		80881957294C37BE00420788 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80881956294C37BE00420788 /* APIManager.swift */; };
 		809FB26E29503C3E000E2EC6 /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FB26D29503C3E000E2EC6 /* Encodable+Ext.swift */; };
 		911E0906294496D2000555D8 /* TimerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E0905294496D2000555D8 /* TimerDetailView.swift */; };
 		911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E090729449A3A000555D8 /* TimerPatternView.swift */; };
@@ -87,7 +87,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		80307690294C5BD200EFF277 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		80307690294C5BD200EFF277 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		807D4D272950430000F757C0 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		80844061294B2927005A1F75 /* SignUpInputViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInputViewModel.swift; sourceTree = "<group>"; };
 		80844062294B2927005A1F75 /* SignUpMainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpMainViewModel.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		80881948294C057900420788 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
 		8088194B294C07B100420788 /* AppColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorSet.swift; sourceTree = "<group>"; };
 		8088194F294C07DA00420788 /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
-		80881956294C37BE00420788 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		80881956294C37BE00420788 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		809FB26D29503C3E000E2EC6 /* Encodable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
 		911E0905294496D2000555D8 /* TimerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDetailView.swift; sourceTree = "<group>"; };
 		911E090729449A3A000555D8 /* TimerPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPatternView.swift; sourceTree = "<group>"; };
@@ -183,8 +183,8 @@
 		80307686294C42CD00EFF277 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				80881956294C37BE00420788 /* ApiManager.swift */,
-				80307690294C5BD200EFF277 /* ApiService.swift */,
+				80881956294C37BE00420788 /* APIManager.swift */,
+				80307690294C5BD200EFF277 /* APIService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -689,7 +689,7 @@
 				912523942937A41800003C87 /* TimerCountView.swift in Sources */,
 				B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */,
 				B623B129292F4F4E00BA7BA7 /* CalendarView.swift in Sources */,
-				80307691294C5BD200EFF277 /* ApiService.swift in Sources */,
+				80307691294C5BD200EFF277 /* APIService.swift in Sources */,
 				B639D135294F5B49009AE6C9 /* Account.swift in Sources */,
 				B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */,
 				912523932937A41800003C87 /* TimerInfoView.swift in Sources */,
@@ -707,7 +707,7 @@
 				B623B118292F47B500BA7BA7 /* Date+Ext.swift in Sources */,
 				B69878AE29480B1B00C58869 /* CommonInputFieldView.swift in Sources */,
 				B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */,
-				80881957294C37BE00420788 /* ApiManager.swift in Sources */,
+				80881957294C37BE00420788 /* APIManager.swift in Sources */,
 				B6D288A1294AED7B0072C347 /* AccountAPIWorker.swift in Sources */,
 				80844069294B2927005A1F75 /* SignUpInputViewModel.swift in Sources */,
 				B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */,
