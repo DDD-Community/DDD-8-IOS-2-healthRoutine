@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+/*
 enum SignUpInputType: String, CaseIterable {
     case email
     case password
@@ -66,8 +67,9 @@ enum SignUpInputType: String, CaseIterable {
         }
     }
 }
+ */
 
-
+/*
 class SignUpInputViewModel: ObservableObject {
     @Published var inputStr: String = ""
     var inputType: SignUpInputType
@@ -156,3 +158,4 @@ class SignUpInputViewModel: ObservableObject {
         }
     }
 }
+*/

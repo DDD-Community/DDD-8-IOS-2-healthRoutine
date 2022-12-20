@@ -10,20 +10,16 @@ import Combine
 
 
 struct SignUpMainView: View {
-    var signUpVM: SignUpMainViewModel = SignUpMainViewModel()
+    @ObservedObject private var viewModel = SignUpViewModel()
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
-            SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .email))
-            SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .password))
-            SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .passwordconfirm))
+            SignUpInputView(placeholder: "이메일 주소", inputStr: $viewModel.email, infoStr: viewModel.emailInfo, inputStateType: viewModel.emailState)
+            SignUpInputView(isSecureMode: true, placeholder: "비밀번호", inputStr: $viewModel.password, infoStr: viewModel.passwordInfo, inputStateType: viewModel.passwordState)
+            SignUpInputView(isSecureMode: true, placeholder: "비밀번호 확인", inputStr: $viewModel.passwordConfirm, infoStr: viewModel.passwordConfirmInfo, inputStateType: viewModel.passwordConfirmState)
             Spacer()
-            Button("통신테스트", action: test)
-                .frame(width: 60, height: 60)
 
-            /*
-            BottomButtonView(buttonTitle: "다음")
-                .padding(.bottom, 24)*/
             // MARK: - 회원가입 뷰 이동 처리
             CustomNavigationLink(destination: NickNameView().customNavigationTitle("회원가입")
             ) {
@@ -37,11 +33,6 @@ struct SignUpMainView: View {
             .padding(.bottom, 24)
         }
         .padding([.leading, .trailing], 20)
-    }
-
-    func test() {
-        signUpVM.requestTest()
-
     }
 }
  

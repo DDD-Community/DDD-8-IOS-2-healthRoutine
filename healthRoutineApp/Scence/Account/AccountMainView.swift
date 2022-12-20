@@ -66,8 +66,8 @@ struct AccountMainView: View {
     }
 }
 
-struct LogInMainView_Previews: PreviewProvider {
+struct AccountMainView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInMainView()
+        AccountMainView()
     }
 }

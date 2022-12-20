@@ -8,34 +8,41 @@
 import SwiftUI
 
 struct SignUpInputView: View {
-    @ObservedObject var signUpInputVM: SignUpInputViewModel
+    var isSecureMode: Bool = false
+    var isAuthButtonVisible: Bool = false
+    var placeholder: String
+
+    @Binding var inputStr: String
+    var infoStr: String
+    var inputStateType: SignUpInputStateType
 
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                if signUpInputVM.inputType == .email || signUpInputVM.inputType == .nickname {
-                    TextField(signUpInputVM.inputType.getPlaceHolderStr(), text: $signUpInputVM.inputStr)
-                        .foregroundColor(signUpInputVM.getInputColor())
+                if isSecureMode {
+                    SecureField(placeholder, text: $inputStr)
+                        .foregroundColor(inputStateType.getInputColor())
                         .font(.system(size: 16, weight: .medium))
                 }
                 else {
-                    SecureField(signUpInputVM.inputType.getPlaceHolderStr(), text: $signUpInputVM.inputStr)
-                        .foregroundColor(signUpInputVM.getInputColor())
+                    TextField(placeholder, text: $inputStr)
+                        .foregroundColor(inputStateType.getInputColor())
                         .font(.system(size: 16, weight: .medium))
                 }
             }
             Divider()
-                .background(signUpInputVM.getInputColor())
-            Text(signUpInputVM.getInfoStr())
-                .foregroundColor(signUpInputVM.getInputState().getInfoStateColor())
+                .background(inputStateType.getInputColor())
+            Text(infoStr)
+                .foregroundColor(inputStateType.getInfoStateColor())
                 .font(.system(size: 13, weight: .regular))
         }
         .padding(.top, 24)
     }
 }
 
-struct SignUpInputView_Previews: PreviewProvider {
+/*struct SignUpInputView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .email))
+        SignUpInputView()
     }
 }
+*/

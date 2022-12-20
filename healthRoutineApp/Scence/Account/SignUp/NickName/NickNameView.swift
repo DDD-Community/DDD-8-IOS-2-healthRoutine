@@ -7,10 +7,11 @@
 
 import SwiftUI
 
+
 struct NickNameView: View {
     var body: some View {
         VStack {
-            SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .nickname))
+//            SignUpInputView(signUpInputVM: SignUpInputViewModel(inputType: .nickname))
             Spacer()
             BottomButtonView(buttonTitle: "다음")
                 .padding(.bottom, 24)

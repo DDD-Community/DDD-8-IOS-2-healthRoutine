@@ -14,6 +14,7 @@
 		8084406B294B2927005A1F75 /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844064294B2927005A1F75 /* NickNameView.swift */; };
 		8084406C294B2927005A1F75 /* SignUpMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844066294B2927005A1F75 /* SignUpMainView.swift */; };
 		8084406D294B2927005A1F75 /* SignUpInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80844068294B2927005A1F75 /* SignUpInputView.swift */; };
+		8085765D295184A4005DA463 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8085765C295184A4005DA463 /* SignUpViewModel.swift */; };
 		8088193A294C027700420788 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881931294C027600420788 /* Pretendard-ExtraBold.otf */; };
 		8088193B294C027700420788 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881932294C027600420788 /* Pretendard-Black.otf */; };
 		8088193C294C027700420788 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881933294C027600420788 /* Pretendard-ExtraLight.otf */; };
@@ -97,6 +98,7 @@
 		80844064294B2927005A1F75 /* NickNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
 		80844066294B2927005A1F75 /* SignUpMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpMainView.swift; sourceTree = "<group>"; };
 		80844068294B2927005A1F75 /* SignUpInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInputView.swift; sourceTree = "<group>"; };
+		8085765C295184A4005DA463 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		80881931294C027600420788 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		80881932294C027600420788 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		80881933294C027600420788 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			children = (
 				80844061294B2927005A1F75 /* SignUpInputViewModel.swift */,
 				80844062294B2927005A1F75 /* SignUpMainViewModel.swift */,
+				8085765C295184A4005DA463 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				80881949294C057900420788 /* Font+Ext.swift in Sources */,
 				B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */,
 				B65208D92949C2AA0095DAB4 /* CustomNavigationLink.swift in Sources */,
+				8085765D295184A4005DA463 /* SignUpViewModel.swift in Sources */,
 				912523912937A41800003C87 /* TimerData.swift in Sources */,
 				B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */,
 				809FB26E29503C3E000E2EC6 /* Encodable+Ext.swift in Sources */,
