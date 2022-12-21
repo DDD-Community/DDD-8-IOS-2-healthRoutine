@@ -22,8 +22,11 @@ class SignInViewModel: ObservableObject {
     
     @Published var canSubmit: Bool = false
     
-    let apiWorker = AccountAPIWorker()
-    
+    private var _close = PassthroughSubject<Bool, Never>()
+    func close(with result: Bool) {
+        self._close.send(result)
+    }
+   
     init() {
         self.bindView()
     }
@@ -44,6 +47,10 @@ class SignInViewModel: ObservableObject {
             .map { $0 && $1 }
             .assign(to: \.canSubmit, on: self)
             .store(in: &cancellables)
+        
+        _close.receive(on: RunLoop.main)
+            .sink { self.close(with: $0) }
+            .store(in: &cancellables)
     }
     
     func signInWith() {
@@ -60,7 +67,7 @@ class SignInViewModel: ObservableObject {
                 }
             } receiveValue: { (value: AccountSignInResponse?) in
                 
-                print(value)
+                self._close.send(true)
             }
             .store(in: &cancellables)
     }

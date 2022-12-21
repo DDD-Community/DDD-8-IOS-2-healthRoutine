@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
+import Combine
 
 struct SignInView: View {
     
     @ObservedObject private var viewModel = SignInViewModel()
     
-    @Environment(\.presentationMode) var presentationMode
     @Binding var hasToken: Bool
     
     var body: some View {
@@ -65,8 +65,8 @@ struct SignInInputView: View {
     }
 }
 
-struct LogInView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignInView(hasToken: .constant(false))
-    }
-}
+//struct LogInView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SignInView(
+//    }
+//}

@@ -183,7 +183,7 @@ class SignUpViewModel: ObservableObject {
                     self.passwordConfirmInfo = SignUpStringType.passwordconfirm.getHelpStr()
                     self.passwordConfirmState = .empty
                 }
-
+                
             })
             .store(in: &cancellables)
 
