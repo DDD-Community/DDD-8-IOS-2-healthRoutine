@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 extension View {
+    typealias ContentTransform<Content: View> = (Self) -> Content
     func placeholder<Content: View>(
         when shouldShow: Bool,
         alignment: Alignment = .leading,
@@ -17,6 +18,14 @@ extension View {
         ZStack(alignment: alignment) {
             placeholder().opacity(shouldShow ? 1 : 0)
             self
+        }
+    }
+
+    @ViewBuilder func conditionalModifier<TrueContent: View, FalseContent: View> (_ condition: Bool, ifTrue: ContentTransform<TrueContent>, ifFalse: ContentTransform<FalseContent>) -> some View {
+        if condition {
+            ifTrue(self)
+        } else {
+            ifFalse(self)
         }
     }
 }

@@ -10,9 +10,10 @@ import Combine
 import SwiftUI
 
 enum SignUpInputStateType: String {
-    case empty
+    case empty // input 비어있음
     case available
     case unavailable
+    case authWaiting
     case authComplete
 
     func getInputColor() -> Color {
@@ -28,7 +29,7 @@ enum SignUpInputStateType: String {
         switch self {
         case .empty:
             return Color(hex: "888888")
-        case .available, .authComplete:
+        case .available, .authComplete, .authWaiting:
             return Color(hex: "22FFAF")
         case .unavailable:
             return Color(hex: "FF0000")
@@ -93,10 +94,6 @@ enum SignUpStringType: String, CaseIterable {
             return "사용가능한 닉네임입니다."
         }
     }
-    
-    func getAuthCompleteStr() -> String {
-        return "*인증이 완료되었습니다."
-    }
 }
 
 class SignUpViewModel: ObservableObject {
@@ -104,25 +101,24 @@ class SignUpViewModel: ObservableObject {
 
     // 이메일
     @Published var email: String = ""
-    var emailInfo: String = ""
-    var emailState: SignUpInputStateType = .empty
+    @Published var emailState: SignUpInputStateType = .empty
+    @Published var emailInfo: String = ""
 
 
     // 비밀번호
     @Published var password: String = ""
+    @Published var passwordState: SignUpInputStateType = .empty
     var passwordInfo: String = ""
-    var passwordState: SignUpInputStateType = .empty
 
     // 비밀번호 확인
     @Published var passwordConfirm: String = ""
+    @Published var passwordConfirmState: SignUpInputStateType = .empty
     var passwordConfirmInfo: String = ""
-    var passwordConfirmState: SignUpInputStateType = .empty
-
 
     // 닉네임
     @Published var nickname: String = ""
+    @Published var nicknameState: SignUpInputStateType = .empty
     var nicknameInfo: String = ""
-    var nicknameState: SignUpInputStateType = .empty
 
     let apiWorker = AccountAPIWorker()
 
@@ -191,6 +187,15 @@ class SignUpViewModel: ObservableObject {
             })
             .store(in: &cancellables)
 
+        $emailState
+            .sink(receiveValue: { state in
+                if state == .authWaiting {
+                    self.emailInfo = ""
+                    self.requestEmailValidation()
+                }
+            })
+            .store(in: &cancellables)
+
         /*
         Publishers.CombineLatest($isActiveEmailField, $isActivePasswordField) // 둘중에 하나의 값이라도 바뀌면 해당 구문 실행
             .map { $0 && $1 }
@@ -205,30 +210,17 @@ class SignUpViewModel: ObservableObject {
                 switch completion {
                 case .failure:
                     print("fail")
-//                    self.errrorMsg = "회원정보 조회에 실패했습니다."
+                    self.emailState = .available
+                    self.emailInfo = "*중복된 이메일입니다."
                 case .finished:
                     print("Finish")
                 }
             } receiveValue: { _ in
                 print("success")
+                self.emailInfo = "*인증이 완료되었습니다."
+                self.emailState = .authComplete
             }
             .store(in: &cancellables)
     }
-    
-//    func requestTest() {
-//        var sample = AccountSignInRequest(email: "test@test.com", password: "Rjsgml!3246%")
-//        APIService.signIn(sample)
-//            .sink { completion in
-//                switch completion {
-//                case .failure(let err):
-//                    print("\(err)")
-//                case .finished:
-//                    print("Finish")
-//                }
-//            } receiveValue: { (value: AccountSignInResponse?) in
-//                print("dddddd")
-//                print(value)
-//            }
-//            .store(in: &something)
-//    }
+
 }

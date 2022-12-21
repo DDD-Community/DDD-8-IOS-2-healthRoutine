@@ -15,9 +15,9 @@ struct SignUpMainView: View {
 
     var body: some View {
         VStack {
-            SignUpInputView(isAuthButtonVisible: true, placeholder: "이메일 주소", inputStr: $viewModel.email, infoStr: viewModel.emailInfo, inputStateType: viewModel.emailState)
-            SignUpInputView(isSecureMode: true, placeholder: "비밀번호", inputStr: $viewModel.password, infoStr: viewModel.passwordInfo, inputStateType: viewModel.passwordState)
-            SignUpInputView(isSecureMode: true, placeholder: "비밀번호 확인", inputStr: $viewModel.passwordConfirm, infoStr: viewModel.passwordConfirmInfo, inputStateType: viewModel.passwordConfirmState)
+            SignUpInputView(isAuthButtonVisible: true, placeholder: "이메일 주소", inputStr: $viewModel.email, infoStr: viewModel.emailInfo, inputStateType: $viewModel.emailState)
+            SignUpInputView(isSecureMode: true, placeholder: "비밀번호", inputStr: $viewModel.password, infoStr: viewModel.passwordInfo, inputStateType: $viewModel.passwordState)
+            SignUpInputView(isSecureMode: true, placeholder: "비밀번호 확인", inputStr: $viewModel.passwordConfirm, infoStr: viewModel.passwordConfirmInfo, inputStateType: $viewModel.passwordConfirmState)
             Spacer()
 
             // MARK: - 회원가입 뷰 이동 처리
