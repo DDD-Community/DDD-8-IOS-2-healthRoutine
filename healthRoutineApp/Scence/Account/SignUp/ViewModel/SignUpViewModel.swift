@@ -15,6 +15,7 @@ enum SignUpInputStateType: String {
     case unavailable
     case authWaiting
     case authComplete
+    case authFail
 
     func getInputColor() -> Color {
         switch self {
@@ -31,7 +32,7 @@ enum SignUpInputStateType: String {
             return Color(hex: "888888")
         case .available, .authComplete, .authWaiting:
             return Color(hex: "22FFAF")
-        case .unavailable:
+        case .unavailable, .authFail:
             return Color(hex: "FF0000")
         }
     }
@@ -119,6 +120,9 @@ class SignUpViewModel: ObservableObject {
     @Published var nickname: String = ""
     @Published var nicknameState: SignUpInputStateType = .empty
     var nicknameInfo: String = ""
+    
+    // 다음버튼용
+    @Published var canNextStep: Bool = false
 
     let apiWorker = AccountAPIWorker()
 
@@ -129,6 +133,7 @@ class SignUpViewModel: ObservableObject {
     private func bindView() {
         $email
             .sink(receiveValue: { str in
+                if self.emailState == .authWaiting || self.emailState == .authComplete { return }
                 if str.isValid {
                     if str.isValidEmail {
                         self.emailState = .available
@@ -150,6 +155,10 @@ class SignUpViewModel: ObservableObject {
         $password
             .sink(receiveValue: { str in
                 if str.isValid {
+                    if self.passwordConfirm.isValid {
+                        self.comparePassword(str, self.passwordConfirm)
+                    }
+                    
                     if str.isValidPassword {
                         self.passwordState = .available
                         self.passwordInfo = SignUpStringType.password.getSuccessStr()
@@ -169,15 +178,8 @@ class SignUpViewModel: ObservableObject {
         
         $passwordConfirm
             .sink(receiveValue: { str in
-                if str.isValid {
-                    if str == self.password {
-                        self.passwordConfirmState = .available
-                        self.passwordConfirmInfo = SignUpStringType.passwordconfirm.getSuccessStr()
-                    }
-                    else {
-                        self.passwordConfirmState = .unavailable
-                        self.passwordConfirmInfo = SignUpStringType.passwordconfirm.getWarningStr()
-                    }
+                if str.isValid && self.password.isValid {
+                    self.comparePassword(self.password, str)
                 }
                 else {
                     self.passwordConfirmInfo = SignUpStringType.passwordconfirm.getHelpStr()
@@ -195,13 +197,29 @@ class SignUpViewModel: ObservableObject {
                 }
             })
             .store(in: &cancellables)
-
-        /*
-        Publishers.CombineLatest($isActiveEmailField, $isActivePasswordField) // 둘중에 하나의 값이라도 바뀌면 해당 구문 실행
-            .map { $0 && $1 }
-            .assign(to: \.canSubmit, on: self)
+        
+        Publishers.CombineLatest3($emailState, $passwordState, $passwordConfirmState)
+            .map { email, password, passwordConfirm in
+                if email == .authComplete && password == .available && passwordConfirm == .available {
+                    return true
+                }
+                else {
+                    return false
+                }
+            }
+            .assign(to: \.canNextStep, on: self)
             .store(in: &cancellables)
-         */
+    }
+    
+    func comparePassword(_ password: String, _ passwordConfirm: String) {
+        if password == passwordConfirm {
+            self.passwordConfirmState = .available
+            self.passwordConfirmInfo = SignUpStringType.passwordconfirm.getSuccessStr()
+        }
+        else {
+            self.passwordConfirmState = .unavailable
+            self.passwordConfirmInfo = SignUpStringType.passwordconfirm.getWarningStr()
+        }
     }
     
     func requestEmailValidation() {
@@ -210,7 +228,7 @@ class SignUpViewModel: ObservableObject {
                 switch completion {
                 case .failure:
                     print("fail")
-                    self.emailState = .available
+                    self.emailState = .authFail
                     self.emailInfo = "*중복된 이메일입니다."
                 case .finished:
                     print("Finish")

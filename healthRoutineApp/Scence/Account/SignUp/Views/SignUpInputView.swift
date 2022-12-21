@@ -27,6 +27,7 @@ struct SignUpInputView: View {
                     }
                         .foregroundColor(inputStateType.getInputColor())
                         .font(.system(size: 16, weight: .medium))
+                        .textContentType(.newPassword)
                 }
                 else {
                     TextField("", text: $inputStr)
@@ -43,14 +44,15 @@ struct SignUpInputView: View {
                         }
                     }
                     .frame(width: 63, height: 36)
-                    .font(.system(size: 13, weight: .regular))
-                    .cornerRadius(6)
                     .foregroundColor(Color(hex:"18171D"))
-                    .conditionalModifier(inputStateType == .available || inputStateType == .authWaiting || inputStateType == .authComplete, ifTrue: { view in
+                    .font(.system(size: 13, weight: .regular))
+                    .conditionalModifier(inputStateType == .available || inputStateType == .authWaiting, ifTrue: { view in
                         view.background(Color(hex:"22FFAF"))
                     }, ifFalse: { view in
                         view.background(Color(hex:"D9D9D9"))
                     })
+                    .cornerRadius(6)
+                    .disabled(inputStateType != .available)
                 }
             }
             Divider()

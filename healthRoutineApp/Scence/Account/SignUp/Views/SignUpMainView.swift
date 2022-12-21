@@ -26,14 +26,16 @@ struct SignUpMainView: View {
                 Text("다음")
                     .frame(maxWidth: .infinity, minHeight: 60)
                     .font(.system(size: 18, weight: .bold))
-                    .foregroundColor(.black)
-                    .background(Color(.darkGray))
+                    .background(viewModel.canNextStep ? Color(hex:"22ffaf") : Color(hex:"CFCFCF"))
+                    .foregroundColor(viewModel.canNextStep ? Color(hex:"18171d") : Color(hex:"888888"))
                     .cornerRadius(10)
             }
+            .disabled(!viewModel.canNextStep)
             .padding(.bottom, 24)
         }
         .padding([.leading, .trailing], 20)
         .background(Color(hex:"18171d"))
+        .ignoresSafeArea(.keyboard)
     }
 }
  

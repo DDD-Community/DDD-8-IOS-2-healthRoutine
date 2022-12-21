@@ -9,19 +9,11 @@ import Foundation
 import Alamofire
 import Combine
 
-//enum APIRepository {
-//    static func requestCheckEmailValidation(_ email: String) -> AnyPublisher<APIResult?, APIError> {
-//        return APIService.checkEmailValidation(email)
-//            .tr
-//    }
-//}
-
-
 class APIService {
     static func checkEmailValidation(_ email: String) -> AnyPublisher<DI_Base, APIError> {
         var parameters = Parameters()
         parameters["email"] = email
-        return APIManager.request("http://rest-api.xyz/user/validate/email", method: .post, parameters: parameters)
+        return APIManager.request("http://rest-api.xyz/api/v1/user/validate/email", method: .post, parameters: parameters)
     }
 
     static func signIn(_ param: AccountSignInRequest)  -> AnyPublisher<AccountSignInResponse, APIError> {
