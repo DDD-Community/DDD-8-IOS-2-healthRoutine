@@ -15,16 +15,17 @@ struct MyPageProfileView: View {
         
         VStack {
             
-            HStack {
+            HStack(spacing: 10) {
                 
                 Circle()
                     .fill(Color.blue)
                     .frame(width: 120, height: 120)
-                    .padding(20)
                 
                 Text("햄스터 갱스터")
                     .fontWeight(.bold)
                     .font(.title)
+                
+                Spacer()
             }
             
             CustomNavigationLink(destination: MyPageDetailView().customNavigationTitle("닉네임 수정")
@@ -39,8 +40,8 @@ struct MyPageProfileView: View {
             
             Spacer()
         }
+        .padding(20)
         .frame(maxWidth: .infinity, minHeight: 200)
-        .background(.yellow)
         .cornerRadius(20)
     }
 }

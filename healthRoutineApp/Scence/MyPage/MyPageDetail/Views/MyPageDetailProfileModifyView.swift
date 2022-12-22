@@ -18,12 +18,15 @@ struct MyPageDetailProfileModifyView: View {
             Circle()
                 .fill(Color.blue)
                 .frame(width: 132, height: 132)
-                .overlay(Image(systemName: "arrow.up")
-                                        .font(.title)
-                                        .padding(),
-                         alignment: .bottom)
-            TextField("변경하실 닉네임을 입력해주세요", text: $viewModel.nickname)
-            Divider()
+                .overlay(Rectangle().frame(width: 30, height: 30).offset(x: 50, y:50) )
+            
+            VStack {
+                
+                TextField("변경하실 닉네임을 입력해주세요", text: $viewModel.nickname)
+                   
+                Divider()
+                
+            }.padding(.top, 24)
         }
     }
 }

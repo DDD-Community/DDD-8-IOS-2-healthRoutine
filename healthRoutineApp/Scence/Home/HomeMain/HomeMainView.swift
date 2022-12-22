@@ -32,8 +32,10 @@ struct HomeMainView: View {
                         }
                     }
                     .padding(20)
+                    .customNavigationBarBackButtonHidden(true)
                 }
             }
+           
             
             Spacer()
         }

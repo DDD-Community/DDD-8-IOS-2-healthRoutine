@@ -10,4 +10,5 @@ import Foundation
 class MyPageDetailProfileModifyViewModel: ObservableObject {
     
     @Published var nickname: String = ""
+    
 }

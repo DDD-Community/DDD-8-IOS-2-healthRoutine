@@ -57,7 +57,7 @@ struct CircleListView: View {
             
             Circle()
                 .fill(Color.green)
-                .frame(width: 65, height: 65)
+                .frame(width: 60, height: 60)
             
             Text(label)
         }

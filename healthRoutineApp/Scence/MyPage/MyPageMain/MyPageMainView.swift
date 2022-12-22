@@ -26,7 +26,8 @@ struct MyPageMainView: View {
                         MyPageBadgeView()
                     }
                 }
-            }
+                
+            }.customNavigationBarBackButtonHidden(true)
         }
     }
 }
