@@ -42,6 +42,7 @@ struct SignInView: View {
         }
         .onAppear {
             self.viewModel.signInFinished
+                .receive(on: RunLoop.main)
                 .sink(receiveValue: { self.hasToken = $0 })
                 .store(in: &self.viewModel.cancellables)
         }

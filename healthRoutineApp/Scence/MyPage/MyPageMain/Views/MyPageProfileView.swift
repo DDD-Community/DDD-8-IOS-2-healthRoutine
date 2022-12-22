@@ -9,32 +9,32 @@ import SwiftUI
 
 struct MyPageProfileView: View {
     
+    @ObservedObject var viewModel = MyPageMainViewModel()
+    
     var body: some View {
-
-        HStack() {
+        
+        VStack {
             
-            Circle()
-              .fill(Color.blue)
-              .frame(width: 120, height: 120)
-              .padding(20)
-            
-            VStack(alignment: .leading, spacing: 15) {
+            HStack {
+                
+                Circle()
+                    .fill(Color.blue)
+                    .frame(width: 120, height: 120)
+                    .padding(20)
                 
                 Text("햄스터 갱스터")
                     .fontWeight(.bold)
                     .font(.title)
-                
-                Button {
-                    
-                    debugPrint("Show Profile View")
-                    
-                } label: {
-                    
-                    Text("프로필 수정")
-                        .frame(width: 160, height: 40)
-                        .background(.gray)
-                        .cornerRadius(30)
-                }
+            }
+            
+            CustomNavigationLink(destination: MyPageDetailView().customNavigationTitle("닉네임 수정")
+            ) {
+                Text("프로필 수정")
+                    .frame(maxWidth: .infinity, minHeight: 60)
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundColor(.black)
+                    .background(Color(.darkGray))
+                    .cornerRadius(10)
             }
             
             Spacer()
