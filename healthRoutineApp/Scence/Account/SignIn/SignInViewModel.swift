@@ -10,23 +10,19 @@ import Combine
 
 class SignInViewModel: ObservableObject {
     
-    private var cancellables: Set<AnyCancellable> = []
+    var cancellables: Set<AnyCancellable> = []
     
     @Published var email: String = "test@test.com"
-    @Published var isActiveEmailField: Bool = false
-    
     @Published var password: String = "Rjsgml!3246%"
+        
+    @Published var isActiveEmailField: Bool = false
     @Published var isActivePasswordField: Bool = false
     
     @Published var errrorMsg: String = ""
-    
     @Published var canSubmit: Bool = false
     
-    private var _close = PassthroughSubject<Bool, Never>()
-    func close(with result: Bool) {
-        self._close.send(result)
-    }
-   
+    var signInFinished = PassthroughSubject<Bool, Never>()
+    
     init() {
         self.bindView()
     }
@@ -47,10 +43,6 @@ class SignInViewModel: ObservableObject {
             .map { $0 && $1 }
             .assign(to: \.canSubmit, on: self)
             .store(in: &cancellables)
-        
-        _close.receive(on: RunLoop.main)
-            .sink { self.close(with: $0) }
-            .store(in: &cancellables)
     }
     
     func signInWith() {
@@ -66,8 +58,7 @@ class SignInViewModel: ObservableObject {
                     print("Finish")
                 }
             } receiveValue: { (value: AccountSignInResponse?) in
-                
-                self._close.send(true)
+                self.signInFinished.send(true)
             }
             .store(in: &cancellables)
     }

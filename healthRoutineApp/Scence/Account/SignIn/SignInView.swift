@@ -12,7 +12,10 @@ struct SignInView: View {
     
     @ObservedObject private var viewModel = SignInViewModel()
     
+    var closeView = PassthroughSubject<Bool, Never>()
     @Binding var hasToken: Bool
+    
+    var cancellables: Set<AnyCancellable> = []
     
     var body: some View {
         
@@ -29,12 +32,18 @@ struct SignInView: View {
                 .foregroundColor(.red)
             
             Button("로그인") {
+                
                 self.viewModel.signInWith()
             }
             .buttonStyle(CommonButtonView())
             .disabled(!viewModel.canSubmit)
             
             Spacer()
+        }
+        .onAppear {
+            self.viewModel.signInFinished
+                .sink(receiveValue: { self.hasToken = $0 })
+                .store(in: &self.viewModel.cancellables)
         }
         .padding(.top, 100)
         .padding(.horizontal, 20)

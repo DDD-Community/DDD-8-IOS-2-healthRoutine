@@ -6,21 +6,19 @@
 //
 
 import SwiftUI
+import Combine
 
 struct AccountMainView: View {
 
     #warning("키체인 토큰 유효 체크")
     // KeychainService.shared.isTokenValidate()
-    
     @State var hasToken: Bool = false
-    @EnvironmentObject var dateHolder: DateHolder
     
     var body: some View {
         
         if hasToken {
             
             ContentView()
-                .environmentObject(dateHolder)
             
         } else {
             
@@ -50,7 +48,7 @@ struct AccountMainView: View {
                     }
                     
                     // MARK: - 로그인 뷰 이동 처리
-                    CustomNavigationLink(destination: SignInView(hasToken: self.$hasToken)) {
+                    CustomNavigationLink(destination: SignInView(hasToken: self.$hasToken))  {
                         Text("로그인")
                             .frame(maxWidth: .infinity, minHeight: 60)
                             .font(.system(size: 18, weight: .bold))
