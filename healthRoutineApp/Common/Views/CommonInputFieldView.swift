@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CommonInputFieldView: View {
     
-    var title: String
+    var title: String?
     var placeholder: String
     var message: String?
     
@@ -20,7 +20,7 @@ struct CommonInputFieldView: View {
         
         VStack {
             
-            Text(title)
+            Text(title ?? "")
             
             TextField(placeholder, text: $value)
             

@@ -471,6 +471,14 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
+		B64FFC2229548BF300537829 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B65AD98329542FBE005AB105 /* MyPageDetailProfileModifyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B65208BD294970E00095DAB4 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,20 +525,12 @@
 		B65AD97D29542BCC005AB105 /* MyPageDetail */ = {
 			isa = PBXGroup;
 			children = (
-				B65AD98229542F91005AB105 /* Views */,
+				B64FFC2229548BF300537829 /* Views */,
 				B65AD97E29542BDA005AB105 /* MyPageDetailView.swift */,
 				B65AD98029542EA6005AB105 /* MyPageMainViewModel.swift */,
 				B65AD9852954307F005AB105 /* MyPageDetailProfileModifyViewModel.swift */,
 			);
 			path = MyPageDetail;
-			sourceTree = "<group>";
-		};
-		B65AD98229542F91005AB105 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B65AD98329542FBE005AB105 /* MyPageDetailProfileModifyView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		B66169F829501D8C000474A9 /* Calendar */ = {

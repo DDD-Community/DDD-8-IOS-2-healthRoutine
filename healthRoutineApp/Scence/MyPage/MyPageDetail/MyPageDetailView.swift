@@ -9,9 +9,6 @@ import SwiftUI
 
 struct MyPageDetailView: View {
     
-    @State var showingSheet: Bool = false
-    @State var openAlbum: Bool = false
-    
     var body: some View {
         
         VStack {
@@ -29,23 +26,6 @@ struct MyPageDetailView: View {
             Spacer()
         }
         .padding()
-    }
-    
-    private func actionSheet() -> ActionSheet {
-        
-        let albumButton = ActionSheet.Button.default(Text("앨범")) {
-            
-            UIView.setAnimationsEnabled(false)
-            
-            self.showingSheet = false
-            self.openAlbum = true
-        }
-                
-        let cancelButton = ActionSheet.Button.cancel(Text("취소"))
-        let actionSheet = ActionSheet(title: Text("선택해주세요"),
-                                      message: Text("촬영 또는 앨범을 선택해주세요"),
-                                      buttons: [albumButton, cancelButton])
-        return actionSheet
     }
 }
 
