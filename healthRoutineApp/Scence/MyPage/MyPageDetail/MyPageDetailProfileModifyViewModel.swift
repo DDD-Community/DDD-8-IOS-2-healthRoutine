@@ -11,4 +11,11 @@ class MyPageDetailProfileModifyViewModel: ObservableObject {
     
     @Published var nickname: String = ""
     
+    init() {
+        self.bind()
+    }
+    
+    private func bind() {
+        
+    }
 }

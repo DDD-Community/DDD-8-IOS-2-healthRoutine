@@ -9,8 +9,6 @@ import SwiftUI
 
 struct MyPageProfileView: View {
     
-    @ObservedObject var viewModel = MyPageMainViewModel()
-    
     var body: some View {
         
         VStack {

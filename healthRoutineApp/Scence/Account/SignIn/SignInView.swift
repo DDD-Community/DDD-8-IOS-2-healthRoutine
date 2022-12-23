@@ -40,14 +40,17 @@ struct SignInView: View {
             
             Spacer()
         }
-        .onAppear {
-            self.viewModel.signInFinished
-                .receive(on: RunLoop.main)
-                .sink(receiveValue: { self.hasToken = $0 })
-                .store(in: &self.viewModel.cancellables)
-        }
+        .onAppear { self.bindView() }
         .padding(.top, 100)
         .padding(.horizontal, 20)
+    }
+    
+    private func bindView() {
+     
+        self.viewModel.signInFinished
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { self.hasToken = $0 })
+            .store(in: &self.viewModel.cancellables)
     }
 }
 
@@ -75,8 +78,8 @@ struct SignInInputView: View {
     }
 }
 
-//struct LogInView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SignInView(
-//    }
-//}
+struct LogInView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignInView(hasToken: .constant(false))
+    }
+}

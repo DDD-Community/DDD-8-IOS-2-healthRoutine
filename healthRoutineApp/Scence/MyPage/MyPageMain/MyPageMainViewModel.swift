@@ -2,7 +2,7 @@
 //  MyPageMainViewModel.swift
 //  healthRoutineApp
 //
-//  Created by geonhui Yu on 2022/12/22.
+//  Created by geonhui Yu on 2022/12/23.
 //
 
 import Foundation
@@ -12,4 +12,11 @@ class MyPageMainViewModel: ObservableObject {
     @Published var nickname: String = ""
     @Published var imageUrl: String = ""
     
+    init() {
+        self.bind()
+    }
+    
+    private func bind() {
+        
+    }
 }

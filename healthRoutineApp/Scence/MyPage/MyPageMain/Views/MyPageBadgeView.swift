@@ -8,55 +8,49 @@
 import SwiftUI
 
 struct MyPageBadgeView: View {
+    
+    let badgeName: [String] = ["뱃지1", "뱃지2", "뱃지3", "뱃지4", "뱃지5", "뱃지6", "뱃지7", "뱃지7", "뱃지8", "뱃지8"]
+    
     var body: some View {
         
         VStack {
             
-            VStack {
+            //            HStack {
+            //
+            //                Circle()
+            //                    .fill(Color.green)
+            //                    .frame(width: 66, height: 66)
+            //
+            //                VStack(alignment: .leading) {
+            //
+            //                    Text("물먹는 슈퍼 하마왕")
+            //                        .font(.system(size: 20, weight: .bold))
+            //
+            //                    Text("수분 섭취 목표 2달 달성")
+            //                        .font(.system(size: 14, weight: .semibold))
+            //                        .foregroundColor(.gray)
+            //                }
+            //
+            //                Spacer()
+            //            }
+            
+            
+            
+            ForEach(badgeName, id: \.self) { i in
                 
                 HStack {
-                
-                    ZStack {
-                        
-                        Circle()
-                            .fill(Color.green)
-                            .frame(width: 65, height: 65)
-                        
-                        Text("선택함")
-                    }
                     
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text("물먹는 슈퍼 하마왕")
-                            .bold()
-                        
-                        Text("수분 섭취 목표 2달 달성")
-                            .fontWeight(.regular)
-                            .font(.system(size: 13))
-                            .foregroundColor(.gray)
-                    }
+                    Circle()
+                        .fill(Color.cyan)
+                        .frame(width: 65, height: 65)
+                    
+                    //                        Text(i)
                 }
-                
-                
-                HStack {
-                    ForEach(1..<6) {
-                        CircleListView(label: "뱃지 \($0)")
-                            .foregroundColor(.white)
-                    }
-                }
-                .padding([.leading, .trailing], 10)
-
-                HStack {
-                    ForEach(7..<12) {
-                        CircleListView(label: "뱃지 \($0)")
-                            .foregroundColor(.white)
-                    }
-                }
-                .padding([.leading, .trailing], 10)
             }
-            .frame(maxWidth: .infinity, minHeight: 280, alignment: .leading)
-            .background(.yellow)
-            .cornerRadius(20)
         }
+        .frame(maxWidth: .infinity, maxHeight: 268)
+        .background(.yellow)
+        .cornerRadius(10)
     }
 }
 

@@ -42,7 +42,7 @@ struct MyPageHistoryView: View {
                     .padding([.trailing], 15)
             }
         }
-        .frame(maxWidth: .infinity, minHeight: 150)
+        .frame(maxWidth: .infinity, minHeight: 160)
         .background(.yellow)
         .cornerRadius(20)
     }
