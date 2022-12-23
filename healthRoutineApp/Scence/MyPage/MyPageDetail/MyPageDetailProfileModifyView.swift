@@ -9,10 +9,10 @@ import SwiftUI
 
 struct MyPageDetailProfileModifyView: View {
     
-    @ObservedObject var viewModel = MyPageDetailProfileModifyViewModel()
-    
     @State var showActionSheet: Bool = false
     @State var showAlbum: Bool = false
+    
+    @ObservedObject var viewModel = MyPageDetailModifyViewModel()
     
     var body: some View {
         

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MyPageDetailView: View {
     
+    @ObservedObject var viewModel = MyPageDetailViewModel()
+    
     var body: some View {
         
         VStack {
@@ -26,6 +28,18 @@ struct MyPageDetailView: View {
             Spacer()
         }
         .padding()
+        .onAppear { self.bindView() }
+    }
+    
+    private func bindView() {
+     
+        self.viewModel.nickNameInfo
+            .receive(on: RunLoop.main)
+            .sink { isErr, hintText in
+                print("isErr")
+                print("hintText")
+            }
+            .store(in: &self.viewModel.cancellables)
     }
 }
 

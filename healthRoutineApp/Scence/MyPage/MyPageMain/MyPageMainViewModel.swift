@@ -6,17 +6,9 @@
 //
 
 import Foundation
+import Combine
 
 class MyPageMainViewModel: ObservableObject {
-    
-    @Published var nickname: String = ""
-    @Published var imageUrl: String = ""
-    
-    init() {
-        self.bind()
-    }
-    
-    private func bind() {
-        
-    }
+
+   
 }
