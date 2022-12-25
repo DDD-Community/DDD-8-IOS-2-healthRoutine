@@ -20,7 +20,7 @@ final class AccountAPIWorker {
 
     static let shared = AccountAPIWorker()
     
-    func createAccount(accountSignInRequest: AccountSignInRequest, completion: @escaping (Result<AccountSignInResponse, NetworkError>) -> Void) {
+    func createAccount(accountSignInRequest: AccountSignInRequest, completion: @escaping (Result<AccountResponse, NetworkError>) -> Void) {
         
         let param = ["email": accountSignInRequest.email, "password": accountSignInRequest.password] // JSON 객체로 변환할 딕셔너리 준비
         let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])
@@ -44,7 +44,7 @@ final class AccountAPIWorker {
                 debugPrint("str : \(str)")
             }
             
-            let signInResponse = try? JSONDecoder().decode(AccountSignInResponse.self, from: data)
+            let signInResponse = try? JSONDecoder().decode(AccountResponse.self, from: data)
             
             if let signInResponse = signInResponse {
                 completion(.success(signInResponse))

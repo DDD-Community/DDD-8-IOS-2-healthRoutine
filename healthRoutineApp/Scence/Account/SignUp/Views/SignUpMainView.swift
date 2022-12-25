@@ -21,7 +21,7 @@ struct SignUpMainView: View {
             Spacer()
 
             // MARK: - 회원가입 뷰 이동 처리
-            CustomNavigationLink(destination: NickNameView().customNavigationTitle("회원가입")
+            CustomNavigationLink(destination: NickNameView(viewModel: self.viewModel).customNavigationTitle("회원가입")
             ) {
                 Text("다음")
                     .frame(maxWidth: .infinity, minHeight: 60)
@@ -36,6 +36,9 @@ struct SignUpMainView: View {
         .padding([.leading, .trailing], 20)
         .background(Color(hex:"18171d"))
         .ignoresSafeArea(.keyboard)
+        .onAppear {
+            self.viewModel.reset()
+        }
     }
 }
  

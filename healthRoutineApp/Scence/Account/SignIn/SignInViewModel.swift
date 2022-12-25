@@ -57,7 +57,7 @@ class SignInViewModel: ObservableObject {
                 case .finished:
                     print("Finish")
                 }
-            } receiveValue: { (value: AccountSignInResponse?) in
+            } receiveValue: { (value: AccountResponse?) in
                 self.signInFinished.send(true)
             }
             .store(in: &cancellables)

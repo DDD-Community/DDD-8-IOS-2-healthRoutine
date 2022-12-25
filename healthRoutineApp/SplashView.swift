@@ -12,14 +12,13 @@ struct SplashView: View {
     @State private var isActive: Bool = false
     
     var body: some View {
-        
         if isActive {
-            
-            // 로그인이 완료 된 경우
-            // ContentView()
-            
-            // 로그인이 완료되지 않은 경우
-            AccountMainView()
+            if KeychainService.shared.isTokenValidate() {
+                ContentView()
+            }
+            else {
+                AccountMainView()
+            }
                 
         } else {
             
@@ -35,6 +34,9 @@ struct SplashView: View {
             }
             .onAppear {
                 
+                if UserDefaults.isFirstAppLaunch() {
+                    KeychainService.shared.deleteToken()
+                }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                     withAnimation {
                         self.isActive = true

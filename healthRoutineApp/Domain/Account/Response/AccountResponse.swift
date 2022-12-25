@@ -7,13 +7,12 @@
 
 import Foundation
 
-struct AccountSignInResponse: Decodable {
-    
+struct AccountResponse: Decodable {
     let code: Int
     let message: String
-    let result: AccountResult
     let status: String
-    let token: String
+    let result: AccountResult
+    let token: String?
 }
 
 struct AccountResult: Codable {

@@ -9,6 +9,8 @@ import Foundation
 import Combine
 import SwiftUI
 
+public typealias VoidClosure = () -> Void
+
 enum SignUpInputStateType: String {
     case empty // input 비어있음
     case available
@@ -198,6 +200,28 @@ class SignUpViewModel: ObservableObject {
             })
             .store(in: &cancellables)
         
+        $nickname
+            .sink(receiveValue: { str in
+                if str.isValid {
+                    if str.isValidNickname {
+                        self.nicknameState = .available
+                        self.nicknameInfo = SignUpStringType.nickname.getSuccessStr()
+                        self.canNextStep = true
+                    }
+                    else {
+                        self.nicknameState = .unavailable
+                        self.nicknameInfo = SignUpStringType.nickname.getWarningStr()
+                        self.canNextStep = false
+                    }
+                }
+                else {
+                    self.nicknameState = .empty
+                    self.nicknameInfo = SignUpStringType.nickname.getHelpStr()
+                    self.canNextStep = false
+                }
+            })
+            .store(in: &cancellables)
+        
         Publishers.CombineLatest3($emailState, $passwordState, $passwordConfirmState)
             .map { email, password, passwordConfirm in
                 if email == .authComplete && password == .available && passwordConfirm == .available {
@@ -209,6 +233,7 @@ class SignUpViewModel: ObservableObject {
             }
             .assign(to: \.canNextStep, on: self)
             .store(in: &cancellables)
+        
     }
     
     func comparePassword(_ password: String, _ passwordConfirm: String) {
@@ -239,6 +264,46 @@ class SignUpViewModel: ObservableObject {
                 self.emailState = .authComplete
             }
             .store(in: &cancellables)
+    }
+    
+    func requestSignUp(_ completeClosure: VoidClosure?) {
+        let request = AccountSignUpRequest(email: self.email, password: self.password, nickname: self.nickname)
+        
+        APIService.signUp(request)
+            .sink { completion in
+                switch completion {
+                case .failure:
+                    print("회원가입 실패")
+                case .finished:
+                    self.signIn(completeClosure)
+                    print("Finish")
+                }
+            } receiveValue: { _ in
+            }
+            .store(in: &cancellables)
+    }
+    
+    func signIn(_ completeClosure: VoidClosure?) {
+        let request = AccountSignInRequest(email: self.email, password: self.password)
+        
+        APIService.signIn(request)
+            .sink { completion in
+                switch completion {
+                case .failure:
+                    print("로그인 실패")
+                case .finished:
+                    completeClosure?()
+                }
+            } receiveValue: { (value: AccountResponse?) in
+                if let value = value, let token = value.token {
+                    KeychainService.shared.saveToken(token: token)
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    func reset() {
+        self.canNextStep = false
     }
 
 }
