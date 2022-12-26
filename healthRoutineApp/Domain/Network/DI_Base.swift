@@ -10,5 +10,4 @@ import Foundation
 struct DI_Base: Codable {
     let code: Int
     let message: String
-    let status: String
 }

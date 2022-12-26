@@ -17,8 +17,10 @@ struct CustomNavigationView<Content: View>: View {
     
     var body: some View {
         NavigationView {
-            CustomNavigationBarContainerView {
-                content
+            BaseView {
+                CustomNavigationBarContainerView {
+                    content
+                }
             }
             .navigationBarHidden(true)
         }

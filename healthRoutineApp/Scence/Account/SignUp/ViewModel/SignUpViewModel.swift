@@ -295,7 +295,7 @@ class SignUpViewModel: ObservableObject {
                     completeClosure?()
                 }
             } receiveValue: { (value: AccountResponse?) in
-                if let value = value, let token = value.token {
+                if let value = value, let token = value.result.token {
                     KeychainService.shared.saveToken(token: token)
                 }
             }

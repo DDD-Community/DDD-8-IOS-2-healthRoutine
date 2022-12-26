@@ -19,11 +19,8 @@ struct CustomNavigationBarContainerView<Content: View>: View {
     }
     
     var body: some View {
-        
         VStack(spacing: 0) {
-            
             CustomNavigationBarView(showBackButton: showBackButton, title: title)
-            
             content
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }

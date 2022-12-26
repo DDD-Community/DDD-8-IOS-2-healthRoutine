@@ -10,13 +10,11 @@ import Foundation
 struct AccountResponse: Decodable {
     let code: Int
     let message: String
-    let status: String
     let result: AccountResult
-    let token: String?
 }
 
 struct AccountResult: Codable {
-    
+    let token: String?
     let email: String
     let nickname: String
 }

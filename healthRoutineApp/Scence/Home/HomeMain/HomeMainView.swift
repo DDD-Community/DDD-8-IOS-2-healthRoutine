@@ -31,7 +31,6 @@ struct HomeMainView: View {
                             BadgeRowView()
                         }
                     }
-                    .padding(20)
                     .customNavigationBarBackButtonHidden(true)
                 }
             }

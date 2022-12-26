@@ -9,13 +9,12 @@ import SwiftUI
 import Combine
 
 struct AccountMainView: View {
-
     #warning("키체인 토큰 유효 체크")
     // KeychainService.shared.isTokenValidate()
     @State var hasToken: Bool = false
     
     var body: some View {
-        
+
         if hasToken {
             
             ContentView()
@@ -58,7 +57,6 @@ struct AccountMainView: View {
                     }
                 }
                 .customNavigationBarBackButtonHidden(true)
-                .padding(20)
             }
         }
     }

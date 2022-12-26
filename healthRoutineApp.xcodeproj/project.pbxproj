@@ -23,11 +23,11 @@
 		80881941294C027700420788 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881938294C027600420788 /* Pretendard-Light.otf */; };
 		80881942294C027700420788 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80881939294C027700420788 /* Pretendard-Bold.otf */; };
 		80881949294C057900420788 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80881948294C057900420788 /* Font+Ext.swift */; };
-		8088194C294C07B100420788 /* AppColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088194B294C07B100420788 /* AppColorSet.swift */; };
 		80881950294C07DA00420788 /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8088194F294C07DA00420788 /* AppColors.xcassets */; };
 		80881953294C2CCE00420788 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80881952294C2CCE00420788 /* Alamofire */; };
 		80881957294C37BE00420788 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80881956294C37BE00420788 /* APIManager.swift */; };
 		809FB26E29503C3E000E2EC6 /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809FB26D29503C3E000E2EC6 /* Encodable+Ext.swift */; };
+		80A2757C295973FF003295C4 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2757B295973FF003295C4 /* BaseView.swift */; };
 		911E0906294496D2000555D8 /* TimerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E0905294496D2000555D8 /* TimerDetailView.swift */; };
 		911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E090729449A3A000555D8 /* TimerPatternView.swift */; };
 		911E090A29449E50000555D8 /* TimerPatternButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911E090929449E50000555D8 /* TimerPatternButtonView.swift */; };
@@ -115,10 +115,10 @@
 		80881938294C027600420788 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		80881939294C027700420788 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		80881948294C057900420788 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
-		8088194B294C07B100420788 /* AppColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorSet.swift; sourceTree = "<group>"; };
 		8088194F294C07DA00420788 /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
 		80881956294C37BE00420788 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		809FB26D29503C3E000E2EC6 /* Encodable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
+		80A2757B295973FF003295C4 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		911E0905294496D2000555D8 /* TimerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDetailView.swift; sourceTree = "<group>"; };
 		911E090729449A3A000555D8 /* TimerPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPatternView.swift; sourceTree = "<group>"; };
 		911E090929449E50000555D8 /* TimerPatternButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPatternButtonView.swift; sourceTree = "<group>"; };
@@ -270,7 +270,6 @@
 		8088194A294C078B00420788 /* AppColors */ = {
 			isa = PBXGroup;
 			children = (
-				8088194B294C07B100420788 /* AppColorSet.swift */,
 				8088194F294C07DA00420788 /* AppColors.xcassets */,
 			);
 			path = AppColors;
@@ -359,6 +358,7 @@
 				B69878A92948068E00C58869 /* BottomButtonView.swift */,
 				B69878AB2948079600C58869 /* CommonButtonView.swift */,
 				B69878AD29480B1B00C58869 /* CommonInputFieldView.swift */,
+				80A2757B295973FF003295C4 /* BaseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -731,6 +731,7 @@
 				B64C977729514B47004F9760 /* HomeDetailViewModel.swift in Sources */,
 				B623B129292F4F4E00BA7BA7 /* CalendarView.swift in Sources */,
 				91B0376E2951FC1C000837BA /* DI_Base.swift in Sources */,
+				80A2757C295973FF003295C4 /* BaseView.swift in Sources */,
 				80307691294C5BD200EFF277 /* APIService.swift in Sources */,
 				B639D135294F5B49009AE6C9 /* Account.swift in Sources */,
 				B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */,
@@ -744,7 +745,6 @@
 				B65208CC29497B480095DAB4 /* HealthRoutineAPI.swift in Sources */,
 				B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */,
 				B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */,
-				8088194C294C07B100420788 /* AppColorSet.swift in Sources */,
 				B65208CA294979760095DAB4 /* AccountAPIs.swift in Sources */,
 				B65208D62949C0F60095DAB4 /* CustomNavigationView.swift in Sources */,
 				B6D2889F294AB1010072C347 /* String+Ext.swift in Sources */,

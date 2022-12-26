@@ -18,31 +18,31 @@ struct SignInView: View {
     var cancellables: Set<AnyCancellable> = []
     
     var body: some View {
-        
-        VStack(spacing: 30) {
-            
-            Image(systemName: "heart.fill")
-                .font(.system(size: 200))
-            
-            SignInInputView(title: "아이디", placeholder: "아이디를 입력해 주세요.", value: $viewModel.email, isAble: $viewModel.isActiveEmailField)
-            SignInInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $viewModel.password, isAble: $viewModel.isActivePasswordField)
-            
-            Text(self.viewModel.errrorMsg)
-                .font(.system(size: 13, weight: .regular))
-                .foregroundColor(.red)
-            
-            Button("로그인") {
-                
-                self.viewModel.signInWith()
+        BaseView {
+            VStack(spacing: 30) {
+
+                Image(systemName: "heart.fill")
+                    .font(.system(size: 200))
+
+                SignInInputView(title: "아이디", placeholder: "아이디를 입력해 주세요.", value: $viewModel.email, isAble: $viewModel.isActiveEmailField)
+                SignInInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $viewModel.password, isAble: $viewModel.isActivePasswordField)
+
+                Text(self.viewModel.errrorMsg)
+                    .font(.system(size: 13, weight: .regular))
+                    .foregroundColor(.red)
+
+                Button("로그인") {
+
+                    self.viewModel.signInWith()
+                }
+                .buttonStyle(CommonButtonView())
+                .disabled(!viewModel.canSubmit)
+
+                Spacer()
             }
-            .buttonStyle(CommonButtonView())
-            .disabled(!viewModel.canSubmit)
-            
-            Spacer()
+            .onAppear { self.bindView() }
+            .padding(.top, 100)
         }
-        .onAppear { self.bindView() }
-        .padding(.top, 100)
-        .padding(.horizontal, 20)
     }
     
     private func bindView() {
