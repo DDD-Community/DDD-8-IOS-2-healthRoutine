@@ -134,7 +134,7 @@ class SignUpViewModel: ObservableObject {
     private func bindView() {
         $email
             .sink(receiveValue: { str in
-                if self.emailState == .authWaiting || self.emailState == .authComplete { return }
+                if self.emailState == .authWaiting { return }
                 if str.isValid {
                     if str.isValidEmail {
                         self.emailState = .available

@@ -12,7 +12,7 @@ import Alamofire
 
 enum APIError: Error {
     case http(ErrorData)
-    case parsing(String, String)
+    case parsing(String)
     case unknown
 }
 
@@ -33,7 +33,7 @@ enum APIManager {
         let request = AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers) { urlRequest in
             urlRequest.timeoutInterval = REQUEST_TIMEOUT
         }
-        return request.validate(statusCode: 200..<600).publishData(emptyResponseCodes: [200, 204, 205]) // 200, 204, 205 응답은 서버 응답 데이터가 비어있어도 성공ㄱㄱ
+        return request.validate().publishData(emptyResponseCodes: [200, 204, 205]) // 200, 204, 205 응답은 서버 응답 데이터가 비어있어도 성공ㄱㄱ
             .tryMap { result -> T in
                 do {
                     return try handleResponse(result: result, decoder: decoder)
@@ -62,7 +62,7 @@ enum APIManager {
         }
         if let data = result.data {
             guard let value = try? decoder.decode(T.self, from: data) else {
-                throw APIError.parsing("에러", "파싱오류") // 임시 하드코딩
+                throw APIError.parsing("파싱오류") // 임시 하드코딩
             }
             return value
         }

@@ -22,6 +22,10 @@ enum AccountErrors: Error {
         case accountNotExist
         case wrongPassword
     }
+    
+    public enum EmailValidationErrorReason {
+        case duplicatedEmail
+    }
 }
 
 extension AccountErrors.SignUpErrorReason: CaseIterable {
@@ -61,6 +65,21 @@ extension AccountErrors.SignInErrorReason: CaseIterable {
         switch self {
         case .accountNotExist: return "잘못 된 비밀번호를 입력했을 시"
         case .wrongPassword: return "없는 이메일을 입력했을 시"
+        }
+    }
+}
+
+extension AccountErrors.EmailValidationErrorReason: CaseIterable {
+    var errorCode: Int {
+        switch self {
+        case .duplicatedEmail: return 409
+        }
+    }
+    
+    var errorDescription: String? {
+
+        switch self {
+        case .duplicatedEmail: return "이미 있는 이메일"
         }
     }
 }
