@@ -17,11 +17,12 @@ struct TimerButtonView: View {
                     .foregroundColor(.black)
                     .frame(width: 30, height: 30)
             }
+            /*
             Button(action: pauseTimer){
                 Image(systemName: "pause")
                     .foregroundColor(.black)
                     .frame(width: 30, height: 30)
-            }
+            }*/
             Button(action: resetTimer){
                 Image(systemName: "stop")
                     .foregroundColor(.black)
@@ -34,9 +35,10 @@ struct TimerButtonView: View {
         timerData.startTimer()
     }
     
+    /*
     func pauseTimer() {
         timerData.pauseTimer()
-    }
+    }*/
     
     func resetTimer() {
         timerData.resetTimer()

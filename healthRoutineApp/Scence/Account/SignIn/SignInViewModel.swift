@@ -58,6 +58,9 @@ class SignInViewModel: ObservableObject {
                     print("Finish")
                 }
             } receiveValue: { (value: AccountResponse?) in
+                if let value = value, let token = value.result.token {
+                    KeychainService.shared.saveToken(token: token)
+                }
                 self.signInFinished.send(true)
             }
             .store(in: &cancellables)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TimerMainView: View {
     var body: some View {
-        NavigationView {
+        CustomNavigationView {
             VStack {
                 TopMenuVeiw(mainTitle: "타이머")
                 ScrollView(showsIndicators: false) {
@@ -18,19 +18,15 @@ struct TimerMainView: View {
                         TimerInfoView()
                     }
                 }
-                .padding(20)
-                
-                NavigationLink(
-                    destination: TimerDetailView(),
-                    label: {
-                        Text("자주 쓰는 타이머 패턴 추가")
-                            .frame(maxWidth: .infinity, minHeight: 59)
-                            .background(.gray)
-                            .cornerRadius(30)
-                            .foregroundColor(.black)
-                    })
-                .padding(20)
-            }
+                CustomNavigationLink(destination: MyPageDetailView().customNavigationTitle("타이머 추가")
+                ) {
+                    Text("자주 쓰는 타이머 패턴 추가")
+                        .frame(maxWidth: .infinity, minHeight: 60)
+                        .background(Color.available_green)
+                        .foregroundColor(Color(hex: "353535"))
+                        .cornerRadius(10)
+                }
+            }.customNavigationBarBackButtonHidden(true)
         }
     }
 }

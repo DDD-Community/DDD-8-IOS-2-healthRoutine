@@ -7,12 +7,13 @@
 
 import Foundation
 import SwiftUI
-typealias TimeUpdated = (_ time: Double)->Void
 
 class TimerData: ObservableObject {
     @Published var timerCount: Int = 0
-    var timer: Timer?
+    
+    private var timer: Timer?
     var isRunning: Bool = false
+    var startTime: Date?
     
     func resetTimer() {
         self.timer?.invalidate()
@@ -23,20 +24,23 @@ class TimerData: ObservableObject {
     
     func startTimer() {
         if isRunning == false {
+            self.startTime = Date()
             self.isRunning = true
             self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {[weak self] _ in
-                guard let self = self else { return }
-                self.timerCount += 1
+                guard let self = self, let startTime = self.startTime else { return }
+                let timeSeconds = Int(Date().timeIntervalSince(startTime))
+                self.timerCount = timeSeconds
             }
         }
     }
     
+    /*
     func pauseTimer() {
         if let timer = timer {
             self.isRunning = false
             timer.invalidate()
         }
-    }
+    }*/
     
     func convertCountToTimeString() -> String {
         let counter = self.timerCount
