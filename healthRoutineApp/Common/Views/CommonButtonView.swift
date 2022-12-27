@@ -13,9 +13,7 @@ struct CommonButtonView: ButtonStyle {
         
         configuration.label
             .frame(maxWidth: .infinity, minHeight: 60)
-            .font(.system(size: 18, weight: .bold))
-            .foregroundColor(.black)
-            .background(Color(.darkGray))
+            .font(Font.pretendard(.bold, size: 18))
             .cornerRadius(10)
     }
 }

@@ -13,14 +13,15 @@ class APIService {
     static func checkEmailValidation(_ email: String) -> AnyPublisher<DI_Base, APIError> {
         var parameters = Parameters()
         parameters["email"] = email
-        return APIManager.request("https://rest-api.xyz/api/v1/user/validate/email", method: .post, parameters: parameters)
+
+        return APIManager.request(AccountAPI.checkEmailValidation.url, method: .post, parameters: parameters)
     }
 
     static func signIn(_ param: AccountSignInRequest)  -> AnyPublisher<AccountResponse, APIError> {
-        return APIManager.request("https://rest-api.xyz/API/v1/user/login", method: .post, parameters: param.dictionary)
+        return APIManager.request(AccountAPI.signIn.url, method: .post, parameters: param.dictionary)
     }
     
     static func signUp(_ param: AccountSignUpRequest) -> AnyPublisher<AccountResponse, APIError> {
-        return APIManager.request("https://rest-api.xyz/api/v1/user/register", method: .post, parameters: param.dictionary)
+        return APIManager.request(AccountAPI.signUp.url, method: .post, parameters: param.dictionary)
     }
 }

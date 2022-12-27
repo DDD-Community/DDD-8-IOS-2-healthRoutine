@@ -16,13 +16,9 @@ struct SignUpCompleteView: View {
                 Spacer()
                 CustomNavigationLink(destination: ContentView()
                 ) {
-                    Text("다음")
-                        .frame(maxWidth: .infinity, minHeight: 60)
-                        .font(.system(size: 18, weight: .bold))
-                        .background(Color(hex:"22ffaf"))
-                        .foregroundColor(Color(hex:"18171d"))
-                        .cornerRadius(10)
+                    BottomButtonView(buttonTitle: "메인으로 이동", isable: true)
                 }
+                .frame(maxHeight: 84) // 60 + 24
             }
         }
     }

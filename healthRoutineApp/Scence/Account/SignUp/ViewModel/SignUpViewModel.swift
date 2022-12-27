@@ -9,8 +9,6 @@ import Foundation
 import Combine
 import SwiftUI
 
-public typealias VoidClosure = () -> Void
-
 enum SignUpInputStateType: String {
     case empty // input 비어있음
     case available
@@ -22,7 +20,7 @@ enum SignUpInputStateType: String {
     func getInputColor() -> Color {
         switch self {
         case .empty:
-            return Color(hex: "888888")
+            return .gray_888
         default:
             return Color(hex: "C9C9C9")
         }
@@ -31,11 +29,11 @@ enum SignUpInputStateType: String {
     func getInfoStateColor() -> Color {
         switch self {
         case .empty:
-            return Color(hex: "888888")
+            return .gray_888
         case .available, .authComplete, .authWaiting:
-            return Color(hex: "22FFAF")
+            return .available_green
         case .unavailable, .authFail:
-            return Color(hex: "FF0000")
+            return .error_red
         }
     }
 }
@@ -124,7 +122,8 @@ class SignUpViewModel: ObservableObject {
     var nicknameInfo: String = ""
     
     // 다음버튼용
-    @Published var canNextStep: Bool = false
+    @Published var canNextNicknameStep: Bool = false
+    @Published var canNextCompleteStep: Bool = false
 
     let apiWorker = AccountAPIWorker()
 
@@ -206,18 +205,18 @@ class SignUpViewModel: ObservableObject {
                     if str.isValidNickname {
                         self.nicknameState = .available
                         self.nicknameInfo = SignUpStringType.nickname.getSuccessStr()
-                        self.canNextStep = true
+                        self.canNextCompleteStep = true
                     }
                     else {
                         self.nicknameState = .unavailable
                         self.nicknameInfo = SignUpStringType.nickname.getWarningStr()
-                        self.canNextStep = false
+                        self.canNextCompleteStep = false
                     }
                 }
                 else {
                     self.nicknameState = .empty
                     self.nicknameInfo = SignUpStringType.nickname.getHelpStr()
-                    self.canNextStep = false
+                    self.canNextCompleteStep = false
                 }
             })
             .store(in: &cancellables)
@@ -231,7 +230,7 @@ class SignUpViewModel: ObservableObject {
                     return false
                 }
             }
-            .assign(to: \.canNextStep, on: self)
+            .assign(to: \.canNextNicknameStep, on: self)
             .store(in: &cancellables)
         
     }
@@ -301,9 +300,4 @@ class SignUpViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
-    func reset() {
-        self.canNextStep = false
-    }
-
 }

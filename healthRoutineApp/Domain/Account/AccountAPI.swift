@@ -8,19 +8,21 @@
 import Foundation
 
 enum AccountAPI {
-    
+    case checkEmailValidation
     case signUp
     case signIn
     
     var url: String {
         
         switch self {
-            
+        case .checkEmailValidation: return "\(HealthRoutineAPI.baseURL)/user/validate/email"
         case .signUp: return "\(HealthRoutineAPI.baseURL)/user/register"
         case .signIn: return "\(HealthRoutineAPI.baseURL)/user/login"
         }
     }
-    
+
+    /*
+
     enum Param: APIParameter {
         
         case email(String)
@@ -42,5 +44,5 @@ enum AccountAPI {
             case .nickname(let value): return value
             }
         }
-    }
+    }*/
 }

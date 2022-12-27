@@ -33,7 +33,7 @@ enum APIManager {
         let request = AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers) { urlRequest in
             urlRequest.timeoutInterval = REQUEST_TIMEOUT
         }
-        return request.validate(statusCode: 200..<600).publishData(emptyResponseCodes: [200, 204, 205]) // 200, 204, 205 응답은 서버 응답 데이터가 비어있어도 성공ㄱ ㄱ
+        return request.validate(statusCode: 200..<600).publishData(emptyResponseCodes: [200, 204, 205]) // 200, 204, 205 응답은 서버 응답 데이터가 비어있어도 성공ㄱㄱ
             .tryMap { result -> T in
                 do {
                     return try handleResponse(result: result, decoder: decoder)

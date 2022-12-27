@@ -26,7 +26,7 @@ struct SignUpInputView: View {
                             Text(placeholder).foregroundColor(inputStateType.getInputColor())
                     }
                         .foregroundColor(inputStateType.getInputColor())
-                        .font(.system(size: 16, weight: .medium))
+                        .font(Font.pretendard(.medium, size: 16))
                         .textContentType(.newPassword)
                 }
                 else {
@@ -35,7 +35,7 @@ struct SignUpInputView: View {
                             Text(placeholder).foregroundColor(inputStateType.getInputColor())
                     }
                         .foregroundColor(inputStateType.getInputColor())
-                        .font(.system(size: 16, weight: .medium))
+                        .font(Font.pretendard(.medium, size: 16))
                 }
                 if isAuthButtonVisible {
                     Button("인증하기") {
@@ -44,10 +44,10 @@ struct SignUpInputView: View {
                         }
                     }
                     .frame(width: 63, height: 36)
-                    .foregroundColor(Color(hex:"18171D"))
-                    .font(.system(size: 13, weight: .regular))
+                    .foregroundColor(.background_black)
+                    .font(Font.pretendard(.regular, size: 13))
                     .conditionalModifier(inputStateType == .available || inputStateType == .authWaiting, ifTrue: { view in
-                        view.background(Color(hex:"22FFAF"))
+                        view.background(Color.available_green)
                     }, ifFalse: { view in
                         view.background(Color(hex:"D9D9D9"))
                     })
@@ -59,7 +59,7 @@ struct SignUpInputView: View {
                 .background(inputStateType.getInputColor())
             Text(infoStr)
                 .foregroundColor(inputStateType.getInfoStateColor())
-                .font(.system(size: 13, weight: .regular))
+                .font(Font.pretendard(.regular, size: 13))
         }
         .padding(.top, 24)
     }

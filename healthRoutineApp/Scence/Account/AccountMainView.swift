@@ -9,8 +9,6 @@ import SwiftUI
 import Combine
 
 struct AccountMainView: View {
-    #warning("키체인 토큰 유효 체크")
-    // KeychainService.shared.isTokenValidate()
     @State var hasToken: Bool = false
     
     var body: some View {
@@ -40,7 +38,7 @@ struct AccountMainView: View {
                     ) {
                         Text("회원가입")
                             .frame(maxWidth: .infinity, minHeight: 60)
-                            .font(.system(size: 18, weight: .bold))
+                            .font(Font.pretendard(.bold, size: 18))
                             .foregroundColor(.black)
                             .background(Color(.darkGray))
                             .cornerRadius(10)
@@ -50,7 +48,7 @@ struct AccountMainView: View {
                     CustomNavigationLink(destination: SignInView(hasToken: self.$hasToken))  {
                         Text("로그인")
                             .frame(maxWidth: .infinity, minHeight: 60)
-                            .font(.system(size: 18, weight: .bold))
+                            .font(Font.pretendard(.bold, size: 18))
                             .foregroundColor(.black)
                             .background(Color(.darkGray))
                             .cornerRadius(10)

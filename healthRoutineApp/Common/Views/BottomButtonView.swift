@@ -8,28 +8,33 @@
 import SwiftUI
 
 struct BottomButtonView: View {
-    
+
     var buttonTitle: String
-    
+    var isable: Bool
+    var buttonAction: VoidClosure? = nil
+    var preventButtonAction: Bool = false
     var body: some View {
-        
+
         VStack {
-            
+
             Spacer()
-            
+
             Button(buttonTitle) {
-                debugPrint("Button Action")
+                buttonAction?()
             }
             .buttonStyle(CommonButtonView())
-            .frame(minHeight: 60)
-//            .background(Color.yellow)
+            .background(isable ? Color.main_green : Color.button_disabled)
+            .foregroundColor(isable ? Color.background_black : Color.gray_888)
+            .cornerRadius(10)
+            .padding(.bottom, 24)
+            .frame(maxWidth: .infinity, minHeight: 60)
+            .disabled(preventButtonAction ? true : !isable)
         }
-//        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
 struct BottomButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        BottomButtonView(buttonTitle: "버튼명")
+        BottomButtonView(buttonTitle: "버튼명", isable: true)
     }
 }

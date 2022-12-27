@@ -12,3 +12,9 @@ struct AccountSignInRequest: Codable {
     let email: String
     let password: String
 }
+
+struct AccountSignUpRequest: Codable {
+    let email: String
+    let password: String
+    let nickname: String
+}

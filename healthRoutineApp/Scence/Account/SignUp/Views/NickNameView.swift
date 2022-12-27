@@ -15,20 +15,12 @@ struct NickNameView: View {
     var body: some View {
         BaseView {
             VStack {
-                SignUpInputView(placeholder: "닉네임", inputStr: $viewModel.nickname, infoStr: viewModel.nicknameInfo, inputStateType: $viewModel.nicknameState)
+                SignUpInputView(placeholder: SignUpStringType.nickname.getPlaceHolderStr(), inputStr: $viewModel.nickname, infoStr: viewModel.nicknameInfo, inputStateType: $viewModel.nicknameState)
                 Spacer()
                 NavigationLink(destination: SignUpCompleteView().navigationBarBackButtonHidden(true), tag: "1", selection: $selection) { EmptyView() }
-                Button("다음") {
+                BottomButtonView(buttonTitle: "다음", isable: viewModel.canNextCompleteStep) {
                     self.handleNextButton()
                 }
-                .frame(maxWidth: .infinity, minHeight: 60)
-                .font(.system(size: 18, weight: .bold))
-                .background(viewModel.canNextStep ? Color(hex:"22ffaf") : Color(hex:"CFCFCF"))
-                .foregroundColor(viewModel.canNextStep ? Color(hex:"18171d") : Color(hex:"888888"))
-                .cornerRadius(10)
-                .disabled(!viewModel.canNextStep)
-                .padding(.bottom, 24)
-
             }
         }
     }
