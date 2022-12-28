@@ -13,6 +13,7 @@ extension Font {
         case bold
         case extraBold
         case medium
+        case semiBold
         case regular
 
         var value: String {
@@ -21,6 +22,8 @@ extension Font {
                 return "Pretendard-Bold"
             case .medium:
                 return "Pretendard-Medium"
+            case .semiBold:
+                return "Pretendard-SemiBold"
             case .extraBold:
                 return "Pretendard-ExtraBold"
             case .regular:

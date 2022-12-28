@@ -34,7 +34,7 @@ struct CustomNavigationBarView: View {
         .padding()
         .foregroundColor(.black) // 색상 변경 여기서하면 됨.
         .font(.headline)
-        .background(Color.clear.ignoresSafeArea(edges: .top))
+        .background(Color.background_black.ignoresSafeArea(edges: .top))
     }
 }
 
@@ -56,6 +56,8 @@ extension CustomNavigationBarView {
             self.presentationMode.wrappedValue.dismiss()
         } label: {
             Image(systemName: "chevron.left")
+                .foregroundColor(.white)
+                .frame(width: 24, height: 24)
         }
     }
     
@@ -65,7 +67,8 @@ extension CustomNavigationBarView {
             
             if let title = title {
                 Text(title)
-                    .font(.system(size: 20, weight: .bold))
+                    .font(Font.pretendard(.semiBold, size: 20))
+                    .foregroundColor(.white)
             }
         }
     }
