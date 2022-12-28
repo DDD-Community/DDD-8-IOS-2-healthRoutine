@@ -21,7 +21,7 @@ struct MyPageDetailView: View {
                 .cornerRadius(20)
             
             Button("수정하기") {
-                
+                self.viewModel.updateInfo()
             }
             .buttonStyle(CommonButtonView())
             

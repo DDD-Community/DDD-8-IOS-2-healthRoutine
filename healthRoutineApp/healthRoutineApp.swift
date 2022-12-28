@@ -21,8 +21,6 @@ struct healthRoutineApp: App {
             
             SplashView()
                 .environmentObject(dateHolder)
-//            ContentView()
-//                .environmentObject(dateHolder)
         }
     }
 }

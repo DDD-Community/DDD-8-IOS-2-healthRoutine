@@ -24,4 +24,8 @@ class APIService {
     static func signUp(_ param: AccountSignUpRequest) -> AnyPublisher<AccountResponse, APIError> {
         return APIManager.request(AccountAPI.signUp.url, method: .post, parameters: param.dictionary)
     }
+    
+    static func updateInfo(_ param: AccountUpdateInfoRequest) -> AnyPublisher<AccountResponse, APIError> {
+        return APIManager.request(AccountAPI.signIn.url, method: .post, parameters: param.dictionary)
+    }
 }

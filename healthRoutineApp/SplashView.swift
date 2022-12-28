@@ -37,7 +37,7 @@ struct SplashView: View {
                 if UserDefaults.isFirstAppLaunch() {
                     KeychainService.shared.deleteToken()
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     withAnimation {
                         self.isActive = true
                     }

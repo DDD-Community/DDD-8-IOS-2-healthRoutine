@@ -18,3 +18,9 @@ struct AccountSignUpRequest: Codable {
     let password: String
     let nickname: String
 }
+
+struct AccountUpdateInfoRequest: Codable {
+    let token: String
+    let nickname: String
+    let image: Data
+}

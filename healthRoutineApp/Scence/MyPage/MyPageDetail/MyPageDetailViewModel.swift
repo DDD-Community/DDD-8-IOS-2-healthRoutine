@@ -35,13 +35,20 @@ final class MyPageDetailViewModel: ObservableObject {
     
     func confirmNickname() {
         
-        
     }
 
     // 앨범 권환 확인
     func checkPermission() {
         
+    }
+    
+    func updateInfo() {
         
+        guard let token = KeychainService.shared.loadToken() else {
+            return
+        }
+        
+        let request = AccountUpdateInfoRequest(token: token, nickname: "", image: Data())
     }
 }
 

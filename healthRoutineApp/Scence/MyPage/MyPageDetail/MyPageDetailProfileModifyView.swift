@@ -10,16 +10,19 @@ import SwiftUI
 struct MyPageDetailProfileModifyView: View {
     
     @State var showActionSheet: Bool = false
-    @State var showAlbum: Bool = false
+    @State var showImagePicker: Bool = false
     
     @ObservedObject var viewModel = MyPageDetailModifyViewModel()
+    
+    @State var image: UIImage = UIImage()
     
     var body: some View {
         
         VStack(spacing: 15) {
             
-            Circle()
-                .fill(Color.blue)
+            Image("ProfileDefault")
+                .foregroundColor(Color.red)
+                .clipShape(Circle())
                 .frame(width: 132, height: 132)
                 .overlay(Rectangle().frame(width: 30, height: 30).offset(x: 50, y:50) )
                 .onTapGesture {
@@ -30,25 +33,17 @@ struct MyPageDetailProfileModifyView: View {
         }
         .padding(.horizontal, 20)
         .actionSheet(isPresented: $showActionSheet, content: actionSheet)
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(sourceType: .photoLibrary) { self.image = $0 }
+        }
     }
     
     private func actionSheet() -> ActionSheet {
         
         let albumButton = ActionSheet.Button.default(Text("앨범에서 선택하기")) {
-            
-            UIView.setAnimationsEnabled(false)
-            
-            self.showActionSheet = false
-            self.showAlbum = true
+            self.showImagePicker = true
         }
-        
-        let defaultButton = ActionSheet.Button.default(Text("기본 프로필 사진으로 변경하기")) {
-            
-            UIView.setAnimationsEnabled(false)
-            
-            self.showActionSheet = false
-        }
-                
+        let defaultButton = ActionSheet.Button.default(Text("기본 프로필 사진으로 변경하기"))
         let cancelButton = ActionSheet.Button.cancel(Text("닫기"))
         let destructiveButton = ActionSheet.Button.destructive(Text("프로필 사진 삭제"))
         let actionSheet = ActionSheet(title: Text("선택해주세요"),
@@ -75,6 +70,6 @@ struct MyPageDetailInputView: View {
 
 struct MyPageDetailProfileModifyView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPageDetailProfileModifyView(showActionSheet: false, showAlbum: false)
+        MyPageDetailProfileModifyView(showActionSheet: false, showImagePicker: false)
     }
 }
