@@ -13,9 +13,9 @@ struct TimerMainView: View {
             VStack {
                 TopMenuVeiw(mainTitle: "타이머")
                 ScrollView(showsIndicators: false) {
-                    VStack(alignment: .center) {
-                        TimerCountView()
-                        TimerInfoView()
+                    VStack(alignment: .center, spacing: 16) {
+                        NormalTimerView()
+                        CustomTimerView()
                     }
                 }
                 CustomNavigationLink(destination: MyPageDetailView().customNavigationTitle("타이머 추가")

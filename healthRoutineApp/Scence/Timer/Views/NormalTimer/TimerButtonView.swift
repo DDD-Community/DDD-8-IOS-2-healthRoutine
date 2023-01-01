@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TimerButtonView: View {
+struct NormalTimerButtonView: View {
     @ObservedObject var timerData: TimerViewModel
     
     var body: some View {
@@ -45,8 +45,8 @@ struct TimerButtonView: View {
     }
 }
 
-struct TimerButtonView_Previews: PreviewProvider {
+struct NormalTimerButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerButtonView(timerData: TimerViewModel())
+        NormalTimerButtonView(timerData: TimerViewModel())
     }
 }

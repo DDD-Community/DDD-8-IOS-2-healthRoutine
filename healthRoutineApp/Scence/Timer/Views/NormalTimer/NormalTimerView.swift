@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct TimerCountView: View {
+struct NormalTimerView: View {
     @ObservedObject var timerData: TimerViewModel = TimerViewModel()
     var body: some View {
         VStack(alignment: .center, spacing: 18) {
             Text("\(timerData.convertCountToTimeString())")
                 .font(Font.pretendard(.bold, size: 42))
                 .foregroundColor(.white)
-            TimerButtonView(timerData: timerData)
+            NormalTimerButtonView(timerData: timerData)
         }
         .frame(maxWidth: .infinity, minHeight: 172)
         .background(Color.box_color)
@@ -22,8 +22,8 @@ struct TimerCountView: View {
     }
 }
 
-struct TimerCountView_Previews: PreviewProvider {
+struct NormalTimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerCountView()
+        NormalTimerView()
     }
 }
