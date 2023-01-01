@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TimerInfoView: View {
-    @ObservedObject var timerData: TimerData = TimerData()
+    @ObservedObject var timerData: TimerViewModel = TimerViewModel()
     var body: some View {
         VStack {
             HStack {

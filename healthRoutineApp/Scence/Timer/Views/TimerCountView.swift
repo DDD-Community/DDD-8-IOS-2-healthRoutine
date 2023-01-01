@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct TimerCountView: View {
-    @ObservedObject var timerData: TimerData = TimerData()
+    @ObservedObject var timerData: TimerViewModel = TimerViewModel()
     var body: some View {
-        VStack {
+        VStack(alignment: .center, spacing: 18) {
             Text("\(timerData.convertCountToTimeString())")
-                .fontWeight(.bold)
-                .font(.largeTitle)
+                .font(Font.pretendard(.bold, size: 42))
+                .foregroundColor(.white)
             TimerButtonView(timerData: timerData)
         }
-        .frame(maxWidth: .infinity, minHeight: 200)
-        .background(.yellow)
-        .cornerRadius(20)
+        .frame(maxWidth: .infinity, minHeight: 172)
+        .background(Color.box_color)
+        .cornerRadius(16)
     }
 }
 
