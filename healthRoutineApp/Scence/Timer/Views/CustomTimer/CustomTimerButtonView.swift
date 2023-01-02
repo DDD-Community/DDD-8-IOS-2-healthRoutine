@@ -36,7 +36,7 @@ struct CustomTimerButtonView: View {
     }
     
     func startTimer() {
-//        timerData.startTimer()
+        timerData.startTimer()
     }
     
     

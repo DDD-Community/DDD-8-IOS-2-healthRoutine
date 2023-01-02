@@ -14,11 +14,16 @@ class DI_CusomTimer {
 }
 
 class DI_Time {
-    var minutes: Int = 0 // 분
-    var seconds: Int = 0 // 초
+    var minutes: Double = 1 // 분
+    var seconds: Double = 30 // 초
     var isExerciseType: Bool = true // 운동 or 휴식
         
     func getTimeString() -> String {
         return "\(String(format:"%02d", minutes))분 \(String(format:"%02d", seconds))초 \(isExerciseType ? "운동" : "휴식")"
+    }
+    
+    func changeTimeToSeconds() -> TimeInterval {
+        let seconds = (minutes * 60) + seconds
+        return seconds
     }
 }
