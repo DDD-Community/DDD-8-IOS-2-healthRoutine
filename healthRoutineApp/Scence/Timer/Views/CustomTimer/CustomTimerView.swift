@@ -15,6 +15,7 @@ struct CustomTimerView: View {
                 CustomTimerReadyView(timerData: timerViewModel.timerData)
             }
             else {
+                CustomTimerRunningView(timerViewModel: timerViewModel)
             }
             CustomTimerButtonView(timerData: timerViewModel)
         }
@@ -56,6 +57,25 @@ struct CustomTimerReadyView: View {
             }
         }
         .padding([.leading], 24)
+    }
+}
+
+struct CustomTimerRunningView: View {
+    @ObservedObject var timerViewModel: CustomTimerViewModel
+    var body: some View {
+        HStack(alignment: .center, spacing: 8) {
+            Text(timerViewModel.getModeString())
+                .lineLimit(1)
+                .font(Font.pretendard(.bold, size: 16))
+                .foregroundColor(timerViewModel.mode == .exercise ? Color(hex:"36383C") : .white)
+                .frame(height: 47)
+                .padding([.leading, .trailing], 20)
+                .background(timerViewModel.mode == .exercise ? .white : .button_blue)
+                .cornerRadius(32)
+            Text("\(timerViewModel.convertCountToTimeString())")
+                .font(Font.pretendard(.bold, size: 26))
+                .foregroundColor(.white)
+        }
     }
 }
 

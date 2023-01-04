@@ -10,7 +10,7 @@ import Foundation
 class DI_CusomTimer {
     var exerCiseTime = DI_Time() // 운동시간
     var breakTime = DI_Time() // 휴식시간
-    var cycle: Int = 0 // 사이클
+    var cycle: Int = 1 // 사이클
 }
 
 class DI_Time {
@@ -19,7 +19,7 @@ class DI_Time {
     var isExerciseType: Bool = true // 운동 or 휴식
         
     func getTimeString() -> String {
-        return "\(String(format:"%02d", minutes))분 \(String(format:"%02d", seconds))초 \(isExerciseType ? "운동" : "휴식")"
+        return "\(String(format:"%.0f", minutes))분 \(String(format:"%.0f", seconds))초 \(isExerciseType ? "운동" : "휴식")"
     }
     
     func changeTimeToSeconds() -> TimeInterval {

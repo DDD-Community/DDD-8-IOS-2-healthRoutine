@@ -12,7 +12,7 @@ struct CustomTimerButtonView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 36) {
-            Button(action: startTimer){
+            Button(action: resetTimer){
                 Image("custom_timer_reset")
                     .frame(width: 40, height: 40)
             }
@@ -23,7 +23,7 @@ struct CustomTimerButtonView: View {
                 }
             }
             else {
-                Button(action: resetTimer){
+                Button(action: startTimer){
                     Image("custom_timer_start")
                         .frame(width: 40, height: 40)
                 }
@@ -45,7 +45,7 @@ struct CustomTimerButtonView: View {
     }
     
     func resetTimer() {
-//        timerData.resetTimer()
+        timerData.resetTimer()
     }
     
     func deleteTimer() {
