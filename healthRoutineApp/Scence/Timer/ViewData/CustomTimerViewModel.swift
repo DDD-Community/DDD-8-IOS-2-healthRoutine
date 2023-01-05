@@ -29,13 +29,16 @@ class CustomTimerViewModel: ObservableObject {
     var timerData: DI_CusomTimer = DI_CusomTimer()
     @Published var mode: CustomTimerMode = .ready // 현재 무슨모드인가
     var nowCycle: Int = 1
-    @Published var timerCount: TimeInterval = 0
+    var timerCount: TimeInterval = 0
+    @Published var remainTime: TimeInterval = 0
     private var timer: Timer?
+
+    @Published var isRunning: Bool = false
 
     var startTime: Date?
     var pauseTime: Date?
-    var storeTime: TimeInterval?
-    
+    var storeTime: TimeInterval = 0
+
     func startTimer() {
         // 준비모드였을때
         if mode == .ready {
@@ -43,7 +46,14 @@ class CustomTimerViewModel: ObservableObject {
             self.startTime = Date()
             timerCount = timerData.exerCiseTime.changeTimeToSeconds()
         }
-//        let pauseTime = Date.timeIntervalSince(pauseTime)
+        else {
+            if let pauseTime = pauseTime {
+                storeTime += Date().timeIntervalSince(pauseTime)
+                self.pauseTime = nil
+            }
+        }
+
+        self.isRunning = true
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) {[weak self] _ in
             guard let self = self else { return }
             self.handleTimer()
@@ -52,13 +62,11 @@ class CustomTimerViewModel: ObservableObject {
     
     func handleTimer() {
         guard let startTime = startTime else { return }
-        var runningTime = Date().timeIntervalSince(startTime)
-        if let pauseTime = pauseTime {
-            runningTime = runningTime +  // pause타임과 지금까지의 시간을 빼줘야할듯..? 처리 미완...!!!Date
-            self.pauseTime = nil
-        }
-        timerCount -= runningTime
-        if timerCount <= 0 {
+        let nowTime = Date()
+        var runningTime = nowTime.timeIntervalSince(startTime)
+        runningTime = runningTime - storeTime
+        remainTime = self.timerCount - runningTime
+        if remainTime <= 0 {
             // 모든사이클 완료했으면 완료
             if nowCycle == timerData.cycle && mode == .breakTime {
                 self.resetTimer()
@@ -69,6 +77,8 @@ class CustomTimerViewModel: ObservableObject {
                 }
                 self.mode = self.mode.switchMode()
                 self.timerCount = getTimeByMode()
+                self.storeTime = 0
+                self.startTime = Date()
             }
         }
     }
@@ -84,6 +94,7 @@ class CustomTimerViewModel: ObservableObject {
     
     func pauseTimer() {
         guard let timer = timer else { return }
+        isRunning = false
         pauseTime = Date()
         timer.invalidate()
     }
@@ -92,6 +103,7 @@ class CustomTimerViewModel: ObservableObject {
         self.mode = .ready
         self.timerCount = 0
         self.nowCycle = 1
+        self.isRunning = false
         self.timer = nil
         self.startTime = nil
     }
@@ -109,7 +121,7 @@ class CustomTimerViewModel: ObservableObject {
     }
 
     func convertCountToTimeString() -> String {
-        let counter = self.timerCount
+        let counter = self.remainTime
         let millseconds = (Int)((counter - floor(counter)) * 100)
         let seconds = (Int)(fmod(counter, 60))
         let minutes = (Int)(fmod((counter/60), 60))

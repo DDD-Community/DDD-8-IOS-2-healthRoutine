@@ -41,7 +41,7 @@ struct CustomTimerButtonView: View {
     
     
     func pauseTimer() {
-//        timerData.pauseTimer()
+        timerData.pauseTimer()
     }
     
     func resetTimer() {
