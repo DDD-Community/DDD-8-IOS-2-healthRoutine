@@ -83,6 +83,7 @@
 		B65AD98429542FBE005AB105 /* MyPageDetailProfileModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AD98329542FBE005AB105 /* MyPageDetailProfileModifyView.swift */; };
 		B65AD9862954307F005AB105 /* MyPageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AD9852954307F005AB105 /* MyPageDetailViewModel.swift */; };
 		B65B4F732967DBB400C30B3E /* ReportDetailPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B4F722967DBB400C30B3E /* ReportDetailPartView.swift */; };
+		B65B4F762967E19600C30B3E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B4F752967E19600C30B3E /* Exercise.swift */; };
 		B66169FA29501DBA000474A9 /* BadgeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66169F929501DBA000474A9 /* BadgeRowView.swift */; };
 		B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F21292E627400A9AE99 /* MyPageMainView.swift */; };
 		B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */; };
@@ -182,6 +183,7 @@
 		B65AD98329542FBE005AB105 /* MyPageDetailProfileModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailProfileModifyView.swift; sourceTree = "<group>"; };
 		B65AD9852954307F005AB105 /* MyPageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailViewModel.swift; sourceTree = "<group>"; };
 		B65B4F722967DBB400C30B3E /* ReportDetailPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailPartView.swift; sourceTree = "<group>"; };
+		B65B4F752967E19600C30B3E /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		B66169F929501DBA000474A9 /* BadgeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRowView.swift; sourceTree = "<group>"; };
 		B68B4F21292E627400A9AE99 /* MyPageMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainView.swift; sourceTree = "<group>"; };
 		B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileView.swift; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 		B65208C12949728A0095DAB4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				B65B4F742967E16C00C30B3E /* Exercise */,
 				80307686294C42CD00EFF277 /* Network */,
 				B65208C6294975350095DAB4 /* Account */,
 			);
@@ -591,6 +594,14 @@
 				B65B4F722967DBB400C30B3E /* ReportDetailPartView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B65B4F742967E16C00C30B3E /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				B65B4F752967E19600C30B3E /* Exercise.swift */,
+			);
+			path = Exercise;
 			sourceTree = "<group>";
 		};
 		B66169F829501D8C000474A9 /* Calendar */ = {
@@ -848,6 +859,7 @@
 				B65AD97C2954063B005AB105 /* AccountMainViewModel.swift in Sources */,
 				B65AD9862954307F005AB105 /* MyPageDetailViewModel.swift in Sources */,
 				B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */,
+				B65B4F762967E19600C30B3E /* Exercise.swift in Sources */,
 				912523952937A41800003C87 /* NormalTimerButtonView.swift in Sources */,
 				B65AD97F29542BDA005AB105 /* MyPageDetailView.swift in Sources */,
 				B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */,
