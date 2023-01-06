@@ -15,7 +15,8 @@ class TimerViewModel: ObservableObject {
     @Published var isRunning: Bool = false
     
     var startTime: Date?
-    var storeCount: TimeInterval?
+    var pauseTime: Date?
+    var storeCount: TimeInterval = 0
     
     func resetTimer() {
         self.timer?.invalidate()
@@ -23,38 +24,33 @@ class TimerViewModel: ObservableObject {
         self.isRunning = false
         self.timerCount = nil
         self.startTime = nil
-        self.storeCount = nil
+        self.storeCount = 0
     }
     
     func startTimer() {
         if isRunning == false {
-            self.startTime = Date()
+            if self.startTime == nil {
+                self.startTime = Date()
+            }
             self.isRunning = true
             self.timer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) {[weak self] _ in
                 guard let self = self, let startTime = self.startTime else { return }
-                let timeSeconds = Date().timeIntervalSince(startTime)
-                if let storeCount = self.storeCount {
-                    self.timerCount = timeSeconds + storeCount
+                let nowTime = Date()
+                let runningTime = nowTime.timeIntervalSince(startTime)
+                if let pauseTime = self.pauseTime {
+                    self.storeCount += nowTime.timeIntervalSince(pauseTime)
+                    self.pauseTime = nil
                 }
-                else {
-                    self.timerCount = timeSeconds
-                }
+                self.timerCount = runningTime - self.storeCount
             }
         }
     }
     
     
     func pauseTimer() {
-        if let timer = timer, let startTime = self.startTime {
-            if var storeCount = self.storeCount {
-                storeCount += Date().timeIntervalSince(startTime)
-            }
-            else {
-                storeCount = Date().timeIntervalSince(startTime)
-            }
-            self.isRunning = false
-            timer.invalidate()
-        }
+        self.isRunning = false
+        self.pauseTime = Date()
+        self.timer?.invalidate()
     }
     
     func convertCountToTimeString() -> String {

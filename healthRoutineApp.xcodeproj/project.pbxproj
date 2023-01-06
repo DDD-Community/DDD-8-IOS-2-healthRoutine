@@ -37,7 +37,7 @@
 		912523922937A41800003C87 /* TimerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238C2937A41800003C87 /* TimerMainView.swift */; };
 		912523932937A41800003C87 /* CustomTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238E2937A41800003C87 /* CustomTimerView.swift */; };
 		912523942937A41800003C87 /* NormalTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238F2937A41800003C87 /* NormalTimerView.swift */; };
-		912523952937A41800003C87 /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912523902937A41800003C87 /* TimerButtonView.swift */; };
+		912523952937A41800003C87 /* NormalTimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912523902937A41800003C87 /* NormalTimerButtonView.swift */; };
 		9167D5B42957F2980002651A /* SignUpCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167D5B32957F2980002651A /* SignUpCompleteView.swift */; };
 		9167D5BA295806E90002651A /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167D5B9295806E90002651A /* UserDefault+Ext.swift */; };
 		9171AF4E2961785F0027339E /* CustomTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9171AF4D2961785F0027339E /* CustomTimerViewModel.swift */; };
@@ -131,7 +131,7 @@
 		9125238C2937A41800003C87 /* TimerMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerMainView.swift; sourceTree = "<group>"; };
 		9125238E2937A41800003C87 /* CustomTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimerView.swift; sourceTree = "<group>"; };
 		9125238F2937A41800003C87 /* NormalTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalTimerView.swift; sourceTree = "<group>"; };
-		912523902937A41800003C87 /* TimerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerButtonView.swift; sourceTree = "<group>"; };
+		912523902937A41800003C87 /* NormalTimerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalTimerButtonView.swift; sourceTree = "<group>"; };
 		9167D5B32957F2980002651A /* SignUpCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteView.swift; sourceTree = "<group>"; };
 		9167D5B9295806E90002651A /* UserDefault+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Ext.swift"; sourceTree = "<group>"; };
 		9171AF4D2961785F0027339E /* CustomTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimerViewModel.swift; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				9125238F2937A41800003C87 /* NormalTimerView.swift */,
-				912523902937A41800003C87 /* TimerButtonView.swift */,
+				912523902937A41800003C87 /* NormalTimerButtonView.swift */,
 			);
 			path = NormalTimer;
 			sourceTree = "<group>";
@@ -812,7 +812,7 @@
 				B65AD97C2954063B005AB105 /* AccountMainViewModel.swift in Sources */,
 				B65AD9862954307F005AB105 /* MyPageDetailViewModel.swift in Sources */,
 				B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */,
-				912523952937A41800003C87 /* TimerButtonView.swift in Sources */,
+				912523952937A41800003C87 /* NormalTimerButtonView.swift in Sources */,
 				B65AD97F29542BDA005AB105 /* MyPageDetailView.swift in Sources */,
 				B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */,
 				B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */,

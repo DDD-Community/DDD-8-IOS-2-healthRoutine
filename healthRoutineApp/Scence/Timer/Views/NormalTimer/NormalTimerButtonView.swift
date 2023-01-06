@@ -12,8 +12,8 @@ struct NormalTimerButtonView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 112) {
-            Button(action: startTimer){
-                Image("timer_start")
+            Button(action: resetTimer){
+                Image("timer_reset")
                     .frame(width: 40, height: 40)
             }
             if timerData.isRunning {
@@ -23,8 +23,8 @@ struct NormalTimerButtonView: View {
                 }
             }
             else {
-                Button(action: resetTimer){
-                    Image("timer_reset")
+                Button(action: startTimer){
+                    Image("timer_start")
                         .frame(width: 40, height: 40)
                 }
             }

@@ -26,18 +26,18 @@ enum CustomTimerMode {
 }
 
 class CustomTimerViewModel: ObservableObject {
-    var timerData: DI_CusomTimer = DI_CusomTimer()
-    @Published var mode: CustomTimerMode = .ready // 현재 무슨모드인가
-    var nowCycle: Int = 1
-    var timerCount: TimeInterval = 0
-    @Published var remainTime: TimeInterval = 0
-    private var timer: Timer?
+    var timerData: DI_CusomTimer = DI_CusomTimer() // 운동.휴식시간 정보가 들어있는 DI
+    private var timer: Timer? // NSTimer
+    @Published var mode: CustomTimerMode = .ready // 현재 무슨모드인가 (준비/운동/휴식)
+    var nowCycle: Int = 1 // 현재 몇번째 사이클중인가 (default: 1)
 
-    @Published var isRunning: Bool = false
+    var timerCount: TimeInterval = 0 // (운동시간 or 휴식시간 정보)
+    @Published var remainTime: TimeInterval = 0 // 몇시간 흘렀는지 (모드 변경될때마다 리셋)
+    @Published var isRunning: Bool = false // 일시정지 or 실행중 판별값
 
-    var startTime: Date?
-    var pauseTime: Date?
-    var storeTime: TimeInterval = 0
+    var startTime: Date? // 시작한시각 (모드변경될때마다 리셋)
+    var pauseTime: Date? // 일시정지한시각
+    var storeTime: TimeInterval = 0 // 일시정지한 시간(얼만큼 정지했는지)
 
     func startTimer() {
         // 준비모드였을때
@@ -93,10 +93,9 @@ class CustomTimerViewModel: ObservableObject {
     }
     
     func pauseTimer() {
-        guard let timer = timer else { return }
         isRunning = false
         pauseTime = Date()
-        timer.invalidate()
+        self.timer?.invalidate()
     }
     
     func resetTimer() {
