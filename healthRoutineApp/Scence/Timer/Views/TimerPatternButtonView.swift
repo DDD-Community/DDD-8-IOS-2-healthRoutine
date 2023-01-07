@@ -13,9 +13,9 @@ struct TimerPatternButtonView: View {
         Button(buttonTitle, action: {
             print("버튼눌림 ㅋ")
         })
-        .lineLimit(1)
-        .fixedSize(horizontal: true, vertical: false)
-        .padding(10)
+//        .lineLimit(1)
+//        .fixedSize(horizontal: true, vertical: false)
+        .padding(16)
         .foregroundColor(.black)
         .background(Color(.systemGray4))
         .cornerRadius(15)
@@ -24,6 +24,6 @@ struct TimerPatternButtonView: View {
 
 struct TimerPatternButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerPatternButtonView(buttonTitle: "1kg")
+        TimerPatternButtonView(buttonTitle: "+ 1kg")
     }
 }

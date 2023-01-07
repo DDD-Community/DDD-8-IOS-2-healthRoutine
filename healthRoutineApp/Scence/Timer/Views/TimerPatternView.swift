@@ -8,20 +8,30 @@
 import SwiftUI
 
 struct TimerPatternView: View {
+    
     @State var viewType: TimerPatternViewType
+    
+    let rows = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
         VStack(spacing: 16) {
+            
             Text(viewType.rawValue)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(Font.pretendard(.bold, size: 20))
-//            HStack {
-//                ForEach(viewType.getButtonArray(), id: \.self) { str in
-//                    TimerPatternButtonView(buttonTitle: str.buttonStr)
-//                }
-//            }
+            
+            LazyHGrid(rows: rows) {
+                ForEach(viewType.getButtonArray(), id: \.self) { str in
+                    TimerPatternButtonView(buttonTitle: str.buttonStr)
+                }
+            }
+            .background(.red)
         }
         .frame(maxWidth: .infinity, minHeight: 183)
-        .padding([.leading], 20) 
+        .padding(.horizontal, 20)
         .background(Color.box_color)
         .cornerRadius(16)
     }
