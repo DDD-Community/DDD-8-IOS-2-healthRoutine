@@ -16,17 +16,13 @@ struct ReportDetailPartView: View {
         static let selected: Color = Color.white
     }
     
-    enum Part {
-        
-    }
-    
     var body: some View {
         
-        Text("가슴")
+        Text("벤트 오버 리트렐 레이즈")
             .lineLimit(1)
             .foregroundColor(.black)
-            .font(Font.pretendard(.bold, size: 20))
-            .frame(width: 70, height: 40)
+            .font(Font.pretendard(.medium, size: 16))
+            .frame(maxWidth: .infinity, maxHeight: 40)
             .padding(.horizontal, 20)
             .background(isSelected ? Colors.selected : Colors.unSelected)
             .cornerRadius(30)
