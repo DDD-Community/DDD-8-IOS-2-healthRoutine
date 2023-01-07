@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct ReportMainView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack(spacing: 10) {
+        
+            Text("오늘은 어떤 운동을 하셨나요?")
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+//            ReportMainRowView()
+//            ReportMainRowView()
+//            ReportMainRowView()
+//            ReportMainRowView()
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.yellow)
     }
 }
 

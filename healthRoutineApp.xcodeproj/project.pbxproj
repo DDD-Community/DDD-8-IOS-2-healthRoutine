@@ -104,6 +104,8 @@
 		B6D8CED62917D86200420E8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED52917D86200420E8E /* ContentView.swift */; };
 		B6D8CED82917D86400420E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D8CED72917D86400420E8E /* Assets.xcassets */; };
 		B6D8CEDB2917D86400420E8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D8CEDA2917D86400420E8E /* Preview Assets.xcassets */; };
+		B6DF8D8529694E9A006C2C89 /* ReportDetailKindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF8D8429694E9A006C2C89 /* ReportDetailKindView.swift */; };
+		B6DF8D872969529E006C2C89 /* ReportDetailDiffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF8D862969529E006C2C89 /* ReportDetailDiffView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -207,6 +209,8 @@
 		B6D8CED52917D86200420E8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B6D8CED72917D86400420E8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6D8CEDA2917D86400420E8E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B6DF8D8429694E9A006C2C89 /* ReportDetailKindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailKindView.swift; sourceTree = "<group>"; };
+		B6DF8D862969529E006C2C89 /* ReportDetailDiffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailDiffView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +405,7 @@
 		B623B0F5292F169300BA7BA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B6DF8D88296957F4006C2C89 /* Alert */,
 				B65208D72949C2980095DAB4 /* Navigation */,
 				B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */,
 				B69878A92948068E00C58869 /* BottomButtonView.swift */,
@@ -595,6 +600,8 @@
 			isa = PBXGroup;
 			children = (
 				B65B4F722967DBB400C30B3E /* ReportDetailPartView.swift */,
+				B6DF8D8429694E9A006C2C89 /* ReportDetailKindView.swift */,
+				B6DF8D862969529E006C2C89 /* ReportDetailDiffView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -704,6 +711,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B6DF8D88296957F4006C2C89 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -807,6 +821,7 @@
 				91B0376E2951FC1C000837BA /* DI_Base.swift in Sources */,
 				80A2757C295973FF003295C4 /* BaseView.swift in Sources */,
 				80307691294C5BD200EFF277 /* APIService.swift in Sources */,
+				B6DF8D872969529E006C2C89 /* ReportDetailDiffView.swift in Sources */,
 				B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */,
 				912523932937A41800003C87 /* CustomTimerView.swift in Sources */,
 				B64C977229514290004F9760 /* HomeMainViewModel.swift in Sources */,
@@ -834,6 +849,7 @@
 				911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */,
 				807D4D282950430000F757C0 /* KeychainService.swift in Sources */,
 				B65208DB2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift in Sources */,
+				B6DF8D8529694E9A006C2C89 /* ReportDetailKindView.swift in Sources */,
 				B65208CE29498D1E0095DAB4 /* AccountErrors.swift in Sources */,
 				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,
 				B6D2889D294AB0370072C347 /* RegExp.swift in Sources */,
