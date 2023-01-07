@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ReportMainRowView: View {
-    
-//    @State var exercise: Exercise
-    
+        
     var body: some View {
 
         HStack() {
@@ -35,9 +33,9 @@ struct ReportMainRowView: View {
         .cornerRadius(10)
     }
 }
-//
-//struct ReportMainRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ReportMainRowView(exercise: . )
-//    }
-//}
+
+struct ReportMainRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        ReportMainRowView()
+    }
+}

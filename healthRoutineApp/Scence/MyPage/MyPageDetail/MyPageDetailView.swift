@@ -17,13 +17,15 @@ struct MyPageDetailView: View {
             
             MyPageDetailProfileModifyView()
                 .frame(maxWidth: .infinity, minHeight: 250)
-                .background(.red)
+                .background(Color.box_color)
                 .cornerRadius(20)
             
             Button("수정하기") {
                 self.viewModel.updateInfo()
             }
             .buttonStyle(CommonButtonView())
+            .background(Color(hex: "353535"))
+            .cornerRadius(10)
             
             Spacer()
         }
