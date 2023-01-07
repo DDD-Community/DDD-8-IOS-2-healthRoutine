@@ -52,8 +52,18 @@ class SignInViewModel: ObservableObject {
         APIService.signIn(request)
             .sink { completion in
                 switch completion {
-                case .failure:
-                    self.errrorMsg = "회원정보 조회에 실패했습니다."
+                case .failure(let error):
+                    switch error {
+                    case .http(let error):
+                        if error.errorCode == 401 {
+                            self.errrorMsg = "잘못된 비밀번호입니다"
+                        }
+                        else if error.errorCode == 404 {
+                            self.errrorMsg = "없는 이메일입니다"
+                        }
+                    default:
+                        break
+                    }
                 case .finished:
                     print("Finish")
                 }
