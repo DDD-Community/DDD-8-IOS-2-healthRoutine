@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct TimerDetailView: View {
+struct TimerAddView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var timerData: TimerAddViewModel = TimerAddViewModel()
     var body: some View {
         NavigationView {
             VStack {
-                TopMenuVeiw(isMainView: false)
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .center) {
                         ForEach(TimerPatternViewType.allCases, id: \.self) { type in
@@ -20,7 +20,7 @@ struct TimerDetailView: View {
                         }
                     }
                 }
-                .padding([.leading, .top, .trailing], 20)
+//                .padding([.leading, .top, .trailing], 20)
                 Button {
                     addTimer()
                 } label: {
@@ -43,6 +43,6 @@ struct TimerDetailView: View {
 
 struct TimerDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerDetailView()
+        TimerAddView()
     }
 }

@@ -18,7 +18,7 @@ struct TimerMainView: View {
                         CustomTimerView()
                     }
                 }
-                CustomNavigationLink(destination: MyPageDetailView().customNavigationTitle("타이머 추가")
+                CustomNavigationLink(destination: TimerAddView().customNavigationTitle("타이머")
                 ) {
                     Text("자주 쓰는 타이머 패턴 추가")
                         .frame(maxWidth: .infinity, minHeight: 60)
