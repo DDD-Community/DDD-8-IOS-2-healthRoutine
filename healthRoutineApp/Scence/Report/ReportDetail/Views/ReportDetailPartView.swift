@@ -16,37 +16,39 @@ struct ReportDetailPartView: View {
         static let selected: Color = Color.white
     }
     
-    enum Const {
-        static var prototype: [String] = ["123123", "123123", "123123", "123123", "123123", "123123", "123123", "123123" ]
-    }
-  
+    private let columns = [
+        GridItem(.flexible()),GridItem(.flexible()),
+        GridItem(.flexible()),GridItem(.flexible())
+    ]
+    
     var body: some View {
-
+        
         VStack {
             
             Text("운동 부위를 입력해주세요")
                 .foregroundColor(.white)
+                .font(Font.pretendard(.bold, size: 20))
                 .frame(maxWidth: .infinity, alignment: .leading)
-//            Const.prototype.map {
-//
-//                Text($0)
-//                    .lineLimit(1)
-//                    .foregroundColor(.black)
-//                    .font(Font.pretendard(.medium, size: 16))
-//                    .frame(maxWidth: .infinity, maxHeight: 40)
-//                    .padding(.horizontal, 20)
-//                    .background(isSelected ? Colors.selected : Colors.unSelected)
-//                    .cornerRadius(30)
-//            }
+            
+            LazyVGrid(columns: columns, spacing: 6) {
+                
+                ForEach(ExPart.allCases, id: \.self) {
+                    
+                    Text($0.localized)
+                        .frame(maxWidth: .infinity)
+                        .padding(16)
+                        .background(Color(.systemGray4))
+                        .cornerRadius(15)
+                }
+            }
+            .frame(maxWidth: .infinity)
         }
         .padding(20)
         .frame(maxWidth: .infinity, maxHeight: 170)
-        .background(.red)
+        .background(Color(hex: "272830"))
         .cornerRadius(16)
     }
 }
-
-
 
 struct ReportDetailPartView_Previews: PreviewProvider {
     static var previews: some View {

@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct TimerPatternButtonView: View {
+    
     @State var buttonTitle: String
+    
     var body: some View {
+        
         Button(buttonTitle, action: {
             print("버튼눌림 ㅋ")
         })
-//        .lineLimit(1)
-//        .fixedSize(horizontal: true, vertical: false)
         .padding(16)
         .foregroundColor(.black)
         .background(Color(.systemGray4))
