@@ -32,16 +32,45 @@ struct ReportDetailDiffView: View {
                     ForEach(ExWeight.allCases, id: \.self) {
                         
                         Text($0.localized)
-                            .frame(maxWidth: .infinity)
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 12)
+                            .font(Font.pretendard(.regular, size: 13))
+                            .padding(.horizontal, 10.5)
+                            .padding(.vertical, 12.5)
                             .background(Color(.systemGray4))
-                            .cornerRadius(15)
+                            .cornerRadius(30)
                     }
                 }
                 
                 ReportDetailDiffRowView(value: $viewModel.weight)
+                
+                LazyHGrid(rows: columns, spacing: 6) {
+                    
+                    // Sample Data
+                    ForEach(ExWeight.allCases, id: \.self) {
+                        
+                        Text($0.localized)
+                            .font(Font.pretendard(.regular, size: 13))
+                            .padding(.horizontal, 10.5)
+                            .padding(.vertical, 12.5)
+                            .background(Color(.systemGray4))
+                            .cornerRadius(30)
+                    }
+                }
+                
                 ReportDetailDiffRowView(value: $viewModel.unit)
+                
+                LazyHGrid(rows: columns, spacing: 6) {
+                    
+                    // Sample Data
+                    ForEach(ExSet.allCases, id: \.self) {
+                        
+                        Text($0.localized)
+                            .font(Font.pretendard(.regular, size: 13))
+                            .padding(.horizontal, 10.5)
+                            .padding(.vertical, 12.5)
+                            .background(Color(.systemGray4))
+                            .cornerRadius(30)
+                    }
+                }
             }
             
         }
@@ -65,6 +94,7 @@ struct ReportDetailDiffRowView: View {
             HStack(alignment: .center) {
                 
                 Text("무게")
+                    .padding(.trailing, 24)
                     .foregroundColor(.white)
                 
                 VStack {
@@ -77,6 +107,7 @@ struct ReportDetailDiffRowView: View {
                 }
                 
                 Text("kg")
+                    .padding(.leading, 8)
                     .foregroundColor(.white)
             }
         }

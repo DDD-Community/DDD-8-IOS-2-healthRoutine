@@ -36,7 +36,7 @@ struct ReportDetailPartView: View {
                     
                     Text($0.localized)
                         .frame(maxWidth: .infinity)
-                        .padding(16)
+                        .padding(14)
                         .background(Color(.systemGray4))
                         .cornerRadius(15)
                 }

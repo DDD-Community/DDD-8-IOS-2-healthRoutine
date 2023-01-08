@@ -9,11 +9,21 @@ import SwiftUI
 
 struct ReportDetailView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         
-        HStack {
+        ZStack {
             
+            ScrollView {
+                
+                VStack {
+                    ReportDetailPartView()
+                    ReportDetailKindView()
+                    ReportDetailDiffView()
+                }
+            }
+            
+            BottomButtonView(buttonTitle: "운동기록 추가하기", isable: true)
         }
+        .padding(.horizontal, 20)
     }
 }
 

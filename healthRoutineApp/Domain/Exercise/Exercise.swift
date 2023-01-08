@@ -27,7 +27,6 @@ enum Exercise {
         case back
         case shoulder
         case abs
-        case test
         
         var index: Int {
             switch self {
@@ -39,7 +38,6 @@ enum Exercise {
             case .shoulder: return 5
             case .abs: return 6
             case .body: return 7
-            case .test: return 8
             }
         }
         
@@ -55,7 +53,6 @@ enum Exercise {
             case .shoulder: return "어깨"
             case .abs: return "복근"
             case .body: return "전신"
-            case .test: return "테스트"
             }
         }
     }
@@ -73,10 +70,10 @@ enum Exercise {
             var localized: String {
                 
                 switch self {
-                case .two: return "+ 2분"
-                case .five: return "+ 5분"
-                case .ten: return "+ 10분"
-                case .twenty: return "+ 20분"
+                case .two: return "+ 2kg"
+                case .five: return "+ 5kg"
+                case .ten: return "+ 10kg"
+                case .twenty: return "+ 20kg"
                 }
             }
         }
@@ -111,10 +108,10 @@ enum Exercise {
                 
                 switch self {
                     
-                case .one: return "1세트"
-                case .three: return "3세트"
-                case .five: return "5세트"
-                case .six: return "6세트"
+                case .one: return "+ 1세트"
+                case .three: return "+ 3세트"
+                case .five: return "+ 5세트"
+                case .six: return "+ 6세트"
                 }
             }
         }

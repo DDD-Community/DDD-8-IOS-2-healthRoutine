@@ -29,6 +29,7 @@ struct BottomButtonView: View {
             .padding(.bottom, 24)
             .frame(maxWidth: .infinity, minHeight: 60)
             .disabled(preventButtonAction ? true : !isable)
+            
         }
     }
 }
