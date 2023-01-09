@@ -19,11 +19,10 @@ struct ReportDetailView: View {
                     ReportDetailKindView()
                     ReportDetailDiffView()
                 }
-            }
-            
-            BottomButtonView(buttonTitle: "운동기록 추가하기", isable: true)
+            }.padding(.horizontal, 20)
+           
+            BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true)
         }
-        .padding(.horizontal, 20)
     }
 }
 
