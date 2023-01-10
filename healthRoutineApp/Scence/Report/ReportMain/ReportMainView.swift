@@ -11,19 +11,29 @@ struct ReportMainView: View {
     
     var body: some View {
         
-        VStack(spacing: 10) {
-        
-            Text("오늘은 어떤 운동을 하셨나요?")
-                .frame(maxWidth: .infinity, alignment: .leading)
+        CustomNavigationView {
             
-//            ReportMainRowView()
-//            ReportMainRowView()
-//            ReportMainRowView()
-//            ReportMainRowView()
+            VStack {
+                
+                LazyVStack(spacing: 10) {
+                    
+                    Text("오늘은 어떤 운동을 하셨나요?")
+                        .foregroundColor(.white)
+                        .font(Font.pretendard(.bold, size: 20))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.bottom, 16)
+                
+                    ReportMainRowView()
+                }
+                .padding(24)
+                .background(.gray)
+            }
+            .cornerRadius(10)
+            
+            Spacer()
+            
+            BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true) .customNavigationBarBackButtonHidden(true)
         }
-        .padding(20)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.yellow)
     }
 }
 

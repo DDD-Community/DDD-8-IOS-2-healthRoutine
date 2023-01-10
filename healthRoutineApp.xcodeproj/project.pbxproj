@@ -65,6 +65,7 @@
 		B623B12B292F508A00BA7BA7 /* CalendarContentDayRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12A292F508A00BA7BA7 /* CalendarContentDayRowView.swift */; };
 		B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */; };
 		B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B12E292F5C5F00BA7BA7 /* Month.swift */; };
+		B636FCE8296BD516008DCC8D /* BottomButton_BackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636FCE7296BD516008DCC8D /* BottomButton_BackView.swift */; };
 		B639D139294F5BE8009AE6C9 /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639D138294F5BE8009AE6C9 /* AccountRequest.swift */; };
 		B639D13B294F5C07009AE6C9 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639D13A294F5C07009AE6C9 /* AccountResponse.swift */; };
 		B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641A4512930582100022A58 /* MyPageViewStrings.swift */; };
@@ -173,6 +174,7 @@
 		B623B12A292F508A00BA7BA7 /* CalendarContentDayRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContentDayRowView.swift; sourceTree = "<group>"; };
 		B623B12C292F563100BA7BA7 /* CalendarContentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContentCellView.swift; sourceTree = "<group>"; };
 		B623B12E292F5C5F00BA7BA7 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		B636FCE7296BD516008DCC8D /* BottomButton_BackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton_BackView.swift; sourceTree = "<group>"; };
 		B639D138294F5BE8009AE6C9 /* AccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequest.swift; sourceTree = "<group>"; };
 		B639D13A294F5C07009AE6C9 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		B641A4512930582100022A58 /* MyPageViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewStrings.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 				B65208D72949C2980095DAB4 /* Navigation */,
 				B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */,
 				B69878A92948068E00C58869 /* BottomButtonView.swift */,
+				B636FCE7296BD516008DCC8D /* BottomButton_BackView.swift */,
 				B69878AB2948079600C58869 /* CommonButtonView.swift */,
 				B69878AD29480B1B00C58869 /* CommonInputFieldView.swift */,
 				80A2757B295973FF003295C4 /* BaseView.swift */,
@@ -917,6 +920,7 @@
 				B65B4F762967E19600C30B3E /* Exercise.swift in Sources */,
 				91C77AA82969488400F578C8 /* TimerAddViewModel.swift in Sources */,
 				912523952937A41800003C87 /* NormalTimerButtonView.swift in Sources */,
+				B636FCE8296BD516008DCC8D /* BottomButton_BackView.swift in Sources */,
 				B65AD97F29542BDA005AB105 /* MyPageDetailView.swift in Sources */,
 				B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */,
 				B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */,
