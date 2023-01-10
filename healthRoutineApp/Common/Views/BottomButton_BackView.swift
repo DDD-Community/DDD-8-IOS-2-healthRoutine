@@ -34,7 +34,7 @@ struct BottomButton_BackView: View {
                 .disabled(preventButtonAction ? true : !isable)
             }
             .frame(maxWidth: .infinity, maxHeight: 84)
-            .background(.white)
+            .background(Color.background_black)
         }
     }
 }

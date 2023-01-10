@@ -14,7 +14,7 @@ struct BaseView<Content>: View where Content: View {
         self.content = content()
     }
 
-    var body : some View {
+    var body: some View {
         ZStack {
             content
         }

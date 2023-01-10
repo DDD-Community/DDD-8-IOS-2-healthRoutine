@@ -26,7 +26,8 @@ struct TimerMainView: View {
                         .foregroundColor(Color(hex: "353535"))
                         .cornerRadius(10)
                 }
-            }.customNavigationBarBackButtonHidden(true)
+            }
+            .customNavigationBarBackButtonHidden(true)
         }
     }
 }

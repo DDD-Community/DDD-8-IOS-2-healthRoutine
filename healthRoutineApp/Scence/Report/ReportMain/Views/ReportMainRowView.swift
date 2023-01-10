@@ -15,9 +15,9 @@ struct ReportMainRowView: View {
             
             Text("가슴")
                 .foregroundColor(.white)
-                .frame(width: 50, height: 50)
+                .frame(width: 42, height: 42)
                 .background(.black)
-                .cornerRadius(10)
+                .cornerRadius(21)
             
             Text("비하인드 숄더프레스")
                 .foregroundColor(.white)
@@ -27,10 +27,10 @@ struct ReportMainRowView: View {
             
             Spacer()
         }
-        .frame(maxWidth: .infinity, minHeight: 74)
-        .padding(12)
+        .frame(maxWidth: .infinity, maxHeight: 55)
+        .padding(.horizontal, 12)
         .background(.red)
-        .cornerRadius(10)
+        .cornerRadius(50)
     }
 }
 
