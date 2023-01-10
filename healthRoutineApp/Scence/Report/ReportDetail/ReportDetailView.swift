@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ReportDetailView: View {
+    
     var body: some View {
         
         ZStack {

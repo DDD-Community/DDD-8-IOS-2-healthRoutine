@@ -12,6 +12,7 @@ struct ReportMainView: View {
     var body: some View {
         
         CustomNavigationView {
+            
             VStack(spacing: 10) {
             
                 Text("오늘은 어떤 운동을 하셨나요?")
@@ -22,12 +23,11 @@ struct ReportMainView: View {
                 ReportMainRowView()
                 ReportMainRowView()
             }
-            .padding(20)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true) .customNavigationBarBackButtonHidden(true)
         }
-        .customNavigationBarBackButtonHidden(true)
-
-//        .background(.yellow)
+        
     }
 }
 
