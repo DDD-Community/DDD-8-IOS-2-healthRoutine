@@ -41,5 +41,6 @@ extension Color {
     static let background_gray = Color("background_gray") // Color(hex: "E5E9EC")
     static let background_gray2 = Color("background_gray2") // Color(hex: "A3ADB4")
     static let background_gray3 = Color("background_gray3") // Color(hex: "4B4C55")
-    static let button_blue = Color("button_blue") // Color(hex: "6563FF")
+    static let button_blue = Color("button_blue") // Color(hex: "6563FF")\
+    static let white_text = Color("white_text") // F9F9F9
 }

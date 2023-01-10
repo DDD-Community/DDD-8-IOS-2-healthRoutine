@@ -32,4 +32,18 @@ extension String {
         let str: String = self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         return str
     }
+
+    public func toInt() -> Int {
+        if let num = NumberFormatter().number(from: self) {
+            return num.intValue
+        }
+        else {
+            return 0
+        }
+    }
+}
+
+
+extension Int {
+    public var isPositive: Bool { return (self > 0) }
 }

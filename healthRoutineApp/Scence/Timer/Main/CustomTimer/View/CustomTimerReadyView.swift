@@ -1,32 +1,14 @@
 //
-//  TimerInfoView.swift
+//  CustomTimerReadyView.swift
 //  healthRoutineApp
 //
-//  Created by 유지은 on 2022/11/30.
+//  Created by 유지은(파트너) - 서비스개발담당App개발팀 on 2023/01/10.
 //
 
 import SwiftUI
 
-struct CustomTimerView: View {
-    @ObservedObject var timerViewModel: CustomTimerViewModel = CustomTimerViewModel()
-    var body: some View {
-        VStack(alignment: .center, spacing: 20) {
-            if timerViewModel.mode == .ready {
-                CustomTimerReadyView(timerData: timerViewModel.timerData)
-            }
-            else {
-                CustomTimerRunningView(timerViewModel: timerViewModel)
-            }
-            CustomTimerButtonView(timerData: timerViewModel)
-        }
-        .frame(maxWidth: .infinity, minHeight: 155)
-        .background(Color.background_gray2)
-        .cornerRadius(16)
-    }
-}
-
 struct CustomTimerReadyView: View {
-    var timerData: DI_CusomTimer
+    var timerData: DI_CustomTimer
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .center, spacing: 4) {
@@ -79,8 +61,22 @@ struct CustomTimerRunningView: View {
     }
 }
 
-struct CustomTimerView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomTimerView()
+struct CustomTimerCycleView: View {
+    @ObservedObject var timerViewModel: CustomTimerViewModel
+    var body: some View {
+        HStack(spacing: 8) {
+            ForEach(0..<timerViewModel.nowCycle, id: \.self) { _ in
+                Ellipse()
+                    .fill(Color.main_green)
+                    .frame(width: 7, height: 7)
+            }
+            ForEach(0..<timerViewModel.timerData.cycle - timerViewModel.nowCycle, id: \.self) { _ in
+                Ellipse()
+                    .strokeBorder(.black, lineWidth: 1)
+                    .background(Circle().fill(.clear))
+                    .frame(width: 7, height: 7)
+            }
+        }
     }
 }
+

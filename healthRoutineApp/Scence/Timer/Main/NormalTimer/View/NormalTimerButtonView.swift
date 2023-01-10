@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NormalTimerButtonView: View {
-    @ObservedObject var timerData: TimerViewModel
+    @ObservedObject var timerData: NormalTimerViewModel
     
     var body: some View {
         HStack(alignment: .center, spacing: 112) {
@@ -47,6 +47,6 @@ struct NormalTimerButtonView: View {
 
 struct NormalTimerButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        NormalTimerButtonView(timerData: TimerViewModel())
+        NormalTimerButtonView(timerData: NormalTimerViewModel())
     }
 }

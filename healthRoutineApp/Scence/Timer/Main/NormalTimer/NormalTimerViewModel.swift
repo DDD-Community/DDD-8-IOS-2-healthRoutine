@@ -6,13 +6,20 @@
 //
 
 import Foundation
+import Combine
 import SwiftUI
 
-class TimerViewModel: ObservableObject {
+class NormalTimerViewModel: ObservableObject {
     @Published var timerCount: TimeInterval?
     
     private var timer: Timer?
     @Published var isRunning: Bool = false
+
+    /*@Binding var timerFlag: Bool // 하나의 타이머만 실행용
+
+    init(timerFlag: Binding<Bool>) {
+        self._timerFlag = timerFlag
+    }*/
     
     var startTime: Date?
     var pauseTime: Date?

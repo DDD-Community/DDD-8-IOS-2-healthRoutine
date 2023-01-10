@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct TimerMainView: View {
+    @ObservedObject var timerMainViewModel: TimerMainViewModel = TimerMainViewModel()
     var body: some View {
         CustomNavigationView {
             VStack {
                 TopMenuVeiw(mainTitle: "타이머")
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .center, spacing: 16) {
-                        NormalTimerView()
-                        CustomTimerView()
+                        NormalTimerView(timerData: NormalTimerViewModel())
+                        ForEach(timerMainViewModel.getCustomTimerViewData(), id: \.self) { item in
+                            CustomTimerView(timerViewModel: CustomTimerViewModel(timerData: item, refresh: $timerMainViewModel.refresh))
+                        }
                     }
                 }
-                CustomNavigationLink(destination: TimerAddView().customNavigationTitle("타이머")
+                CustomNavigationLink(destination: TimerAddView(timerData: TimerAddViewModel(refresh: $timerMainViewModel.refresh)).customNavigationTitle("타이머")
                 ) {
                     Text("자주 쓰는 타이머 패턴 추가")
                         .frame(maxWidth: .infinity, minHeight: 60)

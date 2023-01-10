@@ -26,7 +26,7 @@ enum CustomTimerMode {
 }
 
 class CustomTimerViewModel: ObservableObject {
-    var timerData: DI_CusomTimer = DI_CusomTimer() // 운동.휴식시간 정보가 들어있는 DI
+    var timerData: DI_CustomTimer // 운동.휴식시간 정보가 들어있는 DI
     private var timer: Timer? // NSTimer
     @Published var mode: CustomTimerMode = .ready // 현재 무슨모드인가 (준비/운동/휴식)
     var nowCycle: Int = 1 // 현재 몇번째 사이클중인가 (default: 1)
@@ -38,6 +38,13 @@ class CustomTimerViewModel: ObservableObject {
     var startTime: Date? // 시작한시각 (모드변경될때마다 리셋)
     var pauseTime: Date? // 일시정지한시각
     var storeTime: TimeInterval = 0 // 일시정지한 시간(얼만큼 정지했는지)
+
+    @Binding var refresh: Bool // 부모뷰 리프레시
+
+    init(timerData: DI_CustomTimer, refresh: Binding<Bool>) {
+        self._refresh = refresh
+        self.timerData = timerData
+    }
 
     func startTimer() {
         // 준비모드였을때
@@ -128,4 +135,23 @@ class CustomTimerViewModel: ObservableObject {
         return "\(String(format:"%02d", minutes)):\(String(format:"%02d", seconds)):\(String(format:"%02d", millseconds))"
     }
 
+    func deleteTimer() {
+        self.resetTimer()
+        let defaults = UserDefaults.standard
+        var timerArray: [DI_CustomTimer] = []
+        if let data = defaults.value(forKey: TIMER_PATTERN_KEY) as? Data {
+            let savedArray = try? PropertyListDecoder().decode([DI_CustomTimer].self, from: data)
+            timerArray = savedArray ?? []
+        }
+
+        if let index = timerArray.firstIndex(of: self.timerData) {
+            timerArray.remove(at: index)
+        }
+        defaults.set(try? PropertyListEncoder().encode(timerArray), forKey: TIMER_PATTERN_KEY)
+        
+    }
+
+    deinit {
+        self.resetTimer()
+    }
 }

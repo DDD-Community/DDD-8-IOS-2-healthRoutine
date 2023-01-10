@@ -7,6 +7,8 @@
 
 import Foundation
 
+let TIMER_PATTERN_KEY = "timer_pattern_key"
+
 extension UserDefaults {
     public static func isFirstAppLaunch() -> Bool {
         let firstLaunchFlag = "firstLaunchFlag"

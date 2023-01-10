@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NormalTimerView: View {
-    @ObservedObject var timerData: TimerViewModel = TimerViewModel()
+    @ObservedObject var timerData: NormalTimerViewModel
     var body: some View {
         VStack(alignment: .center, spacing: 18) {
             Text("\(timerData.convertCountToTimeString())")
@@ -24,6 +24,6 @@ struct NormalTimerView: View {
 
 struct NormalTimerView_Previews: PreviewProvider {
     static var previews: some View {
-        NormalTimerView()
+        NormalTimerView(timerData: NormalTimerViewModel())
     }
 }

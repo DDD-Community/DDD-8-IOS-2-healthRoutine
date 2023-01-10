@@ -49,13 +49,14 @@ struct CustomTimerButtonView: View {
     }
     
     func deleteTimer() {
-        
+        timerData.deleteTimer()
+        timerData.refresh.toggle()
     }
 }
 
 struct CustomTimerButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTimerButtonView(timerData: CustomTimerViewModel())
+        CustomTimerButtonView(timerData: CustomTimerViewModel(timerData: DI_CustomTimer(), refresh: .constant(false)))
     }
 }
 

@@ -9,40 +9,41 @@ import SwiftUI
 
 struct TimerAddView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @ObservedObject var timerData: TimerAddViewModel = TimerAddViewModel()
+    @ObservedObject var timerData: TimerAddViewModel
     var body: some View {
-        NavigationView {
-            VStack {
+        BaseView {
+            VStack(spacing: 18.5) {
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .center) {
                         ForEach(TimerPatternViewType.allCases, id: \.self) { type in
-                            TimerPatternView(viewType: type)
+                            TimerPatternView(viewType: type, timerData: timerData)
                         }
                     }
                 }
-//                .padding([.leading, .top, .trailing], 20)
                 Button {
                     addTimer()
                 } label: {
                     Text("타이머 추가하기")
-                        .frame(maxWidth: .infinity, minHeight: 59)
-                        .background(.gray)
-                        .cornerRadius(30)
+                        .frame(maxWidth: .infinity, minHeight: 60)
+                        .font(Font.pretendard(.bold, size: 18))
+                        .background(timerData.isAvailableButton ? Color.main_green : Color.button_disabled)
+                        .foregroundColor(timerData.isAvailableButton ? Color.background_black : Color.gray_888)
+                        .cornerRadius(10)
                 }
-                .padding(20)
+                .disabled(!timerData.isAvailableButton)
             }
         }
-        .navigationBarTitle("", displayMode: .automatic)
-        .navigationBarHidden(true)
     }
     
     func addTimer() {
+        self.timerData.addTimer()
+        self.timerData.refresh.toggle()
         self.presentationMode.wrappedValue.dismiss()
     }
 }
 
 struct TimerDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerAddView()
+        TimerAddView(timerData: TimerAddViewModel(refresh: .constant(false)))
     }
 }
