@@ -55,7 +55,6 @@
 		B615849F2955516D00A7157A /* MyPageMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615849E2955516D00A7157A /* MyPageMainViewModel.swift */; };
 		B6197CFA2937342E006A535D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6197CF92937342E006A535D /* SignInView.swift */; };
 		B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F2292F165100BA7BA7 /* HomeMainView.swift */; };
-		B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F6292F16AE00BA7BA7 /* ReportView.swift */; };
 		B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B114292F3EC400BA7BA7 /* CalendarHelper.swift */; };
 		B623B118292F47B500BA7BA7 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B117292F47B500BA7BA7 /* Date+Ext.swift */; };
 		B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B120292F4AF600BA7BA7 /* CalendarTopView.swift */; };
@@ -164,7 +163,6 @@
 		B6197CF92937342E006A535D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		B623B0EF292F12DB00BA7BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B623B0F2292F165100BA7BA7 /* HomeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainView.swift; sourceTree = "<group>"; };
-		B623B0F6292F16AE00BA7BA7 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		B623B114292F3EC400BA7BA7 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		B623B117292F47B500BA7BA7 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		B623B120292F4AF600BA7BA7 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
@@ -428,7 +426,6 @@
 			children = (
 				B65350F02966D8A600880CED /* ReportDetail */,
 				B65350EF2966D89B00880CED /* ReportMain */,
-				B623B0F6292F16AE00BA7BA7 /* ReportView.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -916,7 +913,6 @@
 				809FB26E29503C3E000E2EC6 /* Encodable+Ext.swift in Sources */,
 				B65AD97C2954063B005AB105 /* AccountMainViewModel.swift in Sources */,
 				B65AD9862954307F005AB105 /* MyPageDetailViewModel.swift in Sources */,
-				B623B0F7292F16AE00BA7BA7 /* ReportView.swift in Sources */,
 				B65B4F762967E19600C30B3E /* Exercise.swift in Sources */,
 				91C77AA82969488400F578C8 /* TimerAddViewModel.swift in Sources */,
 				912523952937A41800003C87 /* NormalTimerButtonView.swift in Sources */,

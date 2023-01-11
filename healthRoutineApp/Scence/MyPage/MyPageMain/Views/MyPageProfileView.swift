@@ -13,15 +13,17 @@ struct MyPageProfileView: View {
         
         VStack {
             
-            HStack(spacing: 10) {
+            HStack(spacing: 22) {
                 
-                Circle()
-                    .fill(Color.blue)
-                    .frame(width: 120, height: 120)
-                
+                Image("ProfileDefault")
+                    .resizable()
+                    .frame(width: 66, height: 66)
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    
                 Text("햄스터 갱스터")
-                    .fontWeight(.bold)
-                    .font(.title)
+                    .font(Font.pretendard(.bold, size: 20))
+                    .foregroundColor(.white)
                 
                 Spacer()
             }
@@ -38,9 +40,10 @@ struct MyPageProfileView: View {
             
             Spacer()
         }
-        .padding(20)
-        .frame(maxWidth: .infinity, minHeight: 200)
-        .cornerRadius(20)
+        .padding(24)
+        .frame(maxWidth: .infinity, maxHeight: 200)
+        .background(Color.box_color)
+        .cornerRadius(10)
     }
 }
 

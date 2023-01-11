@@ -15,8 +15,6 @@ struct MyPageMainView: View {
             
             VStack {
                 
-                TopMenuVeiw(mainTitle: "마이페이지")
-                
                 ScrollView(showsIndicators: false) {
                     
                     VStack(alignment: .center) {
@@ -24,11 +22,24 @@ struct MyPageMainView: View {
                         MyPageProfileView()
                         MyPageHistoryView()
                         MyPageBadgeView()
+                        
+                        HStack(spacing: 70) {
+                            
+                            Text("로그아웃")
+                                .font(Font.pretendard(.medium, size: 14))
+                                .foregroundColor(Color(hex: "707070"))
+                            
+                            Text("회원탈퇴")
+                                .font(Font.pretendard(.medium, size: 14))
+                                .foregroundColor(Color(hex: "707070"))
+                        }
+                        .padding(.top, 16)
                     }
                 }
                 
             }.customNavigationBarBackButtonHidden(true)
         }
+        
     }
 }
 

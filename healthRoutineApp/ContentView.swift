@@ -19,11 +19,12 @@ struct ContentView: View {
                     Text("타이머")
                 }
             
-//            ReportView()
-//                .tabItem {
-//                    Image(systemName: "heart")
-//                    Text("타이머")
-//                }
+            ReportMainView()
+                .tabItem {
+                    Image(systemName: "heart")
+                    Text("기록")
+                }
+            
             TimerMainView()
                 .tabItem {
                     Image(systemName: "heart")

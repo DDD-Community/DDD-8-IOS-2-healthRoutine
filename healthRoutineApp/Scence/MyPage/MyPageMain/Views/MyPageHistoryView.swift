@@ -16,34 +16,42 @@ struct MyPageHistoryView: View {
         VStack {
             
             Text("운동 히스토리")
-                .fontWeight(.semibold)
-                .font(.title3)
+                .font(Font.pretendard(.bold, size: 20))
+                .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding([.leading], 20)
 
             HStack {
                 
-                Image(systemName: "lessthan")
-                    .padding([.leading], 15)
+                Image("leftAngleBracket")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 8, height: 12)
+                   
+                Spacer()
                 
                 ScrollView(.horizontal) {
+                    
+                    
                     
                     HStack(alignment: .center) {
                         
                         ForEach(1..<5) {
                             CircleListView(label: "\($0) 월")
-                                .foregroundColor(.white)
                         }
                     }
                 }
-                .frame(height: 60)
                 
-                Image(systemName: "greaterthan")
-                    .padding([.trailing], 15)
+                Spacer()
+                
+                Image("rightAngleBracket")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 8, height: 12)
             }
         }
-        .frame(maxWidth: .infinity, minHeight: 160)
-        .background(.yellow)
+        .padding(24)
+        .frame(maxWidth: .infinity, maxHeight: 160)
+        .background(Color.box_color)
         .cornerRadius(20)
     }
 }
@@ -56,10 +64,11 @@ struct CircleListView: View {
         ZStack {
             
             Circle()
-                .fill(Color.green)
+                .fill(Color(hex: "353535"))
                 .frame(width: 60, height: 60)
             
             Text(label)
+                .foregroundColor(.black)
         }
     }
 }

@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ReportDetailView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         
-        ZStack {
+        BaseView {
             
             ScrollView {
                 
@@ -20,9 +22,11 @@ struct ReportDetailView: View {
                     ReportDetailKindView()
                     ReportDetailDiffView()
                 }
-            }.padding(.horizontal, 20)
+            }
            
-            BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true)
+            BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true) {
+                self.presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 }

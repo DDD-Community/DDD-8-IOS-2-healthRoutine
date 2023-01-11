@@ -17,7 +17,8 @@ struct SplashView: View {
                 ContentView()
             }
             else {
-                AccountMainView()
+                ContentView()
+//                AccountMainView()
             }
                 
         } else {

@@ -14,22 +14,22 @@ struct ReportMainRowView: View {
         HStack() {
             
             Text("가슴")
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .frame(width: 42, height: 42)
-                .background(.black)
+                .background(Color(hex:"C5C5C5"))
                 .cornerRadius(21)
             
             Text("비하인드 숄더프레스")
-                .foregroundColor(.white)
+                .foregroundColor(.black)
             
             Text("X2")
-                .foregroundColor(.white)
+                .foregroundColor(.black)
             
             Spacer()
         }
-        .frame(maxWidth: .infinity, maxHeight: 55)
+        .frame(maxWidth: .infinity, minHeight: 55)
         .padding(.horizontal, 12)
-        .background(.red)
+        .background(.white)
         .cornerRadius(50)
     }
 }

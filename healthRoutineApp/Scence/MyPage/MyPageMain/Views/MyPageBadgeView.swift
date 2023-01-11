@@ -9,47 +9,88 @@ import SwiftUI
 
 struct MyPageBadgeView: View {
     
-    let badgeName: [String] = ["뱃지1", "뱃지2", "뱃지3", "뱃지4", "뱃지5", "뱃지6", "뱃지7", "뱃지7", "뱃지8", "뱃지8"]
+    let badgeName: [String] = ["ProfileDefault1", "뱃지ProfileDefault", "ProfileDefault3", "ProfileDefault4", "ProfileDefault5", "ProfileDefault6", "ProfileDefault7", "ProfileDefault7", "ProfileDefault8", "뱃지8"]
+    
+    private let columns = [
+        GridItem(.flexible()),GridItem(.flexible()),
+        GridItem(.flexible()),GridItem(.flexible())
+    ]
     
     var body: some View {
         
         VStack {
             
-            //            HStack {
-            //
-            //                Circle()
-            //                    .fill(Color.green)
-            //                    .frame(width: 66, height: 66)
-            //
-            //                VStack(alignment: .leading) {
-            //
-            //                    Text("물먹는 슈퍼 하마왕")
-            //                        .font(.system(size: 20, weight: .bold))
-            //
-            //                    Text("수분 섭취 목표 2달 달성")
-            //                        .font(.system(size: 14, weight: .semibold))
-            //                        .foregroundColor(.gray)
-            //                }
-            //
-            //                Spacer()
-            //            }
-            
-            
-            
-            ForEach(badgeName, id: \.self) { i in
+            HStack(spacing: 16) {
                 
-                HStack {
+                Image("ProfileDefault")
+                    .resizable()
+                    .frame(width: 66, height: 66)
+                    .clipShape(Circle())
+                
+                VStack(alignment: .leading, spacing: 5) {
                     
-                    Circle()
-                        .fill(Color.cyan)
-                        .frame(width: 65, height: 65)
+                    Text("물 먹는 슈퍼 하마왕")
+                        .font(Font.pretendard(.bold, size: 20))
+                        .foregroundColor(.white)
                     
-                    //                        Text(i)
+                    Text("수분 섭취 목표 2달 달성")
+                        .font(Font.pretendard(.semiBold, size: 14))
+                        .foregroundColor(.white)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Spacer()
+            
+            HStack(spacing: 20) {
+
+                Image("ProfileDefault")
+                    .resizable()
+                    .frame(width: 66, height: 66)
+                    .clipShape(Circle())
+
+                Image("ProfileDefault")
+                    .resizable()
+                    .frame(width: 66, height: 66)
+                    .clipShape(Circle())
+
+                Image("ProfileDefault")
+                    .resizable()
+                    .frame(width: 66, height: 66)
+                    .clipShape(Circle())
+
+                Image("ProfileDefault")
+                    .resizable()
+                    .frame(width: 66, height: 66)
+                    .clipShape(Circle())
+            }
+            
+            HStack(spacing: 20) {
+
+                Image("ProfileDefault")
+                    .resizable()
+                    .frame(width: 66, height: 66)
+                    .clipShape(Circle())
+
+                Image("ProfileDefault")
+                    .resizable()
+                    .frame(width: 66, height: 66)
+                    .clipShape(Circle())
+
+                Image("ProfileDefault")
+                    .resizable()
+                    .frame(width: 66, height: 66)
+                    .clipShape(Circle())
+
+                Image("ProfileDefault")
+                    .resizable()
+                    .frame(width: 66, height: 66)
+                    .clipShape(Circle())
+            }
         }
+        .padding(24)
         .frame(maxWidth: .infinity, maxHeight: 268)
-        .background(.yellow)
+        .background(Color.box_color)
         .cornerRadius(10)
     }
 }

@@ -30,9 +30,13 @@ struct ReportMainView: View {
             }
             .cornerRadius(10)
             
-            Spacer()
             
-            BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true) .customNavigationBarBackButtonHidden(true)
+            Spacer()
+
+            CustomNavigationLink(destination: ReportDetailView()) {
+                BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true)
+            }
+            .customNavigationBarBackButtonHidden(true)
         }
     }
 }

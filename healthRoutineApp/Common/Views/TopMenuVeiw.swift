@@ -10,39 +10,25 @@ import SwiftUI
 struct TopMenuVeiw: View {
     
     @State var mainTitle: String = ""
-    var isMainView: Bool = true
     
     var body: some View {
         
         HStack {
-            if isMainView {
-                Text(mainTitle)
-                    .fontWeight(.bold)
-                    .font(.title)
-            }
-            else {
-                Button(action: pop){
-                    Image(systemName: "arrow.backward")
-                        .foregroundColor(.black)
-                }
-            }
             
-            Spacer()
-            
-            Image(systemName: "bell")
+            Text(mainTitle)
+                .font(Font.pretendard(.bold, size: 24))
+                .foregroundColor(.white)
         }
-        .padding(.horizontal, 20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.box_color)
         
         Spacer()
-    }
-    
-    func pop() {
-        // pop
     }
 }
 
 struct TopMenuVeiw_Previews: PreviewProvider {
     static var previews: some View {
         TopMenuVeiw(mainTitle: "마이페이지")
+            .background(.red)
     }
 }

@@ -13,23 +13,25 @@ struct MyPageDetailView: View {
     
     var body: some View {
         
-        VStack {
+        BaseView {
             
-            MyPageDetailProfileModifyView()
-                .frame(maxWidth: .infinity, minHeight: 250)
-                .background(Color.box_color)
-                .cornerRadius(20)
-            
-            Button("수정하기") {
-                self.viewModel.updateInfo()
+            VStack {
+                
+                MyPageDetailProfileModifyView()
+                    .frame(maxWidth: .infinity, minHeight: 250)
+                    .background(Color.box_color)
+                    .cornerRadius(20)
+                
+                Button("수정하기") {
+                    self.viewModel.updateInfo()
+                }
+                .buttonStyle(CommonButtonView())
+                .background(Color(hex: "353535"))
+                .cornerRadius(10)
+                
+                Spacer()
             }
-            .buttonStyle(CommonButtonView())
-            .background(Color(hex: "353535"))
-            .cornerRadius(10)
-            
-            Spacer()
         }
-        .padding()
         .onAppear { self.bindView() }
     }
     
