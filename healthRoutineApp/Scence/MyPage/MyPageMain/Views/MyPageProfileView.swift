@@ -31,7 +31,7 @@ struct MyPageProfileView: View {
             CustomNavigationLink(destination: MyPageDetailView().customNavigationTitle("닉네임 수정")
             ) {
                 Text("프로필 수정")
-                    .frame(maxWidth: .infinity, minHeight: 60)
+                    .frame(maxWidth: .infinity, minHeight: 46)
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(.black)
                     .background(Color(.darkGray))
@@ -41,7 +41,7 @@ struct MyPageProfileView: View {
             Spacer()
         }
         .padding(24)
-        .frame(maxWidth: .infinity, maxHeight: 200)
+        .frame(maxWidth: .infinity, maxHeight: 176)
         .background(Color.box_color)
         .cornerRadius(10)
     }
