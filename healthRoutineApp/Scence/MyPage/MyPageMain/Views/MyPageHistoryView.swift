@@ -9,8 +9,6 @@ import SwiftUI
 
 struct MyPageHistoryView: View {
     
-//    @State var months: [String] = []
-    
     var body: some View {
  
         VStack {
@@ -28,16 +26,11 @@ struct MyPageHistoryView: View {
                     .frame(width: 8, height: 12)
                    
                 Spacer()
-                
-                ScrollView(.horizontal) {
+                     
+                HStack(alignment: .center) {
                     
-                    
-                    
-                    HStack(alignment: .center) {
-                        
-                        ForEach(1..<5) {
-                            CircleListView(label: "\($0) 월")
-                        }
+                    ForEach(1..<5) {
+                        CircleListView(label: "\($0) 월")
                     }
                 }
                 
@@ -52,7 +45,7 @@ struct MyPageHistoryView: View {
         .padding(24)
         .frame(maxWidth: .infinity, maxHeight: 160)
         .background(Color.box_color)
-        .cornerRadius(20)
+        .cornerRadius(10)
     }
 }
 

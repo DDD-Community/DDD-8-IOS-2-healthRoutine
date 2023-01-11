@@ -13,33 +13,37 @@ struct MyPageMainView: View {
         
         CustomNavigationView {
             
-            VStack {
+            BaseView {
                 
-                ScrollView(showsIndicators: false) {
+                VStack {
                     
-                    VStack(alignment: .center) {
+                    ScrollView(showsIndicators: false) {
                         
-                        MyPageProfileView()
-                        MyPageHistoryView()
-                        MyPageBadgeView()
-                        
-                        HStack(spacing: 70) {
+                        VStack {
                             
-                            Text("로그아웃")
-                                .font(Font.pretendard(.medium, size: 14))
-                                .foregroundColor(Color(hex: "707070"))
+                            MyPageProfileView()
+                            MyPageHistoryView()
+                            MyPageBadgeView()
                             
-                            Text("회원탈퇴")
-                                .font(Font.pretendard(.medium, size: 14))
-                                .foregroundColor(Color(hex: "707070"))
+                            HStack(spacing: 70) {
+                                
+                                Text("로그아웃")
+                                    .font(Font.pretendard(.medium, size: 14))
+                                    .foregroundColor(Color(hex: "707070"))
+                                
+                                Text("회원탈퇴")
+                                    .font(Font.pretendard(.medium, size: 14))
+                                    .foregroundColor(Color(hex: "707070"))
+                            }
+                            .padding(.top, 16)
                         }
-                        .padding(.top, 16)
+                
                     }
                 }
-                
-            }.customNavigationBarBackButtonHidden(true)
+                .customNavigationBarBackButtonHidden(true)
+                .customNavigationTitle("마이페이지")
+            }
         }
-        
     }
 }
 
