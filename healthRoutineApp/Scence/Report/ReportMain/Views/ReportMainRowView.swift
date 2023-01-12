@@ -8,29 +8,49 @@
 import SwiftUI
 
 struct ReportMainRowView: View {
-        
+    
     var body: some View {
 
-        HStack() {
+        HStack {
             
-            Text("가슴")
-                .foregroundColor(.black)
-                .frame(width: 42, height: 42)
-                .background(Color(hex:"C5C5C5"))
-                .cornerRadius(21)
+            Rectangle()
+                .frame(width: 50, height: 50)
+                .overlay {
+                    Text("가슴")
+                        .font(Font.pretendard(.bold, size: 18))
+                        .foregroundColor(.black)
+                }
+                .foregroundColor(Color(hex:"C5C5C5"))
+                .cornerRadius(10)
             
-            Text("비하인드 숄더프레스")
-                .foregroundColor(.black)
+            VStack(alignment: .leading) {
+                
+                Text("비하인드 숄더프레스")
+                    .font(Font.pretendard(.bold, size: 18))
+                    .foregroundColor(.white)
+                
+                HStack {
+                    
+                    Text("15kg")
+                        .font(Font.pretendard(.bold, size: 18))
+                        .foregroundColor(.white)
+                    
+                    Text("X2")
+                        .font(Font.pretendard(.bold, size: 18))
+                        .foregroundColor(.white)
+                }
+            }
             
-            Text("X2")
-                .foregroundColor(.black)
+           
+            
+           
             
             Spacer()
         }
-        .frame(maxWidth: .infinity, minHeight: 55)
+        .frame(maxWidth: .infinity, minHeight: 74)
         .padding(.horizontal, 12)
-        .background(.white)
-        .cornerRadius(50)
+        .background(Color.background_gray2)
+        .cornerRadius(16)
     }
 }
 

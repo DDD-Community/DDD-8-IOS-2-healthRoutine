@@ -24,55 +24,81 @@ struct ReportDetailDiffView: View {
             
             LazyVStack {
                 
-                ReportDetailDiffRowView(value: $viewModel.set)
-                
-                LazyHGrid(rows: columns, spacing: 6) {
+                HStack(alignment: .top) {
                     
-                    // Sample Data
-                    ForEach(ExWeight.allCases, id: \.self) {
+                    Text("무게")
+                        .font(Font.pretendard(.bold, size: 20))                        .foregroundColor(.white)
+                    
+                    VStack(alignment: .leading) {
                         
-                        Text($0.localized)
-                            .font(Font.pretendard(.regular, size: 13))
-                            .padding(.horizontal, 10.5)
-                            .padding(.vertical, 12.5)
-                            .background(Color(.systemGray4))
-                            .cornerRadius(30)
+                        ReportDetailDiffRowView(value: $viewModel.set)
+                            .frame(maxWidth: .infinity)
+                        
+                        LazyHGrid(rows: columns, spacing: 6) {
+                            
+                            ForEach(ExWeight.allCases, id: \.self) {
+                                
+                                Text($0.localized)
+                                    .font(Font.pretendard(.bold, size: 13))
+                                    .padding(.horizontal, 10.5)
+                                    .padding(.vertical, 12.5)
+                                    .background(Color(.systemGray4))
+                                    .cornerRadius(30)
+                            }
+                        }
                     }
                 }
                 
-                ReportDetailDiffRowView(value: $viewModel.weight)
-                
-                LazyHGrid(rows: columns, spacing: 6) {
+                HStack(alignment: .top) {
                     
-                    // Sample Data
-                    ForEach(ExWeight.allCases, id: \.self) {
+                    Text("무게")
+                        .font(Font.pretendard(.bold, size: 20))                        .foregroundColor(.white)
+                    
+                    VStack(alignment: .leading) {
                         
-                        Text($0.localized)
-                            .font(Font.pretendard(.regular, size: 13))
-                            .padding(.horizontal, 10.5)
-                            .padding(.vertical, 12.5)
-                            .background(Color(.systemGray4))
-                            .cornerRadius(30)
+                        ReportDetailDiffRowView(value: $viewModel.set)
+                            .frame(maxWidth: .infinity)
+                        
+                        LazyHGrid(rows: columns, spacing: 6) {
+                            
+                            ForEach(ExWeight.allCases, id: \.self) {
+                                
+                                Text($0.localized)
+                                    .font(Font.pretendard(.bold, size: 13))
+                                    .padding(.horizontal, 10.5)
+                                    .padding(.vertical, 12.5)
+                                    .background(Color(.systemGray4))
+                                    .cornerRadius(30)
+                            }
+                        }
                     }
                 }
                 
-                ReportDetailDiffRowView(value: $viewModel.unit)
-                
-                LazyHGrid(rows: columns, spacing: 6) {
+                HStack(alignment: .top) {
                     
-                    // Sample Data
-                    ForEach(ExSet.allCases, id: \.self) {
+                    Text("무게")
+                        .font(Font.pretendard(.bold, size: 20))                        .foregroundColor(.white)
+                    
+                    VStack(alignment: .leading) {
                         
-                        Text($0.localized)
-                            .font(Font.pretendard(.regular, size: 13))
-                            .padding(.horizontal, 10.5)
-                            .padding(.vertical, 12.5)
-                            .background(Color(.systemGray4))
-                            .cornerRadius(30)
+                        ReportDetailDiffRowView(value: $viewModel.set)
+                            .frame(maxWidth: .infinity)
+                        
+                        LazyHGrid(rows: columns, spacing: 6) {
+                            
+                            ForEach(ExSet.allCases, id: \.self) {
+                                
+                                Text($0.localized)
+                                    .font(Font.pretendard(.bold, size: 13))
+                                    .padding(.horizontal, 10.5)
+                                    .padding(.vertical, 12.5)
+                                    .background(Color(.systemGray4))
+                                    .cornerRadius(30)
+                            }
+                        }
                     }
                 }
             }
-            
         }
         .padding(20)
         .background(Color(hex: "272830"))
@@ -89,14 +115,10 @@ struct ReportDetailDiffRowView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack {
             
-            HStack(alignment: .center) {
-                
-                Text("무게")
-                    .padding(.trailing, 24)
-                    .foregroundColor(.white)
-                
+            HStack {
+            
                 VStack {
                     
                     TextField("", text: $value)
@@ -107,7 +129,7 @@ struct ReportDetailDiffRowView: View {
                 }
                 
                 Text("kg")
-                    .padding(.leading, 8)
+                    .font(Font.pretendard(.bold, size: 20))
                     .foregroundColor(.white)
             }
         }
