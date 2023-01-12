@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class TimerMainViewModel: ObservableObject {
     @Published var refresh: Bool = false // 리프레시용

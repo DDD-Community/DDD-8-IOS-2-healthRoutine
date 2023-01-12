@@ -9,3 +9,7 @@ import Foundation
 
 // MARK: - typealias
 public typealias VoidClosure = () -> Void
+
+enum NotificationName: String {
+    case timer
+}

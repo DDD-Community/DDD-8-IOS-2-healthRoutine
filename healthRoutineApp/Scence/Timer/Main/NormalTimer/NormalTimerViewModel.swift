@@ -15,28 +15,36 @@ class NormalTimerViewModel: ObservableObject {
     private var timer: Timer?
     @Published var isRunning: Bool = false
 
-    /*@Binding var timerFlag: Bool // 하나의 타이머만 실행용
+//    @Published var timerFlag: Bool
 
-    init(timerFlag: Binding<Bool>) {
-        self._timerFlag = timerFlag
-    }*/
+//    init(timerFlag: Binding<Bool>) {
+//        self._timerFlag = timerFlag
+//        self.bindView()
+//    }
     
     var startTime: Date?
     var pauseTime: Date?
     var storeCount: TimeInterval = 0
-    
-    func resetTimer() {
+
+    var timerFlag: VoidClosure?
+
+    init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(resetTimer), name: Notification.Name(NotificationName.timer.rawValue), object: nil)    }
+
+    @objc func resetTimer() {
         self.timer?.invalidate()
         self.timer = nil
         self.isRunning = false
         self.timerCount = nil
         self.startTime = nil
+        self.pauseTime = nil
         self.storeCount = 0
     }
     
     func startTimer() {
         if isRunning == false {
             if self.startTime == nil {
+                NotificationCenter.default.post(name: Notification.Name(NotificationName.timer.rawValue), object: nil)
                 self.startTime = Date()
             }
             self.isRunning = true
@@ -58,6 +66,7 @@ class NormalTimerViewModel: ObservableObject {
         self.isRunning = false
         self.pauseTime = Date()
         self.timer?.invalidate()
+        self.timer = nil
     }
     
     func convertCountToTimeString() -> String {

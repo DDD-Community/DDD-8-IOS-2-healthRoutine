@@ -44,11 +44,13 @@ class CustomTimerViewModel: ObservableObject {
     init(timerData: DI_CustomTimer, refresh: Binding<Bool>) {
         self._refresh = refresh
         self.timerData = timerData
+        NotificationCenter.default.addObserver(self, selector: #selector(resetTimer), name: Notification.Name(NotificationName.timer.rawValue), object: nil)
     }
 
     func startTimer() {
         // 준비모드였을때
         if mode == .ready {
+            NotificationCenter.default.post(name: Notification.Name(NotificationName.timer.rawValue), object: nil)
             mode = .exercise
             self.startTime = Date()
             timerCount = timerData.exerCiseTime.changeTimeToSeconds()
@@ -103,15 +105,18 @@ class CustomTimerViewModel: ObservableObject {
         isRunning = false
         pauseTime = Date()
         self.timer?.invalidate()
+        self.timer = nil
     }
     
-    func resetTimer() {
+    @objc func resetTimer() {
         self.mode = .ready
         self.timerCount = 0
         self.nowCycle = 1
         self.isRunning = false
+        self.timer?.invalidate()
         self.timer = nil
         self.startTime = nil
+        self.pauseTime = nil
     }
 
     func getModeString() -> String {
