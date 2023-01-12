@@ -41,20 +41,24 @@ struct CalendarContentCellView: View {
         
         ZStack {
             
-            Circle()
-                .fill(monthStruct().setLevel().background)
-                .frame(width: 30, height: 30)
+            Rectangle()
+//                .fill(monthStruct().setLevel().background)
+                .foregroundColor(Color(hex: "6D6D6D"))
+                .frame(width: 34, height: 34)
+                .cornerRadius(10)
             
             Text(monthStruct().getDay())
-                .foregroundColor(textColor(type: monthStruct().monthType))
+//                .foregroundColor(textColor(type: monthStruct().monthType))
+                .foregroundColor(.black)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .opacity(monthStruct().monthType == .current ? 1 : 0)
     }
     
-    private func textColor(type: MonthType) -> Color {
-        
-        return type == .current ? .black : .gray
-    }
+//    private func textColor(type: MonthType) -> Color {
+//
+//        return type == .current ? .black : .gray
+//    }
     
     private func monthStruct() -> Month {
         

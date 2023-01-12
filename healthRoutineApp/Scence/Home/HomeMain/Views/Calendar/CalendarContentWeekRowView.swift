@@ -26,7 +26,7 @@ struct CalendarContentWeekRowView: View {
 
 struct CalendarContentWeekRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarContentWeekRowView()
+        CalendarContentWeekRowView().environmentObject(DateHolder())
     }
 }
 

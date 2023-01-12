@@ -10,14 +10,16 @@ import SwiftUI
 struct SplashView: View {
     
     @State private var isActive: Bool = false
+    @EnvironmentObject var dateHolder: DateHolder
     
     var body: some View {
+        
         if isActive {
             if KeychainService.shared.isTokenValidate() {
-                ContentView()
+                ContentView().environmentObject(dateHolder)
             }
             else {
-                ContentView()
+                ContentView().environmentObject(dateHolder)
 //                AccountMainView()
             }
                 

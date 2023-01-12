@@ -9,8 +9,6 @@ import SwiftUI
 
 struct MyPageBadgeView: View {
     
-    let badgeName: [String] = ["ProfileDefault1", "뱃지ProfileDefault", "ProfileDefault3", "ProfileDefault4", "ProfileDefault5", "ProfileDefault6", "ProfileDefault7", "ProfileDefault7", "ProfileDefault8", "뱃지8"]
-    
     private let columns = [
         GridItem(.flexible()),GridItem(.flexible()),
         GridItem(.flexible()),GridItem(.flexible())

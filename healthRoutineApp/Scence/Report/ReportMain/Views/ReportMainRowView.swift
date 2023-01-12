@@ -40,11 +40,7 @@ struct ReportMainRowView: View {
                         .foregroundColor(.white)
                 }
             }
-            
-           
-            
-           
-            
+
             Spacer()
         }
         .frame(maxWidth: .infinity, minHeight: 74)

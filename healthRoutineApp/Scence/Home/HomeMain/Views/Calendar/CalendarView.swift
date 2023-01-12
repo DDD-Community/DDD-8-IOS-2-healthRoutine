@@ -13,21 +13,29 @@ struct CalendarView: View {
     
     var body: some View {
         
-        VStack(spacing: 10) {
+        LazyVStack {
             
             Text("DDD님 오늘도 움직여 볼까요!")
+                .font(Font.pretendard(.bold, size: 20))
+                .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding([.leading], 20)
+                .padding(.bottom, 12)
             
             CalendarTopView()
+                .padding(.bottom, 8)
+            
             CalendarContentWeekRowView() // 요일
             CalendarContentDayRowView() // 날짜
         }
+        .frame(maxWidth: .infinity, minHeight: 350)
+        .padding(24)
+        .background(Color.box_color)
+        .cornerRadius(16)
     }
 }
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView()
+        CalendarView().environmentObject(DateHolder())
     }
 }

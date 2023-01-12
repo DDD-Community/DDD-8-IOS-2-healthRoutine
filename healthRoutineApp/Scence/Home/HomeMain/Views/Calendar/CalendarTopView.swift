@@ -19,27 +19,27 @@ struct CalendarTopView: View {
             
             Button(action: self.goToPrevMonth) {
                 
-                Image(systemName: "arrow.left")
-                    .imageScale(.medium)
-                    .font(Font.title.weight(.bold))
-                    .foregroundColor(.black)
+                Image("leftAngleBracket")
+                    .resizable()
+                    .frame(width: 16, height: 16)
             }
             
             Text(CalendarHelper().monthYearString(dateHolder.date))
-                .font(.title)
+                .foregroundColor(.white)
+                .font(Font.pretendard(.bold, size: 20))
                 .animation(.none)
                 .frame(maxWidth: .infinity)
             
             Button(action: self.gotToNextMonth) {
                 
-                Image(systemName: "arrow.right")
-                    .imageScale(.medium)
-                    .font(Font.title.weight(.bold))
-                    .foregroundColor(.black)
+                Image("rightAngleBracket")
+                    .resizable()
+                    .frame(width: 16, height: 16)
             }
             
             Spacer()
         }
+        .frame(maxWidth: .infinity, minHeight: 30)
     }
 }
 
@@ -58,6 +58,6 @@ extension CalendarTopView {
 
 struct CalendarTopView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarTopView()
+        CalendarTopView().environmentObject(DateHolder())
     }
 }

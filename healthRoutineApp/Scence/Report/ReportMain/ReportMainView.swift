@@ -24,8 +24,12 @@ struct ReportMainView: View {
                             .font(Font.pretendard(.bold, size: 20))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.bottom, 16)
-                    
-                        ReportMainRowView() // sample
+                        
+                        List {
+                            ReportMainRowView()
+                            ReportMainRowView()
+                            ReportMainRowView()
+                        }
                     }
                     .padding(24)
                 }

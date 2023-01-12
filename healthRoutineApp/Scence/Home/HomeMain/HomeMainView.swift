@@ -21,6 +21,9 @@ struct HomeMainView: View {
                         
                         VStack {
                             
+                            CalendarView()
+                                .environmentObject(DateHolder())
+                            
                             CustomNavigationLink(destination: HomeDetailView()) {
                                 WaterIntakeView()
                             }

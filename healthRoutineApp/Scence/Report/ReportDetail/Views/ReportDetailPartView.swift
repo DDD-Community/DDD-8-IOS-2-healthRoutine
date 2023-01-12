@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReportDetailPartView: View {
     
-    @State var isSelected: Bool = false
+    @State var selected: String?
     
     private enum Colors {
         static let unSelected: Color = Color.background_gray2
@@ -32,13 +32,17 @@ struct ReportDetailPartView: View {
             
             LazyVGrid(columns: columns, spacing: 6) {
                 
-                ForEach(ExPart.allCases, id: \.self) {
+                ForEach(ExPart.allCases, id: \.self) { part in
                     
-                    Text($0.localized)
-                        .frame(maxWidth: .infinity)
-                        .padding(14)
-                        .background(Color(.systemGray4))
-                        .cornerRadius(15)
+                    Button(action: { self.selected = part.localized }) {
+                        
+                        Text(part.localized)
+                            .frame(maxWidth: .infinity)
+                            .padding(14)
+                            .foregroundColor(.white)
+                            .background(selected == part.localized ? .white : Color(.systemGray4))
+                            .cornerRadius(15)
+                    }
                 }
             }
             .frame(maxWidth: .infinity)

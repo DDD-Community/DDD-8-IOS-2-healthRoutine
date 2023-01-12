@@ -35,17 +35,18 @@ struct CalendarContentDayRowView: View {
                                                 dyasInPrevMonth: daysInPrevMonth)
                         .environmentObject(dateHolder)
                         
-                        
                     }
                 }
             }
         }
-        .frame(maxHeight: .infinity)
+//        .frame(maxHeight: .infinity)
     }
 }
 
 struct CalendarContentDayRowView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        CalendarContentDayRowView()
+                
+        CalendarContentDayRowView().environmentObject(DateHolder())
     }
 }
