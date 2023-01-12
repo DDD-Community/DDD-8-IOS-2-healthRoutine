@@ -31,7 +31,7 @@ struct HomeMainView: View {
                         }
                     }
                     .customNavigationBarBackButtonHidden(true)
-                    .customNavigationTitle("득근득근")
+                    .customNavigationTitle("DKDK")
                 }
         }
     }

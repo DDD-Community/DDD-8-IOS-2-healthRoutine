@@ -111,6 +111,7 @@
 		B6D8CEDB2917D86400420E8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D8CEDA2917D86400420E8E /* Preview Assets.xcassets */; };
 		B6DF8D8529694E9A006C2C89 /* ReportDetailKindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF8D8429694E9A006C2C89 /* ReportDetailKindView.swift */; };
 		B6DF8D872969529E006C2C89 /* ReportDetailDiffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF8D862969529E006C2C89 /* ReportDetailDiffView.swift */; };
+		B6FDBC31296FC61E002D5F43 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FDBC30296FC61E002D5F43 /* Badge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -221,6 +222,7 @@
 		B6D8CEDA2917D86400420E8E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B6DF8D8429694E9A006C2C89 /* ReportDetailKindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailKindView.swift; sourceTree = "<group>"; };
 		B6DF8D862969529E006C2C89 /* ReportDetailDiffView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailDiffView.swift; sourceTree = "<group>"; };
+		B6FDBC30296FC61E002D5F43 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,9 +514,9 @@
 		B623B11B292F497000BA7BA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B6FDBC2E296FC23F002D5F43 /* Intake */,
+				B6FDBC2D296FC239002D5F43 /* Badge */,
 				B66169F829501D8C000474A9 /* Calendar */,
-				B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */,
-				B66169F929501DBA000474A9 /* BadgeRowView.swift */,
 			);
 			name = Views;
 			path = HomeMain/Views;
@@ -559,6 +561,7 @@
 		B65208C12949728A0095DAB4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				B6FDBC2F296FC611002D5F43 /* Badge */,
 				B65B4F742967E16C00C30B3E /* Exercise */,
 				80307686294C42CD00EFF277 /* Network */,
 				B65208C6294975350095DAB4 /* Account */,
@@ -749,6 +752,30 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		B6FDBC2D296FC239002D5F43 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				B66169F929501DBA000474A9 /* BadgeRowView.swift */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
+		B6FDBC2E296FC23F002D5F43 /* Intake */ = {
+			isa = PBXGroup;
+			children = (
+				B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */,
+			);
+			path = Intake;
+			sourceTree = "<group>";
+		};
+		B6FDBC2F296FC611002D5F43 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				B6FDBC30296FC61E002D5F43 /* Badge.swift */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -899,6 +926,7 @@
 				B642C473296AAE25001E6718 /* ReportDetailViewModel.swift in Sources */,
 				B623B125292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift in Sources */,
 				B69878B22948197000C58869 /* AccountMainView.swift in Sources */,
+				B6FDBC31296FC61E002D5F43 /* Badge.swift in Sources */,
 				91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */,
 				80881949294C057900420788 /* Font+Ext.swift in Sources */,
 				B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */,

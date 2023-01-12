@@ -17,26 +17,30 @@ struct WaterIntakeView: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            HStack {
+            HStack(alignment: .center, spacing: 16) {
                 
                 Rectangle()
                     .fill(
                         LinearGradient(gradient: Gradient(colors: [.gray, .blue]), startPoint: .leading, endPoint: .trailing)
                     )
-                    .cornerRadius(20)
-                    .frame(maxWidth: .infinity, maxHeight: 60)
+                    .cornerRadius(10)
+                    .frame(maxWidth: .infinity, maxHeight: 50)
+                    .overlay {
+                        Text("1000ml")
+                            .font(Font.pretendard(.bold, size: 14))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(12)
+                    }
                 
-                
-                Image(systemName: "plus")
-                    .font(.system(size: 30, weight: .bold))
-                    .padding()
-                    .background(Color.gray)
-                    .cornerRadius(20)
+                Image("plus")
+                    .resizable()
+                    .frame(width: 40, height: 40)
             }
             
         }
         .padding(24)
-        .frame(maxWidth: .infinity, maxHeight: 160)
+        .frame(maxWidth: .infinity, maxHeight: 135)
         .background(Color.box_color)
         .cornerRadius(10)
     }
