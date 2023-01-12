@@ -13,30 +13,26 @@ struct HomeMainView: View {
     
     var body: some View {
         
-        VStack {
-            
-            TopMenuVeiw(mainTitle: "득근득근")
-            
             CustomNavigationView {
                 
-                ScrollView {
+                BaseView {
                     
-                    VStack {
+                    ScrollView {
                         
-                        CustomNavigationLink(destination: HomeDetailView()) {
-                            WaterIntakeView()
-                        }
-                        
-                        CustomNavigationLink(destination: HomeDetailView()) {
-                            BadgeRowView()
+                        VStack {
+                            
+                            CustomNavigationLink(destination: HomeDetailView()) {
+                                WaterIntakeView()
+                            }
+                            
+                            CustomNavigationLink(destination: HomeDetailView()) {
+                                BadgeRowView()
+                            }
                         }
                     }
                     .customNavigationBarBackButtonHidden(true)
+                    .customNavigationTitle("득근득근")
                 }
-            }
-           
-            
-            Spacer()
         }
     }
 }

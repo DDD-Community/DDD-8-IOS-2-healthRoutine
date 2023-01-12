@@ -13,7 +13,9 @@ struct WaterIntakeView: View {
         VStack(alignment: .leading) {
             
             Text("오늘은 얼마나 마셧나요?")
-                .font(.system(size: 24, weight: .bold))
+                .font(Font.pretendard(.bold, size: 20))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             HStack {
                 
@@ -33,10 +35,10 @@ struct WaterIntakeView: View {
             }
             
         }
-        .frame(maxWidth: .infinity, maxHeight: 140)
         .padding(24)
-        .background(Color.cyan)
-        .cornerRadius(30)
+        .frame(maxWidth: .infinity, maxHeight: 160)
+        .background(Color.box_color)
+        .cornerRadius(10)
     }
 }
 

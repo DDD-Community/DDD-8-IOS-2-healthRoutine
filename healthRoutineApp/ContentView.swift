@@ -15,28 +15,25 @@ struct ContentView: View {
             
             HomeMainView()
                 .tabItem {
-                    Image(systemName: "heart")
-                    Text("타이머")
+                    Image(systemName: "house")
                 }
             
             ReportMainView()
                 .tabItem {
-                    Image(systemName: "heart")
-                    Text("기록")
+                    Image(systemName: "chart.bar")
                 }
             
             TimerMainView()
                 .tabItem {
-                    Image(systemName: "heart")
-                    Text("타이머")
+                    Image(systemName: "clock")
                 }
             
             MyPageMainView()
                 .tabItem {
-                    Image(systemName: "heart")
-                    Text("마이 페이지")
+                    Image(systemName: "person")
                 }
         }
+        .accentColor(Color.available_green)
     }
 }
 

@@ -25,10 +25,10 @@ struct BadgeRowView: View {
                     .font(.system(size: 16, weight: .medium))
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: 100)
         .padding(24)
-        .background(Color.cyan)
-        .cornerRadius(30)
+        .frame(maxWidth: .infinity, maxHeight: 114)
+        .background(Color.box_color)
+        .cornerRadius(10)
     }
 }
 
