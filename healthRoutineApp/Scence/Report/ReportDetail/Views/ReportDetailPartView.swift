@@ -38,7 +38,7 @@ struct ReportDetailPartView: View {
                         
                         Text(part.localized)
                             .frame(maxWidth: .infinity)
-                            .padding(14)
+                            .padding(12)
                             .foregroundColor(.white)
                             .background(selected == part.localized ? .white : Color(.systemGray4))
                             .cornerRadius(15)

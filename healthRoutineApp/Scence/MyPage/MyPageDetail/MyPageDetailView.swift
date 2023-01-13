@@ -15,14 +15,14 @@ struct MyPageDetailView: View {
         
         BaseView {
             
-            VStack {
+            VStack(spacing: 16) {
                 
                 MyPageDetailProfileModifyView()
                     .frame(maxWidth: .infinity, minHeight: 250)
                     .background(Color.box_color)
                     .cornerRadius(20)
                 
-                Button("수정하기") {
+                Button("수정 하기") {
                     self.viewModel.updateInfo()
                 }
                 .buttonStyle(CommonButtonView())

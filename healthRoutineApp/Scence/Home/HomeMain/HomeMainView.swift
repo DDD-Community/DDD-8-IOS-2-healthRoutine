@@ -19,7 +19,7 @@ struct HomeMainView: View {
                     
                     ScrollView {
                         
-                        VStack {
+                        VStack(spacing: 16) {
                             
                             CalendarView()
                                 .environmentObject(DateHolder())

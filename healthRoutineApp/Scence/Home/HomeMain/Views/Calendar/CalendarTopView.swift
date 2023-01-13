@@ -21,6 +21,7 @@ struct CalendarTopView: View {
                 
                 Image("leftAngleBracket")
                     .resizable()
+                    .scaledToFit()
                     .frame(width: 16, height: 16)
             }
             
@@ -34,12 +35,14 @@ struct CalendarTopView: View {
                 
                 Image("rightAngleBracket")
                     .resizable()
+                    .scaledToFit()
                     .frame(width: 16, height: 16)
             }
             
             Spacer()
         }
         .frame(maxWidth: .infinity, minHeight: 30)
+        .background(Color.box_color)
     }
 }
 

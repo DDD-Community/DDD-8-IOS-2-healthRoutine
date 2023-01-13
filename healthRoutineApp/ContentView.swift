@@ -13,25 +13,28 @@ struct ContentView: View {
         
         TabView {
             
-            HomeMainView()
-                .tabItem {
-                    Image(systemName: "house")
-                }
-            
-            ReportMainView()
-                .tabItem {
-                    Image(systemName: "chart.bar")
-                }
-            
-            TimerMainView()
-                .tabItem {
-                    Image(systemName: "clock")
-                }
-            
-            MyPageMainView()
-                .tabItem {
-                    Image(systemName: "person")
-                }
+            Group {
+                
+                HomeMainView()
+                    .tabItem {
+                        Image(systemName: "house")
+                    }
+                
+                ReportMainView()
+                    .tabItem {
+                        Image(systemName: "chart.bar")
+                    }
+                
+                TimerMainView()
+                    .tabItem {
+                        Image(systemName: "clock")
+                    }
+                
+                MyPageMainView()
+                    .tabItem {
+                        Image(systemName: "person")
+                    }
+            }
         }
         .accentColor(Color.available_green)
     }

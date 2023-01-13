@@ -21,13 +21,18 @@ struct CalendarView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 12)
             
+            Spacer()
+            
             CalendarTopView()
                 .padding(.bottom, 8)
             
             CalendarContentWeekRowView() // 요일
+                .padding(.bottom, 8)
+                .frame(minHeight: 20)
+            
             CalendarContentDayRowView() // 날짜
         }
-        .frame(maxWidth: .infinity, minHeight: 350)
+        .frame(maxWidth: .infinity, maxHeight: 350)
         .padding(24)
         .background(Color.box_color)
         .cornerRadius(16)

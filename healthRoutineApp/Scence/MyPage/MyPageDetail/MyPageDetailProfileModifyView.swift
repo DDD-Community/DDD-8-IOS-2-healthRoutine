@@ -18,13 +18,19 @@ struct MyPageDetailProfileModifyView: View {
     
     var body: some View {
         
-        VStack(spacing: 15) {
+        VStack(spacing: 24) {
             
             Image("ProfileDefault")
+                .resizable()
+                .scaledToFit()
                 .foregroundColor(Color.red)
                 .frame(width: 132, height: 132)
                 .clipShape(Circle())
-                .overlay(Rectangle().frame(width: 30, height: 30).offset(x: 50, y:50) )
+                .overlay(            Image("camera")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 30, height: 30)
+                    .offset(x: 50, y:50) )
                 .onTapGesture {
                     self.showActionSheet = true
                 }
@@ -62,16 +68,22 @@ struct MyPageDetailInputView: View {
         VStack {
             
             TextField("닉네임을 입력해 주세요.", text: $value)
-                .foregroundColor(Color(hex: "C9C9C9"))
+                .textFieldStyle(DefaultTextFieldStyle())
+            
+            HStack {
+                TextField("Search...", text: $value)
+                    .foregroundColor(.cyan)
+            }
+            .textFieldStyle(DefaultTextFieldStyle())
             
             Divider()
         }
     }
 }
 
-
 struct MyPageDetailProfileModifyView_Previews: PreviewProvider {
     static var previews: some View {
         MyPageDetailProfileModifyView(showActionSheet: false, showImagePicker: false)
+            .background(Color.box_color)
     }
 }

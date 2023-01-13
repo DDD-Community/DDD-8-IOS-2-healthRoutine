@@ -30,7 +30,9 @@ struct MyPageHistoryView: View {
                 HStack(alignment: .center) {
                     
                     ForEach(1..<5) {
+                        Spacer()
                         CircleListView(label: "\($0) 월")
+                        Spacer()
                     }
                 }
                 

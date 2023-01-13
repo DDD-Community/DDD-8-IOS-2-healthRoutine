@@ -9,17 +9,18 @@ import SwiftUI
 
 struct CalendarContentWeekRowView: View {
     
+    private let day: [String] = ["일", "월", "화", "수", "목", "금", "토"]
+    
     var body: some View {
         
-        HStack(spacing: 1) {
+        HStack {
             
-            Text("일").bold().dayOfWeek().foregroundColor(.red)
-            Text("월").bold().dayOfWeek()
-            Text("화").bold().dayOfWeek()
-            Text("수").bold().dayOfWeek()
-            Text("목").bold().dayOfWeek()
-            Text("금").bold().dayOfWeek()
-            Text("토").bold().dayOfWeek().foregroundColor(.blue)
+            ForEach(day, id: \.self) {
+                Text($0)
+                    .foregroundColor(.white)
+                    .font(Font.pretendard(.medium, size: 12))
+                    .dayOfWeek()
+            }
         }
     }
 }
@@ -27,6 +28,7 @@ struct CalendarContentWeekRowView: View {
 struct CalendarContentWeekRowView_Previews: PreviewProvider {
     static var previews: some View {
         CalendarContentWeekRowView().environmentObject(DateHolder())
+            .background(Color.box_color)
     }
 }
 

@@ -19,7 +19,7 @@ struct MyPageMainView: View {
                     
                     ScrollView(showsIndicators: false) {
                         
-                        VStack {
+                        VStack(spacing: 16) {
                             
                             MyPageProfileView()
                             MyPageHistoryView()
