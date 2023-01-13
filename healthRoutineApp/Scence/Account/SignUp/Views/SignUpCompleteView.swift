@@ -16,7 +16,7 @@ struct SignUpCompleteView: View {
                 Spacer()
                 CustomNavigationLink(destination: ContentView()
                 ) {
-                    BottomButtonView(buttonTitle: "메인으로 이동", isable: true)
+                    BottomButtonView(buttonTitle: "메인으로 이동", isable: true, preventButtonAction: true)
                 }
                 .frame(maxHeight: 84) // 60 + 24
             }

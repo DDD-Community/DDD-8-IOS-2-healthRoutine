@@ -34,22 +34,20 @@ struct AccountMainView: View {
                                 OnBoardingView(onBoarding: $0)
                             }
                         }
-                        .frame(maxWidth: .infinity, maxHeight: 485)
+                        .frame(maxWidth: .infinity)
                         .background(Color.box_color)
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                         .cornerRadius(16)
                         .onAppear { self.setupAppearance() }
-                        
-                        Spacer()
-                        
+
                         // MARK: - 회원가입 뷰 이동 처리
                         CustomNavigationLink(destination: SignUpMainView().customNavigationTitle("회원가입")
                         ) {
                             Text("회원가입")
                                 .frame(maxWidth: .infinity, minHeight: 60)
                                 .font(Font.pretendard(.bold, size: 18))
-                                .foregroundColor(.black)
-                                .background(Color(.darkGray))
+                                .foregroundColor(Color(hex: "E2E1E5"))
+                                .background(Color(hex:"252525"))
                                 .cornerRadius(10)
                         }
                         
@@ -72,7 +70,7 @@ struct AccountMainView: View {
     func setupAppearance() {
         
         UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color.main_green)
-        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor(Color.white_text)
     }
 }
 
@@ -110,8 +108,8 @@ enum OnBoarding {
         
         switch self {
         case .fist: return "매일 운동을 기록하기"
-        case .second: return "매일의 수분을 섭취하고"
-        case .third: return "매일 운동루틴을 저장하고"
+        case .second: return "매일의 수분을 섭취하기"
+        case .third: return "매일 운동루틴을 저장하기"
         }
     }
 }

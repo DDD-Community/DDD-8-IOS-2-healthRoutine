@@ -133,7 +133,9 @@ class SignUpViewModel: ObservableObject {
 
     private func bindView() {
         $email
+            .removeDuplicates()
             .sink(receiveValue: { str in
+                print(str)
                 if self.emailState == .authWaiting { return }
                 if str.isValid {
                     if str.isValidEmail {
@@ -156,10 +158,6 @@ class SignUpViewModel: ObservableObject {
         $password
             .sink(receiveValue: { str in
                 if str.isValid {
-                    if self.passwordConfirm.isValid {
-                        self.comparePassword(str, self.passwordConfirm)
-                    }
-                    
                     if str.isValidPassword {
                         self.passwordState = .available
                         self.passwordInfo = SignUpStringType.password.getSuccessStr()
@@ -173,13 +171,15 @@ class SignUpViewModel: ObservableObject {
                     self.passwordInfo = SignUpStringType.password.getHelpStr()
                     self.passwordState = .empty
                 }
-
+                if self.passwordConfirm.isValid {
+                    self.comparePassword(str, self.passwordConfirm)
+                }
             })
             .store(in: &cancellables)
         
         $passwordConfirm
             .sink(receiveValue: { str in
-                if str.isValid && self.password.isValid {
+                if str.isValid {
                     self.comparePassword(self.password, str)
                 }
                 else {
@@ -250,48 +250,66 @@ class SignUpViewModel: ObservableObject {
         APIService.checkEmailValidation(self.email)
             .sink { completion in
                 switch completion {
-                case .failure:
-                    print("fail")
+                case .failure(let error):
                     self.emailState = .authFail
-                    self.emailInfo = "*중복된 이메일입니다."
+                    switch error {
+                    case .http(let error):
+                        if error.errorCode == 409 {
+                            self.emailInfo = "*중복된 이메일입니다."
+                        }
+                        else {
+                            self.emailInfo = "*이메일 인증 오류입니다."
+                        }
+                    default:
+                        self.emailInfo = "*이메일 인증 오류입니다."
+                    }
                 case .finished:
-                    print("Finish")
+                    break
                 }
             } receiveValue: { _ in
-                print("success")
                 self.emailInfo = "*인증이 완료되었습니다."
                 self.emailState = .authComplete
             }
             .store(in: &cancellables)
     }
     
-    func requestSignUp(_ completeClosure: VoidClosure?) {
+    func requestSignUp(_ completeClosure: BoolClosure?) {
         let request = AccountSignUpRequest(email: self.email, password: self.password, nickname: self.nickname)
         
         APIService.signUp(request)
             .sink { completion in
                 switch completion {
-                case .failure:
-                    print("회원가입 실패")
+                case .failure(let error):
+                    switch error {
+                    case .http(let error):
+                        if error.errorCode == 409 {
+                            print("얼럿 띄우기 : 이미 있는 이메일입니다.")
+                        }
+                        else {
+                            print("얼럿 띄우기 : 회원가입 오류입니다.")
+                        }
+                    default:
+                        print("얼럿 띄우기 : 회원가입 오류입니다.")
+                        break
+                    }
                 case .finished:
                     self.signIn(completeClosure)
-                    print("Finish")
                 }
             } receiveValue: { _ in
             }
             .store(in: &cancellables)
     }
     
-    func signIn(_ completeClosure: VoidClosure?) {
+    func signIn(_ completeClosure: BoolClosure?) {
         let request = AccountSignInRequest(email: self.email, password: self.password)
         
         APIService.signIn(request)
             .sink { completion in
                 switch completion {
                 case .failure:
-                    print("로그인 실패")
+                    completeClosure?(false)
                 case .finished:
-                    completeClosure?()
+                    completeClosure?(true)
                 }
             } receiveValue: { (value: AccountResponse?) in
                 if let value = value, let token = value.result.token {

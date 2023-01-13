@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: - typealias
 public typealias VoidClosure = () -> Void
+public typealias BoolClosure = (_ value: Bool) -> Void
 
 enum NotificationName: String {
     case timer

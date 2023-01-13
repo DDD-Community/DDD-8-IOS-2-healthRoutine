@@ -19,8 +19,8 @@ struct SplashView: View {
                 ContentView().environmentObject(dateHolder)
             }
             else {
-                ContentView().environmentObject(dateHolder)
-//                AccountMainView()
+//                ContentView().environmentObject(dateHolder)
+                AccountMainView()
             }
                 
         } else {

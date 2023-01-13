@@ -55,8 +55,9 @@ struct CustomTimerRunningView: View {
                 .background(timerViewModel.mode == .exercise ? .white : .button_blue)
                 .cornerRadius(32)
             Text("\(timerViewModel.convertCountToTimeString())")
-                .font(Font.pretendard(.bold, size: 26))
+                .font(Font.pretendard(.bold, size: 36))
                 .foregroundColor(.white)
+                .frame(width: 162, height: 26, alignment: .leading)
         }
     }
 }

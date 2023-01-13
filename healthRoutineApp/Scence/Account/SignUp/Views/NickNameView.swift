@@ -18,6 +18,7 @@ struct NickNameView: View {
                 SignUpInputView(placeholder: SignUpStringType.nickname.getPlaceHolderStr(), inputStr: $viewModel.nickname, infoStr: viewModel.nicknameInfo, inputStateType: $viewModel.nicknameState)
                 Spacer()
                 NavigationLink(destination: SignUpCompleteView().navigationBarBackButtonHidden(true), tag: "1", selection: $selection) { EmptyView() }
+                NavigationLink(destination: AccountMainView().navigationBarBackButtonHidden(true), tag: "2", selection: $selection) { EmptyView() }
                 BottomButtonView(buttonTitle: "다음", isable: viewModel.canNextCompleteStep) {
                     self.handleNextButton()
                 }
@@ -26,8 +27,13 @@ struct NickNameView: View {
     }
     
     func handleNextButton() {
-        viewModel.requestSignUp() {
-            self.selection = "1"
+        viewModel.requestSignUp() { result in
+            if result {
+                self.selection = "1"
+            }
+            else {
+                self.selection = "2"
+            }
         }
     }
 }
