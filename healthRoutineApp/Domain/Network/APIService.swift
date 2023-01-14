@@ -10,6 +10,7 @@ import Alamofire
 import Combine
 
 class APIService {
+    
     static func checkEmailValidation(_ email: String) -> AnyPublisher<DI_Base, APIError> {
         var parameters = Parameters()
         parameters["email"] = email
@@ -25,7 +26,11 @@ class APIService {
         return APIManager.request(AccountAPI.signUp.url, method: .post, parameters: param.dictionary)
     }
     
+    static func fetchInfo(_ param: AccountUpdateInfoRequest) -> AnyPublisher<AccountResponse, APIError> {
+        return APIManager.request(AccountAPI.userInfo.url, method: .get, parameters: param.dictionary)
+    }
+    
     static func updateInfo(_ param: AccountUpdateInfoRequest) -> AnyPublisher<AccountResponse, APIError> {
-        return APIManager.request(AccountAPI.signIn.url, method: .post, parameters: param.dictionary)
+        return APIManager.request(AccountAPI.userInfo.url, method: .post, parameters: param.dictionary)
     }
 }

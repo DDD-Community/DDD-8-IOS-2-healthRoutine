@@ -37,7 +37,8 @@ struct MyPageDetailProfileModifyView: View {
             
             MyPageDetailInputView(value: $viewModel.nickname)
         }
-        .padding(.horizontal, 20)
+        .padding(24)
+        .cornerRadius(16)
         .actionSheet(isPresented: $showActionSheet, content: actionSheet)
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(sourceType: .photoLibrary) { self.image = $0 }
@@ -69,12 +70,6 @@ struct MyPageDetailInputView: View {
             
             TextField("닉네임을 입력해 주세요.", text: $value)
                 .textFieldStyle(DefaultTextFieldStyle())
-            
-            HStack {
-                TextField("Search...", text: $value)
-                    .foregroundColor(.cyan)
-            }
-            .textFieldStyle(DefaultTextFieldStyle())
             
             Divider()
         }

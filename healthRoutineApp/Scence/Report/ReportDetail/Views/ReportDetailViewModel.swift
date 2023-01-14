@@ -11,7 +11,11 @@ import SwiftUI
 
 final class ReportDetailViewModel: ObservableObject {
     
+    @Published var exercise: Exercise.Part = .chest
+    
     @Published var weight: String = ""
-    @Published var unit: String = ""
+    @Published var count: String = ""
     @Published var set: String = ""
+    
+//    var exerciseValue = CurrentValueSubject<Exercise, Never>(value)
 }

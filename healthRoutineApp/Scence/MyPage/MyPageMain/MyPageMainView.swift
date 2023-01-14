@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MyPageMainView: View {
     
+    private var viewModel = MyPageDetailViewModel()
+    
     var body: some View {
         
         CustomNavigationView {
@@ -44,6 +46,11 @@ struct MyPageMainView: View {
                 .customNavigationTitle("마이페이지")
             }
         }
+    }
+    
+    private func bindView() {
+        
+        self.viewModel.fetchInfo()
     }
 }
 

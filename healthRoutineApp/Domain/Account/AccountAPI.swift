@@ -12,7 +12,8 @@ enum AccountAPI {
     case checkEmailValidation
     case signUp
     case signIn
-    case updateInfo
+    
+    case userInfo
     
     var url: String {
         
@@ -20,7 +21,7 @@ enum AccountAPI {
         case .checkEmailValidation: return "\(HealthRoutineAPI.baseURL)/user/validate/email"
         case .signUp: return "\(HealthRoutineAPI.baseURL)/user/register"
         case .signIn: return "\(HealthRoutineAPI.baseURL)/user/login"
-        case .updateInfo: return "\(HealthRoutineAPI.baseURL)/user/login"
+        case .userInfo: return "\(HealthRoutineAPI.baseURL)/user/profile"
         }
     }
 

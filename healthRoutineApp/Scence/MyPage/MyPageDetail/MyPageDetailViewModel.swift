@@ -36,6 +36,11 @@ final class MyPageDetailViewModel: ObservableObject {
     func confirmNickname() {
         
     }
+    
+    func fetchInfo() {
+        
+        
+    }
 
     // 앨범 권환 확인
     func checkPermission() {

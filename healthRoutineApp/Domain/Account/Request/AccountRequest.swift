@@ -24,3 +24,7 @@ struct AccountUpdateInfoRequest: Codable {
     let nickname: String
     let image: Data
 }
+
+struct AccountFetchMyInfoRequest: Codable {
+    
+}

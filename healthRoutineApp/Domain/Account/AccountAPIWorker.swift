@@ -55,7 +55,44 @@ final class AccountAPIWorker {
         }.resume()
     }
     
-    func signInWith() {
+    func fetchMyInfo(completion: @escaping (Result<AccountMyInfoResult, NetworkError>) -> Void) {
         
+        guard let url = URL(string: _API.userInfo.url) else {
+            return completion(.failure(.badUrl))
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+               
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data, error == nil else {
+                return completion(.failure(.noData))
+            }
+            
+            if let str = String(data: data, encoding: .utf8) {
+                debugPrint("str : \(str)")
+            }
+            
+            let fetchInfoResponse = try? JSONDecoder().decode(AccountMyInfoResponse.self, from: data)
+            
+            if let fetchInfoResponse = fetchInfoResponse {
+                completion(.success(fetchInfoResponse.result))
+            } else {
+                completion(.failure(.decodingError))
+            }
+            
+        }.resume()
     }
 }
+
+//extension AccountAPIWorker {
+//
+//    func fetchMyInfo() -> Future<AccountMyInfoResult, NetworkError> {
+//
+//        let spec = _API.userInfo.url
+//
+//        return Just(spec)
+//    }
+//}

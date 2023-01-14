@@ -32,9 +32,10 @@ struct ReportMainView: View {
                         }
                     }
                     .padding(24)
+                    .background(Color.box_color)
+                    .cornerRadius(10)
                 }
-                .background(Color.box_color)
-                .cornerRadius(10)
+               
 
                 CustomNavigationLink(destination: ReportDetailView().customNavigationTitle("기록")) {
                     BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true)
