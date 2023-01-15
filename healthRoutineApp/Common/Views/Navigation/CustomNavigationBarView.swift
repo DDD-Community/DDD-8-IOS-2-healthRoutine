@@ -31,7 +31,7 @@ struct CustomNavigationBarView: View {
                     .opacity(0)
             }
         }
-        .padding()
+        .padding(20)
         .foregroundColor(.black) // 색상 변경 여기서하면 됨.
         .font(.headline)
         .background(Color.background_black.ignoresSafeArea(edges: .top))
@@ -67,7 +67,7 @@ extension CustomNavigationBarView {
             
             if let title = title {
                 Text(title)
-                    .font(Font.pretendard(.semiBold, size: 20))
+                    .font(Font.pretendard(.bold, size: 24))
                     .foregroundColor(.white)
             }
         }

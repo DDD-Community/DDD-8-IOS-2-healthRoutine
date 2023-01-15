@@ -10,12 +10,13 @@ import SwiftUI
 struct CalendarView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
+    private var viewModel = CalendarViewModel()
     
     var body: some View {
         
         LazyVStack {
             
-            Text("DDD님 오늘도 움직여 볼까요!")
+            Text("\(viewModel.getNickName())오늘도 움직여 볼까요?")
                 .font(Font.pretendard(.bold, size: 20))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)

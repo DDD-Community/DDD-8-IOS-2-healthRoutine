@@ -29,6 +29,7 @@ struct TimerAddView: View {
                         .background(timerData.isAvailableButton ? Color.main_green : Color.button_disabled)
                         .foregroundColor(timerData.isAvailableButton ? Color.background_black : Color.gray_888)
                         .cornerRadius(10)
+                        .padding(.bottom, 10)
                 }
                 .disabled(!timerData.isAvailableButton)
             }

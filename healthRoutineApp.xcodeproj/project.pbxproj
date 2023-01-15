@@ -49,6 +49,8 @@
 		9171AF5329617DD40027339E /* DI_CustomTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9171AF5229617DD40027339E /* DI_CustomTimer.swift */; };
 		91B0376C2951F96A000837BA /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0376B2951F96A000837BA /* View+Ext.swift */; };
 		91B0376E2951FC1C000837BA /* DI_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0376D2951FC1C000837BA /* DI_Base.swift */; };
+		91BD01E729740595006C47FA /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD01E629740595006C47FA /* CalendarViewModel.swift */; };
+		91BD01E929740E95006C47FA /* HomeDetailTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD01E829740E95006C47FA /* HomeDetailTabView.swift */; };
 		91C77AA82969488400F578C8 /* TimerAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C77AA72969488400F578C8 /* TimerAddViewModel.swift */; };
 		91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C856ED2948C49B000385C7 /* Color+Ext.swift */; };
 		B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */; };
@@ -157,6 +159,8 @@
 		91B0376A2951F3DD000837BA /* healthRoutineApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = healthRoutineApp.entitlements; sourceTree = "<group>"; };
 		91B0376B2951F96A000837BA /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		91B0376D2951FC1C000837BA /* DI_Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI_Base.swift; sourceTree = "<group>"; };
+		91BD01E629740595006C47FA /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		91BD01E829740E95006C47FA /* HomeDetailTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailTabView.swift; sourceTree = "<group>"; };
 		91C77AA72969488400F578C8 /* TimerAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAddViewModel.swift; sourceTree = "<group>"; };
 		91C856ED2948C49B000385C7 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuVeiw.swift; sourceTree = "<group>"; };
@@ -402,6 +406,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		91BD01E529740587006C47FA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91BD01E629740595006C47FA /* CalendarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B609BEF2292EFB60008045CE /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +555,7 @@
 			children = (
 				B64C9774295142AC004F9760 /* HomeDetailView.swift */,
 				B64C977629514B47004F9760 /* HomeDetailViewModel.swift */,
+				91BD01E829740E95006C47FA /* HomeDetailTabView.swift */,
 			);
 			path = HomeDetail;
 			sourceTree = "<group>";
@@ -651,6 +664,7 @@
 		B66169F829501D8C000474A9 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				91BD01E529740587006C47FA /* ViewModel */,
 				B623B128292F4F4E00BA7BA7 /* CalendarView.swift */,
 				B623B120292F4AF600BA7BA7 /* CalendarTopView.swift */,
 				B623B124292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift */,
@@ -877,6 +891,7 @@
 				B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */,
 				B64C977729514B47004F9760 /* HomeDetailViewModel.swift in Sources */,
 				B623B129292F4F4E00BA7BA7 /* CalendarView.swift in Sources */,
+				91BD01E929740E95006C47FA /* HomeDetailTabView.swift in Sources */,
 				91B0376E2951FC1C000837BA /* DI_Base.swift in Sources */,
 				80A2757C295973FF003295C4 /* BaseView.swift in Sources */,
 				80307691294C5BD200EFF277 /* APIService.swift in Sources */,
@@ -891,6 +906,7 @@
 				9167D5BA295806E90002651A /* UserDefault+Ext.swift in Sources */,
 				8070843F296D55870063D16D /* TimerMainViewModel.swift in Sources */,
 				B623B12F292F5C5F00BA7BA7 /* Month.swift in Sources */,
+				91BD01E729740595006C47FA /* CalendarViewModel.swift in Sources */,
 				B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */,
 				B65208CA294979760095DAB4 /* AccountAPI.swift in Sources */,
 				B6535E65295BE12100372E7E /* ImagePicker.swift in Sources */,

@@ -44,7 +44,7 @@ struct ReportMainView: View {
                
 
                 CustomNavigationLink(destination: ReportDetailView().customNavigationTitle("기록")) {
-                    BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true)
+                    BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true, preventButtonAction: true)
                 }
                 .customNavigationTitle("기록")
                 .customNavigationBarBackButtonHidden(true)

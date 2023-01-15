@@ -25,11 +25,7 @@ struct TimerMainView: View {
                     }
                     CustomNavigationLink(destination: TimerAddView(timerData: TimerAddViewModel(refresh: $timerMainViewModel.refresh)).customNavigationTitle("타이머")
                     ) {
-                        Text("자주 쓰는 타이머 패턴 추가")
-                            .frame(maxWidth: .infinity, minHeight: 60)
-                            .background(Color.available_green)
-                            .foregroundColor(Color(hex: "353535"))
-                            .cornerRadius(10)
+                        BottomButton_BackView(buttonTitle: "자주 쓰는 타이머 패턴 추가", isable: true, preventButtonAction: true)
                     }
                 }
                 .customNavigationTitle("타이머")

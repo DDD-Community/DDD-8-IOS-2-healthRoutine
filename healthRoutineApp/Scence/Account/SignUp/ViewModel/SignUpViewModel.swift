@@ -314,6 +314,7 @@ class SignUpViewModel: ObservableObject {
             } receiveValue: { (value: AccountResponse?) in
                 if let value = value, let token = value.result.token {
                     KeychainService.shared.saveToken(token: token)
+                    UserDefaults.standard.set(value.result.nickname, forKey: NICKNAME_KEY)
                 }
             }
             .store(in: &cancellables)

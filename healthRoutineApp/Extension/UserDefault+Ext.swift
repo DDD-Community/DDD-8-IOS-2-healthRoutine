@@ -8,6 +8,7 @@
 import Foundation
 
 let TIMER_PATTERN_KEY = "timer_pattern_key"
+let NICKNAME_KEY = "nickname_key"
 
 extension UserDefaults {
     public static func isFirstAppLaunch() -> Bool {

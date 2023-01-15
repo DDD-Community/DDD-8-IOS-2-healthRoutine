@@ -21,16 +21,14 @@ struct HomeMainView: View {
                         
                         VStack(spacing: 16) {
                             
-                            CalendarView()
-                                .environmentObject(DateHolder())
-                            
                             CustomNavigationLink(destination: HomeDetailView()) {
-                                WaterIntakeView()
+                                CalendarView()
+                                    .environmentObject(DateHolder())
                             }
                             
-                            CustomNavigationLink(destination: HomeDetailView()) {
-                                BadgeRowView()
-                            }
+                            WaterIntakeView()
+                            
+                            BadgeRowView()
                         }
                     }
                     .customNavigationBarBackButtonHidden(true)

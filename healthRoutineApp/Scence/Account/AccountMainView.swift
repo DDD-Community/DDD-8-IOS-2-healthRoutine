@@ -31,7 +31,7 @@ struct AccountMainView: View {
                         
                             ForEach(boardInfo, id: \.self) {
                                 OnBoardingView(onBoarding: $0)
-                            }
+                            } 
                         }
                         .frame(maxWidth: .infinity)
                         .background(Color.background_black)
