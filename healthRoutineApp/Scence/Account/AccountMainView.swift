@@ -12,7 +12,7 @@ struct AccountMainView: View {
     
     @State var hasToken: Bool = false
     
-    private let boardInfo: [OnBoarding] = [.fist, .second, .third]
+    private let boardInfo: [OnBoarding] = [.workout, .drink, .routine]
     
     var body: some View {
         
@@ -27,7 +27,6 @@ struct AccountMainView: View {
                 BaseView {
                     
                     VStack(spacing: 16) {
-                        
                         TabView {
                         
                             ForEach(boardInfo, id: \.self) {
@@ -35,21 +34,11 @@ struct AccountMainView: View {
                             }
                         }
                         .frame(maxWidth: .infinity)
-                        .background(Color.box_color)
+                        .background(Color.background_black)
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                         .cornerRadius(16)
+                        .padding(.top, 19)
                         .onAppear { self.setupAppearance() }
-
-                        // MARK: - 회원가입 뷰 이동 처리
-                        CustomNavigationLink(destination: SignUpMainView().customNavigationTitle("회원가입")
-                        ) {
-                            Text("회원가입")
-                                .frame(maxWidth: .infinity, minHeight: 60)
-                                .font(Font.pretendard(.bold, size: 18))
-                                .foregroundColor(Color(hex: "E2E1E5"))
-                                .background(Color(hex:"252525"))
-                                .cornerRadius(10)
-                        }
                         
                         // MARK: - 로그인 뷰 이동 처리
                         CustomNavigationLink(destination: SignInView(hasToken: self.$hasToken))  {
@@ -58,6 +47,17 @@ struct AccountMainView: View {
                                 .font(Font.pretendard(.bold, size: 18))
                                 .foregroundColor(.black)
                                 .background(Color.main_green)
+                                .cornerRadius(10)
+                        }
+                        
+                        // MARK: - 회원가입 뷰 이동 처리
+                        CustomNavigationLink(destination: SignUpMainView().customNavigationTitle("회원가입")
+                        ) {
+                            Text("회원가입")
+                                .frame(maxWidth: .infinity, minHeight: 60)
+                                .font(Font.pretendard(.bold, size: 18))
+                                .foregroundColor(Color(hex: "E2E1E5"))
+                                .background(Color(hex:"252525"))
                                 .cornerRadius(10)
                         }
                     }
@@ -82,34 +82,42 @@ struct AccountMainView_Previews: PreviewProvider {
 
 enum OnBoarding {
     
-    case fist
-    case second
-    case third
+    case workout
+    case drink
+    case routine
     
     var image: String {
         
         switch self {
-        case .fist: return "onBoarding1"
-        case .second: return "onBoarding2"
-        case .third: return "onBoarding3"
+        case .workout: return "onBoarding1"
+        case .drink: return "onBoarding2"
+        case .routine: return "onBoarding3"
         }
     }
     
     var title: String {
         
         switch self {
-        case .fist: return "나의 운동 패턴을 기록해요"
-        case .second: return "매일 수분 섭취를 추적해요"
-        case .third: return "나만의 운동 루틴을 저장해요"
+        case .workout: return "Work out."
+        case .drink: return "Drink."
+        case .routine: return "Have Routine."
         }
     }
     
     var desc: String {
         
         switch self {
-        case .fist: return "매일 운동을 기록하기"
-        case .second: return "매일의 수분을 섭취하기"
-        case .third: return "매일 운동루틴을 저장하기"
+        case .workout: return "나의 운동 패턴을 기록해요"
+        case .drink: return "매일의 수분 섭취를 추적해요"
+        case .routine: return "나만의 운동 루틴을 저장해요"
+        }
+    }
+    
+    var guide: String {
+        switch self {
+        case .workout: return "운동 패턴을 저장해서 쉽게 기록할 수 있어요."
+        case .drink: return "수분 섭취 기록도 버튼 하나로!"
+        case .routine: return "운동 루틴 타이머로 나만의 시간 루틴을 짜요!"
         }
     }
 }
@@ -121,19 +129,25 @@ struct OnBoardingView: View {
     var body: some View {
         
         VStack {
-            
             Text(onBoarding.title)
-                .foregroundColor(.white)
-                .font(Font.pretendard(.bold, size: 20))
+                .foregroundColor(.main_green)
+                .font(Font.pretendard(.bold, size: 36))
+                .padding(.bottom, 5)
             
             Text(onBoarding.desc)
-                .foregroundColor(.white)
-                .font(Font.pretendard(.bold, size: 13))
-                .padding(.top, 15)
+                .foregroundColor(.white_text)
+                .font(Font.pretendard(.bold, size: 18))
+                .padding(.bottom, 19)
             
             Image(onBoarding.image)
                 .resizable()
-                .frame(maxWidth: .infinity, maxHeight: 300)
+                .frame(maxWidth: .infinity, maxHeight: 274)
+                .padding(.bottom, 6)
+            
+            Text(onBoarding.guide)
+                .foregroundColor(.white_text)
+                .font(Font.pretendard(.bold, size: 14))
+                .padding(.vertical, 5)
         }
     }
 }

@@ -19,29 +19,24 @@ struct SignInView: View {
     
     var body: some View {
         BaseView {
-            VStack(spacing: 30) {
+            VStack(alignment: .leading, spacing: 30) {
 
                 Image(systemName: "heart.fill")
                     .font(.system(size: 200))
+                    .frame(maxWidth: .infinity, minHeight: 239)
 
-                SignInInputView(title: "아이디", placeholder: "아이디를 입력해 주세요.", value: $viewModel.email, isAble: $viewModel.isActiveEmailField)
-                SignInInputView(title: "비밀번호", placeholder: "비밀번호를 입력해주세요.", value: $viewModel.password, isAble: $viewModel.isActivePasswordField)
+                SignInInputView(title: "이메일", placeholder: "이메일 주소를 입력해주세요", isSecureMode: false, value: $viewModel.email, isAble: $viewModel.isActiveEmailField)
+                SignInInputView(title: "비밀번호", placeholder: "영문, 숫자, 특수문자 조합 8자리 이상", isSecureMode: true, value: $viewModel.password, isAble: $viewModel.isActivePasswordField)
 
                 Text(self.viewModel.errrorMsg)
-                    .font(.system(size: 13, weight: .regular))
-                    .foregroundColor(.red)
-
-                Button("로그인") {
-
+                    .font(Font.pretendard(.regular, size: 13))
+                    .foregroundColor(.error_red)
+                
+                BottomButtonView(buttonTitle: "로그인", isable: viewModel.canSubmit) {
                     self.viewModel.signInWith()
                 }
-                .buttonStyle(CommonButtonView())
-                .disabled(!viewModel.canSubmit)
-
-                Spacer()
             }
             .onAppear { self.bindView() }
-            .padding(.top, 100)
         }
     }
     
@@ -58,6 +53,7 @@ struct SignInInputView: View {
 
     var title: String
     var placeholder: String
+    var isSecureMode: Bool
     
     @Binding var value: String
     @Binding var isAble: Bool
@@ -67,13 +63,30 @@ struct SignInInputView: View {
         VStack {
             
             Text(title)
+                .foregroundColor(Color(hex: "E2E1E5"))
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .font(Font.pretendard(.medium, size: 16))
             
-            TextField(placeholder, text: $value)
+            if isSecureMode {
+                SecureField("", text: $value)
+                    .placeholder(when: value.isEmpty) {
+                        Text(placeholder).foregroundColor(.gray_888)
+                }
+                    .foregroundColor(.gray_888)
+                    .font(Font.pretendard(.medium, size: 16))
+            }
+            else {
+                TextField("", text: $value)
+                    .placeholder(when: value.isEmpty) {
+                        Text(placeholder).foregroundColor(.gray_888)
+                }
+                    .foregroundColor(.gray_888)
+                    .font(Font.pretendard(.medium, size: 16))
+            }
                 
             Divider()
-                .frame(height: 2)
-                .background(self.isAble ? .green : .gray)
+                .frame(height: 1)
+                .background(self.isAble ? Color.main_green : Color.gray_888)
         }
     }
 }

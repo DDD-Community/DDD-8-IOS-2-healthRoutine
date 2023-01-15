@@ -54,18 +54,13 @@ class SignInViewModel: ObservableObject {
                 switch completion {
                 case .failure(let error):
                     switch error {
-                    case .http(let error):
-                        if error.errorCode == 401 {
-                            self.errrorMsg = "잘못된 비밀번호입니다"
-                        }
-                        else if error.errorCode == 404 {
-                            self.errrorMsg = "없는 이메일입니다"
-                        }
+                    case .http:
+                        self.errrorMsg = "* 올바르지 않은 이메일 혹은 비밀번호 입니다."
                     default:
-                        break
+                        self.errrorMsg = "로그인 실패"
                     }
                 case .finished:
-                    print("Finish")
+                    break
                 }
             } receiveValue: { (value: AccountResponse?) in
                 if let value = value, let token = value.result.token {
