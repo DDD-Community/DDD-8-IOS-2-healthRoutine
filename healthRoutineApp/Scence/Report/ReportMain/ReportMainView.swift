@@ -19,13 +19,19 @@ struct ReportMainView: View {
                     
                     LazyVStack(spacing: 10) {
                         
-                        Text("오늘은 어떤 운동을 하셨나요?")
+//                        Text("오늘은 어떤 운동을 하셨나요?")
+                        Text("첫 운동을 기록해보세요!")
                             .foregroundColor(.white)
                             .font(Font.pretendard(.bold, size: 20))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.bottom, 16)
                         
+                        Image("logo")
+                            .resizable()
+                            .frame(width: 297, height: 297, alignment: .center)
+                        
                         List {
+                            
                             ReportMainRowView()
                             ReportMainRowView()
                             ReportMainRowView()

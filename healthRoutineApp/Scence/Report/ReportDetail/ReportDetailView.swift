@@ -17,7 +17,7 @@ struct ReportDetailView: View {
             
             ScrollView {
                 
-                VStack {
+                VStack(spacing: 16) {
                     ReportDetailPartView()
                     ReportDetailKindView()
                     ReportDetailDiffView()

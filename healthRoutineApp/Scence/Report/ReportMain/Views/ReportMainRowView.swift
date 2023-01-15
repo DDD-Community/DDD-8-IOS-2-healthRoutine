@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ReportMainRowView: View {
     
+    var part: String = ""
+    var weight: String = ""
+    var set: String = ""
+    
     var body: some View {
 
         HStack {

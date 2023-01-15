@@ -32,13 +32,6 @@ struct ReportDetailKindView: View {
                         .background(Color(.systemGray4))
                         .cornerRadius(15)
                 }
-                
-                Text("+")
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 14)
-                    .background(Color(.systemGray4))
-                    .cornerRadius(15)
             }
             .frame(maxWidth: .infinity)
         }

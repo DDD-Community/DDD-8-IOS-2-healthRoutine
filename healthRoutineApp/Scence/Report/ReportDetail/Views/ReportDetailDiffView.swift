@@ -39,7 +39,7 @@ struct ReportDetailDiffView: View {
                             ForEach(ExWeight.allCases, id: \.self) {
                                 
                                 Text($0.localized)
-                                    .font(Font.pretendard(.bold, size: 13))
+                                    .font(Font.pretendard(.semiBold, size: 13))
                                     .padding(.horizontal, 10.5)
                                     .padding(.vertical, 12.5)
                                     .background(Color(.systemGray4))
@@ -65,7 +65,7 @@ struct ReportDetailDiffView: View {
                             ForEach(ExWeight.allCases, id: \.self) {
                                 
                                 Text($0.localized)
-                                    .font(Font.pretendard(.bold, size: 13))
+                                    .font(Font.pretendard(.semiBold, size: 13))
                                     .padding(.horizontal, 10.5)
                                     .padding(.vertical, 12.5)
                                     .background(Color(.systemGray4))
@@ -91,7 +91,7 @@ struct ReportDetailDiffView: View {
                             ForEach(ExSet.allCases, id: \.self) {
                                 
                                 Text($0.localized)
-                                    .font(Font.pretendard(.bold, size: 13))
+                                    .font(Font.pretendard(.semiBold, size: 13))
                                     .padding(.horizontal, 10.5)
                                     .padding(.vertical, 12.5)
                                     .background(Color(.systemGray4))
