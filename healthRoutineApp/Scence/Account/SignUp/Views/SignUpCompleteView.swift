@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct SignUpCompleteView: View {
+    @EnvironmentObject private var viewRouter: ViewRouter
     var body: some View {
         BaseView {
             VStack {
                 Text("회원가입 완료")
                     .padding(.top, 100)
                 Spacer()
-                CustomNavigationLink(destination: ContentView()
-                ) {
-                    BottomButtonView(buttonTitle: "메인으로 이동", isable: true, preventButtonAction: true)
+
+                BottomButtonView(buttonTitle: "메인으로 이동", isable: true) {
+                    viewRouter.currentView = .home
                 }
                 .frame(maxHeight: 84) // 60 + 24
             }

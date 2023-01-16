@@ -11,10 +11,10 @@ import Combine
 struct SignInView: View {
     
     @ObservedObject private var viewModel = SignInViewModel()
-    
+    @EnvironmentObject private var viewRouter: ViewRouter
+
     var closeView = PassthroughSubject<Bool, Never>()
-    @Binding var hasToken: Bool
-    
+
     var cancellables: Set<AnyCancellable> = []
     
     var body: some View {
@@ -44,7 +44,7 @@ struct SignInView: View {
      
         self.viewModel.signInFinished
             .receive(on: RunLoop.main)
-            .sink(receiveValue: { self.hasToken = $0 })
+            .sink(receiveValue: { _ in viewRouter.currentView = .home })
             .store(in: &self.viewModel.cancellables)
     }
 }
@@ -93,6 +93,6 @@ struct SignInInputView: View {
 
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(hasToken: .constant(false))
+        SignInView()
     }
 }

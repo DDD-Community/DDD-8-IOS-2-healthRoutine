@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct healthRoutineApp: App {
 
+    @StateObject private var viewRouter = ViewRouter()
+
     var body: some Scene {
         
         WindowGroup {
@@ -18,6 +20,7 @@ struct healthRoutineApp: App {
             
             SplashView()
                 .environmentObject(dateHolder)
+                .environmentObject(viewRouter)
         }
     }
 }

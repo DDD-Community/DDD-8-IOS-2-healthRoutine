@@ -11,18 +11,18 @@ struct SplashView: View {
     
     @State private var isActive: Bool = false
     @EnvironmentObject var dateHolder: DateHolder
+    @EnvironmentObject private var viewRouter: ViewRouter
     
     var body: some View {
         
         if isActive {
-            if KeychainService.shared.isTokenValidate() {
+            if viewRouter.currentView == .home {
                 ContentView().environmentObject(dateHolder)
             }
             else {
-//                ContentView().environmentObject(dateHolder)
                 AccountMainView()
             }
-                
+
         } else {
             
             VStack {

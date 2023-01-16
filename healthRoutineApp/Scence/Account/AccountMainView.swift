@@ -9,60 +9,48 @@ import SwiftUI
 import Combine
 
 struct AccountMainView: View {
-    
-    @State var hasToken: Bool = false
-    
+        
     private let boardInfo: [OnBoarding] = [.workout, .drink, .routine]
     
     var body: some View {
-        
-        if hasToken {
-            
-            ContentView()
-            
-        } else {
-            
-            CustomNavigationView {
-                
-                BaseView {
-                    
-                    VStack(spacing: 16) {
-                        TabView {
+        CustomNavigationView {
+
+            BaseView {
+
+                VStack(spacing: 16) {
+                    TabView {
                         
-                            ForEach(boardInfo, id: \.self) {
-                                OnBoardingView(onBoarding: $0)
-                            } 
-                        }
-                        .frame(maxWidth: .infinity)
-                        .background(Color.background_black)
-                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                        .cornerRadius(16)
-                        .padding(.top, 19)
-                        .onAppear { self.setupAppearance() }
-                        
-                        // MARK: - 로그인 뷰 이동 처리
-                        CustomNavigationLink(destination: SignInView(hasToken: self.$hasToken))  {
-                            Text("로그인")
-                                .frame(maxWidth: .infinity, minHeight: 60)
-                                .font(Font.pretendard(.bold, size: 18))
-                                .foregroundColor(.black)
-                                .background(Color.main_green)
-                                .cornerRadius(10)
-                        }
-                        
-                        // MARK: - 회원가입 뷰 이동 처리
-                        CustomNavigationLink(destination: SignUpMainView().customNavigationTitle("회원가입")
-                        ) {
-                            Text("회원가입")
-                                .frame(maxWidth: .infinity, minHeight: 60)
-                                .font(Font.pretendard(.bold, size: 18))
-                                .foregroundColor(Color(hex: "E2E1E5"))
-                                .background(Color(hex:"252525"))
-                                .cornerRadius(10)
+                        ForEach(boardInfo, id: \.self) {
+                            OnBoardingView(onBoarding: $0)
                         }
                     }
-                    .customNavigationBarBackButtonHidden(true)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.background_black)
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                    .cornerRadius(16)
+                    .padding(.top, 19)
+                    .onAppear { self.setupAppearance() }
+
+                    // MARK: - 로그인 뷰 이동 처리
+                    CustomNavigationLink(destination: SignInView())  {
+                        Text("로그인")
+                            .frame(maxWidth: .infinity, minHeight: 60)
+                            .font(Font.pretendard(.bold, size: 18))
+                            .foregroundColor(.black)
+                            .background(Color.main_green)
+                            .cornerRadius(10)
+                    }
+                    // MARK: - 회원가입 뷰 이동 처리
+                    CustomNavigationLink(destination: SignUpMainView().customNavigationTitle("회원가입")) {
+                        Text("회원가입")
+                            .frame(maxWidth: .infinity, minHeight: 60)
+                            .font(Font.pretendard(.bold, size: 18))
+                            .foregroundColor(Color(hex: "E2E1E5"))
+                            .background(Color(hex:"252525"))
+                            .cornerRadius(10)
+                    }
                 }
+                .customNavigationBarBackButtonHidden(true)
             }
         }
     }

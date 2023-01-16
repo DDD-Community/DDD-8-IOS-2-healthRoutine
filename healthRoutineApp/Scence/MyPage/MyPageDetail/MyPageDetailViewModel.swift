@@ -55,6 +55,11 @@ final class MyPageDetailViewModel: ObservableObject {
         
         let request = AccountUpdateInfoRequest(token: token, nickname: "", image: Data())
     }
+
+    func logout(_ closure: VoidClosure?) {
+        KeychainService.shared.deleteToken()
+        closure?()
+    }
 }
 
 final class MyPageDetailModifyViewModel: ObservableObject {

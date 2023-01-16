@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MyPageMainView: View {
-    
-    private var viewModel = MyPageDetailViewModel()
-    
+    @ObservedObject private var viewModel = MyPageDetailViewModel()
+    @EnvironmentObject private var viewRouter: ViewRouter
+
     var body: some View {
         
         CustomNavigationView {
@@ -28,10 +28,17 @@ struct MyPageMainView: View {
                             MyPageBadgeView()
                             
                             HStack(spacing: 70) {
-                                
-                                Text("로그아웃")
-                                    .font(Font.pretendard(.medium, size: 14))
-                                    .foregroundColor(Color(hex: "707070"))
+
+                                Button {
+                                    viewModel.logout() {
+                                        viewRouter.currentView = .account
+                                        viewRouter.changeFlag.toggle()
+                                    }
+                                } label: {
+                                    Text("로그아웃")
+                                        .font(Font.pretendard(.medium, size: 14))
+                                        .foregroundColor(Color(hex: "707070"))
+                                }
                                 
                                 Text("회원탈퇴")
                                     .font(Font.pretendard(.medium, size: 14))

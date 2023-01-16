@@ -22,8 +22,7 @@ struct SignUpMainView: View {
                 Spacer()
 
                 // MARK: - 회원가입 뷰 이동 처리
-                CustomNavigationLink(destination: NickNameView(viewModel: self.viewModel).customNavigationTitle("회원가입")
-                ) {
+                CustomNavigationLink(destination: NickNameView(viewModel: self.viewModel).customNavigationTitle("회원가입")) {
                     BottomButtonView(buttonTitle: "다음", isable: viewModel.canNextNicknameStep, preventButtonAction: true)
                 }
                 .frame(maxHeight: 84) // 60 + 24
