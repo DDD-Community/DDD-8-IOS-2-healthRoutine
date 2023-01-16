@@ -11,6 +11,8 @@ struct MyPageMainView: View {
     @ObservedObject private var viewModel = MyPageDetailViewModel()
     @EnvironmentObject private var viewRouter: ViewRouter
 
+    private var badge: Badge = .badge1
+    
     var body: some View {
         
         CustomNavigationView {

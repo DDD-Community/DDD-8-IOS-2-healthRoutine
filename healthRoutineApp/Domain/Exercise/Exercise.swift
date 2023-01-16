@@ -15,7 +15,11 @@ typealias ExSet = Exercise.Detail.Set
 enum Exercise {
     
     // 운동 부위
-    enum Part: CaseIterable, Comparable {
+    enum Part: CaseIterable, Comparable, Identifiable {
+        
+        var id: Self {
+            return self
+        }
         
         static let ordered: [ExPart] = Self.allCases.sorted()
         

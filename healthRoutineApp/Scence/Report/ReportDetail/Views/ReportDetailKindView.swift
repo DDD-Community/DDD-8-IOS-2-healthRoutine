@@ -11,6 +11,8 @@ struct ReportDetailKindView: View {
     
     private let columns = [GridItem(.flexible()),GridItem(.flexible())]
     
+    var exPart: ExPart = .chest
+    
     var body: some View {
     
         LazyVStack {
@@ -24,6 +26,7 @@ struct ReportDetailKindView: View {
                 
                 // Sample Data
                 ForEach(ExPart.allCases, id: \.self) {
+                    
                     
                     Text($0.localized)
                         .frame(maxWidth: .infinity)

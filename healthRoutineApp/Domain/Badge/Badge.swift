@@ -52,7 +52,27 @@ enum Badge: String, CaseIterable {
 //            <#code#>
 //        }
 //    }
-//    var desc: String = ""
+
+//    var desc: String {
+        //        switch self {
+        //        case .badge1:
+        //            <#code#>
+        //        case .badge2:
+        //            <#code#>
+        //        case .badge3:
+        //            <#code#>
+        //        case .badge4:
+        //            <#code#>
+        //        case .badge5:
+        //            <#code#>
+        //        case .badge6:
+        //            <#code#>
+        //        case .badge7:
+        //            <#code#>
+        //        case .badge8:
+        //            <#code#>
+        //        }
+//    }
     
 //    var icons: [UIImage] {
 //

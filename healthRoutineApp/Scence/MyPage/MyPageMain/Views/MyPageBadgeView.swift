@@ -36,58 +36,28 @@ struct MyPageBadgeView: View {
                         .foregroundColor(.white)
                 }
             }
+            .padding(.bottom, 27)
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
             
-            HStack(spacing: 20) {
-
-                Image("ProfileDefault")
-                    .resizable()
-                    .frame(width: 66, height: 66)
-                    .clipShape(Circle())
-
-                Image("ProfileDefault")
-                    .resizable()
-                    .frame(width: 66, height: 66)
-                    .clipShape(Circle())
-
-                Image("ProfileDefault")
-                    .resizable()
-                    .frame(width: 66, height: 66)
-                    .clipShape(Circle())
-
-                Image("ProfileDefault")
-                    .resizable()
-                    .frame(width: 66, height: 66)
-                    .clipShape(Circle())
+            LazyVGrid(columns: columns, spacing: 16) {
+                
+                // Sample Data
+                ForEach(0..<8, id: \.self) { _ in // 뱃지 넣으면 될듯!
+                    
+                    Image("ProfileDefault")
+                        .resizable()
+                        .frame(width: 60, height: 60)
+                        .clipShape(Circle())
+                        .frame(maxWidth: .infinity)
+                }
             }
-            
-            HStack(spacing: 20) {
-
-                Image("ProfileDefault")
-                    .resizable()
-                    .frame(width: 66, height: 66)
-                    .clipShape(Circle())
-
-                Image("ProfileDefault")
-                    .resizable()
-                    .frame(width: 66, height: 66)
-                    .clipShape(Circle())
-
-                Image("ProfileDefault")
-                    .resizable()
-                    .frame(width: 66, height: 66)
-                    .clipShape(Circle())
-
-                Image("ProfileDefault")
-                    .resizable()
-                    .frame(width: 66, height: 66)
-                    .clipShape(Circle())
-            }
+            .frame(maxWidth: .infinity)
+//            .background(.red)
         }
         .padding(24)
-        .frame(maxWidth: .infinity, maxHeight: 268)
+        .frame(maxWidth: .infinity, maxHeight: 280)
         .background(Color.box_color)
         .cornerRadius(10)
     }
