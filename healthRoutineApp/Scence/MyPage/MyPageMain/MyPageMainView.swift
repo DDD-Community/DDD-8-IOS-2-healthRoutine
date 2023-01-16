@@ -10,6 +10,7 @@ import SwiftUI
 struct MyPageMainView: View {
     
     private var viewModel = MyPageDetailViewModel()
+    private var badge: Badge = .badge1
     
     var body: some View {
         
