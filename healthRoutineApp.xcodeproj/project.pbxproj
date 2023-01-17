@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		800D4B1D296BA09400F9C806 /* TimerPatternInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D4B1C296BA09400F9C806 /* TimerPatternInputView.swift */; };
+		80122A1329762EEE00193EAC /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = 80122A1229762EEE00193EAC /* FLAnimatedImage */; };
+		80122A1529762FFD00193EAC /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80122A1429762FFD00193EAC /* GifView.swift */; };
+		80122A19297635DC00193EAC /* water-500.gif in Resources */ = {isa = PBXBuildFile; fileRef = 80122A16297635DC00193EAC /* water-500.gif */; };
+		80122A1A297635DC00193EAC /* water-1000.gif in Resources */ = {isa = PBXBuildFile; fileRef = 80122A17297635DC00193EAC /* water-1000.gif */; };
+		80122A1B297635DC00193EAC /* water-2000.gif in Resources */ = {isa = PBXBuildFile; fileRef = 80122A18297635DC00193EAC /* water-2000.gif */; };
 		80307691294C5BD200EFF277 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80307690294C5BD200EFF277 /* APIService.swift */; };
 		8060547C295AAD1A002617BA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8060547B295AAD1A002617BA /* Const.swift */; };
 		80605482295AC7F5002617BA /* HealthRoutineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80605481295AC7F5002617BA /* HealthRoutineAPI.swift */; };
@@ -119,6 +124,10 @@
 
 /* Begin PBXFileReference section */
 		800D4B1C296BA09400F9C806 /* TimerPatternInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPatternInputView.swift; sourceTree = "<group>"; };
+		80122A1429762FFD00193EAC /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
+		80122A16297635DC00193EAC /* water-500.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "water-500.gif"; sourceTree = "<group>"; };
+		80122A17297635DC00193EAC /* water-1000.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "water-1000.gif"; sourceTree = "<group>"; };
+		80122A18297635DC00193EAC /* water-2000.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "water-2000.gif"; sourceTree = "<group>"; };
 		80307690294C5BD200EFF277 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		8060547B295AAD1A002617BA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		80605481295AC7F5002617BA /* HealthRoutineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRoutineAPI.swift; sourceTree = "<group>"; };
@@ -237,12 +246,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				80881953294C2CCE00420788 /* Alamofire in Frameworks */,
+				80122A1329762EEE00193EAC /* FLAnimatedImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80122A1C297635E500193EAC /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				80122A16297635DC00193EAC /* water-500.gif */,
+				80122A17297635DC00193EAC /* water-1000.gif */,
+				80122A18297635DC00193EAC /* water-2000.gif */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
 		80307686294C42CD00EFF277 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +445,7 @@
 				807D4D272950430000F757C0 /* KeychainService.swift */,
 				8060547B295AAD1A002617BA /* Const.swift */,
 				80F9BFDA2974E8920018E3CE /* ViewRouter.swift */,
+				80122A1429762FFD00193EAC /* GifView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -465,6 +486,7 @@
 		B623B0F9292F17B200BA7BA7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				80122A1C297635E500193EAC /* Gif */,
 				8088194A294C078B00420788 /* AppColors */,
 				80881930294C026B00420788 /* Fonts */,
 				B6ADAB7729344A870014277B /* Preview Assets.xcassets */,
@@ -811,6 +833,7 @@
 			name = healthRoutineApp;
 			packageProductDependencies = (
 				80881952294C2CCE00420788 /* Alamofire */,
+				80122A1229762EEE00193EAC /* FLAnimatedImage */,
 			);
 			productName = healthRoutineApp;
 			productReference = B6D8CED02917D86200420E8E /* healthRoutineApp.app */;
@@ -842,6 +865,7 @@
 			mainGroup = B6D8CEC72917D86200420E8E;
 			packageReferences = (
 				80881951294C2CCE00420788 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				80122A1129762EEE00193EAC /* XCRemoteSwiftPackageReference "FLAnimatedImage" */,
 			);
 			productRefGroup = B6D8CED12917D86200420E8E /* Products */;
 			projectDirPath = "";
@@ -861,6 +885,9 @@
 				8088193D294C027700420788 /* Pretendard-Medium.otf in Resources */,
 				80881942294C027700420788 /* Pretendard-Bold.otf in Resources */,
 				80881940294C027700420788 /* Pretendard-Thin.otf in Resources */,
+				80122A1B297635DC00193EAC /* water-2000.gif in Resources */,
+				80122A19297635DC00193EAC /* water-500.gif in Resources */,
+				80122A1A297635DC00193EAC /* water-1000.gif in Resources */,
 				8088193C294C027700420788 /* Pretendard-ExtraLight.otf in Resources */,
 				B6D8CEDB2917D86400420E8E /* Preview Assets.xcassets in Resources */,
 				B6ADAB7829344A870014277B /* Preview Assets.xcassets in Resources */,
@@ -935,6 +962,7 @@
 				B6D2889D294AB0370072C347 /* RegExp.swift in Sources */,
 				B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */,
 				B623B123292F4B2300BA7BA7 /* DateHolder.swift in Sources */,
+				80122A1529762FFD00193EAC /* GifView.swift in Sources */,
 				B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */,
 				B69878AA2948068F00C58869 /* BottomButtonView.swift in Sources */,
 				B69878B0294810CA00C58869 /* SplashView.swift in Sources */,
@@ -1192,6 +1220,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		80122A1129762EEE00193EAC /* XCRemoteSwiftPackageReference "FLAnimatedImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flipboard/FLAnimatedImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		80881951294C2CCE00420788 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -1203,6 +1239,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		80122A1229762EEE00193EAC /* FLAnimatedImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80122A1129762EEE00193EAC /* XCRemoteSwiftPackageReference "FLAnimatedImage" */;
+			productName = FLAnimatedImage;
+		};
 		80881952294C2CCE00420788 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 80881951294C2CCE00420788 /* XCRemoteSwiftPackageReference "Alamofire" */;

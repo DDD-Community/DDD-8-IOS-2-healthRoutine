@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import FLAnimatedImage
 
 struct WaterIntakeView: View {
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 12) {
             
             Text("오늘은 얼마나 마셧나요?")
                 .font(Font.pretendard(.bold, size: 20))
@@ -18,13 +19,8 @@ struct WaterIntakeView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             HStack(alignment: .center, spacing: 16) {
-                
-                Rectangle()
-                    .fill(
-                        LinearGradient(gradient: Gradient(colors: [.gray, .blue]), startPoint: .leading, endPoint: .trailing)
-                    )
-                    .cornerRadius(10)
-                    .frame(maxWidth: .infinity, maxHeight: 50)
+                GIFView(imageUrl: "water-500")
+                    .frame(maxWidth: .infinity, maxHeight: 51)
                     .overlay {
                         Text("1000ml")
                             .font(Font.pretendard(.bold, size: 14))
@@ -32,7 +28,6 @@ struct WaterIntakeView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(12)
                     }
-                
                 Image("plus")
                     .resizable()
                     .frame(width: 40, height: 40)
