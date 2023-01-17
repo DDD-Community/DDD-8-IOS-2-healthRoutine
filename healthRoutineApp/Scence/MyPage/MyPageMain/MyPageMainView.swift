@@ -11,7 +11,7 @@ struct MyPageMainView: View {
     @ObservedObject private var viewModel = MyPageDetailViewModel()
     @EnvironmentObject private var viewRouter: ViewRouter
 
-    private var badge: Badge = .badge1
+//    private var badge: [Badge] = [.water]
     
     var body: some View {
         

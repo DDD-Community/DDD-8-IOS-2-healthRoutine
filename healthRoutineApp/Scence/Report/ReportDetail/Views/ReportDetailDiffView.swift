@@ -40,8 +40,34 @@ struct ReportDetailDiffView: View {
                                 
                                 Text($0.localized)
                                     .font(Font.pretendard(.semiBold, size: 13))
-                                    .padding(.horizontal, 10.5)
-                                    .padding(.vertical, 12.5)
+                                    .padding(.horizontal, 12.5)
+                                    .padding(.vertical, 9.5)
+                                    .background(Color(.systemGray4))
+                                    .cornerRadius(30)
+                            }
+                        }
+                    }
+                }
+                
+                HStack(alignment: .top) {
+                    
+                    Text("횟수")
+                        .font(Font.pretendard(.bold, size: 20))
+                        .foregroundColor(.white)
+                    
+                    VStack(alignment: .leading) {
+                        
+                        ReportDetailDiffRowView(value: $viewModel.set)
+                            .frame(maxWidth: .infinity)
+                        
+                        LazyHGrid(rows: columns, spacing: 6) {
+                            
+                            ForEach(ExWeight.allCases, id: \.self) {
+                                
+                                Text($0.localized)
+                                    .font(Font.pretendard(.semiBold, size: 13))
+                                    .padding(.horizontal, 12.5)
+                                    .padding(.vertical, 9.5)
                                     .background(Color(.systemGray4))
                                     .cornerRadius(30)
                             }
@@ -62,38 +88,12 @@ struct ReportDetailDiffView: View {
                         
                         LazyHGrid(rows: columns, spacing: 6) {
                             
-                            ForEach(ExWeight.allCases, id: \.self) {
-                                
-                                Text($0.localized)
-                                    .font(Font.pretendard(.semiBold, size: 13))
-                                    .padding(.horizontal, 10.5)
-                                    .padding(.vertical, 12.5)
-                                    .background(Color(.systemGray4))
-                                    .cornerRadius(30)
-                            }
-                        }
-                    }
-                }
-                
-                HStack(alignment: .top) {
-                    
-                    Text("갯수")
-                        .font(Font.pretendard(.bold, size: 20))
-                        .foregroundColor(.white)
-                    
-                    VStack(alignment: .leading) {
-                        
-                        ReportDetailDiffRowView(value: $viewModel.set)
-                            .frame(maxWidth: .infinity)
-                        
-                        LazyHGrid(rows: columns, spacing: 6) {
-                            
                             ForEach(ExSet.allCases, id: \.self) {
                                 
                                 Text($0.localized)
                                     .font(Font.pretendard(.semiBold, size: 13))
-                                    .padding(.horizontal, 10.5)
-                                    .padding(.vertical, 12.5)
+                                    .padding(.horizontal, 12.5)
+                                    .padding(.vertical, 9.5)
                                     .background(Color(.systemGray4))
                                     .cornerRadius(30)
                             }

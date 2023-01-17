@@ -14,20 +14,22 @@ struct MyPageBadgeView: View {
         GridItem(.flexible()),GridItem(.flexible())
     ]
     
+    var badgeTest: Badge = .water
+    
     var body: some View {
         
         VStack {
             
             HStack(spacing: 16) {
                 
-                Image("ProfileDefault")
+                Image(badgeTest.icon)
                     .resizable()
                     .frame(width: 66, height: 66)
                     .clipShape(Circle())
                 
                 VStack(alignment: .leading, spacing: 5) {
                     
-                    Text("물 먹는 슈퍼 하마왕")
+                    Text(badgeTest.title)
                         .font(Font.pretendard(.bold, size: 20))
                         .foregroundColor(.white)
                     
@@ -44,13 +46,14 @@ struct MyPageBadgeView: View {
             LazyVGrid(columns: columns, spacing: 16) {
                 
                 // Sample Data
-                ForEach(0..<8, id: \.self) { _ in // 뱃지 넣으면 될듯!
+                ForEach(Badge.allCases, id: \.self) { // 뱃지 넣으면 될듯!
                     
-                    Image("ProfileDefault")
+                    Image($0.icon)
                         .resizable()
+                        .scaledToFit()
                         .frame(width: 60, height: 60)
-                        .clipShape(Circle())
                         .frame(maxWidth: .infinity)
+//                        .background(.red)
                 }
             }
             .frame(maxWidth: .infinity)
