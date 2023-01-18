@@ -27,6 +27,7 @@ struct TimerMainView: View {
                     ) {
                         BottomButton_BackView(buttonTitle: "자주 쓰는 타이머 패턴 추가", isable: true, preventButtonAction: true)
                     }
+                    .frame(height: 84)
                 }
                 .customNavigationTitle("타이머")
                 .customNavigationBarBackButtonHidden(true)

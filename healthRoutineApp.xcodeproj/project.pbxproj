@@ -14,6 +14,7 @@
 		80122A1A297635DC00193EAC /* water-1000.gif in Resources */ = {isa = PBXBuildFile; fileRef = 80122A17297635DC00193EAC /* water-1000.gif */; };
 		80122A1B297635DC00193EAC /* water-2000.gif in Resources */ = {isa = PBXBuildFile; fileRef = 80122A18297635DC00193EAC /* water-2000.gif */; };
 		80307691294C5BD200EFF277 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80307690294C5BD200EFF277 /* APIService.swift */; };
+		8056B94B29767680008F0269 /* ReportMainRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056B94A29767680008F0269 /* ReportMainRowView.swift */; };
 		8060547C295AAD1A002617BA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8060547B295AAD1A002617BA /* Const.swift */; };
 		80605482295AC7F5002617BA /* HealthRoutineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80605481295AC7F5002617BA /* HealthRoutineAPI.swift */; };
 		8070843F296D55870063D16D /* TimerMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070843E296D55870063D16D /* TimerMainViewModel.swift */; };
@@ -90,7 +91,7 @@
 		B65208DB2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208DA2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift */; };
 		B65350F22966D8B400880CED /* ReportDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65350F12966D8B400880CED /* ReportDetailView.swift */; };
 		B65350F42966D8BC00880CED /* ReportMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65350F32966D8BC00880CED /* ReportMainView.swift */; };
-		B65350F72966D91000880CED /* ReportMainRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65350F62966D91000880CED /* ReportMainRowView.swift */; };
+		B65350F72966D91000880CED /* ReportMainRowView_Backup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65350F62966D91000880CED /* ReportMainRowView_Backup.swift */; };
 		B6535E65295BE12100372E7E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6535E64295BE12100372E7E /* ImagePicker.swift */; };
 		B65AD97C2954063B005AB105 /* AccountMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AD97B2954063B005AB105 /* AccountMainViewModel.swift */; };
 		B65AD97F29542BDA005AB105 /* MyPageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AD97E29542BDA005AB105 /* MyPageDetailView.swift */; };
@@ -129,6 +130,7 @@
 		80122A17297635DC00193EAC /* water-1000.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "water-1000.gif"; sourceTree = "<group>"; };
 		80122A18297635DC00193EAC /* water-2000.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "water-2000.gif"; sourceTree = "<group>"; };
 		80307690294C5BD200EFF277 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		8056B94A29767680008F0269 /* ReportMainRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportMainRowView.swift; sourceTree = "<group>"; };
 		8060547B295AAD1A002617BA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		80605481295AC7F5002617BA /* HealthRoutineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRoutineAPI.swift; sourceTree = "<group>"; };
 		8070843E296D55870063D16D /* TimerMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerMainViewModel.swift; sourceTree = "<group>"; };
@@ -206,7 +208,7 @@
 		B65208DA2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarPreferenceKey.swift; sourceTree = "<group>"; };
 		B65350F12966D8B400880CED /* ReportDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailView.swift; sourceTree = "<group>"; };
 		B65350F32966D8BC00880CED /* ReportMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMainView.swift; sourceTree = "<group>"; };
-		B65350F62966D91000880CED /* ReportMainRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMainRowView.swift; sourceTree = "<group>"; };
+		B65350F62966D91000880CED /* ReportMainRowView_Backup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMainRowView_Backup.swift; sourceTree = "<group>"; };
 		B6535E64295BE12100372E7E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		B65AD97B2954063B005AB105 /* AccountMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMainViewModel.swift; sourceTree = "<group>"; };
 		B65AD97E29542BDA005AB105 /* MyPageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDetailView.swift; sourceTree = "<group>"; };
@@ -652,7 +654,8 @@
 		B65350F52966D90400880CED /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B65350F62966D91000880CED /* ReportMainRowView.swift */,
+				8056B94A29767680008F0269 /* ReportMainRowView.swift */,
+				B65350F62966D91000880CED /* ReportMainRowView_Backup.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -952,7 +955,7 @@
 				B6D288A1294AED7B0072C347 /* AccountAPIWorker.swift in Sources */,
 				B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */,
 				911E0906294496D2000555D8 /* TimerAddView.swift in Sources */,
-				B65350F72966D91000880CED /* ReportMainRowView.swift in Sources */,
+				B65350F72966D91000880CED /* ReportMainRowView_Backup.swift in Sources */,
 				911E090829449A3A000555D8 /* TimerPatternView.swift in Sources */,
 				807D4D282950430000F757C0 /* KeychainService.swift in Sources */,
 				B65208DB2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift in Sources */,
@@ -964,6 +967,7 @@
 				B623B123292F4B2300BA7BA7 /* DateHolder.swift in Sources */,
 				80122A1529762FFD00193EAC /* GifView.swift in Sources */,
 				B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */,
+				8056B94B29767680008F0269 /* ReportMainRowView.swift in Sources */,
 				B69878AA2948068F00C58869 /* BottomButtonView.swift in Sources */,
 				B69878B0294810CA00C58869 /* SplashView.swift in Sources */,
 				B6197CFA2937342E006A535D /* SignInView.swift in Sources */,
