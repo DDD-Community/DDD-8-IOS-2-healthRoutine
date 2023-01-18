@@ -8,36 +8,39 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var section = 0
+    
     var body: some View {
         
-        TabView {
+        TabView(selection: $section) {
             
             Group {
                 
                 HomeMainView()
                     .tabItem {
-                        Image(systemName: "house")
+                        self.section == 0 ? Image("mainOn") : Image("main")
                     }
+                    .tag(0)
                 
                 ReportMainView()
                     .tabItem {
-                        Image(systemName: "chart.bar")
+                        self.section == 1 ? Image("reportOn") : Image("report")
                     }
+                    .tag(1)
                 
                 TimerMainView()
                     .tabItem {
-                        Image(systemName: "clock")
+                        self.section == 2 ? Image("timerOn") : Image("timer")
                     }
+                    .tag(2)
                 
                 MyPageMainView()
                     .tabItem {
-                        Image(systemName: "person")
+                        self.section == 3 ? Image("myPageOn") : Image("myPage")
                     }
+                    .tag(3)
             }
-        }
-        .accentColor(Color.available_green)
-        .onAppear() {
-            UITabBar.appearance().barTintColor = UIColor(Color.background_black)
         }
     }
 }
