@@ -100,6 +100,7 @@
 		B65B4F732967DBB400C30B3E /* ReportDetailPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B4F722967DBB400C30B3E /* ReportDetailPartView.swift */; };
 		B65B4F762967E19600C30B3E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B4F752967E19600C30B3E /* Exercise.swift */; };
 		B66169FA29501DBA000474A9 /* BadgeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66169F929501DBA000474A9 /* BadgeRowView.swift */; };
+		B66578642978208C009FE02F /* MyPageBadgeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */; };
 		B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F21292E627400A9AE99 /* MyPageMainView.swift */; };
 		B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */; };
 		B68B4F29292E64E400A9AE99 /* MyPageHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */; };
@@ -217,6 +218,7 @@
 		B65B4F722967DBB400C30B3E /* ReportDetailPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailPartView.swift; sourceTree = "<group>"; };
 		B65B4F752967E19600C30B3E /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		B66169F929501DBA000474A9 /* BadgeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRowView.swift; sourceTree = "<group>"; };
+		B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBadgeDetailView.swift; sourceTree = "<group>"; };
 		B68B4F21292E627400A9AE99 /* MyPageMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainView.swift; sourceTree = "<group>"; };
 		B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileView.swift; sourceTree = "<group>"; };
 		B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHistoryView.swift; sourceTree = "<group>"; };
@@ -740,6 +742,7 @@
 				B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */,
 				B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */,
 				B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */,
+				B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -976,6 +979,7 @@
 				B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */,
 				B642C473296AAE25001E6718 /* ReportDetailViewModel.swift in Sources */,
 				B623B125292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift in Sources */,
+				B66578642978208C009FE02F /* MyPageBadgeDetailView.swift in Sources */,
 				B69878B22948197000C58869 /* AccountMainView.swift in Sources */,
 				B6FDBC31296FC61E002D5F43 /* Badge.swift in Sources */,
 				91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */,

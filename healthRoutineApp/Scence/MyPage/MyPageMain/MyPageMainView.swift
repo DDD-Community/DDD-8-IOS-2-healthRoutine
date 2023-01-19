@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct MyPageMainView: View {
+    
     @ObservedObject private var viewModel = MyPageDetailViewModel()
     @EnvironmentObject private var viewRouter: ViewRouter
-
-//    private var badge: [Badge] = [.water]
     
     var body: some View {
         
@@ -19,40 +18,42 @@ struct MyPageMainView: View {
             
             BaseView {
                 
-                VStack {
+                ZStack {
                     
-                    ScrollView(showsIndicators: false) {
+                    VStack {
                         
-                        VStack(spacing: 16) {
+                        ScrollView(showsIndicators: false) {
                             
-                            MyPageProfileView()
-                            MyPageHistoryView()
-                            MyPageBadgeView()
-                            
-                            HStack(spacing: 70) {
+                            VStack(spacing: 16) {
+                                
+                                MyPageProfileView()
+                                MyPageHistoryView()
+                                MyPageBadgeView()
+                                
+                                HStack(spacing: 70) {
 
-                                Button {
-                                    viewModel.logout() {
-                                        viewRouter.currentView = .account
-                                        viewRouter.changeFlag.toggle()
+                                    Button {
+                                        viewModel.logout() {
+                                            viewRouter.currentView = .account
+                                            viewRouter.changeFlag.toggle()
+                                        }
+                                    } label: {
+                                        Text("로그아웃")
+                                            .font(Font.pretendard(.medium, size: 14))
+                                            .foregroundColor(Color(hex: "707070"))
                                     }
-                                } label: {
-                                    Text("로그아웃")
+                                    
+                                    Text("회원탈퇴")
                                         .font(Font.pretendard(.medium, size: 14))
                                         .foregroundColor(Color(hex: "707070"))
                                 }
-                                
-                                Text("회원탈퇴")
-                                    .font(Font.pretendard(.medium, size: 14))
-                                    .foregroundColor(Color(hex: "707070"))
+                                .padding(.top, 16)
                             }
-                            .padding(.top, 16)
                         }
-                
                     }
+                    .customNavigationBarBackButtonHidden(true)
+                    .customNavigationTitle("마이페이지")
                 }
-                .customNavigationBarBackButtonHidden(true)
-                .customNavigationTitle("마이페이지")
             }
         }
     }
