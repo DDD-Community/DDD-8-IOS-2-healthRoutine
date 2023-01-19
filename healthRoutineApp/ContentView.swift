@@ -42,6 +42,9 @@ struct ContentView: View {
                     .tag(3)
             }
         }
+        .onAppear() {
+            UITabBar.appearance().barTintColor = UIColor(Color.background_black)
+        }
     }
 }
 

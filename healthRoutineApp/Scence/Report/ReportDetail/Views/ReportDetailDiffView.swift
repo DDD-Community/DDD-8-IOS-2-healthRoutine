@@ -27,7 +27,7 @@ struct ReportDetailDiffView: View {
                 HStack(alignment: .top) {
                     
                     Text("무게")
-                        .font(Font.pretendard(.bold, size: 20))                        .foregroundColor(.white)
+                        .font(Font.pretendard(.bold, size: 16))                        .foregroundColor(.white_text)
                     
                     VStack(alignment: .leading) {
                         

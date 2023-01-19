@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ReportDetailKindView: View {
+
+    @State var selected: String?
     
     private let columns = [GridItem(.flexible()),GridItem(.flexible())]
     
@@ -23,17 +25,20 @@ struct ReportDetailKindView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             LazyVGrid(columns: columns, spacing: 6) {
-                
-                // Sample Data
-                ForEach(ExPart.allCases, id: \.self) {
-                    
-                    
-                    Text($0.localized)
-                        .frame(maxWidth: .infinity)
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 14)
-                        .background(Color(.systemGray4))
-                        .cornerRadius(15)
+
+                ForEach(ExPart.allCases, id: \.self) { part in
+
+                    Button(action: { self.selected = part.localized }) {
+
+                        Text(part.localized)
+                            .font(Font.pretendard(.semiBold, size: 13))
+                            .frame(maxWidth: .infinity)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 14)
+                            .foregroundColor(.background_black)
+                            .background(selected == part.localized ? Color.main_green : Color.background_gray)
+                            .cornerRadius(15)
+                    }
                 }
             }
             .frame(maxWidth: .infinity)

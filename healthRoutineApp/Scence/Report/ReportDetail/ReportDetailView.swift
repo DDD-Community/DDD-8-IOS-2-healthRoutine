@@ -14,18 +14,21 @@ struct ReportDetailView: View {
     var body: some View {
         
         BaseView {
-            
-            ScrollView {
-                
-                VStack(spacing: 16) {
-                    ReportDetailPartView()
-                    ReportDetailKindView()
-                    ReportDetailDiffView()
+            VStack {
+
+                ScrollView {
+
+                    VStack(spacing: 16) {
+                        ReportDetailPartView()
+                        ReportDetailKindView()
+                        ReportDetailDiffView()
+                    }
                 }
-            }
-           
-            BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true) {
-                self.presentationMode.wrappedValue.dismiss()
+
+                BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true) {
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+                .frame(height: 84)
             }
         }
     }

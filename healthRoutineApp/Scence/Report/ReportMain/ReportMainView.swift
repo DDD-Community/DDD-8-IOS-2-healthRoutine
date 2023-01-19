@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ReportMainView: View {
-    #warning("임시 샘플 코드 하드코딩합니다.")
     @State var samples: [Int] = [0,1,2,3]
-
 
     var body: some View {
         

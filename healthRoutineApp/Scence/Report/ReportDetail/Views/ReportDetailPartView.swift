@@ -25,8 +25,8 @@ struct ReportDetailPartView: View {
         
         VStack {
             
-            Text("운동 부위를 입력해주세요")
-                .foregroundColor(.white)
+            Text("운동 부위를 선택해주세요")
+                .foregroundColor(.white_text)
                 .font(Font.pretendard(.bold, size: 20))
                 .frame(maxWidth: .infinity, alignment: .leading)
             
@@ -37,10 +37,11 @@ struct ReportDetailPartView: View {
                     Button(action: { self.selected = part.localized }) {
                         
                         Text(part.localized)
+                            .font(Font.pretendard(.semiBold, size: 14))
                             .frame(maxWidth: .infinity)
                             .padding(12)
-                            .foregroundColor(.black)
-                            .background(selected == part.localized ? .white : Color(.systemGray4))
+                            .foregroundColor(.background_black)
+                            .background(selected == part.localized ? Color.main_green : Color.background_gray)
                             .cornerRadius(15)
                     }
                 }
