@@ -18,30 +18,13 @@ struct MyPageHistoryView: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            HStack {
+            HStack(alignment: .center) {
                 
-                Image("leftAngleBracket")
-                    .resizable()
-                    .foregroundColor(.white)
-                    .frame(width: 8, height: 12)
-                   
-                Spacer()
-                     
-                HStack(alignment: .center) {
-                    
-                    ForEach(1..<5) {
-                        Spacer()
-                        CircleListView(label: "\($0) 월")
-                        Spacer()
-                    }
+                ForEach(1..<6) {
+                    Spacer()
+                    CircleListView(label: "\($0) 월")
+                    Spacer()
                 }
-                
-                Spacer()
-                
-                Image("rightAngleBracket")
-                    .resizable()
-                    .foregroundColor(.white)
-                    .frame(width: 8, height: 12)
             }
         }
         .padding(24)
@@ -64,6 +47,7 @@ struct CircleListView: View {
             
             Text(label)
                 .foregroundColor(.black)
+                .font(Font.pretendard(.bold, size: 14))
         }
     }
 }

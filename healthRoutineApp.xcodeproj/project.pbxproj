@@ -60,7 +60,6 @@
 		91BD01E929740E95006C47FA /* HomeDetailTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD01E829740E95006C47FA /* HomeDetailTabView.swift */; };
 		91C77AA82969488400F578C8 /* TimerAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C77AA72969488400F578C8 /* TimerAddViewModel.swift */; };
 		91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C856ED2948C49B000385C7 /* Color+Ext.swift */; };
-		B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */; };
 		B615849F2955516D00A7157A /* MyPageMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615849E2955516D00A7157A /* MyPageMainViewModel.swift */; };
 		B6197CFA2937342E006A535D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6197CF92937342E006A535D /* SignInView.swift */; };
 		B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F2292F165100BA7BA7 /* HomeMainView.swift */; };
@@ -108,7 +107,6 @@
 		B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */; };
 		B69878AA2948068F00C58869 /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878A92948068E00C58869 /* BottomButtonView.swift */; };
 		B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AB2948079600C58869 /* CommonButtonView.swift */; };
-		B69878AE29480B1B00C58869 /* CommonInputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AD29480B1B00C58869 /* CommonInputFieldView.swift */; };
 		B69878B0294810CA00C58869 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AF294810CA00C58869 /* SplashView.swift */; };
 		B69878B22948197000C58869 /* AccountMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878B12948197000C58869 /* AccountMainView.swift */; };
 		B6ADAB7829344A870014277B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ADAB7729344A870014277B /* Preview Assets.xcassets */; };
@@ -177,7 +175,6 @@
 		91BD01E829740E95006C47FA /* HomeDetailTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailTabView.swift; sourceTree = "<group>"; };
 		91C77AA72969488400F578C8 /* TimerAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAddViewModel.swift; sourceTree = "<group>"; };
 		91C856ED2948C49B000385C7 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
-		B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuVeiw.swift; sourceTree = "<group>"; };
 		B615849E2955516D00A7157A /* MyPageMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainViewModel.swift; sourceTree = "<group>"; };
 		B6197CF92937342E006A535D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		B623B0EF292F12DB00BA7BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -226,7 +223,6 @@
 		B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeView.swift; sourceTree = "<group>"; };
 		B69878A92948068E00C58869 /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
 		B69878AB2948079600C58869 /* CommonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonView.swift; sourceTree = "<group>"; };
-		B69878AD29480B1B00C58869 /* CommonInputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInputFieldView.swift; sourceTree = "<group>"; };
 		B69878AF294810CA00C58869 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B69878B12948197000C58869 /* AccountMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMainView.swift; sourceTree = "<group>"; };
 		B6ADAB7729344A870014277B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -475,13 +471,9 @@
 		B623B0F5292F169300BA7BA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B6D677A7297A358500A2939C /* Button */,
 				B6DF8D88296957F4006C2C89 /* Alert */,
 				B65208D72949C2980095DAB4 /* Navigation */,
-				B609BEF3292EFF99008045CE /* TopMenuVeiw.swift */,
-				B69878A92948068E00C58869 /* BottomButtonView.swift */,
-				B636FCE7296BD516008DCC8D /* BottomButton_BackView.swift */,
-				B69878AB2948079600C58869 /* CommonButtonView.swift */,
-				B69878AD29480B1B00C58869 /* CommonInputFieldView.swift */,
 				80A2757B295973FF003295C4 /* BaseView.swift */,
 			);
 			path = Views;
@@ -496,16 +488,8 @@
 				B6ADAB7729344A870014277B /* Preview Assets.xcassets */,
 				B623B0EF292F12DB00BA7BA7 /* Info.plist */,
 				B6D8CED72917D86400420E8E /* Assets.xcassets */,
-				B623B0FA292F17B200BA7BA7 /* Localizables */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		B623B0FA292F17B200BA7BA7 /* Localizables */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Localizables;
 			sourceTree = "<group>";
 		};
 		B623B113292F3EB800BA7BA7 /* Tools */ = {
@@ -747,6 +731,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B6D677A7297A358500A2939C /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				B69878A92948068E00C58869 /* BottomButtonView.swift */,
+				B636FCE7296BD516008DCC8D /* BottomButton_BackView.swift */,
+				B69878AB2948079600C58869 /* CommonButtonView.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		B6D8CEC72917D86200420E8E = {
 			isa = PBXGroup;
 			children = (
@@ -951,7 +945,6 @@
 				B623B118292F47B500BA7BA7 /* Date+Ext.swift in Sources */,
 				B65B4F732967DBB400C30B3E /* ReportDetailPartView.swift in Sources */,
 				B65350F22966D8B400880CED /* ReportDetailView.swift in Sources */,
-				B69878AE29480B1B00C58869 /* CommonInputFieldView.swift in Sources */,
 				B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */,
 				80950213296AF4A900EE0E00 /* Array+Ext.swift in Sources */,
 				80881957294C37BE00420788 /* APIManager.swift in Sources */,
@@ -1003,7 +996,6 @@
 				B636FCE8296BD516008DCC8D /* BottomButton_BackView.swift in Sources */,
 				B65AD97F29542BDA005AB105 /* MyPageDetailView.swift in Sources */,
 				B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */,
-				B609BEF4292EFF99008045CE /* TopMenuVeiw.swift in Sources */,
 				91B0376C2951F96A000837BA /* View+Ext.swift in Sources */,
 				B66169FA29501DBA000474A9 /* BadgeRowView.swift in Sources */,
 				B639D13B294F5C07009AE6C9 /* AccountResponse.swift in Sources */,
