@@ -113,6 +113,8 @@
 		B6D2889D294AB0370072C347 /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2889C294AB0370072C347 /* RegExp.swift */; };
 		B6D2889F294AB1010072C347 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2889E294AB1010072C347 /* String+Ext.swift */; };
 		B6D288A1294AED7B0072C347 /* AccountAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D288A0294AED7B0072C347 /* AccountAPIWorker.swift */; };
+		B6D677A9297A6BC400A2939C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D677A8297A6BC400A2939C /* Account.swift */; };
+		B6D677AB297A6C8F00A2939C /* WordLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D677AA297A6C8F00A2939C /* WordLimit.swift */; };
 		B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED32917D86200420E8E /* healthRoutineApp.swift */; };
 		B6D8CED62917D86200420E8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED52917D86200420E8E /* ContentView.swift */; };
 		B6D8CED82917D86400420E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6D8CED72917D86400420E8E /* Assets.xcassets */; };
@@ -230,6 +232,8 @@
 		B6D2889C294AB0370072C347 /* RegExp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegExp.swift; sourceTree = "<group>"; };
 		B6D2889E294AB1010072C347 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		B6D288A0294AED7B0072C347 /* AccountAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIWorker.swift; sourceTree = "<group>"; };
+		B6D677A8297A6BC400A2939C /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		B6D677AA297A6C8F00A2939C /* WordLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLimit.swift; sourceTree = "<group>"; };
 		B6D8CED02917D86200420E8E /* healthRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D8CED32917D86200420E8E /* healthRoutineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthRoutineApp.swift; sourceTree = "<group>"; };
 		B6D8CED52917D86200420E8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -591,6 +595,7 @@
 				B65B4F742967E16C00C30B3E /* Exercise */,
 				80307686294C42CD00EFF277 /* Network */,
 				B65208C6294975350095DAB4 /* Account */,
+				B6D677AA297A6C8F00A2939C /* WordLimit.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -603,6 +608,7 @@
 				B65208C9294979760095DAB4 /* AccountAPI.swift */,
 				B65208CD29498D1E0095DAB4 /* AccountErrors.swift */,
 				B6D288A0294AED7B0072C347 /* AccountAPIWorker.swift */,
+				B6D677A8297A6BC400A2939C /* Account.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -960,6 +966,7 @@
 				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,
 				B6D2889D294AB0370072C347 /* RegExp.swift in Sources */,
 				B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */,
+				B6D677A9297A6BC400A2939C /* Account.swift in Sources */,
 				B623B123292F4B2300BA7BA7 /* DateHolder.swift in Sources */,
 				80122A1529762FFD00193EAC /* GifView.swift in Sources */,
 				B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */,
@@ -987,6 +994,7 @@
 				912523912937A41800003C87 /* NormalTimerViewModel.swift in Sources */,
 				B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */,
 				80708441296D6A070063D16D /* CustomTimerReadyView.swift in Sources */,
+				B6D677AB297A6C8F00A2939C /* WordLimit.swift in Sources */,
 				809FB26E29503C3E000E2EC6 /* Encodable+Ext.swift in Sources */,
 				B65AD97C2954063B005AB105 /* AccountMainViewModel.swift in Sources */,
 				B65AD9862954307F005AB105 /* MyPageDetailViewModel.swift in Sources */,

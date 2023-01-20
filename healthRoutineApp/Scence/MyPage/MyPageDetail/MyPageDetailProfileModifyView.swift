@@ -12,7 +12,7 @@ struct MyPageDetailProfileModifyView: View {
     @State var showActionSheet: Bool = false
     @State var showImagePicker: Bool = false
     
-    @ObservedObject var viewModel = MyPageDetailModifyViewModel()
+//    @ObservedObject var viewModel = MyPageDetailModifyViewModel()
     
     @State var image: UIImage = UIImage()
     
@@ -76,9 +76,9 @@ struct MyPageDetailInputView: View {
     }
 }
 
-struct MyPageDetailProfileModifyView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyPageDetailProfileModifyView(showActionSheet: false, showImagePicker: false)
-            .background(Color.box_color)
-    }
-}
+//struct MyPageDetailProfileModifyView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyPageDetailProfileModifyView(showActionSheet: false, showImagePicker: false)
+//            .background(Color.box_color)
+//    }
+//}
