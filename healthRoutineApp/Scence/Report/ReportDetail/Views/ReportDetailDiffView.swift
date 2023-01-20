@@ -22,12 +22,13 @@ struct ReportDetailDiffView: View {
                 .font(Font.pretendard(.bold, size: 20))
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            LazyVStack {
+            LazyVStack(spacing: 34) {
                 
                 HStack(alignment: .top) {
                     
                     Text("무게")
-                        .font(Font.pretendard(.bold, size: 16))                        .foregroundColor(.white_text)
+                        .font(Font.pretendard(.bold, size: 16))           
+                        .foregroundColor(.white_text)
                     
                     VStack(alignment: .leading) {
                         
@@ -52,7 +53,7 @@ struct ReportDetailDiffView: View {
                 HStack(alignment: .top) {
                     
                     Text("횟수")
-                        .font(Font.pretendard(.bold, size: 20))
+                        .font(Font.pretendard(.bold, size: 16))
                         .foregroundColor(.white)
                     
                     VStack(alignment: .leading) {
@@ -78,7 +79,7 @@ struct ReportDetailDiffView: View {
                 HStack(alignment: .top) {
                     
                     Text("세트")
-                        .font(Font.pretendard(.bold, size: 20))
+                        .font(Font.pretendard(.bold, size: 16))
                         .foregroundColor(.white)
                     
                     VStack(alignment: .leading) {
@@ -124,6 +125,8 @@ struct ReportDetailDiffRowView: View {
                 VStack {
                     
                     TextField("", text: $value)
+                        .foregroundColor(Color.main_green)
+                        .font(Font.pretendard(.bold, size: 32))
                         
                     Divider()
                         .frame(height: 2)
@@ -131,7 +134,7 @@ struct ReportDetailDiffRowView: View {
                 }
                 
                 Text("kg")
-                    .font(Font.pretendard(.bold, size: 20))
+                    .font(Font.pretendard(.semiBold, size: 14))
                     .foregroundColor(.white)
             }
         }
