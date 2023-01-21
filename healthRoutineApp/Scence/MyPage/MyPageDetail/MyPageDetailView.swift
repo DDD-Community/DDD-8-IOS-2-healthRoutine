@@ -18,12 +18,9 @@ struct MyPageDetailView: View {
             VStack(spacing: 16) {
                 
                 MyPageDetailProfileModifyView()
-                    .frame(maxWidth: .infinity, minHeight: 250)
-                    .background(Color.box_color)
-                    .cornerRadius(20)
                 
                 Button("수정 하기") {
-                    self.viewModel.updateInfo()
+                    
                 }
                 .buttonStyle(CommonButtonView())
                 .background(Color(hex: "353535"))
@@ -34,16 +31,22 @@ struct MyPageDetailView: View {
         }
         .onAppear { self.bindView() }
     }
+}
+
+extension MyPageDetailView {
     
     private func bindView() {
+        
+        
+    }
+    
+    private func bindInputs(_ inputs: MyPageDetailViewModelInputs) {
      
-        self.viewModel.nickNameInfo
-            .receive(on: RunLoop.main)
-            .sink { isErr, hintText in
-                print("isErr")
-                print("hintText")
-            }
-            .store(in: &self.viewModel.cancellables)
+    }
+    
+    private func bindOutputs(_ outputs: MyPageDetailViewModelOutputs) {
+        
+        
     }
 }
 

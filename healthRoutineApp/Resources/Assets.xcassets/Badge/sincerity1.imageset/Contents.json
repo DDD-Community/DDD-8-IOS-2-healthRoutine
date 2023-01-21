@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "sincerity1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "물_2.png",
+      "filename" : "sincerity1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "sincerity1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

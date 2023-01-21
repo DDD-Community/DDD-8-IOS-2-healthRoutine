@@ -18,14 +18,14 @@ struct MyPageBadgeView: View {
     
     var body: some View {
         
-        VStack {
+        LazyVStack {
             
             HStack(spacing: 16) {
                 
                 Image(badgeTest.icon)
                     .resizable()
                     .frame(width: 66, height: 66)
-                    .clipShape(Circle())
+                    .aspectRatio(1, contentMode: .fit)
                 
                 VStack(alignment: .leading, spacing: 5) {
                     
@@ -38,29 +38,23 @@ struct MyPageBadgeView: View {
                         .foregroundColor(.white)
                 }
             }
-            .padding(.bottom, 27)
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            Spacer()
-            
-            LazyVGrid(columns: columns, spacing: 16) {
+            LazyVGrid(columns: columns) {
                 
                 // Sample Data
                 ForEach(Badge.allCases, id: \.self) { // 뱃지 넣으면 될듯!
                     
                     Image($0.icon)
                         .resizable()
-                        .scaledToFit()
-                        .frame(width: 60, height: 60)
-                        .frame(maxWidth: .infinity)
-//                        .background(.red)
+                        .frame(width: 80, height: 80)
                 }
             }
-            .frame(maxWidth: .infinity)
-//            .background(.red)
         }
         .padding(24)
-        .frame(maxWidth: .infinity, maxHeight: 280)
+//        .padding(.top, 24)
+//        .padding(.bottom, 19)
+        .frame(maxWidth: .infinity)
         .background(Color.box_color)
         .cornerRadius(10)
     }

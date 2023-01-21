@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "exercise2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "물_1.png",
+      "filename" : "exercise2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "exercise2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

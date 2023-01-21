@@ -15,7 +15,7 @@ struct MyPageProfileView: View {
             
             HStack(spacing: 22) {
                 
-                Image("ProfileDefault")
+                Image("profile")
                     .resizable()
                     .frame(width: 66, height: 66)
                     .scaledToFit()
@@ -33,8 +33,8 @@ struct MyPageProfileView: View {
                 Text("프로필 수정")
                     .frame(maxWidth: .infinity, minHeight: 46)
                     .font(.system(size: 18, weight: .bold))
-                    .foregroundColor(.black)
-                    .background(Color(.darkGray))
+                    .foregroundColor(Color(hex: "4B4C55"))
+                    .background(Color.disabled_button_field)
                     .cornerRadius(10)
             }
             

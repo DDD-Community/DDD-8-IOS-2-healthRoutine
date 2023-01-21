@@ -8,7 +8,37 @@
 import Foundation
 import Combine
 
-class MyPageMainViewModel: ObservableObject {
+fileprivate protocol MyPageMainViewModelInputs {
+    
+    func tapProfile()
+}
 
+fileprivate protocol MyPageMainViewModelOutputs {
+    
+    var showDetailView: Published<Bool> { get }
+    
+    var showBadgeView: Published<Badge> { get }
+    var showExerciseSummary: Published<String> { get }
+}
+
+class MyPageMainViewModel: ObservableObject {
    
+    var cancellables: Set<AnyCancellable> = []
+
+    @Published var nickname: String = ""
+    
+    
+    
+    
+    private func bindView() {
+        
+    }
+    
+    private func fetchInfos() {
+        
+    }
+    
+    init() {
+        self.bindView()
+    }
 }
