@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct ReportMainView: View {
-    @State var samples: [Int] = [0,1,2,3]
+    @ObservedObject private var viewModel: ReportViewModel
+    
+    init() {
+        viewModel = ReportViewModel()
+        viewModel.fetchList()
+    }
 
     var body: some View {
         
@@ -32,8 +37,8 @@ struct ReportMainView: View {
                                 .resizable()
                                 .frame(width: 297, height: 297, alignment: .center)
 
-                            ForEach (samples, id: \.self) { index in
-                                ReportMainRowView(samples: $samples, index: index).frame(height: 74)
+                            ForEach (viewModel.exerciseArray, id: \.self) { index in
+                                ReportMainRowView(samples: $viewModel.exerciseArray, index: index).frame(height: 74)
                             }
                         }
                         .padding(24)
@@ -41,7 +46,7 @@ struct ReportMainView: View {
                         .cornerRadius(10)
                     }
 
-                    CustomNavigationLink(destination: ReportDetailView().customNavigationTitle("기록")) {
+                    CustomNavigationLink(destination: ReportDetailView(viewModel: viewModel.getDetailViewModel()).customNavigationTitle("기록")) {
                         BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true, preventButtonAction: true)
                     }
                     .frame(height: 84)

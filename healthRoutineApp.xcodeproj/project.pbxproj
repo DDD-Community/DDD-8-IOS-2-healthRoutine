@@ -49,6 +49,8 @@
 		912523932937A41800003C87 /* CustomTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238E2937A41800003C87 /* CustomTimerView.swift */; };
 		912523942937A41800003C87 /* NormalTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238F2937A41800003C87 /* NormalTimerView.swift */; };
 		912523952937A41800003C87 /* NormalTimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912523902937A41800003C87 /* NormalTimerButtonView.swift */; };
+		9150D9B6297C340500DF07F9 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9150D9B5297C340500DF07F9 /* ReportViewModel.swift */; };
+		9150D9B8297C350900DF07F9 /* ReportDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9150D9B7297C350900DF07F9 /* ReportDetailViewModel.swift */; };
 		9167D5B42957F2980002651A /* SignUpCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167D5B32957F2980002651A /* SignUpCompleteView.swift */; };
 		9167D5BA295806E90002651A /* UserDefault+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167D5B9295806E90002651A /* UserDefault+Ext.swift */; };
 		9171AF4E2961785F0027339E /* CustomTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9171AF4D2961785F0027339E /* CustomTimerViewModel.swift */; };
@@ -77,7 +79,6 @@
 		B639D139294F5BE8009AE6C9 /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639D138294F5BE8009AE6C9 /* AccountRequest.swift */; };
 		B639D13B294F5C07009AE6C9 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639D13A294F5C07009AE6C9 /* AccountResponse.swift */; };
 		B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641A4512930582100022A58 /* MyPageViewStrings.swift */; };
-		B642C473296AAE25001E6718 /* ReportDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B642C472296AAE25001E6718 /* ReportDetailViewModel.swift */; };
 		B64C977229514290004F9760 /* HomeMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C977129514290004F9760 /* HomeMainViewModel.swift */; };
 		B64C9775295142AC004F9760 /* HomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C9774295142AC004F9760 /* HomeDetailView.swift */; };
 		B64C977729514B47004F9760 /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C977629514B47004F9760 /* HomeDetailViewModel.swift */; };
@@ -165,6 +166,8 @@
 		9125238E2937A41800003C87 /* CustomTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimerView.swift; sourceTree = "<group>"; };
 		9125238F2937A41800003C87 /* NormalTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalTimerView.swift; sourceTree = "<group>"; };
 		912523902937A41800003C87 /* NormalTimerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalTimerButtonView.swift; sourceTree = "<group>"; };
+		9150D9B5297C340500DF07F9 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		9150D9B7297C350900DF07F9 /* ReportDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewModel.swift; sourceTree = "<group>"; };
 		9167D5B32957F2980002651A /* SignUpCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteView.swift; sourceTree = "<group>"; };
 		9167D5B9295806E90002651A /* UserDefault+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Ext.swift"; sourceTree = "<group>"; };
 		9171AF4D2961785F0027339E /* CustomTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimerViewModel.swift; sourceTree = "<group>"; };
@@ -195,7 +198,6 @@
 		B639D138294F5BE8009AE6C9 /* AccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequest.swift; sourceTree = "<group>"; };
 		B639D13A294F5C07009AE6C9 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		B641A4512930582100022A58 /* MyPageViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewStrings.swift; sourceTree = "<group>"; };
-		B642C472296AAE25001E6718 /* ReportDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewModel.swift; sourceTree = "<group>"; };
 		B64C977129514290004F9760 /* HomeMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewModel.swift; sourceTree = "<group>"; };
 		B64C9774295142AC004F9760 /* HomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView.swift; sourceTree = "<group>"; };
 		B64C977629514B47004F9760 /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
@@ -468,6 +470,8 @@
 			children = (
 				B65350F02966D8A600880CED /* ReportDetail */,
 				B65350EF2966D89B00880CED /* ReportMain */,
+				9150D9B5297C340500DF07F9 /* ReportViewModel.swift */,
+				9150D9B7297C350900DF07F9 /* ReportDetailViewModel.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -678,7 +682,6 @@
 				B65B4F722967DBB400C30B3E /* ReportDetailPartView.swift */,
 				B6DF8D8429694E9A006C2C89 /* ReportDetailKindView.swift */,
 				B6DF8D862969529E006C2C89 /* ReportDetailDiffView.swift */,
-				B642C472296AAE25001E6718 /* ReportDetailViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -968,6 +971,7 @@
 				B6D2889D294AB0370072C347 /* RegExp.swift in Sources */,
 				B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */,
 				B623B123292F4B2300BA7BA7 /* DateHolder.swift in Sources */,
+				9150D9B8297C350900DF07F9 /* ReportDetailViewModel.swift in Sources */,
 				80122A1529762FFD00193EAC /* GifView.swift in Sources */,
 				B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */,
 				8056B94B29767680008F0269 /* ReportMainRowView.swift in Sources */,
@@ -977,10 +981,10 @@
 				8084406C294B2927005A1F75 /* SignUpMainView.swift in Sources */,
 				9171AF5329617DD40027339E /* DI_CustomTimer.swift in Sources */,
 				B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */,
-				B642C473296AAE25001E6718 /* ReportDetailViewModel.swift in Sources */,
 				B623B125292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift in Sources */,
 				B66578642978208C009FE02F /* MyPageBadgeDetailView.swift in Sources */,
 				B69878B22948197000C58869 /* AccountMainView.swift in Sources */,
+				9150D9B6297C340500DF07F9 /* ReportViewModel.swift in Sources */,
 				B6FDBC31296FC61E002D5F43 /* Badge.swift in Sources */,
 				91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */,
 				80881949294C057900420788 /* Font+Ext.swift in Sources */,

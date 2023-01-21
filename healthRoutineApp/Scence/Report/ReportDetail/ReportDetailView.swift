@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ReportDetailView: View {
-    
+    @ObservedObject var viewModel: ReportDetailViewModel
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -36,6 +36,6 @@ struct ReportDetailView: View {
 
 struct ReportDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportDetailView()
+        ReportDetailView(viewModel: ReportDetailViewModel())
     }
 }
