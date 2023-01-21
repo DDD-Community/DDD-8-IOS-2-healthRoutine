@@ -13,7 +13,7 @@ enum Account {
     
     struct Info: Codable, Equatable {
         
-        var id: String?
+//        var id: String?
     
         var nickname: String?
         var photo: String?

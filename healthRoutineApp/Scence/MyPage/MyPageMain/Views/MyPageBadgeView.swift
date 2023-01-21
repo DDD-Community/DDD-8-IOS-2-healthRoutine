@@ -24,7 +24,8 @@ struct MyPageBadgeView: View {
                 
                 Image(badgeTest.icon)
                     .resizable()
-                    .frame(width: 80, height: 80)
+                    .frame(width: 66, height: 66)
+                    .aspectRatio(1, contentMode: .fit)
                 
                 VStack(alignment: .leading, spacing: 5) {
                     

@@ -60,7 +60,6 @@ struct MyPageMainView: View {
     
     private func bindView() {
         
-        self.viewModel.fetchInfo()
     }
 }
 
