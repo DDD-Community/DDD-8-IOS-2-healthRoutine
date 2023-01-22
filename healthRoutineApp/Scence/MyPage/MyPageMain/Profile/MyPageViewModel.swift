@@ -21,6 +21,9 @@ final class MyPageViewModel: ObservableObject {
     @Published var showImagePicker: Bool = false // 이미지 선택화면 여부
     @Published var showActionSheet: Bool = false // 시트 화면 여부
     
+    var fetchProfileFinished = PassthroughSubject<AccountMyInfoProfileResponse, Never>()
+//    var nickname = PassthroughSubject<String. Never>()
+    
     // History
     @Published var history: [String] = []
     
@@ -43,3 +46,37 @@ final class MyPageViewModel: ObservableObject {
     }
 }
 
+extension MyPageViewModel {
+    
+    func fetchProfile() {
+        
+        APIService.fetchProfileInfo()
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { (value: AccountMyInfoProfileResponse) in
+                self.fetchProfileFinished.send(value)
+            }
+            .store(in: &cancellables)
+    }
+}
+
+extension MyPageViewModel {
+    
+    private func updateInfo(_ response: AccountMyInfoProfileResponse) {
+        
+        self.nickname = response.result.nickname
+        
+//        guard let recentImage = response.result.profileImage
+        
+//        self.recentImage = response.result.profileImage
+        
+    }
+}

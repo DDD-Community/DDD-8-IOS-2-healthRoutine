@@ -19,14 +19,14 @@ struct AccountResult: Codable {
     let nickname: String
 }
 
-struct AccountMyInfoResponse: Decodable {
+struct AccountMyInfoProfileResponse: Decodable {
     
     let code: Int
     let message: String
-    let result: AccountMyInfoResult
+    let result: AccountMyInfoProfileResult
 }
 
-struct AccountMyInfoResult: Codable {
+struct AccountMyInfoProfileResult: Codable {
     
     let id: String
     let nickname: String

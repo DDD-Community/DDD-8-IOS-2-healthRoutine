@@ -7,15 +7,21 @@
 
 import Foundation
 
-typealias AccountInfo = Account.Info
-
-enum Account {
-    
-    struct Info: Codable, Equatable {
-        
+//typealias AccountInfo = Account.Info
+//
+//enum Account {
+//    
+//    struct Info: Codable, Equatable {
+//        
 //        var id: String?
-    
-        var nickname: String?
-        var photo: String?
-    }
-}
+//        var nickname: String?
+//        var photo: String?
+//        
+//        enum CodingKeys: String, CodingKey {
+//            
+//            case id
+//            case nicknam
+//            case photo = "profileImage"
+//        }
+//    }
+//}

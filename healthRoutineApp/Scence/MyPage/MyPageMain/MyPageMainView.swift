@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MyPageMainView: View {
     
-    @ObservedObject private var viewModel = MyPageDetailViewModel()
+    @ObservedObject private var viewModel = MyPageViewModel()
     @EnvironmentObject private var viewRouter: ViewRouter
     
     var body: some View {
@@ -33,11 +33,14 @@ struct MyPageMainView: View {
                                 HStack(spacing: 70) {
 
                                     Button {
+                                        
                                         viewModel.logout() {
                                             viewRouter.currentView = .account
                                             viewRouter.changeFlag.toggle()
                                         }
+                                        
                                     } label: {
+                                        
                                         Text("로그아웃")
                                             .font(Font.pretendard(.medium, size: 14))
                                             .foregroundColor(Color(hex: "707070"))

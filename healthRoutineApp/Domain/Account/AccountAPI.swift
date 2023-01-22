@@ -7,6 +7,13 @@
 
 import Foundation
 
+
+// MARK: API Header Protocol
+protocol APIHeader {
+    var key: String { get }
+    var value: String { get }
+}
+
 enum AccountAPI {
     
     case checkEmailValidation
@@ -22,6 +29,27 @@ enum AccountAPI {
         case .signUp: return "\(HealthRoutineAPI.baseURL)/user/register"
         case .signIn: return "\(HealthRoutineAPI.baseURL)/user/login"
         case .userInfo: return "\(HealthRoutineAPI.baseURL)/user/profile"
+        }
+    }
+    
+    enum Header: APIHeader {
+        
+        static let authFieldName: String = "Authorization"
+        
+        case auth(String)
+        
+        var key: String {
+            
+            switch self {
+            case .auth: return AccountAPI.Header.authFieldName
+            }
+        }
+        
+        var value: String {
+            
+            switch self {
+            case .auth(let value): return "Bearer \(value)"
+            }
         }
     }
 

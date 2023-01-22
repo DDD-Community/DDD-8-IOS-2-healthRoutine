@@ -20,11 +20,6 @@ struct AccountSignUpRequest: Codable {
 }
 
 struct AccountUpdateInfoRequest: Codable {
-    let token: String
     let nickname: String
     let image: Data
-}
-
-struct AccountFetchMyInfoRequest: Codable {
-    
 }

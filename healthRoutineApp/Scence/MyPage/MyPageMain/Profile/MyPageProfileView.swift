@@ -9,26 +9,28 @@ import SwiftUI
 
 struct MyPageProfileView: View {
     
+    @ObservedObject private var viewModel = MyPageViewModel()
+    
     var body: some View {
         
         VStack {
             
             HStack(spacing: 22) {
                 
-                Image("profile")
-                    .resizable()
-                    .frame(width: 66, height: 66)
-                    .scaledToFit()
-                    .clipShape(Circle())
+//                Image("profile")
+//                    .resizable()
+//                    .frame(width: 66, height: 66)
+//                    .scaledToFit()
+//                    .clipShape(Circle())
                     
-                Text("햄스터 갱스터")
+                Text(self.viewModel.nickname)
                     .font(Font.pretendard(.bold, size: 20))
                     .foregroundColor(.white)
                 
                 Spacer()
             }
             
-            CustomNavigationLink(destination: MyPageDetailView().customNavigationTitle("닉네임 수정")
+            CustomNavigationLink(destination: MyPageProfileDetailView().customNavigationTitle("닉네임 수정")
             ) {
                 Text("프로필 수정")
                     .frame(maxWidth: .infinity, minHeight: 46)
@@ -44,6 +46,9 @@ struct MyPageProfileView: View {
         .frame(maxWidth: .infinity, maxHeight: 176)
         .background(Color.box_color)
         .cornerRadius(10)
+        .onAppear {
+            self.viewModel.fetchProfile()
+        }
     }
 }
 

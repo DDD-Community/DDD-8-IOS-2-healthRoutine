@@ -25,9 +25,21 @@ class APIService {
     static func signUp(_ param: AccountSignUpRequest) -> AnyPublisher<AccountResponse, APIError> {
         return APIManager.request(AccountAPI.signUp.url, method: .post, parameters: param.dictionary)
     }
+}
+
+
+// MARK: - MyPage
+extension APIService {
     
-    static func fetchInfo(_ param: AccountUpdateInfoRequest) -> AnyPublisher<AccountResponse, APIError> {
-        return APIManager.request(AccountAPI.userInfo.url, method: .get, parameters: param.dictionary)
+    static func fetchProfileInfo() -> AnyPublisher<AccountMyInfoProfileResponse, APIError> {
+        
+        guard let token = KeychainService.shared.loadToken() else {
+            return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
+        }
+
+        let headers: HTTPHeaders? = HTTPHeaders([AccountAPI.Header.authFieldName: AccountAPI.Header.auth(token).value])
+        
+        return APIManager.request(AccountAPI.userInfo.url, method: .get, headers: headers)
     }
     
     static func updateInfo(_ param: AccountUpdateInfoRequest) -> AnyPublisher<AccountResponse, APIError> {
