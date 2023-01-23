@@ -125,8 +125,6 @@ class SignUpViewModel: ObservableObject {
     @Published var canNextNicknameStep: Bool = false
     @Published var canNextCompleteStep: Bool = false
 
-    let apiWorker = AccountAPIWorker()
-
     init() {
         self.bindView()
     }

@@ -10,6 +10,7 @@ import SwiftUI
 struct MyPageProfileView: View {
     
     @ObservedObject private var viewModel = MyPageViewModel()
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
         
@@ -17,13 +18,26 @@ struct MyPageProfileView: View {
             
             HStack(spacing: 22) {
                 
-//                Image("profile")
-//                    .resizable()
-//                    .frame(width: 66, height: 66)
-//                    .scaledToFit()
-//                    .clipShape(Circle())
+                if let profileImage = viewModel.recentImage {
                     
-                Text(self.viewModel.nickname)
+                    Image(uiImage: profileImage)
+                        .resizable()
+                        .frame(width: 66, height: 66)
+                        .scaledToFit()
+                        .clipShape(Circle())
+                    
+                } else {
+                    
+                    Image("profile")
+                        .resizable()
+                        .frame(width: 66, height: 66)
+                        .scaledToFit()
+                        .clipShape(Circle())
+                    
+                }
+                
+                Text(self.viewModel.getNickName())
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .font(Font.pretendard(.bold, size: 20))
                     .foregroundColor(.white)
                 

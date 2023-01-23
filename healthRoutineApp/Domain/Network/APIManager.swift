@@ -22,6 +22,7 @@ struct ErrorData: Codable {
 }
 
 enum APIManager {
+    
     private static let REQUEST_TIMEOUT = TimeInterval(40) // 서버 타임아웃
 
     static func request<T: Decodable>(_ url: String,

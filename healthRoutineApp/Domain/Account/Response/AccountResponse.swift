@@ -26,6 +26,10 @@ struct AccountMyInfoProfileResponse: Decodable {
     let result: AccountMyInfoProfileResult
 }
 
+struct AccountMyInfoImageUploadResponse: Decodable {
+    let result: String
+}
+
 struct AccountMyInfoProfileResult: Codable {
     
     let id: String

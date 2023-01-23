@@ -108,11 +108,11 @@
 		B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AB2948079600C58869 /* CommonButtonView.swift */; };
 		B69878B0294810CA00C58869 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AF294810CA00C58869 /* SplashView.swift */; };
 		B69878B22948197000C58869 /* AccountMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878B12948197000C58869 /* AccountMainView.swift */; };
+		B6A82500297D704200AEF33A /* LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A824FF297D704200AEF33A /* LifeCycle.swift */; };
+		B6A82503297D902C00AEF33A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A82502297D902C00AEF33A /* API.swift */; };
 		B6ADAB7829344A870014277B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ADAB7729344A870014277B /* Preview Assets.xcassets */; };
 		B6D2889D294AB0370072C347 /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2889C294AB0370072C347 /* RegExp.swift */; };
 		B6D2889F294AB1010072C347 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2889E294AB1010072C347 /* String+Ext.swift */; };
-		B6D288A1294AED7B0072C347 /* AccountAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D288A0294AED7B0072C347 /* AccountAPIWorker.swift */; };
-		B6D677A9297A6BC400A2939C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D677A8297A6BC400A2939C /* Account.swift */; };
 		B6D677AB297A6C8F00A2939C /* WordLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D677AA297A6C8F00A2939C /* WordLimit.swift */; };
 		B6D8CED42917D86200420E8E /* healthRoutineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED32917D86200420E8E /* healthRoutineApp.swift */; };
 		B6D8CED62917D86200420E8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D8CED52917D86200420E8E /* ContentView.swift */; };
@@ -225,12 +225,12 @@
 		B69878AB2948079600C58869 /* CommonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonView.swift; sourceTree = "<group>"; };
 		B69878AF294810CA00C58869 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B69878B12948197000C58869 /* AccountMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMainView.swift; sourceTree = "<group>"; };
+		B6A824FF297D704200AEF33A /* LifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCycle.swift; sourceTree = "<group>"; };
+		B6A82502297D902C00AEF33A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		B6ADAB7729344A870014277B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B6ADAB7D29344EA30014277B /* HealthRoutine */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HealthRoutine; sourceTree = "<group>"; };
 		B6D2889C294AB0370072C347 /* RegExp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegExp.swift; sourceTree = "<group>"; };
 		B6D2889E294AB1010072C347 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
-		B6D288A0294AED7B0072C347 /* AccountAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIWorker.swift; sourceTree = "<group>"; };
-		B6D677A8297A6BC400A2939C /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		B6D677AA297A6C8F00A2939C /* WordLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLimit.swift; sourceTree = "<group>"; };
 		B6D8CED02917D86200420E8E /* healthRoutineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = healthRoutineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D8CED32917D86200420E8E /* healthRoutineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthRoutineApp.swift; sourceTree = "<group>"; };
@@ -444,6 +444,7 @@
 				B623B0F5292F169300BA7BA7 /* Views */,
 				B623B122292F4B2300BA7BA7 /* DateHolder.swift */,
 				B623B12E292F5C5F00BA7BA7 /* Month.swift */,
+				B6A824FF297D704200AEF33A /* LifeCycle.swift */,
 				807D4D272950430000F757C0 /* KeychainService.swift */,
 				8060547B295AAD1A002617BA /* Const.swift */,
 				80F9BFDA2974E8920018E3CE /* ViewRouter.swift */,
@@ -608,8 +609,6 @@
 				B639D136294F5BC6009AE6C9 /* Request */,
 				B65208C9294979760095DAB4 /* AccountAPI.swift */,
 				B65208CD29498D1E0095DAB4 /* AccountErrors.swift */,
-				B6D288A0294AED7B0072C347 /* AccountAPIWorker.swift */,
-				B6D677A8297A6BC400A2939C /* Account.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -742,6 +741,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		B6A82501297D902200AEF33A /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				B6A82502297D902C00AEF33A /* API.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		B6D677A7297A358500A2939C /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,6 +780,7 @@
 			isa = PBXGroup;
 			children = (
 				91B0376A2951F3DD000837BA /* healthRoutineApp.entitlements */,
+				B6A82501297D902200AEF33A /* Foundation */,
 				B65208C12949728A0095DAB4 /* Domain */,
 				B68B4F1A292E61EE00A9AE99 /* Scence */,
 				B69878AF294810CA00C58869 /* SplashView.swift */,
@@ -937,6 +945,7 @@
 				80307691294C5BD200EFF277 /* APIService.swift in Sources */,
 				B6DF8D872969529E006C2C89 /* ReportDetailDiffView.swift in Sources */,
 				B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */,
+				B6A82500297D704200AEF33A /* LifeCycle.swift in Sources */,
 				912523932937A41800003C87 /* CustomTimerView.swift in Sources */,
 				B64C977229514290004F9760 /* HomeMainViewModel.swift in Sources */,
 				911E090A29449E50000555D8 /* TimerPatternButtonView.swift in Sources */,
@@ -958,7 +967,6 @@
 				B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */,
 				80950213296AF4A900EE0E00 /* Array+Ext.swift in Sources */,
 				80881957294C37BE00420788 /* APIManager.swift in Sources */,
-				B6D288A1294AED7B0072C347 /* AccountAPIWorker.swift in Sources */,
 				B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */,
 				911E0906294496D2000555D8 /* TimerAddView.swift in Sources */,
 				B65350F72966D91000880CED /* ReportMainRowView_Backup.swift in Sources */,
@@ -970,7 +978,6 @@
 				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,
 				B6D2889D294AB0370072C347 /* RegExp.swift in Sources */,
 				B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */,
-				B6D677A9297A6BC400A2939C /* Account.swift in Sources */,
 				B623B123292F4B2300BA7BA7 /* DateHolder.swift in Sources */,
 				9150D9B8297C350900DF07F9 /* ReportDetailViewModel.swift in Sources */,
 				80122A1529762FFD00193EAC /* GifView.swift in Sources */,
@@ -1005,6 +1012,7 @@
 				B65B4F762967E19600C30B3E /* Exercise.swift in Sources */,
 				91C77AA82969488400F578C8 /* TimerAddViewModel.swift in Sources */,
 				912523952937A41800003C87 /* NormalTimerButtonView.swift in Sources */,
+				B6A82503297D902C00AEF33A /* API.swift in Sources */,
 				B636FCE8296BD516008DCC8D /* BottomButton_BackView.swift in Sources */,
 				B65AD97F29542BDA005AB105 /* MyPageProfileDetailView.swift in Sources */,
 				B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */,

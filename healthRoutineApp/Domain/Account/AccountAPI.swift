@@ -7,13 +7,6 @@
 
 import Foundation
 
-
-// MARK: API Header Protocol
-protocol APIHeader {
-    var key: String { get }
-    var value: String { get }
-}
-
 enum AccountAPI {
     
     case checkEmailValidation
@@ -21,14 +14,20 @@ enum AccountAPI {
     case signIn
     
     case userInfo
+    case updateNickname
+    case updateProfileImage
     
     var url: String {
         
         switch self {
+    
         case .checkEmailValidation: return "\(HealthRoutineAPI.baseURL)/user/validate/email"
         case .signUp: return "\(HealthRoutineAPI.baseURL)/user/register"
         case .signIn: return "\(HealthRoutineAPI.baseURL)/user/login"
+            
         case .userInfo: return "\(HealthRoutineAPI.baseURL)/user/profile"
+        case .updateNickname: return "\(HealthRoutineAPI.baseURL)/user/profile"
+        case .updateProfileImage: return  "\(HealthRoutineAPI.baseURL)/user/profile/img-upload"
         }
     }
     
@@ -52,29 +51,4 @@ enum AccountAPI {
             }
         }
     }
-
-    /*
-
-    enum Param: APIParameter {
-        
-        case email(String)
-        case password(String)
-        case nickname(String)
-        
-        var key: String {
-            switch self {
-            case .email: return "email"
-            case .password: return "password"
-            case .nickname: return "nickname"
-            }
-        }
-        
-        var value: Any? {
-            switch self {
-            case .email(let value): return value
-            case .password(let value): return value
-            case .nickname(let value): return value
-            }
-        }
-    }*/
 }

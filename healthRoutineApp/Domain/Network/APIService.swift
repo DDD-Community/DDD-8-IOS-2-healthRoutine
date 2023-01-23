@@ -27,7 +27,6 @@ class APIService {
     }
 }
 
-
 // MARK: - MyPage
 extension APIService {
     
@@ -42,7 +41,21 @@ extension APIService {
         return APIManager.request(AccountAPI.userInfo.url, method: .get, headers: headers)
     }
     
-    static func updateInfo(_ param: AccountUpdateInfoRequest) -> AnyPublisher<AccountResponse, APIError> {
-        return APIManager.request(AccountAPI.userInfo.url, method: .post, parameters: param.dictionary)
+    static func updateProfileImage() ->  AnyPublisher<AccountMyInfoImageUploadResponse, APIError> {
+        
+        guard let token = KeychainService.shared.loadToken() else {
+            return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
+        }
+        
+        let headers: HTTPHeaders? = HTTPHeaders([AccountAPI.Header.authFieldName: AccountAPI.Header.auth(token).value])
+        
+        return APIManager.request(AccountAPI.updateProfileImage.url, method: .put, headers: headers)
     }
+    
+    // 이미지 업로드
+//    static func updateInfo(_ param: AccountUpdateInfoRequest) -> AnyPublisher<AccountResponse, APIError> {
+//        return APIManager.request(AccountAPI.userInfo.url, method: .post, parameters: param.dictionary)
+//    }
+    
+    // 닉네임 업데이트
 }

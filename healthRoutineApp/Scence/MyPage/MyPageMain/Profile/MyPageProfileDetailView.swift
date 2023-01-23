@@ -71,6 +71,9 @@ struct MyPageProfileDetailView: View {
                 }
                 
                 Button("수정 하기") {
+                    
+                    self.viewModel.updateProfile()
+                    
                     self.presentationMode.wrappedValue.dismiss()
                 }
                 .background(Color(hex: "3CF4B2"))

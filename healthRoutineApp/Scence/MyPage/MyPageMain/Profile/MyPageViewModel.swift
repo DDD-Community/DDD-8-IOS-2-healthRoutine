@@ -21,9 +21,6 @@ final class MyPageViewModel: ObservableObject {
     @Published var showImagePicker: Bool = false // 이미지 선택화면 여부
     @Published var showActionSheet: Bool = false // 시트 화면 여부
     
-    var fetchProfileFinished = PassthroughSubject<AccountMyInfoProfileResponse, Never>()
-//    var nickname = PassthroughSubject<String. Never>()
-    
     // History
     @Published var history: [String] = []
     
@@ -44,6 +41,16 @@ final class MyPageViewModel: ObservableObject {
         KeychainService.shared.deleteToken()
         closure?()
     }
+    
+    func getNickName() -> String {
+        let nickname = UserDefaults.standard.string(forKey: NICKNAME_KEY)
+        if let nickname = nickname {
+            return "\(nickname)"
+        }
+        else {
+            return ""
+        }
+    }
 }
 
 extension MyPageViewModel {
@@ -62,9 +69,14 @@ extension MyPageViewModel {
                     break
                 }
             } receiveValue: { (value: AccountMyInfoProfileResponse) in
-                self.fetchProfileFinished.send(value)
+                self.updateInfo(value)
             }
             .store(in: &cancellables)
+    }
+    
+    func updateProfile() {
+        
+        // 닉네임 변경(중복체크) -> 이미지 변경
     }
 }
 
@@ -72,11 +84,10 @@ extension MyPageViewModel {
     
     private func updateInfo(_ response: AccountMyInfoProfileResponse) {
         
-        self.nickname = response.result.nickname
+        guard let profileImage = response.result.profileImage else {
+            return
+        }
         
-//        guard let recentImage = response.result.profileImage
-        
-//        self.recentImage = response.result.profileImage
-        
+        self.recentImage = UIImage(named: profileImage)
     }
 }

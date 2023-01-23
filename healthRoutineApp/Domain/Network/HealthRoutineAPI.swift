@@ -13,7 +13,7 @@ enum HealthRoutineAPI {
     
     static let baseURL: String = "https://rest-api.xyz/api/v1"
     
-    enum Header {
+    enum Header: APIHeader {
         
         static let authFieldName: String = "Authorization"
         
