@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ReportMainRowView: View {
 
-    @Binding var samples: [Int]
-    let index : Int
+    @Binding var samples: [TodayExerciseListResult]
+//    let index : Int
     
     var part: String = ""
     var weight: String = ""
@@ -27,7 +27,7 @@ struct ReportMainRowView: View {
                     Rectangle()
                         .frame(width: 54, height: 54)
                         .overlay {
-                            Text("\(index)")
+                            Text("sample")
                                 .font(Font.pretendard(.bold, size: 14))
                                 .foregroundColor(.black)
                         }
@@ -72,9 +72,11 @@ struct ReportMainRowView: View {
                     .background(Color.error_red)
                     .cornerRadius(10)
                     .onTapGesture {
-                        if let idx = samples.firstIndex(where: { $0 == index }) {
+                        /*
+                        if let idx = samples.firstIndex(where: { $0.exerciseId == index }) {
                             samples.remove(at: idx)
                         }
+                         */
                     }
                 }
             }
@@ -102,6 +104,6 @@ struct ReportMainRowView: View {
 
 struct ReportMainRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportMainRowView(samples: .constant([0,1,2,3]), index: 0)
+        ReportMainRowView(samples: .constant([]))
     }
 }

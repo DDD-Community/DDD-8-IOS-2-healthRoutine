@@ -7,17 +7,39 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class ReportViewModel: ObservableObject {
     
-    // 운동리스트이며 임시로 [Int]로 선언합니다.
-    @Published var exerciseArray: [Int] = []
+    var cancellables: Set<AnyCancellable> = []
+    
+    @Published var exerciseArray: [TodayExerciseListResult] = []
+    
+    var titleStr: String {
+        if exerciseArray.isEmpty {
+            return "첫 운동을 기록해보세요!"
+        }
+        else {
+            return "오늘은 어떤 운동을 하셨나요?"
+        }
+    }
     
     func fetchList() {
-        // 통신후 exerciseArray업데이트해주는 함수
-        
-        //샘플 데이터입니다.
-        self.exerciseArray = [0,1,2,3]
+        APIService.fetchTodayExerciseList()
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { (value: TodayExerciseListResponse) in
+                self.exerciseArray = value.result
+            }
+            .store(in: &cancellables)
     }
     
     func getDetailViewModel() -> ReportDetailViewModel {

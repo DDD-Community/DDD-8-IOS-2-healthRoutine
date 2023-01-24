@@ -11,6 +11,11 @@ struct ReportDetailView: View {
     @ObservedObject var viewModel: ReportDetailViewModel
     @Environment(\.presentationMode) var presentationMode
     
+    init(viewModel: ReportDetailViewModel) {
+        self.viewModel = viewModel
+        self.viewModel.fetchExerciseInfo()
+    }
+    
     var body: some View {
         
         BaseView {
@@ -19,9 +24,9 @@ struct ReportDetailView: View {
                 ScrollView {
 
                     VStack(spacing: 16) {
-                        ReportDetailPartView()
-                        ReportDetailKindView()
-                        ReportDetailDiffView()
+                        ReportDetailPartView() // 부위
+                        ReportDetailKindView() //종류
+                        ReportDetailDiffView() //상세
                     }
                 }
 
