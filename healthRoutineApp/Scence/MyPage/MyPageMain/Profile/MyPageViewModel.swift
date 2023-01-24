@@ -18,7 +18,6 @@ final class MyPageViewModel: ObservableObject {
     @Published var nickname: String = ""
     @Published var recentImage: UIImage?
     
-    
     @Published var showImagePicker: Bool = false // 이미지 선택화면 여부
     @Published var showActionSheet: Bool = false // 시트 화면 여부
     
@@ -84,7 +83,6 @@ extension MyPageViewModel {
                 }
             } receiveValue: { (value: AccountMyInfoImageUploadResponse) in
                 self.updateProfileFinished.send(true)
-              
             }
             .store(in: &cancellables)
     }

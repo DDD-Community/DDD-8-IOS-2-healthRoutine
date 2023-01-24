@@ -61,15 +61,10 @@ enum APIManager {
                                                decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<T, APIError> {
         
         let multipartRequest = AF.upload(multipartFormData: { MultipartFormData in
-            
-//            guard let photoData = photoFile?.jpegData(compressionQuality: 1.0) else {
-//                return
-//            }
-            
+        
             if let image = photoFile?.pngData() {
                 MultipartFormData.append(image, withName: "file", fileName: "\(image).png", mimeType: "image/png")
             }
-            //            MultipartFormData.append(photoData, withName: "img", fileName: "profile.jpg", mimeType: "image/jpg")
             
         }, to: url, method: method, headers: headers)
         

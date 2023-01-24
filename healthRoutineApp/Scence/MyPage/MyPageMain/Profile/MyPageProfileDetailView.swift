@@ -10,6 +10,7 @@ import SwiftUI
 struct MyPageProfileDetailView: View {
     
     @ObservedObject var viewModel = MyPageViewModel()
+    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {

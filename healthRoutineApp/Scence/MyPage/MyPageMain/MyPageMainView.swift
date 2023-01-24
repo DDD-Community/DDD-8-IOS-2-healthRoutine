@@ -59,12 +59,6 @@ struct MyPageMainView: View {
                 }
             }
         }
-        .onAppear {
-            self.viewModel.fetchProfile()
-        }
-        .refreshable {
-            
-        }
     }
 }
 
