@@ -19,10 +19,6 @@ struct AccountSignUpRequest: Codable {
     let nickname: String
 }
 
-struct AccountUpdateNicknameRequest: Codable {
+struct AccountProfileUpdateRequest: Codable {
     let nickname: String
-}
-
-struct AccountUpdateProfileImageRequest: Codable {
-    let file: Data
 }

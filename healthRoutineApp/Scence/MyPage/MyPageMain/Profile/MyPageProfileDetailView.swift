@@ -16,7 +16,7 @@ struct MyPageProfileDetailView: View {
         
         BaseView {
             
-            VStack {
+            VStack(spacing: 16) {
                 
                 VStack(spacing: 30) {
                     
@@ -41,8 +41,8 @@ struct MyPageProfileDetailView: View {
                                     Image("camera")
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: 30, height: 30)
-                                        .offset(x: 50, y:50) )
+                                        .frame(width: 40, height: 40)
+                                        .offset(x: 45, y: 45))
                         }
                     }
                     
@@ -70,18 +70,19 @@ struct MyPageProfileDetailView: View {
                     }
                 }
                 
-                Button("수정 하기") {
-                    self.viewModel.updateProfileImage()
-//                    debugPrint("수정하기 클릭")
-                }
-                .background(Color(hex: "3CF4B2"))
-                .buttonStyle(CommonButtonView())
-                .cornerRadius(10)
+                Text("프로필 수정")
+                    .frame(maxWidth: .infinity, minHeight: 60)
+                    .font(Font.pretendard(.bold, size: 18))
+                    .background(Color(hex: "3CF4B2"))
+                    .cornerRadius(10)
+                    .onTapGesture {
+                        self.viewModel.updateProfileImage()
+                        debugPrint("수정하기")
+                    }
                 
                 Spacer()
             }
             .onAppear {
-                
                 self.bindView()
             }
         }
@@ -89,11 +90,16 @@ struct MyPageProfileDetailView: View {
     
     private func bindView() {
         
+        self.viewModel.updateProfileFinished
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { _ in self.viewModel.updateUserInfo() })
+            .store(in: &self.viewModel.cancellables)
+        
         self.viewModel.updateFinished
+            .print("1111")
             .receive(on: RunLoop.main)
             .sink(receiveValue: { _ in self.presentationMode.wrappedValue.dismiss() })
             .store(in: &self.viewModel.cancellables)
-
     }
 }
 

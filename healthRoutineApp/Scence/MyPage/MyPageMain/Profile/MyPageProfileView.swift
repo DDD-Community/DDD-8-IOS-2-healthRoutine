@@ -44,17 +44,17 @@ struct MyPageProfileView: View {
                 Spacer()
             }
             
+            Spacer()
+            
             CustomNavigationLink(destination: MyPageProfileDetailView().customNavigationTitle("닉네임 수정")
             ) {
                 Text("프로필 수정")
                     .frame(maxWidth: .infinity, minHeight: 46)
                     .font(.system(size: 18, weight: .bold))
-                    .foregroundColor(Color(hex: "4B4C55"))
-                    .background(Color.disabled_button_field)
+                    .background(Color(hex: "4B4C55"))
+                    .foregroundColor(Color.disabled_button_field)
                     .cornerRadius(10)
             }
-            
-            Spacer()
         }
         .padding(24)
         .frame(maxWidth: .infinity, maxHeight: 176)
