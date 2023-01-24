@@ -71,10 +71,8 @@ struct MyPageProfileDetailView: View {
                 }
                 
                 Button("수정 하기") {
-                    
-                    self.viewModel.updateProfile()
-                    
-                    self.presentationMode.wrappedValue.dismiss()
+                    self.viewModel.updateProfileImage()
+//                    debugPrint("수정하기 클릭")
                 }
                 .background(Color(hex: "3CF4B2"))
                 .buttonStyle(CommonButtonView())
@@ -82,7 +80,20 @@ struct MyPageProfileDetailView: View {
                 
                 Spacer()
             }
+            .onAppear {
+                
+                self.bindView()
+            }
         }
+    }
+    
+    private func bindView() {
+        
+        self.viewModel.updateFinished
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { _ in self.presentationMode.wrappedValue.dismiss() })
+            .store(in: &self.viewModel.cancellables)
+
     }
 }
 

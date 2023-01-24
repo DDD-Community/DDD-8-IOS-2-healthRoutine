@@ -21,8 +21,10 @@ final class MyPageViewModel: ObservableObject {
     @Published var showImagePicker: Bool = false // 이미지 선택화면 여부
     @Published var showActionSheet: Bool = false // 시트 화면 여부
     
+    var updateFinished = PassthroughSubject<Bool, Never>()
+    
     // History
-    @Published var history: [String] = []
+    @Published var history: [String: String] = [:]
     
     // Badge
     @Published var badges: [Badge] = []
@@ -74,9 +76,23 @@ extension MyPageViewModel {
             .store(in: &cancellables)
     }
     
-    func updateProfile() {
+    func updateProfileImage() {
         
-        // 닉네임 변경(중복체크) -> 이미지 변경
+        APIService.updateProfileImage(recentImage)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { (value: AccountMyInfoImageUploadResponse) in
+                self.updateFinished.send(true)
+            }
+            .store(in: &cancellables)
     }
 }
 

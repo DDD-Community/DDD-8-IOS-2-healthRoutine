@@ -26,13 +26,21 @@ struct AccountMyInfoProfileResponse: Decodable {
     let result: AccountMyInfoProfileResult
 }
 
-struct AccountMyInfoImageUploadResponse: Decodable {
-    let result: String
-}
-
 struct AccountMyInfoProfileResult: Codable {
     
     let id: String
     let nickname: String
     let profileImage: String?
+}
+
+
+// MARK: - update profile
+struct AccountMyInfoImageUploadResponse: Decodable {
+    let code: Int
+    let message: String
+    let result: AccountMyInfoProfileUpdateResult
+}
+
+struct AccountMyInfoProfileUpdateResult: Codable {
+    let profileImageUrl: String
 }

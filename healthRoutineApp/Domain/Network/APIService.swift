@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import Combine
+import UIKit
 
 class APIService {
     
@@ -41,21 +42,20 @@ extension APIService {
         return APIManager.request(AccountAPI.userInfo.url, method: .get, headers: headers)
     }
     
-    static func updateProfileImage() ->  AnyPublisher<AccountMyInfoImageUploadResponse, APIError> {
+    static func updateProfileImage(_ photoImg: UIImage?) -> AnyPublisher<AccountMyInfoImageUploadResponse, APIError> {
         
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
         }
         
+//        guard let photoData = photoImg.jpegData(compressionQuality: 1.0) else {
+//            return Fail(error: NSError(domain: "Missing Photo", code: -10002, userInfo: nil) as! APIError).eraseToAnyPublisher()
+//        }
+        
         let headers: HTTPHeaders? = HTTPHeaders([AccountAPI.Header.authFieldName: AccountAPI.Header.auth(token).value])
         
-        return APIManager.request(AccountAPI.updateProfileImage.url, method: .put, headers: headers)
+//        let mediaParams: [APIMediaParameter] = [APIMediaParameter(name: "image", fileName: "image.jpg", mimeType: "image/jpeg", fileURL: nil, fileData: photoData)]
+        
+        return APIManager.requestMultipart(AccountAPI.updateProfileImage.url, method: .put, headers: headers, photoFile: photoImg)
     }
-    
-    // 이미지 업로드
-//    static func updateInfo(_ param: AccountUpdateInfoRequest) -> AnyPublisher<AccountResponse, APIError> {
-//        return APIManager.request(AccountAPI.userInfo.url, method: .post, parameters: param.dictionary)
-//    }
-    
-    // 닉네임 업데이트
 }

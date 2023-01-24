@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import Alamofire
+import UIKit
 
 
 enum APIError: Error {
@@ -24,7 +25,7 @@ struct ErrorData: Codable {
 enum APIManager {
     
     private static let REQUEST_TIMEOUT = TimeInterval(40) // 서버 타임아웃
-
+    
     static func request<T: Decodable>(_ url: String,
                                       method: HTTPMethod = .get,
                                       parameters: Parameters? = nil,
@@ -34,7 +35,8 @@ enum APIManager {
         let request = AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers) { urlRequest in
             urlRequest.timeoutInterval = REQUEST_TIMEOUT
         }
-        return request.validate().publishData(emptyResponseCodes: [200, 204, 205]) // 200, 204, 205 응답은 서버 응답 데이터가 비어있어도 성공ㄱㄱ
+        // 200, 204, 205 응답은 서버 응답 데이터가 비어있어도 성공ㄱㄱ
+        return request.validate().publishData(emptyResponseCodes: [200, 204, 205])
             .tryMap { result -> T in
                 do {
                     return try handleResponse(result: result, decoder: decoder)
@@ -49,7 +51,44 @@ enum APIManager {
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
-
+    
+    static func requestMultipart<T: Decodable>(_ url: String,
+                                               method: HTTPMethod = .post,
+                                               parameters: Parameters? = nil,
+                                               encoding: ParameterEncoding = JSONEncoding.default,
+                                               headers: HTTPHeaders? = nil,
+                                               photoFile: UIImage?,
+                                               decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<T, APIError> {
+        
+        let multipartRequest = AF.upload(multipartFormData: { MultipartFormData in
+            
+//            guard let photoData = photoFile?.jpegData(compressionQuality: 1.0) else {
+//                return
+//            }
+            
+            if let image = photoFile?.pngData() {
+                MultipartFormData.append(image, withName: "file", fileName: "\(image).png", mimeType: "image/png")
+            }
+            //            MultipartFormData.append(photoData, withName: "img", fileName: "profile.jpg", mimeType: "image/jpg")
+            
+        }, to: url, method: method, headers: headers)
+        
+        return multipartRequest.validate().publishData(emptyResponseCodes: [200, 204, 205])
+            .tryMap { result -> T in
+                do {
+                    return try handleResponse(result: result, decoder: decoder)
+                }
+                catch let error {
+                    throw error
+                }
+            }
+            .mapError({ (error) -> APIError in
+                return handleError(error)
+            })
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
     private static func handleResponse<T: Decodable>(result: DataResponsePublisher<Data>.Output,
                                                      decoder: JSONDecoder = JSONDecoder()) throws -> T {
         print(result.debugDescription)
@@ -71,7 +110,7 @@ enum APIManager {
             return Empty.emptyValue() as! T
         }
     }
-
+    
     private static func handleError(_ error: Error) -> APIError {
         if let apiError = error as? APIError {
             return apiError

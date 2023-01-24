@@ -18,11 +18,13 @@ enum HealthRoutineAPI {
         static let authFieldName: String = "Authorization"
         
         case auth(String)
+        case contentMulti
         
         var key: String {
             
             switch self {
             case .auth: return HealthRoutineHeader.authFieldName
+            case .contentMulti: return "Content-Type"
             }
         }
         
@@ -30,6 +32,7 @@ enum HealthRoutineAPI {
             
             switch self {
             case .auth(let value): return "Bearer \(value)"
+            case .contentMulti:return "multipart/form-data; boundary=\(APIConst.boundary)"
             }
         }
     }

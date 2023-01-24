@@ -24,5 +24,5 @@ struct AccountUpdateNicknameRequest: Codable {
 }
 
 struct AccountUpdateProfileImageRequest: Codable {
-    let profileImage: Data
+    let file: Data
 }
