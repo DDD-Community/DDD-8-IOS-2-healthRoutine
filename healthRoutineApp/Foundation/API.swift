@@ -34,13 +34,6 @@ struct APIMediaParameter {
     let fileData: Data?
 }
 
-
-struct NoResponse: Codable {
-    // 응답의 정상 혹은 오류 여부만 체크하는 응답 (프로필 업로드)
-    var code: Int?
-    var message: String?
-}
-
 // MARK: API Specification
 struct APISpec {
     let method: HTTPMethod

@@ -59,7 +59,7 @@ extension APIService {
         return APIManager.requestMultipart(AccountAPI.updateProfileImage.url, method: .put, headers: headers, photoFile: photoImg)
     }
     
-    static func updateProfile(_ param: AccountProfileUpdateRequest) -> AnyPublisher<NoResponse, APIError> {
+    static func updateProfile(_ param: AccountProfileUpdateRequest) -> AnyPublisher<DI_Base, APIError> {
      
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()

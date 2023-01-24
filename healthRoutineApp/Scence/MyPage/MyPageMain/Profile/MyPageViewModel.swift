@@ -18,6 +18,7 @@ final class MyPageViewModel: ObservableObject {
     @Published var nickname: String = ""
     @Published var recentImage: UIImage?
     
+    
     @Published var showImagePicker: Bool = false // 이미지 선택화면 여부
     @Published var showActionSheet: Bool = false // 시트 화면 여부
     
@@ -44,16 +45,6 @@ final class MyPageViewModel: ObservableObject {
         KeychainService.shared.deleteToken()
         closure?()
     }
-    
-    func getNickName() -> String {
-        let nickname = UserDefaults.standard.string(forKey: NICKNAME_KEY)
-        if let nickname = nickname {
-            return "\(nickname)"
-        }
-        else {
-            return ""
-        }
-    }
 }
 
 extension MyPageViewModel {
@@ -61,6 +52,7 @@ extension MyPageViewModel {
     func fetchProfile() {
         
         APIService.fetchProfileInfo()
+            .receive(on: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
@@ -114,7 +106,7 @@ extension MyPageViewModel {
                 case .finished:
                     break
                 }
-            } receiveValue: { (value: NoResponse) in
+            } receiveValue: { _ in
                 self.updateFinished.send(true)
             }
             .store(in: &cancellables)
@@ -130,5 +122,6 @@ extension MyPageViewModel {
         }
         
         self.recentImage = UIImage(named: profileImage)
+        self.nickname = response.result.nickname
     }
 }

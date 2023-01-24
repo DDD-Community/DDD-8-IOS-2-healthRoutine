@@ -9,8 +9,7 @@ import SwiftUI
 
 struct MyPageProfileView: View {
     
-    @ObservedObject private var viewModel = MyPageViewModel()
-    @Environment(\.scenePhase) var scenePhase
+    @StateObject private var viewModel = MyPageViewModel()
     
     var body: some View {
         
@@ -36,7 +35,7 @@ struct MyPageProfileView: View {
                     
                 }
                 
-                Text(self.viewModel.getNickName())
+                Text(self.viewModel.nickname)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(Font.pretendard(.bold, size: 20))
                     .foregroundColor(.white)

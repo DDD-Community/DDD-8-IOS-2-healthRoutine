@@ -31,7 +31,7 @@ struct MyPageMainView: View {
                                 MyPageBadgeView()
                                 
                                 HStack(spacing: 70) {
-
+                                    
                                     Button {
                                         
                                         viewModel.logout() {
@@ -59,10 +59,12 @@ struct MyPageMainView: View {
                 }
             }
         }
-    }
-    
-    private func bindView() {
-        
+        .onAppear {
+            self.viewModel.fetchProfile()
+        }
+        .refreshable {
+            
+        }
     }
 }
 
