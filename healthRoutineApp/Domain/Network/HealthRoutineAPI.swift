@@ -7,8 +7,6 @@
 
 import Foundation
 
-typealias HealthRoutineHeader = HealthRoutineAPI.Header
-
 enum HealthRoutineAPI {
     
     static let baseURL: String = "https://rest-api.xyz/api/v1"
@@ -23,7 +21,7 @@ enum HealthRoutineAPI {
         var key: String {
             
             switch self {
-            case .auth: return HealthRoutineHeader.authFieldName
+            case .auth: return HealthRoutineAPI.Header.authFieldName
             case .contentMulti: return "Content-Type"
             }
         }

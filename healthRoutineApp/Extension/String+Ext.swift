@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     
@@ -43,7 +44,29 @@ extension String {
     }
 }
 
+extension String {
+    
+    func load() -> UIImage {
+        
+        do {
+            
+            guard let url = URL(string: self) else {
+                return UIImage()
+            }
+            
+            let data: Data = try Data(contentsOf: url)
+            return UIImage(data: data) ?? UIImage()
+            
+        } catch {
+            
+        }
+        
+        return UIImage()
+    }
+}
+
 
 extension Int {
     public var isPositive: Bool { return (self > 0) }
 }
+

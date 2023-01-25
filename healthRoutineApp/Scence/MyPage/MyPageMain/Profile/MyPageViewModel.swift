@@ -119,7 +119,10 @@ extension MyPageViewModel {
             return
         }
         
-        self.recentImage = UIImage(named: profileImage)
+//    https://cdn.rest-api.xyz/NkaRPMIfRMimHfI3baCAsQ/2008143 bytes.png -> 이미지 못 불러옴
+//    https://cdn.rest-api.xyz/NkaRPMIfRMimHfI3baCAsQ/2008143%20bytes.png -> 가능
+        
+        self.recentImage = profileImage.load()
         self.nickname = response.result.nickname
     }
 }

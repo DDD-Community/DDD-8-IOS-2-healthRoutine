@@ -16,8 +16,6 @@ enum AccountAPI {
     case userInfo // 업로드 이후 해당 통신사용
     case updateProfileImage // 임시 업로드
     
-    case todayExerciseList
-    
     var url: String {
         
         switch self {
@@ -27,28 +25,6 @@ enum AccountAPI {
         case .signIn: return "\(HealthRoutineAPI.baseURL)/user/login"
         case .userInfo: return "\(HealthRoutineAPI.baseURL)/user/profile"
         case .updateProfileImage: return  "\(HealthRoutineAPI.baseURL)/user/profile/img-upload"
-        case .todayExerciseList: return "\(HealthRoutineAPI.baseURL)/exercise/today"
-        }
-    }
-    
-    enum Header: APIHeader {
-        
-        static let authFieldName: String = "Authorization"
-        
-        case auth(String)
-        
-        var key: String {
-            
-            switch self {
-            case .auth: return AccountAPI.Header.authFieldName
-            }
-        }
-        
-        var value: String {
-            
-            switch self {
-            case .auth(let value): return "Bearer \(value)"
-            }
         }
     }
 }

@@ -37,7 +37,7 @@ extension APIService {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
         }
 
-        let headers: HTTPHeaders? = HTTPHeaders([AccountAPI.Header.authFieldName: AccountAPI.Header.auth(token).value])
+        let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
         
         return APIManager.request(AccountAPI.userInfo.url, method: .get, headers: headers)
     }
@@ -52,7 +52,7 @@ extension APIService {
 //            return Fail(error: NSError(domain: "Missing Photo", code: -10002, userInfo: nil) as! APIError).eraseToAnyPublisher()
 //        }
         
-        let headers: HTTPHeaders? = HTTPHeaders([AccountAPI.Header.authFieldName: AccountAPI.Header.auth(token).value])
+        let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
         
 //        let mediaParams: [APIMediaParameter] = [APIMediaParameter(name: "image", fileName: "image.jpg", mimeType: "image/jpeg", fileURL: nil, fileData: photoData)]
         
@@ -65,7 +65,7 @@ extension APIService {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
         }
         
-        let headers: HTTPHeaders? = HTTPHeaders([AccountAPI.Header.authFieldName: AccountAPI.Header.auth(token).value])
+        let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
         
         return APIManager.request(AccountAPI.userInfo.url, method: .put, parameters: param.dictionary, headers: headers)
     }
@@ -73,13 +73,14 @@ extension APIService {
 
 // MARK: - 운동기록
 extension APIService {
+    
     static func fetchTodayExerciseList() -> AnyPublisher<TodayExerciseListResponse, APIError> {
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
         }
 
-        let headers: HTTPHeaders? = HTTPHeaders([AccountAPI.Header.authFieldName: AccountAPI.Header.auth(token).value])
+        let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
         
-        return APIManager.request(AccountAPI.todayExerciseList.url, method: .get, headers: headers)
+        return APIManager.request(ExerciseAPI.todayExerciseList.url, method: .get, headers: headers)
     }
 }
