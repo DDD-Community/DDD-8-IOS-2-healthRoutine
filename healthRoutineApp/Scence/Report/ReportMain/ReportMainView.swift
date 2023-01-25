@@ -30,9 +30,9 @@ struct ReportMainView: View {
                                 .foregroundColor(.white)
                                 .font(Font.pretendard(.bold, size: 20))
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.bottom, 16)
+//                                .padding(.bottom, 16)
 
-                            ForEach (viewModel.exerciseArray, id: \.self) { item in
+                            ForEach(viewModel.exerciseArray, id: \.self) { item in
                                 ReportMainRowView(samples: $viewModel.exerciseArray).frame(height: 74)
                             }
                         }

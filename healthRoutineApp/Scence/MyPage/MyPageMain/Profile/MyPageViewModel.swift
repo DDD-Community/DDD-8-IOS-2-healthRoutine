@@ -15,7 +15,7 @@ final class MyPageViewModel: ObservableObject {
     var cancellables: Set<AnyCancellable> = []
     
     // Profile
-    @Published var nickname: String = ""
+    @Published var nickname: String = UserDefaults.standard.string(forKey: NICKNAME_KEY)!
     @Published var recentImage: UIImage?
     
     @Published var showImagePicker: Bool = false // 이미지 선택화면 여부
@@ -91,8 +91,6 @@ extension MyPageViewModel {
         
         let param = AccountProfileUpdateRequest(nickname: self.nickname)
         
-        print(param.nickname)
-        
         APIService.updateProfile(param)
             .sink { completion in
                 switch completion {
@@ -105,6 +103,7 @@ extension MyPageViewModel {
                     break
                 }
             } receiveValue: { _ in
+                UserDefaults.standard.set(self.nickname, forKey: NICKNAME_KEY)
                 self.updateFinished.send(true)
             }
             .store(in: &cancellables)

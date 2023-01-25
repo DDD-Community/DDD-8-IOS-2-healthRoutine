@@ -25,27 +25,30 @@ struct SplashView: View {
 
         } else {
             
-            VStack {
+            ZStack {
                 
-                VStack(spacing: 20) {
-                
-                    Image(systemName: "heart.fill")
-                        .font(.system(size: 100))
+                VStack {
                     
-                    Text("Splash Test")
+                    Image("splash")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 240, height: 180)
                 }
-            }
-            .onAppear {
-                
-                if UserDefaults.isFirstAppLaunch() {
-                    KeychainService.shared.deleteToken()
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    withAnimation {
-                        self.isActive = true
+                .onAppear {
+                    
+                    if UserDefaults.isFirstAppLaunch() {
+                        KeychainService.shared.deleteToken()
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                        withAnimation {
+                            self.isActive = true
+                        }
                     }
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background_black)
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }

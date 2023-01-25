@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct HomeMainView: View {
-    
-    private var mainViews: [any View] = [WaterIntakeView(), BadgeRowView()]
-    
+ 
     var body: some View {
         
             CustomNavigationView {
@@ -32,7 +30,7 @@ struct HomeMainView: View {
                         }
                     }
                     .customNavigationBarBackButtonHidden(true)
-                    .customNavigationTitle("DKDK")
+//                    .customNavigationTitle("DKDK")
                 }
         }
     }
