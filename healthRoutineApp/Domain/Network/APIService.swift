@@ -70,3 +70,16 @@ extension APIService {
         return APIManager.request(AccountAPI.userInfo.url, method: .put, parameters: param.dictionary, headers: headers)
     }
 }
+
+// MARK: - 운동기록
+extension APIService {
+    static func fetchTodayExerciseList() -> AnyPublisher<TodayExerciseListResponse, APIError> {
+        guard let token = KeychainService.shared.loadToken() else {
+            return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
+        }
+
+        let headers: HTTPHeaders? = HTTPHeaders([AccountAPI.Header.authFieldName: AccountAPI.Header.auth(token).value])
+        
+        return APIManager.request(AccountAPI.todayExerciseList.url, method: .get, headers: headers)
+    }
+}

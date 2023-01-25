@@ -44,3 +44,21 @@ struct AccountMyInfoImageUploadResponse: Decodable {
 struct AccountMyInfoProfileUpdateResult: Codable {
     let profileImageUrl: String
 }
+
+
+// MARK: - exercise
+struct TodayExerciseListResponse: Decodable {
+    let code: Int
+    let message: String
+    let result: [TodayExerciseListResult]
+}
+
+struct TodayExerciseListResult: Codable, Hashable {
+    let exerciseId: Int
+    let exerciseSubject: String
+    let categorySubject: String
+    let weight: Int
+    let set: Int
+    let count: Int
+    let createdAt: Int
+}
