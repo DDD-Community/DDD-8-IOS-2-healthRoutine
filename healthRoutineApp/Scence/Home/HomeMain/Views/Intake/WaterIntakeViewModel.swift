@@ -21,11 +21,61 @@ class WaterIntakeViewModel: ObservableObject {
     
     private func bind() {
         
-        $waterAmount
+        let waterAmountStream = $waterAmount
             .filter { $0 >= 0 }
             .receive(on: RunLoop.main)
+            .share()
+        
+        waterAmountStream
             .map { self.updateGIFView($0) }
             .assign(to: \.gifName, on: self)
+            .store(in: &cancellables)
+        
+        waterAmountStream
+            .sink { self.updateInfos($0) }
+            .store(in: &cancellables)
+    }
+    
+    func fetchInfos() {
+        
+        APIService.getWaterAmount()
+            .receive(on: RunLoop.main)
+            .sink {  completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { (value: WaterAmountResponse) in
+                self.waterAmount = value.result.capacity
+            }
+            .store(in: &cancellables)
+
+    }
+    
+    func updateInfos(_ amount: Int) {
+        
+        let param = WaterAmountUpdateRequest(capacity: amount)
+
+        APIService.updateWaterAmount(param)
+            .receive(on: RunLoop.main)
+            .sink {  completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { (value: DI_Base) in
+                print(value.code)
+            }
             .store(in: &cancellables)
     }
 }
@@ -55,6 +105,10 @@ extension WaterIntakeViewModel {
     }
     
     func minusAmount() {
+        
         self.waterAmount -= 250
+        if self.waterAmount < 0 {
+            self.waterAmount = 0
+        }
     }
 }

@@ -48,12 +48,12 @@ struct WaterIntakeView: View {
                         self.viewModel.plusAmount()
                     }
             }
-            
         }
         .padding(24)
         .frame(maxWidth: .infinity, maxHeight: 135)
         .background(Color.box_color)
         .cornerRadius(16)
+        .onAppear { self.viewModel.fetchInfos() }
     }
 }
 

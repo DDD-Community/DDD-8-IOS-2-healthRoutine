@@ -36,7 +36,7 @@ enum APIManager {
             urlRequest.timeoutInterval = REQUEST_TIMEOUT
         }
         // 200, 204, 205 응답은 서버 응답 데이터가 비어있어도 성공ㄱㄱ
-        return request.validate().publishData(emptyResponseCodes: [200, 204, 205])
+        return request.validate().publishData(emptyResponseCodes: [200, 201, 204, 205])
             .tryMap { result -> T in
                 do {
                     return try handleResponse(result: result, decoder: decoder)

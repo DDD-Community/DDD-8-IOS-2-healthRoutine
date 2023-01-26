@@ -104,6 +104,8 @@
 		B66578642978208C009FE02F /* MyPageBadgeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */; };
 		B6841AF22982090D00A73A92 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF12982090D00A73A92 /* Water.swift */; };
 		B6841AF62982092A00A73A92 /* WaterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF52982092A00A73A92 /* WaterRequest.swift */; };
+		B6841AF82982099000A73A92 /* WaterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF72982099000A73A92 /* WaterResponse.swift */; };
+		B6841AFA29820A3E00A73A92 /* WaterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF929820A3E00A73A92 /* WaterAPI.swift */; };
 		B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F21292E627400A9AE99 /* MyPageMainView.swift */; };
 		B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */; };
 		B68B4F29292E64E400A9AE99 /* MyPageHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */; };
@@ -230,6 +232,8 @@
 		B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBadgeDetailView.swift; sourceTree = "<group>"; };
 		B6841AF12982090D00A73A92 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		B6841AF52982092A00A73A92 /* WaterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRequest.swift; sourceTree = "<group>"; };
+		B6841AF72982099000A73A92 /* WaterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterResponse.swift; sourceTree = "<group>"; };
+		B6841AF929820A3E00A73A92 /* WaterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterAPI.swift; sourceTree = "<group>"; };
 		B68B4F21292E627400A9AE99 /* MyPageMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainView.swift; sourceTree = "<group>"; };
 		B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileView.swift; sourceTree = "<group>"; };
 		B68B4F28292E64E400A9AE99 /* MyPageHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageHistoryView.swift; sourceTree = "<group>"; };
@@ -712,6 +716,7 @@
 				B6841AF42982091D00A73A92 /* Response */,
 				B6841AF32982091700A73A92 /* Request */,
 				B6841AF12982090D00A73A92 /* Water.swift */,
+				B6841AF929820A3E00A73A92 /* WaterAPI.swift */,
 			);
 			path = Water;
 			sourceTree = "<group>";
@@ -727,6 +732,7 @@
 		B6841AF42982091D00A73A92 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				B6841AF72982099000A73A92 /* WaterResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1066,11 +1072,13 @@
 				B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */,
 				B623B125292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift in Sources */,
 				B64F86AD2980E3960099AE05 /* BadgeViewModel.swift in Sources */,
+				B6841AF82982099000A73A92 /* WaterResponse.swift in Sources */,
 				B66578642978208C009FE02F /* MyPageBadgeDetailView.swift in Sources */,
 				B69878B22948197000C58869 /* AccountMainView.swift in Sources */,
 				9150D9B6297C340500DF07F9 /* ReportViewModel.swift in Sources */,
 				B6FDBC31296FC61E002D5F43 /* Badge.swift in Sources */,
 				91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */,
+				B6841AFA29820A3E00A73A92 /* WaterAPI.swift in Sources */,
 				80881949294C057900420788 /* Font+Ext.swift in Sources */,
 				B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */,
 				9171AF4E2961785F0027339E /* CustomTimerViewModel.swift in Sources */,

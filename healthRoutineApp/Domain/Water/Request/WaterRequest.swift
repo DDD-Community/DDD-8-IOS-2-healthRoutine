@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct WaterAmountRequest {
-    
+struct WaterAmountUpdateRequest: Codable {
+    let capacity: Int
 }
