@@ -26,4 +26,9 @@ struct ExerciseDeleteReqeust: Codable {
     let healthId: String
 }
 
+struct ExerciseFetchReqeust: Codable {
+    
+    let time: Int
+}
+
 

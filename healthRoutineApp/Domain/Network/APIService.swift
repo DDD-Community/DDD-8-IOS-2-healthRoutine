@@ -74,13 +74,23 @@ extension APIService {
 // MARK: - 운동기록
 extension APIService {
     
-    static func fetchTodayExerciseList() -> AnyPublisher<TodayExerciseListResponse, APIError> {
+    static func fetchTodayExerciseList(_ param: ExerciseFetchReqeust) -> AnyPublisher<TodayExerciseListResponse, APIError> {
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
         }
 
         let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
         
-        return APIManager.request(ExerciseAPI.todayExerciseList.url, method: .get, headers: headers)
+        return APIManager.request(ExerciseAPI.todayExerciseList.url, method: .get, parameters: param.dictionary, encoding: URLEncoding.queryString, headers: headers)
+    }
+    
+    static func deleteReport(_ param: ExerciseDeleteReqeust) -> AnyPublisher<DI_Base, APIError> {
+        guard let token = KeychainService.shared.loadToken() else {
+            return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
+        }
+
+        let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
+        
+        return APIManager.request(ExerciseAPI.todayExerciseList.url, method: .delete, parameters: param.dictionary, headers: headers)
     }
 }

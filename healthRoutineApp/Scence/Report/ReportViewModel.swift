@@ -25,7 +25,8 @@ class ReportViewModel: ObservableObject {
     }
     
     func fetchList() {
-        APIService.fetchTodayExerciseList()
+        let param = ExerciseFetchReqeust(time: Int(Date().millisecondsSince1970))
+        APIService.fetchTodayExerciseList(param)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
@@ -40,6 +41,33 @@ class ReportViewModel: ObservableObject {
                 self.exerciseArray = value.result
             }
             .store(in: &cancellables)
+    }
+    
+    func deleteReport(_ id: String) {
+        self.updateUI(id) // 통신전 삭제 UI 업데이트
+        let param = ExerciseDeleteReqeust(healthId: id)
+        APIService.deleteReport(param)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { _ in
+                self.fetchList()
+            }
+            .store(in: &cancellables)
+    }
+    
+    func updateUI(_ deleteId: String) {
+        let index = exerciseArray.firstIndex{ $0.id == deleteId }
+        if let index = index {
+            exerciseArray.remove(at: index)
+        }
     }
     
     func getDetailViewModel() -> ReportDetailViewModel {

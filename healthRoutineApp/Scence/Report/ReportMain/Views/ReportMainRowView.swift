@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct ReportMainRowView: View {
-
-    @Binding var samples: [TodayExerciseListResult]
-//    let index : Int
     
-    var part: String = ""
-    var weight: String = ""
-    var set: String = ""
+    var item: TodayExerciseListResult
+    var deleteClosure: StringClosure?
 
     @State var offset = CGSize.zero
     @State var deleteButton: Bool = false
 
-    
     var body: some View {
         GeometryReader { geo in
             HStack(spacing: -22) {
@@ -27,7 +22,7 @@ struct ReportMainRowView: View {
                     Rectangle()
                         .frame(width: 54, height: 54)
                         .overlay {
-                            Text("sample")
+                            Text(item.categorySubject)
                                 .font(Font.pretendard(.bold, size: 14))
                                 .foregroundColor(.black)
                         }
@@ -36,17 +31,13 @@ struct ReportMainRowView: View {
 
                     VStack(alignment: .leading) {
 
-                        Text("비하인드 숄더프레스")
+                        Text(item.exerciseSubject)
                             .font(Font.pretendard(.semiBold, size: 14))
                             .foregroundColor(.white_text)
 
                         HStack {
-
-                            Text("15kg")
-                                .font(Font.pretendard(.semiBold, size: 14))
-                                .foregroundColor(.white_text)
-
-                            Text("X2")
+                            
+                            Text(item.getInfoStr())
                                 .font(Font.pretendard(.semiBold, size: 14))
                                 .foregroundColor(.white_text)
                         }
@@ -72,11 +63,7 @@ struct ReportMainRowView: View {
                     .background(Color.error_red)
                     .cornerRadius(10)
                     .onTapGesture {
-                        /*
-                        if let idx = samples.firstIndex(where: { $0.exerciseId == index }) {
-                            samples.remove(at: idx)
-                        }
-                         */
+                        deleteClosure?(item.id)
                     }
                 }
             }
@@ -104,6 +91,6 @@ struct ReportMainRowView: View {
 
 struct ReportMainRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportMainRowView(samples: .constant([]))
+        ReportMainRowView(item: TodayExerciseListResult(id: "1", exerciseSubject: "스쿼트", categorySubject: "하체", weight: 10, reps: 15, set: 5))
     }
 }
