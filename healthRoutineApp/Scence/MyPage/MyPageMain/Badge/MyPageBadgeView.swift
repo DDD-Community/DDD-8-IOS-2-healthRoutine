@@ -52,8 +52,6 @@ struct MyPageBadgeView: View {
             }
         }
         .padding(24)
-//        .padding(.top, 24)
-//        .padding(.bottom, 19)
         .frame(maxWidth: .infinity)
         .background(Color.box_color)
         .cornerRadius(10)

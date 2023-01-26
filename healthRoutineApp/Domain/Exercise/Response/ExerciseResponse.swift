@@ -7,6 +7,16 @@
 
 import Foundation
 
+struct TodayExerciseListResult: Codable, Hashable {
+    let exerciseId: Int
+    let exerciseSubject: String
+    let categorySubject: String
+    let weight: Int
+    let set: Int
+    let count: Int
+    let createdAt: Int
+}
+
 struct TodayExerciseListResponse: Decodable {
     let code: Int
     let message: String

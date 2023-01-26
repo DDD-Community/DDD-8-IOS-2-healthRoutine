@@ -14,11 +14,11 @@ struct MyPageMainView: View {
     
     var body: some View {
         
-        CustomNavigationView {
+        ZStack {
             
-            BaseView {
+            CustomNavigationView {
                 
-                ZStack {
+                BaseView {
                     
                     VStack {
                         
@@ -27,6 +27,7 @@ struct MyPageMainView: View {
                             VStack(spacing: 16) {
                                 
                                 MyPageProfileView()
+                                
                                 MyPageHistoryView()
                                 MyPageBadgeView()
                                 
@@ -56,8 +57,25 @@ struct MyPageMainView: View {
                     }
                     .customNavigationBarBackButtonHidden(true)
                     .customNavigationTitle("마이페이지")
+                    
                 }
+                
             }
+            
+//            ZStack {
+//
+//                Text("")
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                    .background(.black)
+//                    .opacity(0.4)
+//                    .edgesIgnoringSafeArea(.all)
+//
+//                MyPageBadgeDetailView()
+//                    .edgesIgnoringSafeArea(.all)
+//            }
+//            .onTapGesture {
+//                debugPrint("Close Badge Detail")
+//            }
         }
     }
 }
