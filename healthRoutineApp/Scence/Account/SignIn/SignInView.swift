@@ -21,9 +21,10 @@ struct SignInView: View {
         BaseView {
             VStack(alignment: .leading, spacing: 30) {
 
-                Image(systemName: "heart.fill")
-                    .font(.system(size: 200))
-                    .frame(maxWidth: .infinity, minHeight: 239)
+                Image("splash")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 240, height: 180)
 
                 SignInInputView(title: "이메일", placeholder: "이메일 주소를 입력해주세요", isSecureMode: false, value: $viewModel.email, isAble: $viewModel.isActiveEmailField)
                 SignInInputView(title: "비밀번호", placeholder: "영문, 숫자, 특수문자 조합 8자리 이상", isSecureMode: true, value: $viewModel.password, isAble: $viewModel.isActivePasswordField)
