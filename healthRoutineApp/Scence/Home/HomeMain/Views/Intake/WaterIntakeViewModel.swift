@@ -22,6 +22,7 @@ class WaterIntakeViewModel: ObservableObject {
     private func bind() {
         
         let waterAmountStream = $waterAmount
+            .removeDuplicates()
             .filter { $0 >= 0 }
             .receive(on: RunLoop.main)
             .share()

@@ -7,3 +7,23 @@
 
 import Foundation
 
+struct ExerciseAddRequest: Codable {
+    
+    let categoryId: Int
+    let subject: String
+}
+
+struct ExerciseTotalAddRequest: Codable {
+    
+    let exerciseId: Int
+    let weight: Int?
+    let set: Int?
+    let reps: Int?
+}
+
+struct ExerciseDeleteReqeust: Codable {
+    
+    let healthId: String
+}
+
+

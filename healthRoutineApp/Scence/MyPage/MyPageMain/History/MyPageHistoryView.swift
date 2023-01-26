@@ -18,17 +18,14 @@ struct MyPageHistoryView: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            HStack {
-                
-                Spacer()
-                
+            HStack(alignment: .center) {
+    
                 ForEach(1..<6) {
                     
                     CircleListView(label: "\($0) 월")
-                        .frame(maxWidth: .infinity)
+                        .frame(width: 54)
                 }
-                
-                Spacer()
+
             }
         }
         .padding(24)
@@ -48,7 +45,8 @@ struct CircleListView: View {
             
             Circle()
                 .fill(Color(hex: "A3ADB4"))
-            
+                .frame(width: 54, height: 54)
+               
             Text(label)
                 .foregroundColor(Color(hex: "353535"))
                 .font(Font.pretendard(.bold, size: 14))

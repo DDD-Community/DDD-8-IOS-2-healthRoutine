@@ -27,7 +27,6 @@ struct MyPageMainView: View {
                             VStack(spacing: 16) {
                                 
                                 MyPageProfileView()
-                                
                                 MyPageHistoryView()
                                 MyPageBadgeView()
                                 
@@ -51,7 +50,7 @@ struct MyPageMainView: View {
                                         .font(Font.pretendard(.medium, size: 14))
                                         .foregroundColor(Color(hex: "707070"))
                                 }
-                                .padding(.top, 16)
+                                .padding(.vertical, 16)
                             }
                         }
                     }

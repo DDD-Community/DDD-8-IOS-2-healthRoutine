@@ -11,11 +11,6 @@ struct ReportDetailPartView: View {
     
     @State var selected: String?
     
-    private enum Colors {
-        static let unSelected: Color = Color.background_gray2
-        static let selected: Color = Color.white
-    }
-    
     private let columns = [
         GridItem(.flexible()),GridItem(.flexible()),
         GridItem(.flexible()),GridItem(.flexible())

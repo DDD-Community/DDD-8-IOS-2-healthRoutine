@@ -9,8 +9,7 @@ import SwiftUI
 
 struct MyPageProfileDetailView: View {
     
-    @ObservedObject var viewModel = MyPageViewModel()
-    
+    @StateObject var viewModel = MyPageViewModel()
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -100,6 +99,8 @@ struct MyPageProfileDetailView: View {
             .receive(on: RunLoop.main)
             .sink(receiveValue: { _ in self.presentationMode.wrappedValue.dismiss() })
             .store(in: &self.viewModel.cancellables)
+        
+        self.viewModel.fetchProfile() // 이미지 갱신이슈 때문에 일단 임시고 처리해볼게요
     }
 }
 

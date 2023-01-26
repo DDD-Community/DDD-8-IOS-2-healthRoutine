@@ -15,7 +15,7 @@ struct HomeMainView: View {
                 
                 BaseView {
                     
-                    ScrollView {
+                    ScrollView(showsIndicators: false) {
                         
                         VStack(spacing: 16) {
                             
@@ -27,6 +27,7 @@ struct HomeMainView: View {
                             WaterIntakeView()
                             
                             BadgeRowView()
+                                .padding(.bottom, 16)
                         }
                     }
                     .customNavigationBarBackButtonHidden(true)

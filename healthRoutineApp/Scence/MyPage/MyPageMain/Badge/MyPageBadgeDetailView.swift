@@ -28,14 +28,17 @@ struct MyPageBadgeDetailView: View {
                     
                     Text(badge.title)
                         .foregroundColor(.white_text)
+                        .frame(height: 20)
                         .font(Font.pretendard(.bold, size: 18))
                     
                     Text(badge.desc)
                         .foregroundColor(Color(hex: "AAB2B8"))
+                        .frame(height: 20)
                         .font(Font.pretendard(.regular, size: 14))
                     
                     Text(badge.subDesc)
                         .foregroundColor(.white_text)
+                        .frame(height: 20)
                         .font(Font.pretendard(.semiBold, size: 16))
                 }
                 .frame(maxWidth: .infinity, maxHeight: 254)
