@@ -21,11 +21,6 @@ struct ExerciseTotalAddRequest: Codable {
     let reps: Int?
 }
 
-struct ExerciseDeleteReqeust: Codable {
-    
-    let healthId: String
-}
-
 struct ExerciseFetchReqeust: Codable {
     
     let time: Int

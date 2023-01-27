@@ -45,8 +45,7 @@ class ReportViewModel: ObservableObject {
     
     func deleteReport(_ id: String) {
         self.updateUI(id) // 통신전 삭제 UI 업데이트
-        let param = ExerciseDeleteReqeust(healthId: id)
-        APIService.deleteReport(param)
+        APIService.deleteReport(id)
             .sink { completion in
                 switch completion {
                 case .failure(let error):

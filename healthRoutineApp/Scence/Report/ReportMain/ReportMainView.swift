@@ -42,7 +42,7 @@ struct ReportMainView: View {
                         .cornerRadius(10)
                     }
 
-                    CustomNavigationLink(destination: ReportDetailView(viewModel: viewModel.getDetailViewModel()).customNavigationTitle("기록")) {
+                    CustomNavigationLink(destination: ReportDetailView(viewModel: viewModel.getDetailViewModel()).customNavigationTitle("")) {
                         BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true, preventButtonAction: true)
                     }
                     .frame(height: 84)

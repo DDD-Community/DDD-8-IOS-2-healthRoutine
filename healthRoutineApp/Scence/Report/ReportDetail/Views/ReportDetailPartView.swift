@@ -37,7 +37,7 @@ struct ReportDetailPartView: View {
                             .padding(12)
                             .foregroundColor(.background_black)
                             .background(selected == part.localized ? Color.main_green : Color.background_gray)
-                            .cornerRadius(15)
+                            .cornerRadius(10)
                     }
                 }
             }

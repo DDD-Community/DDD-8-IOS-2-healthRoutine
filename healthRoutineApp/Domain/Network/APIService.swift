@@ -81,16 +81,16 @@ extension APIService {
 
         let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
         
-        return APIManager.request(ExerciseAPI.todayExerciseList.url, method: .get, parameters: param.dictionary, encoding: URLEncoding.queryString, headers: headers)
+        return APIManager.request(ExerciseAPI.todayExerciseList.url, method: .get, parameters: param.intDictionary, encoding: URLEncoding.queryString, headers: headers)
     }
     
-    static func deleteReport(_ param: ExerciseDeleteReqeust) -> AnyPublisher<DI_Base, APIError> {
+    static func deleteReport(_ healthId: String) -> AnyPublisher<DI_Base, APIError> {
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
         }
 
         let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
         
-        return APIManager.request(ExerciseAPI.todayExerciseList.url, method: .delete, parameters: param.dictionary, headers: headers)
+        return APIManager.request("\(ExerciseAPI.todayExerciseList.url)/\(healthId)", method: .delete, headers: headers)
     }
 }
