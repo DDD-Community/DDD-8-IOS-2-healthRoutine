@@ -11,6 +11,7 @@ struct MyPageMainView: View {
     
     @ObservedObject private var viewModel = MyPageViewModel()
     @EnvironmentObject private var viewRouter: ViewRouter
+    @State private var isPresented = false
     
     var body: some View {
         
@@ -27,54 +28,76 @@ struct MyPageMainView: View {
                             VStack(spacing: 16) {
                                 
                                 MyPageProfileView()
-                                MyPageHistoryView()
                                 MyPageBadgeView()
                                 
-                                HStack(spacing: 70) {
-                                    
-                                    Button {
-                                        
-                                        viewModel.logout() {
-                                            viewRouter.currentView = .account
-                                            viewRouter.changeFlag.toggle()
-                                        }
-                                        
-                                    } label: {
-                                        
-                                        Text("로그아웃")
-                                            .font(Font.pretendard(.medium, size: 14))
-                                            .foregroundColor(Color(hex: "707070"))
-                                    }
-                                    
-                                    Text("회원탈퇴")
-                                        .font(Font.pretendard(.medium, size: 14))
-                                        .foregroundColor(Color(hex: "707070"))
+                                Button {
+                                    self.isPresented.toggle()
+                                } label: {
+                                    Text("로그아웃")
+                                        .frame(maxWidth: .infinity, minHeight: 60)
+                                        .font(Font.pretendard(.medium, size: 18))
+                                        .foregroundColor(.white)
+                                        .background(Color(hex: "4B4C55"))
+                                        .cornerRadius(10)
                                 }
-                                .padding(.vertical, 16)
+                                .fullScreenCover(isPresented: $isPresented) {
+                                    CommonAlertView(info: AlertorViewInfo(title: "회원탈퇴", message: "정말 우리를 떠나실건가요?\n탈퇴 후 회원 정보는 복구가 불가능해요.", okTitle: "탈퇴하기", cancelTitle: "취소", okCompletion: {
+                                        self.isPresented.toggle()
+                                    }, cancelCompletion: {
+                                        self.isPresented.toggle()
+                                    }))
+                                    .background(ClearBackgroundView())
+                                }
+                                .onAppear {
+                                    UIView.setAnimationsEnabled(false)
+                                }
+                                
+                                Button {
+                                    self.isPresented.toggle()
+                                } label: {
+                                    Text("회원탈퇴")
+                                        .frame(maxWidth: .infinity, minHeight: 60)
+                                        .font(Font.pretendard(.medium, size: 18))
+                                        .foregroundColor(.white)
+                                        .background(Color(hex: "4B4C55"))
+                                        .cornerRadius(10)
+                                }
+                                .fullScreenCover(isPresented: $isPresented) {
+                                    CommonAlertView(info: AlertorViewInfo(title: "", message: "", okTitle: "", cancelTitle: "", okCompletion: nil, cancelCompletion: nil))
+                                        .background(ClearBackgroundView())
+                                }
+                                .onAppear {
+                                    UIView.setAnimationsEnabled(false)
+                                }
+                                
+//                                HStack(spacing: 70) {
+//
+//                                    Button {
+//
+//                                        viewModel.logout() {
+//                                            viewRouter.currentView = .account
+//                                            viewRouter.changeFlag.toggle()
+//                                        }
+//
+//                                    } label: {
+//
+//                                        Text("로그아웃")
+//                                            .font(Font.pretendard(.medium, size: 14))
+//                                            .foregroundColor(Color(hex: "707070"))
+//                                    }
+//
+//                                    Text("회원탈퇴")
+//                                        .font(Font.pretendard(.medium, size: 14))
+//                                        .foregroundColor(Color(hex: "707070"))
+//                                }
+//                                .padding(.vertical, 16)
                             }
                         }
                     }
                     .customNavigationBarBackButtonHidden(true)
                     .customNavigationTitle("마이페이지")
-                    
                 }
-                
             }
-            
-//            ZStack {
-//
-//                Text("")
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .background(.black)
-//                    .opacity(0.4)
-//                    .edgesIgnoringSafeArea(.all)
-//
-//                MyPageBadgeDetailView()
-//                    .edgesIgnoringSafeArea(.all)
-//            }
-//            .onTapGesture {
-//                debugPrint("Close Badge Detail")
-//            }
         }
     }
 }

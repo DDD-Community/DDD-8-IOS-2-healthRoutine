@@ -9,67 +9,65 @@ import SwiftUI
 
 struct CommonAlertView: View {
     
-    var title: String = ""
-    var message: String = ""
+    var info: AlertorViewInfo
     
-    var confirm: String = ""
-    var cancel: String = ""
-    
-    var cancelAction: VoidClosure? = nil
-    var confirmAction: VoidClosure? = nil
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         
-        VStack(spacing: 20) {
+        ZStack {
             
-            Text(title)
-                .font(Font.pretendard(.bold, size: 20))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundColor(.white)
-            
-            Text(message)
-                .font(Font.pretendard(.medium, size: 16))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundColor(.white)
-            
-            HStack {
-
-                Spacer()
+            VStack(spacing: 20) {
                 
-                Text(cancel)
-                    .font(Font.pretendard(.regular, size: 13))
-                    .padding(.horizontal, 23)
-                    .padding(.vertical, 13)
-                    .background(Color.background_gray)
-                    .cornerRadius(10)
-                    .onTapGesture {
-                        self.confirmAction?()
-                    }
+                Text(info.title)
+                    .font(Font.pretendard(.bold, size: 20))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundColor(.white)
                 
-                Text(confirm)
-                    .font(Font.pretendard(.regular, size: 13))
-                    .padding(.horizontal, 23)
-                    .padding(.vertical, 13)
-                    .background(Color.main_green)
-                    .cornerRadius(10)
-                    .onTapGesture {
-                        self.cancelAction?()
-                    }
+                Text(info.message)
+                    .font(Font.pretendard(.medium, size: 16))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundColor(.white)
                 
-                
+                HStack {
+                    
+                    Spacer()
+                    
+                    Text(info.cancelTitle)
+                        .font(Font.pretendard(.regular, size: 13))
+                        .foregroundColor(.black)
+                        .padding(.horizontal, 23)
+                        .padding(.vertical, 13)
+                        .background(Color.background_gray)
+                        .cornerRadius(10)
+                        .onTapGesture {
+                            self.info.cancelCompletion?()
+                        }
+                    
+                    Text(info.okTitle)
+                        .font(Font.pretendard(.regular, size: 13))
+                        .foregroundColor(.black)
+                        .padding(.horizontal, 23)
+                        .padding(.vertical, 13)
+                        .background(Color.main_green)
+                        .cornerRadius(10)
+                        .onTapGesture {
+                            self.info.okCompletion?()
+                        }
+                }
             }
+            .padding(24)
+            .cornerRadius(16)
+            .background(Color.box_color)
+            .cornerRadius(16)
+            .padding(24)
         }
-        .frame(maxWidth: .infinity)
-        .padding(24)
-        .cornerRadius(16)
-        .background(Color.box_color)
-//        .cornerRadius(16)
-//        .padding(24)
     }
 }
 
 struct CommonAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        CommonAlertView()
+        CommonAlertView(info: AlertorViewInfo(title: "회원탈퇴", message: "정말 우리를 떠나실건가요?\n탈퇴 후 회원 정보는 복구가 불가능해요.", okTitle: "회원탈퇴", cancelTitle: "취소", okCompletion: nil, cancelCompletion: nil))
+            .blur(radius: 0)
     }
 }
