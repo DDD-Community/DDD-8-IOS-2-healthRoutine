@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Combine
 
 class BadgeViewModel: ObservableObject {
     
     @Published var badge: Badge = .water
+    var cancellables: Set<AnyCancellable> = []
     
     init() {
         self.bindView()
@@ -18,12 +20,34 @@ class BadgeViewModel: ObservableObject {
     private func bindView() {
         
     }
-//    var badgeTapped = Cur
 }
 
 extension BadgeViewModel {
     
     func fetchBadgeInfos() {
+     
+        APIService.getBadgeList()
+            .receive(on: RunLoop.main)
+            .sink {  completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { (value: BadgeListResponse) in
+                self.updateBadgeView(value.result)
+            }
+            .store(in: &cancellables)
+    }
+}
+
+extension BadgeViewModel {
+    
+    private func updateBadgeView(_ badgeInfos: BadgeListResult) {
         
     }
 }

@@ -23,7 +23,7 @@ struct ToastView: View {
                 .frame(maxWidth: .infinity, maxHeight: 46)
                 .background(Color.gray_888)
                 .cornerRadius(10)
-                .padding(20)
+                .padding(.bottom, 12)
         }
     }
 }

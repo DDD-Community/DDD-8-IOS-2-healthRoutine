@@ -81,6 +81,8 @@ struct MyPageProfileDetailView: View {
                     }
                 
                 Spacer()
+                
+//                ToastView(title: "닉네임 변경을 완료 했습니다")
             }
             .onAppear {
                 self.bindView()

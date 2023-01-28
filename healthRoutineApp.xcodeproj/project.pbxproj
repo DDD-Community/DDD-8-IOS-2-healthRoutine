@@ -111,6 +111,9 @@
 		B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */; };
 		B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */; };
 		B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */; };
+		B68DA2112984DC2100525E87 /* BadgeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DA2102984DC2100525E87 /* BadgeRequest.swift */; };
+		B68DA2142984DC2D00525E87 /* BadgeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DA2132984DC2D00525E87 /* BadgeResponse.swift */; };
+		B68DA2162984DCC900525E87 /* BadgeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DA2152984DCC900525E87 /* BadgeAPI.swift */; };
 		B69878AA2948068F00C58869 /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878A92948068E00C58869 /* BottomButtonView.swift */; };
 		B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AB2948079600C58869 /* CommonButtonView.swift */; };
 		B69878B0294810CA00C58869 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AF294810CA00C58869 /* SplashView.swift */; };
@@ -242,6 +245,9 @@
 		B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileView.swift; sourceTree = "<group>"; };
 		B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBadgeView.swift; sourceTree = "<group>"; };
 		B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeView.swift; sourceTree = "<group>"; };
+		B68DA2102984DC2100525E87 /* BadgeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRequest.swift; sourceTree = "<group>"; };
+		B68DA2132984DC2D00525E87 /* BadgeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeResponse.swift; sourceTree = "<group>"; };
+		B68DA2152984DCC900525E87 /* BadgeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAPI.swift; sourceTree = "<group>"; };
 		B69878A92948068E00C58869 /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
 		B69878AB2948079600C58869 /* CommonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonView.swift; sourceTree = "<group>"; };
 		B69878AF294810CA00C58869 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -775,6 +781,22 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
+		B68DA20F2984DC0F00525E87 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				B68DA2102984DC2100525E87 /* BadgeRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		B68DA2122984DC2400525E87 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				B68DA2132984DC2D00525E87 /* BadgeResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		B6A824FC297D437700AEF33A /* Badge */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,7 +924,10 @@
 		B6FDBC2F296FC611002D5F43 /* Badge */ = {
 			isa = PBXGroup;
 			children = (
+				B68DA2122984DC2400525E87 /* Response */,
+				B68DA20F2984DC0F00525E87 /* Request */,
 				B6FDBC30296FC61E002D5F43 /* Badge.swift */,
+				B68DA2152984DCC900525E87 /* BadgeAPI.swift */,
 			);
 			path = Badge;
 			sourceTree = "<group>";
@@ -1007,6 +1032,7 @@
 				B64F86AB2980BD560099AE05 /* ExerciseAPI.swift in Sources */,
 				8060547C295AAD1A002617BA /* Const.swift in Sources */,
 				80605482295AC7F5002617BA /* HealthRoutineAPI.swift in Sources */,
+				B68DA2162984DCC900525E87 /* BadgeAPI.swift in Sources */,
 				B6D8CED62917D86200420E8E /* ContentView.swift in Sources */,
 				8084406B294B2927005A1F75 /* NickNameView.swift in Sources */,
 				B65208D42949BE710095DAB4 /* CustomNavigationBarContainerView.swift in Sources */,
@@ -1041,6 +1067,7 @@
 				B6A82510298027CD00AEF33A /* ExerciseRequest.swift in Sources */,
 				B65208D62949C0F60095DAB4 /* CustomNavigationView.swift in Sources */,
 				B6D2889F294AB1010072C347 /* String+Ext.swift in Sources */,
+				B68DA2142984DC2D00525E87 /* BadgeResponse.swift in Sources */,
 				B623B118292F47B500BA7BA7 /* Date+Ext.swift in Sources */,
 				B65B4F732967DBB400C30B3E /* ReportDetailPartView.swift in Sources */,
 				B65350F22966D8B400880CED /* ReportDetailView.swift in Sources */,
@@ -1080,6 +1107,7 @@
 				B69878B22948197000C58869 /* AccountMainView.swift in Sources */,
 				9150D9B6297C340500DF07F9 /* ReportViewModel.swift in Sources */,
 				B6FDBC31296FC61E002D5F43 /* Badge.swift in Sources */,
+				B68DA2112984DC2100525E87 /* BadgeRequest.swift in Sources */,
 				B6A25C3B29838B5A002AD80E /* ClearBackgroundView.swift in Sources */,
 				91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */,
 				B6841AFA29820A3E00A73A92 /* WaterAPI.swift in Sources */,
