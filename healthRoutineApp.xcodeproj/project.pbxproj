@@ -114,6 +114,7 @@
 		B68DA2112984DC2100525E87 /* BadgeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DA2102984DC2100525E87 /* BadgeRequest.swift */; };
 		B68DA2142984DC2D00525E87 /* BadgeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DA2132984DC2D00525E87 /* BadgeResponse.swift */; };
 		B68DA2162984DCC900525E87 /* BadgeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DA2152984DCC900525E87 /* BadgeAPI.swift */; };
+		B68DA2182984FE4D00525E87 /* ReportDetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DA2172984FE4D00525E87 /* ReportDetailPopupView.swift */; };
 		B69878AA2948068F00C58869 /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878A92948068E00C58869 /* BottomButtonView.swift */; };
 		B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AB2948079600C58869 /* CommonButtonView.swift */; };
 		B69878B0294810CA00C58869 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AF294810CA00C58869 /* SplashView.swift */; };
@@ -248,6 +249,7 @@
 		B68DA2102984DC2100525E87 /* BadgeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRequest.swift; sourceTree = "<group>"; };
 		B68DA2132984DC2D00525E87 /* BadgeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeResponse.swift; sourceTree = "<group>"; };
 		B68DA2152984DCC900525E87 /* BadgeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAPI.swift; sourceTree = "<group>"; };
+		B68DA2172984FE4D00525E87 /* ReportDetailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailPopupView.swift; sourceTree = "<group>"; };
 		B69878A92948068E00C58869 /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
 		B69878AB2948079600C58869 /* CommonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonView.swift; sourceTree = "<group>"; };
 		B69878AF294810CA00C58869 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -676,6 +678,7 @@
 			children = (
 				B65B4F6F2967DB9300C30B3E /* Views */,
 				B65350F12966D8B400880CED /* ReportDetailView.swift */,
+				B68DA2172984FE4D00525E87 /* ReportDetailPopupView.swift */,
 			);
 			path = ReportDetail;
 			sourceTree = "<group>";
@@ -1133,6 +1136,7 @@
 				B65AD97F29542BDA005AB105 /* MyPageProfileDetailView.swift in Sources */,
 				B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */,
 				91B0376C2951F96A000837BA /* View+Ext.swift in Sources */,
+				B68DA2182984FE4D00525E87 /* ReportDetailPopupView.swift in Sources */,
 				B66169FA29501DBA000474A9 /* BadgeRowView.swift in Sources */,
 				B639D13B294F5C07009AE6C9 /* AccountResponse.swift in Sources */,
 				9171AF50296178D70027339E /* CustomTimerButtonView.swift in Sources */,

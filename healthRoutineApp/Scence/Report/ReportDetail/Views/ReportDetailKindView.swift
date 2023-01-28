@@ -10,6 +10,7 @@ import SwiftUI
 struct ReportDetailKindView: View {
 
     @State var selected: String?
+    @State var isPresentPopup: Bool = false
     
     private let columns = [GridItem(.flexible()),GridItem(.flexible())]
     
@@ -24,20 +25,51 @@ struct ReportDetailKindView: View {
                 .font(Font.pretendard(.bold, size: 20))
                 .frame(maxWidth: .infinity, alignment: .leading)
             
+            Button {
+                
+                self.isPresentPopup.toggle()
+                
+            } label: {
+                Text("추가하기 +")
+                    .frame(maxWidth: .infinity, minHeight: 40)
+                    .font(Font.pretendard(.semiBold, size: 14))
+                    .foregroundColor(.white)
+                    .background(Color.background_gray3)
+                    .cornerRadius(10)
+            }
+            .fullScreenCover(isPresented: $isPresentPopup) {
+                
+                ReportDetailPopupView(value: "")
+                    .background(ClearBackgroundView())
+            }
+            .onAppear { UIView.setAnimationsEnabled(false) }
+            
             LazyVGrid(columns: columns, spacing: 6) {
 
                 ForEach(ExPart.allCases, id: \.self) { part in
 
                     Button(action: { self.selected = part.localized }) {
 
-                        Text(part.localized)
-                            .font(Font.pretendard(.semiBold, size: 13))
-                            .frame(maxWidth: .infinity)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 14)
-                            .foregroundColor(.background_black)
-                            .background(selected == part.localized ? Color.main_green : Color.background_gray)
-                            .cornerRadius(15)
+                        HStack {
+                            
+                            Spacer()
+                            
+                            Text(part.localized)
+                                .font(Font.pretendard(.regular, size: 13))
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 40)
+                                .lineLimit(2)
+                            
+                            Image("close")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 10, height: 10)
+                                .opacity(selected == part.localized ? 0 : 1)
+                        }
+                        .padding(.horizontal, 17)
+                        .foregroundColor(.background_black)
+                        .background(selected == part.localized ? Color.main_green : Color.background_gray)
+                        .cornerRadius(10)
                     }
                 }
             }
