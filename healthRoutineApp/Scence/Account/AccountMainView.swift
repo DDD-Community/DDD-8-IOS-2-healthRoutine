@@ -13,11 +13,13 @@ struct AccountMainView: View {
     private let boardInfo: [OnBoarding] = [.workout, .drink, .routine]
     
     var body: some View {
+        
         CustomNavigationView {
 
             BaseView {
 
-                VStack(spacing: 16) {
+                VStack(spacing: 0) {
+                    
                     TabView {
                         
                         ForEach(boardInfo, id: \.self) {
@@ -27,28 +29,32 @@ struct AccountMainView: View {
                     .frame(maxWidth: .infinity)
                     .background(Color.background_black)
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                    .cornerRadius(16)
-                    .padding(.top, 19)
+                    .background(.blue)
                     .onAppear { self.setupAppearance() }
-
-                    // MARK: - 로그인 뷰 이동 처리
-                    CustomNavigationLink(destination: SignInView())  {
-                        Text("로그인")
-                            .frame(maxWidth: .infinity, minHeight: 60)
-                            .font(Font.pretendard(.bold, size: 18))
-                            .foregroundColor(.black)
-                            .background(Color.main_green)
-                            .cornerRadius(10)
+                    
+                    VStack(spacing: 16) {
+                        
+                        // MARK: - 로그인 뷰 이동 처리
+                        CustomNavigationLink(destination: SignInView())  {
+                            Text("로그인")
+                                .frame(maxWidth: .infinity, maxHeight: 60)
+                                .font(Font.pretendard(.bold, size: 18))
+                                .foregroundColor(.black)
+                                .background(Color.main_green)
+                                .cornerRadius(10)
+                        }
+                        // MARK: - 회원가입 뷰 이동 처리
+                        CustomNavigationLink(destination: SignUpMainView().customNavigationTitle("회원가입")) {
+                            Text("회원가입")
+                                .frame(maxWidth: .infinity, maxHeight: 60)
+                                .font(Font.pretendard(.bold, size: 18))
+                                .foregroundColor(Color(hex: "E2E1E5"))
+                                .background(Color(hex:"252525"))
+                                .cornerRadius(10)
+                        }
                     }
-                    // MARK: - 회원가입 뷰 이동 처리
-                    CustomNavigationLink(destination: SignUpMainView().customNavigationTitle("회원가입")) {
-                        Text("회원가입")
-                            .frame(maxWidth: .infinity, minHeight: 60)
-                            .font(Font.pretendard(.bold, size: 18))
-                            .foregroundColor(Color(hex: "E2E1E5"))
-                            .background(Color(hex:"252525"))
-                            .cornerRadius(10)
-                    }
+                    
+                    Spacer()
                 }
                 .customNavigationBarBackButtonHidden(true)
             }
@@ -117,18 +123,24 @@ struct OnBoardingView: View {
     var body: some View {
         
         VStack {
-            Text(onBoarding.title)
-                .foregroundColor(.main_green)
-                .font(Font.pretendard(.bold, size: 36))
-                .padding(.bottom, 5)
             
-            Text(onBoarding.desc)
-                .foregroundColor(.white_text)
-                .font(Font.pretendard(.bold, size: 18))
-                .padding(.bottom, 19)
+            VStack {
+                
+                Text(onBoarding.title)
+                    .foregroundColor(.main_green)
+                    .font(Font.pretendard(.bold, size: 36))
+                    .padding(.bottom, 5)
+                
+                Text(onBoarding.desc)
+                    .foregroundColor(.white_text)
+                    .font(Font.pretendard(.bold, size: 18))
+                    .padding(.bottom, 19)
+            }
+            .frame(maxHeight: 68)
             
             Image(onBoarding.image)
                 .resizable()
+                .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: 274)
                 .padding(.bottom, 6)
             

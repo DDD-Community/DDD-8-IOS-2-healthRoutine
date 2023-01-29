@@ -44,36 +44,36 @@ struct ReportDetailKindView: View {
             }
             .onAppear { UIView.setAnimationsEnabled(false) }
             
-            LazyVGrid(columns: columns, spacing: 6) {
-
-                ForEach(ExPart.allCases, id: \.self) { part in
-
-                    Button(action: { self.selected = part.localized }) {
-
-                        HStack {
-                            
-                            Spacer()
-                            
-                            Text(part.localized)
-                                .font(Font.pretendard(.regular, size: 13))
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 40)
-                                .lineLimit(2)
-                            
-                            Image("close")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 10, height: 10)
-                                .opacity(selected == part.localized ? 0 : 1)
-                        }
-                        .padding(.horizontal, 17)
-                        .foregroundColor(.background_black)
-                        .background(selected == part.localized ? Color.main_green : Color.background_gray)
-                        .cornerRadius(10)
-                    }
-                }
-            }
-            .frame(maxWidth: .infinity)
+//            LazyVGrid(columns: columns, spacing: 6) {
+//
+//                ForEach(ExPart.allCases, id: \.self) { part in
+//
+//                    Button(action: { self.selected = part.localized }) {
+//
+//                        HStack {
+//                            
+//                            Spacer()
+//                            
+//                            Text(part.localized)
+//                                .font(Font.pretendard(.regular, size: 13))
+//                                .frame(maxWidth: .infinity)
+//                                .frame(height: 40)
+//                                .lineLimit(2)
+//                            
+//                            Image("close")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(width: 10, height: 10)
+//                                .opacity(selected == part.localized ? 0 : 1)
+//                        }
+//                        .padding(.horizontal, 17)
+//                        .foregroundColor(.background_black)
+//                        .background(selected == part.localized ? Color.main_green : Color.background_gray)
+//                        .cornerRadius(10)
+//                    }
+//                }
+//            }
+//            .frame(maxWidth: .infinity)
         }
         .padding(20)
         .background(Color(hex: "272830"))

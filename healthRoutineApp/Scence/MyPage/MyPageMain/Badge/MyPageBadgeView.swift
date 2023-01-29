@@ -50,6 +50,9 @@ struct MyPageBadgeView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 80, height: 80)
+                        .onTapGesture {
+//                            self.viewModel.badgeTapped.send(<#T##input: Bool##Bool#>)
+                        }
                 }
             }
         }

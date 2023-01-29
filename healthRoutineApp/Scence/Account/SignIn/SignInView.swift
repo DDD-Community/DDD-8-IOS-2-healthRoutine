@@ -13,13 +13,11 @@ struct SignInView: View {
     @ObservedObject private var viewModel = SignInViewModel()
     @EnvironmentObject private var viewRouter: ViewRouter
 
-    var closeView = PassthroughSubject<Bool, Never>()
-
     var cancellables: Set<AnyCancellable> = []
     
     var body: some View {
         BaseView {
-            VStack(alignment: .leading, spacing: 30) {
+            VStack(alignment: .center, spacing: 30) {
 
                 Image("splash")
                     .resizable()

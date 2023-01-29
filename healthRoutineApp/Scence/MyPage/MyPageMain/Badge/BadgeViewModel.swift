@@ -10,8 +10,11 @@ import Combine
 
 class BadgeViewModel: ObservableObject {
     
-    @Published var badge: Badge = .water
     var cancellables: Set<AnyCancellable> = []
+    
+    @Published var latestBadge: Badge = .water
+    
+    var badgeTapped = PassthroughSubject<Badge, Never>()
     
     init() {
         self.bindView()
@@ -43,6 +46,8 @@ extension BadgeViewModel {
             }
             .store(in: &cancellables)
     }
+    
+    
 }
 
 extension BadgeViewModel {
