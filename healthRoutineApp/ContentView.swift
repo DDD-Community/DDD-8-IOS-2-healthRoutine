@@ -8,43 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    var tabItems = TabItem.allCases
     
-    @State private var section = 0
+    @State var selected: TabItem = .home
+    
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
     
     var body: some View {
         
-        TabView(selection: $section) {
+        TabView(selection: $selected) {
             
-            Group {
-                
-                HomeMainView()
-                    .tabItem {
-                        self.section == 0 ? Image("mainOn") : Image("main")
-                    }
-                    .tag(0)
-                
-                ReportMainView()
-                    .tabItem {
-                        self.section == 1 ? Image("reportOn") : Image("report")
-                    }
-                    .tag(1)
-                
-                TimerMainView()
-                    .tabItem {
-                        self.section == 2 ? Image("timerOn") : Image("timer")
-                    }
-                    .tag(2)
-                
-                MyPageMainView()
-                    .tabItem {
-                        self.section == 3 ? Image("myPageOn") : Image("myPage")
-                    }
-                    .tag(3)
-            }
+            HomeMainView()
+                .tag(tabItems[0])
+            
+            ReportMainView()
+                .tag(tabItems[1])
+            
+            TimerMainView()
+                .tag(tabItems[2])
+            
+            MyPageMainView()
+                .tag(tabItems[3])
         }
-        .onAppear() {
-            UITabBar.appearance().barTintColor = UIColor(Color.background_black)
-        }
+        Spacer(minLength: 0)
+        CustomTabbarView(tabItems: tabItems, selected: $selected)
     }
 }
 

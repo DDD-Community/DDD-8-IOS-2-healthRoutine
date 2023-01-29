@@ -49,6 +49,7 @@
 		912523932937A41800003C87 /* CustomTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238E2937A41800003C87 /* CustomTimerView.swift */; };
 		912523942937A41800003C87 /* NormalTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125238F2937A41800003C87 /* NormalTimerView.swift */; };
 		912523952937A41800003C87 /* NormalTimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912523902937A41800003C87 /* NormalTimerButtonView.swift */; };
+		912623F52986467800A3B73F /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912623F42986467700A3B73F /* CustomTabView.swift */; };
 		9150D9B6297C340500DF07F9 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9150D9B5297C340500DF07F9 /* ReportViewModel.swift */; };
 		9150D9B8297C350900DF07F9 /* ReportDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9150D9B7297C350900DF07F9 /* ReportDetailViewModel.swift */; };
 		9167D5B42957F2980002651A /* SignUpCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9167D5B32957F2980002651A /* SignUpCompleteView.swift */; };
@@ -181,6 +182,7 @@
 		9125238E2937A41800003C87 /* CustomTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimerView.swift; sourceTree = "<group>"; };
 		9125238F2937A41800003C87 /* NormalTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalTimerView.swift; sourceTree = "<group>"; };
 		912523902937A41800003C87 /* NormalTimerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalTimerButtonView.swift; sourceTree = "<group>"; };
+		912623F42986467700A3B73F /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		9150D9B5297C340500DF07F9 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		9150D9B7297C350900DF07F9 /* ReportDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewModel.swift; sourceTree = "<group>"; };
 		9167D5B32957F2980002651A /* SignUpCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteView.swift; sourceTree = "<group>"; };
@@ -438,6 +440,14 @@
 			path = ComponentView;
 			sourceTree = "<group>";
 		};
+		912623F32986466800A3B73F /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				912623F42986467700A3B73F /* CustomTabView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
 		9171AF4B296173DA0027339E /* NormalTimer */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +519,7 @@
 		B623B0F5292F169300BA7BA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				912623F32986466800A3B73F /* TabView */,
 				B6A25C3A29838B5A002AD80E /* ClearBackgroundView.swift */,
 				80122A1429762FFD00193EAC /* GifView.swift */,
 				B6D677A7297A358500A2939C /* Button */,
@@ -1032,6 +1043,7 @@
 				B64F86AB2980BD560099AE05 /* ExerciseAPI.swift in Sources */,
 				8060547C295AAD1A002617BA /* Const.swift in Sources */,
 				80605482295AC7F5002617BA /* HealthRoutineAPI.swift in Sources */,
+				912623F52986467800A3B73F /* CustomTabView.swift in Sources */,
 				B68DA2162984DCC900525E87 /* BadgeAPI.swift in Sources */,
 				B6D8CED62917D86200420E8E /* ContentView.swift in Sources */,
 				8084406B294B2927005A1F75 /* NickNameView.swift in Sources */,
