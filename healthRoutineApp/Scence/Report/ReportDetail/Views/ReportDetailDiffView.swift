@@ -126,7 +126,7 @@ struct ReportDetailDiffRowView: View {
                     
                     TextField("", text: $value)
                         .foregroundColor(Color.main_green)
-                        .font(Font.pretendard(.bold, size: 32))
+                        .font(Font.pretendard(.bold, size: 24))
                         
                     Divider()
                         .frame(height: 2)

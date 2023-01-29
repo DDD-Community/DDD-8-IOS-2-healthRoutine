@@ -25,8 +25,8 @@ struct ReportDetailView: View {
 
                     VStack(spacing: 16) {
                         ReportDetailPartView() // 부위
-                        ReportDetailKindView() //종류
-                        ReportDetailDiffView() //상세
+                        ReportDetailKindView() // 종류
+                        ReportDetailDiffView() // 상세
                     }
                 }
 
