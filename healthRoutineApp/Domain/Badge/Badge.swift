@@ -33,6 +33,19 @@ enum Badge: String, CaseIterable {
     
     var title: String {
         
+        // 운동의 시작
+        // 운동의 기쁨
+        // 운동 홀릭
+        // 운동 마스터
+        // 운동 챔피언
+        // 성실 주니어
+        // 성실 프로
+        // 성실 마스터
+        // 성실 챔피언
+        // 꿀컵꿀컵
+        // 벌컵벌컵
+        // 물 먹는 하마
+        
         switch self {
         case .water: return "벌컵 벌컵"
         case .waterUpgrade: return "물먹는 하마"

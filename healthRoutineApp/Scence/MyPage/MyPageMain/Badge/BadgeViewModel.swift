@@ -10,11 +10,10 @@ import Combine
 
 class BadgeViewModel: ObservableObject {
     
+    // Badge Id값 받아서 Tap에 해당하는 id값 전달해서 뿌릴예정
     var cancellables: Set<AnyCancellable> = []
     
     @Published var latestBadge: Badge = .water
-    
-    var badgeTapped = PassthroughSubject<Badge, Never>()
     
     init() {
         self.bindView()

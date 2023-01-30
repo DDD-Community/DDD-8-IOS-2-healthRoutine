@@ -10,6 +10,7 @@ import SwiftUI
 struct MyPageBadgeDetailView: View {
     
     @State var badge: Badge = .water
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         
@@ -48,7 +49,6 @@ struct MyPageBadgeDetailView: View {
                 
                 Spacer()
             }
-            
         }
     }
 }

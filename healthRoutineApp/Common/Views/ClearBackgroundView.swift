@@ -23,8 +23,6 @@ struct ClearBackgroundView: UIViewRepresentable {
         override func didMoveToWindow() {
             super.didMoveToWindow()
             
-//            superview?.superview?.backgroundColor = .clear
-            
             superview?.superview?.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         }
     }

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct MyPageBadgeView: View {
     
+    @State private var isPresented = false
+    @Environment(\.presentationMode) var presentationMode
+    
     private let columns = [
         GridItem(.flexible()),GridItem(.flexible()),
         GridItem(.flexible()),GridItem(.flexible())
@@ -43,16 +46,20 @@ struct MyPageBadgeView: View {
             
             LazyVGrid(columns: columns) {
                 
-                // Sample Data
-                ForEach(Badge.allCases, id: \.self) { // 뱃지 넣으면 될듯!
+                ForEach(Badge.allCases, id: \.self) { badge in
                     
-                    Image($0.icon)
+                    Image(badge.icon)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 80, height: 80)
                         .onTapGesture {
-//                            self.viewModel.badgeTapped.send(<#T##input: Bool##Bool#>)
+                            self.isPresented.toggle()
                         }
+                        .fullScreenCover(isPresented: self.$isPresented) {
+                            MyPageBadgeDetailView()
+                                .background(ClearBackgroundView())
+                        }
+                        .onAppear { UIView.setAnimationsEnabled(false) }
                 }
             }
         }
