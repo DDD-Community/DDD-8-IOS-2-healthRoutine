@@ -9,11 +9,11 @@ import SwiftUI
 
 struct BaseView<Content>: View where Content: View {
     private let content: Content
-
+    
     public init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
-
+    
     var body: some View {
         ZStack {
             content
@@ -23,4 +23,3 @@ struct BaseView<Content>: View where Content: View {
         .ignoresSafeArea(.keyboard)
     }
 }
-

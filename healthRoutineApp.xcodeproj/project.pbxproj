@@ -121,6 +121,7 @@
 		B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AB2948079600C58869 /* CommonButtonView.swift */; };
 		B69878B0294810CA00C58869 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AF294810CA00C58869 /* SplashView.swift */; };
 		B69878B22948197000C58869 /* AccountMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878B12948197000C58869 /* AccountMainView.swift */; };
+		B69F7EEB2988A995008790E9 /* HalfSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F7EEA2988A995008790E9 /* HalfSheetView.swift */; };
 		B6A25C392983762F002AD80E /* Alertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A25C382983762F002AD80E /* Alertor.swift */; };
 		B6A25C3B29838B5A002AD80E /* ClearBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A25C3A29838B5A002AD80E /* ClearBackgroundView.swift */; };
 		B6A25C3D29838D8C002AD80E /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A25C3C29838D8C002AD80E /* ToastView.swift */; };
@@ -258,6 +259,7 @@
 		B69878AB2948079600C58869 /* CommonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonView.swift; sourceTree = "<group>"; };
 		B69878AF294810CA00C58869 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B69878B12948197000C58869 /* AccountMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMainView.swift; sourceTree = "<group>"; };
+		B69F7EEA2988A995008790E9 /* HalfSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSheetView.swift; sourceTree = "<group>"; };
 		B6A25C382983762F002AD80E /* Alertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertor.swift; sourceTree = "<group>"; };
 		B6A25C3A29838B5A002AD80E /* ClearBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackgroundView.swift; sourceTree = "<group>"; };
 		B6A25C3C29838D8C002AD80E /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 				B65208D72949C2980095DAB4 /* Navigation */,
 				80A2757B295973FF003295C4 /* BaseView.swift */,
 				B6A25C3C29838D8C002AD80E /* ToastView.swift */,
+				B69F7EEA2988A995008790E9 /* HalfSheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1122,6 +1125,7 @@
 				B623B125292F4E3900BA7BA7 /* CalendarContentWeekRowView.swift in Sources */,
 				B64F86AD2980E3960099AE05 /* BadgeViewModel.swift in Sources */,
 				B6841AF82982099000A73A92 /* WaterResponse.swift in Sources */,
+				B69F7EEB2988A995008790E9 /* HalfSheetView.swift in Sources */,
 				B66578642978208C009FE02F /* MyPageBadgeDetailView.swift in Sources */,
 				B69878B22948197000C58869 /* AccountMainView.swift in Sources */,
 				9150D9B6297C340500DF07F9 /* ReportViewModel.swift in Sources */,
