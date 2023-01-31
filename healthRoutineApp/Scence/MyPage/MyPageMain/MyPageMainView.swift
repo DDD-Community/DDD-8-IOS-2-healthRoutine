@@ -13,6 +13,8 @@ struct MyPageMainView: View {
     @EnvironmentObject private var viewRouter: ViewRouter
     @State private var isPresented = false
     
+//    private let signOutInfo: AlertorViewInfo
+    
     var body: some View {
         
         ZStack {
@@ -54,6 +56,11 @@ struct MyPageMainView: View {
                                 
                                 Button {
                                     self.isPresented.toggle()
+                                    
+                                    //                                        viewModel.logout() {
+                                    //                                            viewRouter.currentView = .account
+                                    //                                            viewRouter.changeFlag.toggle()
+                                    //                                        }
                                 } label: {
                                     Text("회원탈퇴")
                                         .frame(maxWidth: .infinity, minHeight: 60)
@@ -69,28 +76,6 @@ struct MyPageMainView: View {
                                 .onAppear {
                                     UIView.setAnimationsEnabled(false)
                                 }
-                                
-//                                HStack(spacing: 70) {
-//
-//                                    Button {
-//
-//                                        viewModel.logout() {
-//                                            viewRouter.currentView = .account
-//                                            viewRouter.changeFlag.toggle()
-//                                        }
-//
-//                                    } label: {
-//
-//                                        Text("로그아웃")
-//                                            .font(Font.pretendard(.medium, size: 14))
-//                                            .foregroundColor(Color(hex: "707070"))
-//                                    }
-//
-//                                    Text("회원탈퇴")
-//                                        .font(Font.pretendard(.medium, size: 14))
-//                                        .foregroundColor(Color(hex: "707070"))
-//                                }
-//                                .padding(.vertical, 16)
                             }
                         }
                     }
