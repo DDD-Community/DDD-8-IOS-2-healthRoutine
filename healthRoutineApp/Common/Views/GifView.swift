@@ -6,58 +6,48 @@
 //
 
 import SwiftUI
-import FLAnimatedImage
 
 struct GIFView: UIViewRepresentable {
-    private var imageUrl: String
-
-    init(imageUrl: String) {
-        self.imageUrl = imageUrl
+    private let name: String?
+    
+    public init(name: String) {
+        self.name = name
     }
-
-    private let imageView: FLAnimatedImageView = {
-        let imageView = FLAnimatedImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.masksToBounds = true
-        return imageView
-    }()
-
-    private let activityIndicator: UIActivityIndicatorView = {
-        let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        return activityIndicator
-    }()
+    
+    func makeUIView(context: Context) -> GIFImageView {
+        return GIFImageView(name: name ?? "")
+    }
+    
+    func updateUIView(_ uiView: GIFImageView, context: Context) {
+        uiView.updateGIF(name: name ?? "")
+    }
 }
 
-extension GIFView {
-    func makeUIView(context: Context) -> UIView {
-        let view = UIView(frame: .zero)
-
-        view.addSubview(activityIndicator)
-        view.addSubview(imageView)
-
-        imageView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-        imageView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-
-        activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-
-        return view
+class GIFImageView: UIView {
+    private let imageView = UIImageView()
+    private var name: String?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
-
-    func updateUIView(_ uiView: UIView, context: Context) {
-        activityIndicator.startAnimating()
-        guard let url = Bundle.main.url(forResource: imageUrl, withExtension: "gif") else { return }
-
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                let image = FLAnimatedImage(animatedGIFData: data)
-
-                DispatchQueue.main.async {
-                    activityIndicator.stopAnimating()
-                    imageView.animatedImage = image
-                }
-            }
-        }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    convenience init(name: String) {
+        self.init()
+        self.name = name
+        imageView.contentMode = .scaleAspectFit
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView.frame = bounds
+        self.addSubview(imageView)
+    }
+    
+    func updateGIF(name: String) {
+        imageView.image = UIImage.gifImage(name: name)
     }
 }

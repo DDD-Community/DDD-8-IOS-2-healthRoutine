@@ -21,7 +21,7 @@ struct WaterIntakeView: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            HStack(alignment: .center, spacing: 16) {
+            HStack(alignment: .center) {
                 
                 Image("minus")
                     .resizable()
@@ -30,15 +30,13 @@ struct WaterIntakeView: View {
                         self.viewModel.minusAmount()
                     }
                 
-                GIFView(imageUrl: self.viewModel.gifName)
-//                GIFView(imageUrl: "water-2000")
+                GIFView(name: self.viewModel.gifName)
                     .frame(maxWidth: .infinity, maxHeight: 51)
                     .overlay {
                         Text("\(self.viewModel.waterAmount) ml")
                             .font(Font.pretendard(.bold, size: 14))
                             .foregroundColor(.white)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(12)
+                            .frame(maxWidth: .infinity, alignment: .center)
                     }
                 
                 Image("plus")
