@@ -8,8 +8,34 @@
 import SwiftUI
 
 struct HalfSheetView: View {
+    
+    @State var showSheet: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Button {
+            
+            showSheet.toggle()
+            
+        } label: {
+            
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            
+        }
+        .halfSheet(showSheet: $showSheet) {
+            
+            ZStack {
+                
+                Color.red
+                
+                Text("Test")
+            }
+            .ignoresSafeArea()
+            
+            
+        } onEnd: {
+            print("Dismiss")
+        }
     }
 }
 

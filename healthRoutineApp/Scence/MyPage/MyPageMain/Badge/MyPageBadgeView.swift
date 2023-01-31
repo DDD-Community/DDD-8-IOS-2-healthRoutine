@@ -55,11 +55,19 @@ struct MyPageBadgeView: View {
                         .onTapGesture {
                             self.isPresented.toggle()
                         }
-                        .fullScreenCover(isPresented: self.$isPresented) {
-                            MyPageBadgeDetailView()
-                                .background(ClearBackgroundView())
+                        .halfSheet(showSheet: $isPresented) {
+                            
+                            ZStack {
+                                
+                                Color.red
+                                
+                                MyPageBadgeDetailView()
+                            }
+                            .ignoresSafeArea()
+                           
+                        } onEnd: {
+                            print("dismiss")
                         }
-                        .onAppear { UIView.setAnimationsEnabled(false) }
                 }
             }
         }

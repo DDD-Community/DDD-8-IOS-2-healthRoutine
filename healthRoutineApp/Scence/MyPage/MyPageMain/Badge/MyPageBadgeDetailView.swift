@@ -18,8 +18,6 @@ struct MyPageBadgeDetailView: View {
             
             VStack {
                 
-                Spacer()
-                
                 VStack {
                     
                     Image(badge.icon)
@@ -42,12 +40,8 @@ struct MyPageBadgeDetailView: View {
                         .frame(height: 20)
                         .font(Font.pretendard(.semiBold, size: 16))
                 }
-                .frame(maxWidth: .infinity, maxHeight: 254)
+                .frame(maxWidth: .infinity)
                 .background(Color.box_color)
-                .cornerRadius(10)
-                .padding(20)
-                
-                Spacer()
             }
         }
     }
