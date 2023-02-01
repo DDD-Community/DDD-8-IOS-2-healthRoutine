@@ -9,70 +9,57 @@ import SwiftUI
 
 struct MyPageBadgeView: View {
     
-    @State private var isPresented = false
-    @Environment(\.presentationMode) var presentationMode
-    
-    private let columns = [
-        GridItem(.flexible()),GridItem(.flexible()),
-        GridItem(.flexible()),GridItem(.flexible())
+    private let rows = [
+        GridItem(.flexible(minimum: 80, maximum: 80)),
+        GridItem(.flexible(minimum: 80, maximum: 80)),
+        GridItem(.flexible(minimum: 80, maximum: 80))
     ]
-    
-    var badgeTest: Badge = .water
     
     var body: some View {
         
-        LazyVStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 7) {
             
-            HStack(spacing: 16) {
+            HStack(spacing: 3) {
                 
-                Image(badgeTest.icon)
+                Image("물음표")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 90, height: 90)
+                    .frame(width: 80, height: 80)
+//                    .background(.blue)
                 
                 VStack(alignment: .leading, spacing: 0) {
                     
-                    Text(badgeTest.title)
+                    Text("나의 배지")
                         .font(Font.pretendard(.bold, size: 20))
                         .foregroundColor(.white)
                         .frame(height: 31)
                     
-                    Text(badgeTest.desc)
+                    Text("운동을 하여 배지를 획득해 보세요!")
                         .font(Font.pretendard(.semiBold, size: 14))
                         .foregroundColor(.white)
                         .frame(height: 31)
                 }
             }
             
-            LazyVGrid(columns: columns) {
+            LazyHGrid(rows: rows, spacing: 0) {
                 
                 ForEach(Badge.allCases, id: \.self) { badge in
                     
-                    Image(badge.icon)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80, height: 80)
-                        .onTapGesture {
-                            self.isPresented.toggle()
-                        }
-                        .halfSheet(showSheet: $isPresented) {
-                            
-                            ZStack {
-                                
-                                Color.red
-                                
-                                MyPageBadgeDetailView()
-                            }
-                            .ignoresSafeArea()
-                           
-                        } onEnd: {
-                            print("dismiss")
-                        }
+                    Button {
+                        
+                    } label: {
+                        
+                        Image(badge.icon)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80, height: 80)
+                    }
+                    
                 }
             }
         }
-        .padding(24)
-        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 15)
+        .frame(height: 395)
         .background(Color.box_color)
         .cornerRadius(10)
     }

@@ -122,6 +122,7 @@
 		B69878B0294810CA00C58869 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878AF294810CA00C58869 /* SplashView.swift */; };
 		B69878B22948197000C58869 /* AccountMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69878B12948197000C58869 /* AccountMainView.swift */; };
 		B69F7EEB2988A995008790E9 /* HalfSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F7EEA2988A995008790E9 /* HalfSheetView.swift */; };
+		B69F7EEE2988C098008790E9 /* MyPageUtilsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F7EED2988C098008790E9 /* MyPageUtilsView.swift */; };
 		B6A25C392983762F002AD80E /* Alertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A25C382983762F002AD80E /* Alertor.swift */; };
 		B6A25C3B29838B5A002AD80E /* ClearBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A25C3A29838B5A002AD80E /* ClearBackgroundView.swift */; };
 		B6A25C3D29838D8C002AD80E /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A25C3C29838D8C002AD80E /* ToastView.swift */; };
@@ -260,6 +261,7 @@
 		B69878AF294810CA00C58869 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B69878B12948197000C58869 /* AccountMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMainView.swift; sourceTree = "<group>"; };
 		B69F7EEA2988A995008790E9 /* HalfSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSheetView.swift; sourceTree = "<group>"; };
+		B69F7EED2988C098008790E9 /* MyPageUtilsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageUtilsView.swift; sourceTree = "<group>"; };
 		B6A25C382983762F002AD80E /* Alertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertor.swift; sourceTree = "<group>"; };
 		B6A25C3A29838B5A002AD80E /* ClearBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackgroundView.swift; sourceTree = "<group>"; };
 		B6A25C3C29838D8C002AD80E /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				B68B4F21292E627400A9AE99 /* MyPageMainView.swift */,
+				B69F7EEC2988C018008790E9 /* Utils */,
 				B6A824FE297D439100AEF33A /* Profile */,
 				B6A824FC297D437700AEF33A /* Badge */,
 			);
@@ -797,6 +800,7 @@
 			children = (
 				B623B119292F48B700BA7BA7 /* MyPageMain */,
 				B641A4512930582100022A58 /* MyPageViewStrings.swift */,
+				B65AD9852954307F005AB105 /* MyPageViewModel.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -817,6 +821,14 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		B69F7EEC2988C018008790E9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B69F7EED2988C098008790E9 /* MyPageUtilsView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		B6A824FC297D437700AEF33A /* Badge */ = {
 			isa = PBXGroup;
 			children = (
@@ -830,7 +842,6 @@
 		B6A824FE297D439100AEF33A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				B65AD9852954307F005AB105 /* MyPageViewModel.swift */,
 				B65AD97E29542BDA005AB105 /* MyPageProfileDetailView.swift */,
 				B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */,
 			);
@@ -1162,6 +1173,7 @@
 				9171AF50296178D70027339E /* CustomTimerButtonView.swift in Sources */,
 				B639D139294F5BE8009AE6C9 /* AccountRequest.swift in Sources */,
 				9167D5B42957F2980002651A /* SignUpCompleteView.swift in Sources */,
+				B69F7EEE2988C098008790E9 /* MyPageUtilsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,10 @@ class BadgeViewModel: ObservableObject {
     // Badge Id값 받아서 Tap에 해당하는 id값 전달해서 뿌릴예정
     var cancellables: Set<AnyCancellable> = []
     
-    @Published var latestBadge: Badge = .water
+    @Published var latestBadge: Badge = .sincerityPro
+    
+    var badgeTapped = PassthroughSubject<Badge, Never>()
+    @Published var showBadgeModal: Bool = false
     
     init() {
         self.bindView()
@@ -45,8 +48,6 @@ extension BadgeViewModel {
             }
             .store(in: &cancellables)
     }
-    
-    
 }
 
 extension BadgeViewModel {
