@@ -79,12 +79,13 @@
 		B639D139294F5BE8009AE6C9 /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639D138294F5BE8009AE6C9 /* AccountRequest.swift */; };
 		B639D13B294F5C07009AE6C9 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B639D13A294F5C07009AE6C9 /* AccountResponse.swift */; };
 		B641A4522930582100022A58 /* MyPageViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B641A4512930582100022A58 /* MyPageViewStrings.swift */; };
+		B6429E07298BFCCD00E3C7E2 /* HomeBadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6429E06298BFCCD00E3C7E2 /* HomeBadgeViewModel.swift */; };
 		B64C977229514290004F9760 /* HomeMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C977129514290004F9760 /* HomeMainViewModel.swift */; };
 		B64C9775295142AC004F9760 /* HomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C9774295142AC004F9760 /* HomeDetailView.swift */; };
 		B64C977729514B47004F9760 /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C977629514B47004F9760 /* HomeDetailViewModel.swift */; };
 		B64F86AB2980BD560099AE05 /* ExerciseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F86AA2980BD560099AE05 /* ExerciseAPI.swift */; };
 		B64F86AD2980E3960099AE05 /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F86AC2980E3960099AE05 /* BadgeViewModel.swift */; };
-		B64F86AF298108480099AE05 /* WaterIntakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F86AE298108480099AE05 /* WaterIntakeViewModel.swift */; };
+		B64F86AF298108480099AE05 /* HomeWaterIntakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F86AE298108480099AE05 /* HomeWaterIntakeViewModel.swift */; };
 		B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208BB294963470095DAB4 /* SignInViewModel.swift */; };
 		B65208CA294979760095DAB4 /* AccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208C9294979760095DAB4 /* AccountAPI.swift */; };
 		B65208CE29498D1E0095DAB4 /* AccountErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65208CD29498D1E0095DAB4 /* AccountErrors.swift */; };
@@ -102,7 +103,7 @@
 		B65AD9862954307F005AB105 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AD9852954307F005AB105 /* MyPageViewModel.swift */; };
 		B65B4F732967DBB400C30B3E /* ReportDetailPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B4F722967DBB400C30B3E /* ReportDetailPartView.swift */; };
 		B65B4F762967E19600C30B3E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B4F752967E19600C30B3E /* Exercise.swift */; };
-		B66169FA29501DBA000474A9 /* BadgeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66169F929501DBA000474A9 /* BadgeRowView.swift */; };
+		B66169FA29501DBA000474A9 /* HomeBadgeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66169F929501DBA000474A9 /* HomeBadgeRowView.swift */; };
 		B66578642978208C009FE02F /* MyPageBadgeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */; };
 		B6744A0329827C2B00B4BACB /* CommonAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6744A0229827C2B00B4BACB /* CommonAlertView.swift */; };
 		B6841AF22982090D00A73A92 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF12982090D00A73A92 /* Water.swift */; };
@@ -112,7 +113,7 @@
 		B68B4F22292E627400A9AE99 /* MyPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F21292E627400A9AE99 /* MyPageMainView.swift */; };
 		B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */; };
 		B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */; };
-		B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */; };
+		B68CC7ED29309CEA009A0A2F /* HomeWaterIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68CC7EC29309CEA009A0A2F /* HomeWaterIntakeView.swift */; };
 		B68DA2112984DC2100525E87 /* BadgeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DA2102984DC2100525E87 /* BadgeRequest.swift */; };
 		B68DA2142984DC2D00525E87 /* BadgeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DA2132984DC2D00525E87 /* BadgeResponse.swift */; };
 		B68DA2162984DCC900525E87 /* BadgeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DA2152984DCC900525E87 /* BadgeAPI.swift */; };
@@ -126,7 +127,6 @@
 		B6A25C392983762F002AD80E /* Alertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A25C382983762F002AD80E /* Alertor.swift */; };
 		B6A25C3B29838B5A002AD80E /* ClearBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A25C3A29838B5A002AD80E /* ClearBackgroundView.swift */; };
 		B6A25C3D29838D8C002AD80E /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A25C3C29838D8C002AD80E /* ToastView.swift */; };
-		B6A82500297D704200AEF33A /* LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A824FF297D704200AEF33A /* LifeCycle.swift */; };
 		B6A82503297D902C00AEF33A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A82502297D902C00AEF33A /* API.swift */; };
 		B6A82505297FFF4100AEF33A /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A82504297FFF4100AEF33A /* Account.swift */; };
 		B6A825082980129F00AEF33A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B6A825072980129F00AEF33A /* Kingfisher */; };
@@ -218,12 +218,13 @@
 		B639D138294F5BE8009AE6C9 /* AccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequest.swift; sourceTree = "<group>"; };
 		B639D13A294F5C07009AE6C9 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		B641A4512930582100022A58 /* MyPageViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewStrings.swift; sourceTree = "<group>"; };
+		B6429E06298BFCCD00E3C7E2 /* HomeBadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBadgeViewModel.swift; sourceTree = "<group>"; };
 		B64C977129514290004F9760 /* HomeMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewModel.swift; sourceTree = "<group>"; };
 		B64C9774295142AC004F9760 /* HomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView.swift; sourceTree = "<group>"; };
 		B64C977629514B47004F9760 /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
 		B64F86AA2980BD560099AE05 /* ExerciseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseAPI.swift; sourceTree = "<group>"; };
 		B64F86AC2980E3960099AE05 /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
-		B64F86AE298108480099AE05 /* WaterIntakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeViewModel.swift; sourceTree = "<group>"; };
+		B64F86AE298108480099AE05 /* HomeWaterIntakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWaterIntakeViewModel.swift; sourceTree = "<group>"; };
 		B65208BB294963470095DAB4 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		B65208C9294979760095DAB4 /* AccountAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPI.swift; sourceTree = "<group>"; };
 		B65208CD29498D1E0095DAB4 /* AccountErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountErrors.swift; sourceTree = "<group>"; };
@@ -241,7 +242,7 @@
 		B65AD9852954307F005AB105 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		B65B4F722967DBB400C30B3E /* ReportDetailPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailPartView.swift; sourceTree = "<group>"; };
 		B65B4F752967E19600C30B3E /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		B66169F929501DBA000474A9 /* BadgeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRowView.swift; sourceTree = "<group>"; };
+		B66169F929501DBA000474A9 /* HomeBadgeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBadgeRowView.swift; sourceTree = "<group>"; };
 		B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBadgeDetailView.swift; sourceTree = "<group>"; };
 		B6744A0229827C2B00B4BACB /* CommonAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAlertView.swift; sourceTree = "<group>"; };
 		B6841AF12982090D00A73A92 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
@@ -251,7 +252,7 @@
 		B68B4F21292E627400A9AE99 /* MyPageMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainView.swift; sourceTree = "<group>"; };
 		B68B4F26292E634D00A9AE99 /* MyPageProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileView.swift; sourceTree = "<group>"; };
 		B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBadgeView.swift; sourceTree = "<group>"; };
-		B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeView.swift; sourceTree = "<group>"; };
+		B68CC7EC29309CEA009A0A2F /* HomeWaterIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWaterIntakeView.swift; sourceTree = "<group>"; };
 		B68DA2102984DC2100525E87 /* BadgeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeRequest.swift; sourceTree = "<group>"; };
 		B68DA2132984DC2D00525E87 /* BadgeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeResponse.swift; sourceTree = "<group>"; };
 		B68DA2152984DCC900525E87 /* BadgeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAPI.swift; sourceTree = "<group>"; };
@@ -265,7 +266,6 @@
 		B6A25C382983762F002AD80E /* Alertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertor.swift; sourceTree = "<group>"; };
 		B6A25C3A29838B5A002AD80E /* ClearBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackgroundView.swift; sourceTree = "<group>"; };
 		B6A25C3C29838D8C002AD80E /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
-		B6A824FF297D704200AEF33A /* LifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCycle.swift; sourceTree = "<group>"; };
 		B6A82502297D902C00AEF33A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		B6A82504297FFF4100AEF33A /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		B6A8250C298027A200AEF33A /* ExerciseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseResponse.swift; sourceTree = "<group>"; };
@@ -496,7 +496,6 @@
 				B623B0F5292F169300BA7BA7 /* Views */,
 				B623B122292F4B2300BA7BA7 /* DateHolder.swift */,
 				B623B12E292F5C5F00BA7BA7 /* Month.swift */,
-				B6A824FF297D704200AEF33A /* LifeCycle.swift */,
 				807D4D272950430000F757C0 /* KeychainService.swift */,
 				8060547B295AAD1A002617BA /* Const.swift */,
 				80F9BFDA2974E8920018E3CE /* ViewRouter.swift */,
@@ -938,7 +937,8 @@
 		B6FDBC2D296FC239002D5F43 /* Badge */ = {
 			isa = PBXGroup;
 			children = (
-				B66169F929501DBA000474A9 /* BadgeRowView.swift */,
+				B66169F929501DBA000474A9 /* HomeBadgeRowView.swift */,
+				B6429E06298BFCCD00E3C7E2 /* HomeBadgeViewModel.swift */,
 			);
 			path = Badge;
 			sourceTree = "<group>";
@@ -946,8 +946,8 @@
 		B6FDBC2E296FC23F002D5F43 /* Intake */ = {
 			isa = PBXGroup;
 			children = (
-				B68CC7EC29309CEA009A0A2F /* WaterIntakeView.swift */,
-				B64F86AE298108480099AE05 /* WaterIntakeViewModel.swift */,
+				B68CC7EC29309CEA009A0A2F /* HomeWaterIntakeView.swift */,
+				B64F86AE298108480099AE05 /* HomeWaterIntakeViewModel.swift */,
 			);
 			path = Intake;
 			sourceTree = "<group>";
@@ -1080,13 +1080,12 @@
 				80307691294C5BD200EFF277 /* APIService.swift in Sources */,
 				B6DF8D872969529E006C2C89 /* ReportDetailDiffView.swift in Sources */,
 				B623B121292F4AF600BA7BA7 /* CalendarTopView.swift in Sources */,
-				B6A82500297D704200AEF33A /* LifeCycle.swift in Sources */,
 				912523932937A41800003C87 /* CustomTimerView.swift in Sources */,
 				B64C977229514290004F9760 /* HomeMainViewModel.swift in Sources */,
 				911E090A29449E50000555D8 /* TimerPatternButtonView.swift in Sources */,
 				B623B12B292F508A00BA7BA7 /* CalendarContentDayRowView.swift in Sources */,
 				8084406D294B2927005A1F75 /* SignUpInputView.swift in Sources */,
-				B64F86AF298108480099AE05 /* WaterIntakeViewModel.swift in Sources */,
+				B64F86AF298108480099AE05 /* HomeWaterIntakeViewModel.swift in Sources */,
 				B65208D22949BC130095DAB4 /* CustomNavigationBarView.swift in Sources */,
 				9167D5BA295806E90002651A /* UserDefault+Ext.swift in Sources */,
 				B6A25C392983762F002AD80E /* Alertor.swift in Sources */,
@@ -1119,7 +1118,7 @@
 				B6841AF22982090D00A73A92 /* Water.swift in Sources */,
 				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,
 				B6D2889D294AB0370072C347 /* RegExp.swift in Sources */,
-				B68CC7ED29309CEA009A0A2F /* WaterIntakeView.swift in Sources */,
+				B68CC7ED29309CEA009A0A2F /* HomeWaterIntakeView.swift in Sources */,
 				B623B123292F4B2300BA7BA7 /* DateHolder.swift in Sources */,
 				B6A25C3D29838D8C002AD80E /* ToastView.swift in Sources */,
 				9150D9B8297C350900DF07F9 /* ReportDetailViewModel.swift in Sources */,
@@ -1137,6 +1136,7 @@
 				B64F86AD2980E3960099AE05 /* BadgeViewModel.swift in Sources */,
 				B6841AF82982099000A73A92 /* WaterResponse.swift in Sources */,
 				B69F7EEB2988A995008790E9 /* HalfSheetView.swift in Sources */,
+				B6429E07298BFCCD00E3C7E2 /* HomeBadgeViewModel.swift in Sources */,
 				B66578642978208C009FE02F /* MyPageBadgeDetailView.swift in Sources */,
 				B69878B22948197000C58869 /* AccountMainView.swift in Sources */,
 				9150D9B6297C340500DF07F9 /* ReportViewModel.swift in Sources */,
@@ -1168,7 +1168,7 @@
 				B65208BC294963470095DAB4 /* SignInViewModel.swift in Sources */,
 				91B0376C2951F96A000837BA /* View+Ext.swift in Sources */,
 				B68DA2182984FE4D00525E87 /* ReportDetailPopupView.swift in Sources */,
-				B66169FA29501DBA000474A9 /* BadgeRowView.swift in Sources */,
+				B66169FA29501DBA000474A9 /* HomeBadgeRowView.swift in Sources */,
 				B639D13B294F5C07009AE6C9 /* AccountResponse.swift in Sources */,
 				9171AF50296178D70027339E /* CustomTimerButtonView.swift in Sources */,
 				B639D139294F5BE8009AE6C9 /* AccountRequest.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  WaterIntakeView.swift
+//  HomeWaterIntakeView.swift
 //  healthRoutineApp
 //
 //  Created by geonhui Yu on 2022/11/25.
@@ -8,9 +8,9 @@
 import SwiftUI
 import FLAnimatedImage
 
-struct WaterIntakeView: View {
+struct HomeWaterIntakeView: View {
     
-    @ObservedObject private var viewModel = WaterIntakeViewModel()
+    @ObservedObject private var viewModel = HomeWaterIntakeViewModel()
     
     var body: some View {
         
@@ -55,8 +55,8 @@ struct WaterIntakeView: View {
     }
 }
 
-struct WaterIntakeView_Previews: PreviewProvider {
+struct HomeWaterIntakeView_Previews: PreviewProvider {
     static var previews: some View {
-        WaterIntakeView()
+        HomeWaterIntakeView()
     }
 }

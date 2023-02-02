@@ -24,9 +24,9 @@ struct HomeMainView: View {
                                     .environmentObject(DateHolder())
                             }
                             
-                            WaterIntakeView()
+                            HomeWaterIntakeView()
                             
-                            BadgeRowView()
+                            HomeBadgeRowView()
                                 .padding(.bottom, 16)
                         }
                     }

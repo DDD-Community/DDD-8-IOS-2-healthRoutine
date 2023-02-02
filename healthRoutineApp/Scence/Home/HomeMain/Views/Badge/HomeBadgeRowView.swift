@@ -1,5 +1,5 @@
 //
-//  BadgeRowView.swift
+//  HomeBadgeRowView.swift
 //  healthRoutineApp
 //
 //  Created by geonhui Yu on 2022/12/19.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BadgeRowView: View {
+struct HomeBadgeRowView: View {
     
     var body: some View {
         
@@ -38,9 +38,9 @@ struct BadgeRowView: View {
     }
 }
 
-struct BadgeRowView_Previews: PreviewProvider {
+struct HomeBadgeRowView_Previews: PreviewProvider {
     static var previews: some View {
-        BadgeRowView()
+        HomeBadgeRowView()
     }
 }
 

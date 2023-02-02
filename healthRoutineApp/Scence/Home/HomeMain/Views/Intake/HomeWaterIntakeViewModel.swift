@@ -1,5 +1,5 @@
 //
-//  WaterIntakeViewModel.swift
+//  HomeWaterIntakeViewModel.swift
 //  healthRoutineApp
 //
 //  Created by geonhui Yu on 2023/01/25.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class WaterIntakeViewModel: ObservableObject {
+class HomeWaterIntakeViewModel: ObservableObject {
 
     var cancellables: Set<AnyCancellable> = []
     
@@ -81,7 +81,7 @@ class WaterIntakeViewModel: ObservableObject {
     }
 }
 
-extension WaterIntakeViewModel {
+extension HomeWaterIntakeViewModel {
     
     private func updateGIFView(_ amount: Int) -> String {
         

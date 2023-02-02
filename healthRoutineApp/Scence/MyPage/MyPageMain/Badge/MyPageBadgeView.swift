@@ -25,7 +25,6 @@ struct MyPageBadgeView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80, height: 80)
-//                    .background(.blue)
                 
                 VStack(alignment: .leading, spacing: 0) {
                     
