@@ -61,6 +61,14 @@ extension CustomNavigationBarView {
         }
     }
     
+    private var logoSeciton: some View {
+        
+        Image("Splash")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 60, height: 45)
+    }
+    
     private var titleSection: some View {
         
         VStack(spacing: 4) {

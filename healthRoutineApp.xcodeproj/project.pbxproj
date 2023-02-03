@@ -98,7 +98,6 @@
 		B65350F42966D8BC00880CED /* ReportMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65350F32966D8BC00880CED /* ReportMainView.swift */; };
 		B65350F72966D91000880CED /* ReportMainRowView_Backup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65350F62966D91000880CED /* ReportMainRowView_Backup.swift */; };
 		B6535E65295BE12100372E7E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6535E64295BE12100372E7E /* ImagePicker.swift */; };
-		B65AD97C2954063B005AB105 /* AccountMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AD97B2954063B005AB105 /* AccountMainViewModel.swift */; };
 		B65AD97F29542BDA005AB105 /* MyPageProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AD97E29542BDA005AB105 /* MyPageProfileDetailView.swift */; };
 		B65AD9862954307F005AB105 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65AD9852954307F005AB105 /* MyPageViewModel.swift */; };
 		B65B4F732967DBB400C30B3E /* ReportDetailPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B4F722967DBB400C30B3E /* ReportDetailPartView.swift */; };
@@ -237,7 +236,6 @@
 		B65350F32966D8BC00880CED /* ReportMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMainView.swift; sourceTree = "<group>"; };
 		B65350F62966D91000880CED /* ReportMainRowView_Backup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMainRowView_Backup.swift; sourceTree = "<group>"; };
 		B6535E64295BE12100372E7E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		B65AD97B2954063B005AB105 /* AccountMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMainViewModel.swift; sourceTree = "<group>"; };
 		B65AD97E29542BDA005AB105 /* MyPageProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProfileDetailView.swift; sourceTree = "<group>"; };
 		B65AD9852954307F005AB105 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		B65B4F722967DBB400C30B3E /* ReportDetailPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailPartView.swift; sourceTree = "<group>"; };
@@ -639,7 +637,6 @@
 			isa = PBXGroup;
 			children = (
 				B69878B12948197000C58869 /* AccountMainView.swift */,
-				B65AD97B2954063B005AB105 /* AccountMainViewModel.swift */,
 				B6197CF6293733E9006A535D /* SignIn */,
 				8084405F294B2927005A1F75 /* SignUp */,
 			);
@@ -1157,7 +1154,6 @@
 				80708441296D6A070063D16D /* CustomTimerReadyView.swift in Sources */,
 				B6D677AB297A6C8F00A2939C /* WordLimit.swift in Sources */,
 				809FB26E29503C3E000E2EC6 /* Encodable+Ext.swift in Sources */,
-				B65AD97C2954063B005AB105 /* AccountMainViewModel.swift in Sources */,
 				B65AD9862954307F005AB105 /* MyPageViewModel.swift in Sources */,
 				B65B4F762967E19600C30B3E /* Exercise.swift in Sources */,
 				91C77AA82969488400F578C8 /* TimerAddViewModel.swift in Sources */,
