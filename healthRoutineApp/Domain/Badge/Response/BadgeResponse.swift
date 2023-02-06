@@ -13,6 +13,11 @@ struct BadgeListResponse: Codable {
     let result: BadgeListResult
 }
 
+struct BadgeLatestResult: Codable {
+    let index: Int
+    let subject: String
+}
+
 struct BadgeListResult: Codable {
     
     let exerciseStart: Bool
@@ -27,16 +32,8 @@ struct BadgeListResult: Codable {
     let drinkHoneyHoney: Bool
     let drinkBulkUpBulkUp: Bool
     let drinkHippo: Bool
+    let latestBadge: BadgeLatestResult
 }
 
-struct BadgeLastestResponse: Codable {
-    
-    let code: Int
-    let message: String
-    let result: BadgeLatestResult
-}
 
-struct BadgeLatestResult: Codable {
-    
-    let subject: String
-}
+

@@ -15,6 +15,7 @@ enum AccountAPI {
     
     case userInfo // 업로드 이후 해당 통신사용
     case updateProfileImage // 임시 업로드
+    case withdraw
     
     var url: String {
         
@@ -25,6 +26,7 @@ enum AccountAPI {
         case .signIn: return "\(HealthRoutineAPI.baseURL)/user/login"
         case .userInfo: return "\(HealthRoutineAPI.baseURL)/user/profile"
         case .updateProfileImage: return  "\(HealthRoutineAPI.baseURL)/user/profile/img-upload"
+        case .withdraw: return "\(HealthRoutineAPI.baseURL)/user/withdrawal"
         }
     }
 }

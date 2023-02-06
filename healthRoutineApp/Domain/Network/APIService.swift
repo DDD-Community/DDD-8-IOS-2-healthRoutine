@@ -26,6 +26,17 @@ class APIService {
     static func signUp(_ param: AccountSignUpRequest) -> AnyPublisher<AccountResponse, APIError> {
         return APIManager.request(AccountAPI.signUp.url, method: .post, parameters: param.dictionary)
     }
+    
+    static func withdraw() -> AnyPublisher<AccountResponse, APIError> {
+        
+        guard let token = KeychainService.shared.loadToken() else {
+            return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
+        }
+
+        let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
+        
+        return APIManager.request(AccountAPI.withdraw.url, method: .delete, headers: headers)
+    }
 }
 
 // MARK: - MyPage

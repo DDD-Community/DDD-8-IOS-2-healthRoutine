@@ -37,28 +37,6 @@ extension BadgeViewModel {
             }
             .store(in: &cancellables)
     }
-    
-    func fetchLatestBadgeInfo() {
-        
-        APIService.getLatestBadge()
-            .receive(on: RunLoop.main)
-            .sink {  completion in
-                switch completion {
-                case .failure(let error):
-                    switch error {
-                    case .http: do {}
-                    default: do {}
-                    }
-                case .finished:
-                    break
-                }
-                
-            } receiveValue: { (value: BadgeLastestResponse) in
-               
-                
-            }
-            .store(in: &cancellables)
-    }
 }
 
 extension BadgeViewModel {
