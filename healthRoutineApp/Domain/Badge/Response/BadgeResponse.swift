@@ -32,7 +32,7 @@ struct BadgeListResult: Codable {
     let drinkHoneyHoney: Bool
     let drinkBulkUpBulkUp: Bool
     let drinkHippo: Bool
-    let latestBadge: BadgeLatestResult
+    let latestBadge: BadgeLatestResult?
 }
 
 

@@ -9,23 +9,25 @@ import SwiftUI
 
 struct HomeBadgeRowView: View {
     
+//    @ObservedObject private var viewModel = BadgeViewModel()
+    
     var body: some View {
         
         HStack(spacing: 16) {
             
-            Image("ProfileDefault")
+            Image("물음표")
                 .resizable()
                 .frame(width: 66, height: 66)
                 .cornerRadius(33)
             
             VStack(spacing: 8) {
                 
-                Text("물먹는 하마")
+                Text("나의 배지")
                     .font(Font.pretendard(.bold, size: 20))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(.white)
                 
-                Text("2달연속으로 수분 섭취 성공")
+                Text("운동을 하여 배지를 획득해 보세요!")
                     .font(.system(size: 16, weight: .medium))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(.white)

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Badge: String, CaseIterable {
     
@@ -38,6 +39,35 @@ enum Badge: String, CaseIterable {
         case .drinkBulkUpBulkUp: return 11
         case .drinkHippo: return 12
         }
+    }
+}
+
+extension Badge {
+    
+    private var icons: [UIImage] {
+        switch self {
+        case .exerciseStart: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName: "1운동의시작")]
+        case .exerciseHappy: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName: "2운동의기쁨")]
+        case .exerciseHolic: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"3운동홀릭")]
+        case .exerciseMaster: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"4운동마스터")]
+        case .exerciseChampion: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"5운동챔피언")]
+        case .sincerityJunior: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"6성실주니어")]
+        case .sincerityPro: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"7성실프로")]
+        case .sincerityMaster: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"8성실마스터")]
+        case .sincerityChampion: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"9성실챔피언")]
+        case .drinkHoneyHoney: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"10꿀컵꿀컵")]
+        case .drinkBulkUpBulkUp: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"11벌컵벌컵")]
+        case .drinkHippo: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"12물먹는하마")]
+        }
+    }
+    
+    func icon(with badge: Bool) -> UIImage? {
+        
+        guard badge else {
+            return self.icons[0]
+        }
+        
+        return self.icons[1]
     }
     
     var title: String {
@@ -94,21 +124,21 @@ enum Badge: String, CaseIterable {
         }
     }
     
-    var icon: String {
-        
-        switch self {
-        case .exerciseStart: return "1운동의시작"
-        case .exerciseHappy: return "2운동의기쁨"
-        case .exerciseHolic: return "3운동홀릭"
-        case .exerciseMaster: return "4운동마스터"
-        case .exerciseChampion: return "5운동챔피언"
-        case .sincerityJunior: return "6성실주니어"
-        case .sincerityPro: return "7성실프로"
-        case .sincerityMaster: return "8성실마스터"
-        case .sincerityChampion: return "9성실챔피언"
-        case .drinkHoneyHoney: return "10꿀컵꿀컵"
-        case .drinkBulkUpBulkUp: return "11벌컵벌컵"
-        case .drinkHippo: return "12물먹는하마"
-        }
-    }
+//    var icon: String {
+//        
+//        switch self {
+//        case .exerciseStart: return "1운동의시작"
+//        case .exerciseHappy: return "2운동의기쁨"
+//        case .exerciseHolic: return "3운동홀릭"
+//        case .exerciseMaster: return "4운동마스터"
+//        case .exerciseChampion: return "5운동챔피언"
+//        case .sincerityJunior: return "6성실주니어"
+//        case .sincerityPro: return "7성실프로"
+//        case .sincerityMaster: return "8성실마스터"
+//        case .sincerityChampion: return "9성실챔피언"
+//        case .drinkHoneyHoney: return "10꿀컵꿀컵"
+//        case .drinkBulkUpBulkUp: return "11벌컵벌컵"
+//        case .drinkHippo: return "12물먹는하마"
+//        }
+//    }
 }

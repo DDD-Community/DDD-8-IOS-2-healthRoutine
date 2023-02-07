@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MyPageBadgeView: View {
     
+//    private let viewModel = BadgeViewModel()
+    
     private let rows = [
         GridItem(.flexible(minimum: 80, maximum: 80)),
         GridItem(.flexible(minimum: 80, maximum: 80)),
@@ -41,20 +43,33 @@ struct MyPageBadgeView: View {
             }
             
             LazyHGrid(rows: rows, spacing: 0) {
-                
-                ForEach(Badge.allCases, id: \.self) { badge in
-                    
-                    Button {
-                        
-                    } label: {
-                        
-                        Image(badge.icon)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 80, height: 80)
-                    }
-                    
-                }
+            
+//                ForEach(self.viewModel.gainBadges, id: \.self) { badge in
+//                    
+//                    Button {
+//                        
+//                    } label: {
+//                        
+//                        Image(badge.icon)
+//                            .resizable()
+//                            .scaledToFit()
+//                            .frame(width: 80, height: 80)
+//                    }
+//                    
+//                }
+//                ForEach(Badge.allCases, id: \.self) { badge in
+//
+//                    Button {
+//
+//                    } label: {
+//
+//                        Image(badge.icon)
+//                            .resizable()
+//                            .scaledToFit()
+//                            .frame(width: 80, height: 80)
+//                    }
+//
+//                }
             }
         }
         .padding(.horizontal, 15)
