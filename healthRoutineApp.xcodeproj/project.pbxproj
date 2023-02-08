@@ -104,6 +104,8 @@
 		B65B4F762967E19600C30B3E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B4F752967E19600C30B3E /* Exercise.swift */; };
 		B66169FA29501DBA000474A9 /* HomeBadgeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66169F929501DBA000474A9 /* HomeBadgeRowView.swift */; };
 		B66578642978208C009FE02F /* MyPageBadgeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */; };
+		B668C8DA2993452000537F58 /* BadgeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668C8D92993452000537F58 /* BadgeItemViewModel.swift */; };
+		B668C8DD2993481300537F58 /* BadgeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668C8DC2993481300537F58 /* BadgeDetailViewModel.swift */; };
 		B6744A0329827C2B00B4BACB /* CommonAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6744A0229827C2B00B4BACB /* CommonAlertView.swift */; };
 		B6841AF22982090D00A73A92 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF12982090D00A73A92 /* Water.swift */; };
 		B6841AF62982092A00A73A92 /* WaterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF52982092A00A73A92 /* WaterRequest.swift */; };
@@ -242,6 +244,8 @@
 		B65B4F752967E19600C30B3E /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		B66169F929501DBA000474A9 /* HomeBadgeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBadgeRowView.swift; sourceTree = "<group>"; };
 		B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBadgeDetailView.swift; sourceTree = "<group>"; };
+		B668C8D92993452000537F58 /* BadgeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeItemViewModel.swift; sourceTree = "<group>"; };
+		B668C8DC2993481300537F58 /* BadgeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDetailViewModel.swift; sourceTree = "<group>"; };
 		B6744A0229827C2B00B4BACB /* CommonAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAlertView.swift; sourceTree = "<group>"; };
 		B6841AF12982090D00A73A92 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		B6841AF52982092A00A73A92 /* WaterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRequest.swift; sourceTree = "<group>"; };
@@ -491,6 +495,7 @@
 		B609BEF2292EFB60008045CE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B668C8DB2993477B00537F58 /* Badge */,
 				B623B0F5292F169300BA7BA7 /* Views */,
 				B623B122292F4B2300BA7BA7 /* DateHolder.swift */,
 				B623B12E292F5C5F00BA7BA7 /* Month.swift */,
@@ -742,6 +747,16 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		B668C8DB2993477B00537F58 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				B64F86AC2980E3960099AE05 /* BadgeViewModel.swift */,
+				B668C8D92993452000537F58 /* BadgeItemViewModel.swift */,
+				B668C8DC2993481300537F58 /* BadgeDetailViewModel.swift */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
 		B6841AF0298208FE00A73A92 /* Water */ = {
 			isa = PBXGroup;
 			children = (
@@ -830,7 +845,6 @@
 			children = (
 				B68B4F2A292E650700A9AE99 /* MyPageBadgeView.swift */,
 				B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */,
-				B64F86AC2980E3960099AE05 /* BadgeViewModel.swift */,
 			);
 			path = Badge;
 			sourceTree = "<group>";
@@ -1069,6 +1083,7 @@
 				912523942937A41800003C87 /* NormalTimerView.swift in Sources */,
 				B623B12D292F563100BA7BA7 /* CalendarContentCellView.swift in Sources */,
 				B64C977729514B47004F9760 /* HomeDetailViewModel.swift in Sources */,
+				B668C8DD2993481300537F58 /* BadgeDetailViewModel.swift in Sources */,
 				91BE28B4298902C900352E69 /* UIImage+Ext.swift in Sources */,
 				B623B129292F4F4E00BA7BA7 /* CalendarView.swift in Sources */,
 				91BD01E929740E95006C47FA /* HomeDetailTabView.swift in Sources */,
@@ -1116,6 +1131,7 @@
 				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,
 				B6D2889D294AB0370072C347 /* RegExp.swift in Sources */,
 				B68CC7ED29309CEA009A0A2F /* HomeWaterIntakeView.swift in Sources */,
+				B668C8DA2993452000537F58 /* BadgeItemViewModel.swift in Sources */,
 				B623B123292F4B2300BA7BA7 /* DateHolder.swift in Sources */,
 				B6A25C3D29838D8C002AD80E /* ToastView.swift in Sources */,
 				9150D9B8297C350900DF07F9 /* ReportDetailViewModel.swift in Sources */,
