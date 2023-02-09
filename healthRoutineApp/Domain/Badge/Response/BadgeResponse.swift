@@ -33,10 +33,6 @@ struct BadgeListResult: Codable {
     let drinkBulkUpBulkUp: Bool
     let drinkHippo: Bool
     let latestBadge: BadgeLatestResult?
-    
-//    var gainBadges: [Badge] {
-//
-//    }
 }
 
 

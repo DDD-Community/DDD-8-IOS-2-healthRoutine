@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Combine
 
-class CalendarViewModel {
+final class CalendarViewModel: ObservableObject {
     
     func getNickName() -> String {
         let nickname = UserDefaults.standard.string(forKey: NICKNAME_KEY)
@@ -18,4 +19,6 @@ class CalendarViewModel {
             return ""
         }
     }
+    
+    
 }

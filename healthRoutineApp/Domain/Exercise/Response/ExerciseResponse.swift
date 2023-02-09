@@ -40,3 +40,26 @@ struct TodayExerciseListResponse: Decodable {
     let message: String
     let result: [TodayExerciseListResult]
 }
+
+// MARK: 메인 월 별 잔디
+struct MonthList: Codable {
+    let day: Int
+    let totalExercise: Int
+    let level: Int
+    let isFutureDays: Bool
+}
+
+struct MonthlyExerciseListResult: Codable {
+    
+    let year: Int
+    let month: Int
+    let message: String
+    let data: [MonthList]
+}
+
+struct MonthlyExerciseListResponse: Codable {
+    
+    let code: Int
+    let message: String
+    let result: MonthlyExerciseListResult
+}
