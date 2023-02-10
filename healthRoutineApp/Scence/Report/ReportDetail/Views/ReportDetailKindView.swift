@@ -12,6 +12,9 @@ struct ReportDetailKindView: View {
     @State var selected: String?
     @State var isPresentPopup: Bool = false
     
+    // 임시
+    @Binding var flag: Bool
+    
     private let columns = [GridItem(.flexible()),GridItem(.flexible())]
     
     var exPart: ExPart = .chest
@@ -43,6 +46,26 @@ struct ReportDetailKindView: View {
                     .background(ClearBackgroundView())
             }
             .onAppear { UIView.setAnimationsEnabled(false) }
+            
+            LazyVGrid(columns: columns, spacing: 6) {
+                
+                if flag {
+                    ForEach(ExPart.chest.subPart, id: \.self) { exercise in
+                        Button(action: {
+                            self.selected = exercise
+                        }) {
+                            
+                            Text(exercise)
+                                .font(Font.pretendard(.semiBold, size: 14))
+                                .frame(maxWidth: .infinity)
+                                .padding(12)
+                                .foregroundColor(.background_black)
+                                .background(selected == exercise ? Color.main_green : Color.background_gray)
+                                .cornerRadius(10)
+                        }
+                    }
+                }
+            }
             
 //            LazyVGrid(columns: columns, spacing: 6) {
 //
@@ -83,6 +106,6 @@ struct ReportDetailKindView: View {
 
 struct ReportDetailKindView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportDetailKindView()
+        ReportDetailKindView(flag: .constant(false))
     }
 }

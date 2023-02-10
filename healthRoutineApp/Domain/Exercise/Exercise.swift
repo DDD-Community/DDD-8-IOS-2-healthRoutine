@@ -11,6 +11,7 @@ typealias ExPart = Exercise.Part
 typealias ExTime = Exercise.Detail.Time
 typealias ExWeight = Exercise.Detail.Weight
 typealias ExSet = Exercise.Detail.Set
+typealias ExCount = Exercise.Detail.Count
 
 enum Exercise {
     
@@ -175,6 +176,24 @@ enum Exercise {
                 case .quarter: return "+15분"
                 case .half: return "+30분"
                 case .hour: return "+60분"
+                }
+            }
+        }
+        
+        enum Count: CaseIterable {
+            case one
+            case three
+            case five
+            case ten
+            
+            var localized: String {
+                
+                switch self {
+                    
+                case .one: return "+1번"
+                case .three: return "+3번"
+                case .five: return "+5번"
+                case .ten: return "+10번"
                 }
             }
         }

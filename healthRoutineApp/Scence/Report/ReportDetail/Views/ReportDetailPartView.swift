@@ -10,6 +10,7 @@ import SwiftUI
 struct ReportDetailPartView: View {
     
     @State var selected: String?
+    @Binding var flag: Bool
     
     private let columns = [
         GridItem(.flexible()),GridItem(.flexible()),
@@ -29,7 +30,10 @@ struct ReportDetailPartView: View {
                 
                 ForEach(ExPart.allCases, id: \.self) { part in
                     
-                    Button(action: { self.selected = part.localized }) {
+                    Button(action: {
+                        self.selected = part.localized
+                        self.flag.toggle()
+                    }) {
                         
                         Text(part.localized)
                             .font(Font.pretendard(.semiBold, size: 14))
@@ -52,6 +56,6 @@ struct ReportDetailPartView: View {
 
 struct ReportDetailPartView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportDetailPartView()
+        ReportDetailPartView(flag: .constant(false))
     }
 }

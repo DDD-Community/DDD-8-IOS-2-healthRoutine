@@ -11,6 +11,9 @@ struct ReportDetailView: View {
     @ObservedObject var viewModel: ReportDetailViewModel
     @Environment(\.presentationMode) var presentationMode
     
+    // 임시추가
+    @State var flag: Bool = false
+    
     init(viewModel: ReportDetailViewModel) {
         self.viewModel = viewModel
         self.viewModel.fetchExerciseInfo()
@@ -24,13 +27,14 @@ struct ReportDetailView: View {
                 ScrollView {
 
                     VStack(spacing: 16) {
-                        ReportDetailPartView() // 부위
-                        ReportDetailKindView() // 종류
+                        ReportDetailPartView(flag: $flag) // 부위
+                        ReportDetailKindView(flag: $flag) // 종류
                         ReportDetailDiffView() // 상세
                     }
                 }
 
                 BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true) {
+                    self.viewModel.delegate?.add()
                     self.presentationMode.wrappedValue.dismiss()
                 }
                 .frame(height: 84)

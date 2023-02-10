@@ -104,4 +104,9 @@ extension APIService {
         
         return APIManager.request("\(ExerciseAPI.todayExerciseList.url)/\(healthId)", method: .delete, headers: headers)
     }
+    
+    static func fetchCategoryExerciseList() -> AnyPublisher<CategoryExerciseListResponse, APIError> {
+        return APIManager.request(ExerciseAPI.todayExerciseList.url, method: .get)
+        
+    }
 }

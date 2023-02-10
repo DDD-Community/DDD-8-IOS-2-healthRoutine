@@ -10,7 +10,7 @@ import SwiftUI
 struct ReportDetailDiffView: View {
     
     @ObservedObject private var viewModel = ReportDetailViewModel()
-    
+
     private let columns = [GridItem(.flexible())]
     
     var body: some View {
@@ -32,19 +32,22 @@ struct ReportDetailDiffView: View {
                     
                     VStack(alignment: .leading) {
                         
-                        ReportDetailDiffRowView(value: $viewModel.set)
+                        ReportDetailDiffRowView(title: "kg", value: $viewModel.weight)
                             .frame(maxWidth: .infinity)
                         
                         LazyHGrid(rows: columns, spacing: 6) {
                             
-                            ForEach(ExWeight.allCases, id: \.self) {
+                            ForEach(ExWeight.allCases, id: \.self) { weight in
                                 
-                                Text($0.localized)
+                                Text(weight.localized)
                                     .font(Font.pretendard(.semiBold, size: 13))
                                     .padding(.horizontal, 12.5)
                                     .padding(.vertical, 9.5)
                                     .background(Color(.systemGray4))
                                     .cornerRadius(30)
+                                    .onTapGesture {
+                                        viewModel.weight += "2"
+                                    }
                             }
                         }
                     }
@@ -58,12 +61,12 @@ struct ReportDetailDiffView: View {
                     
                     VStack(alignment: .leading) {
                         
-                        ReportDetailDiffRowView(value: $viewModel.set)
+                        ReportDetailDiffRowView(title: "번", value: $viewModel.count)
                             .frame(maxWidth: .infinity)
                         
                         LazyHGrid(rows: columns, spacing: 6) {
                             
-                            ForEach(ExWeight.allCases, id: \.self) {
+                            ForEach(ExCount.allCases, id: \.self) {
                                 
                                 Text($0.localized)
                                     .font(Font.pretendard(.semiBold, size: 13))
@@ -71,6 +74,9 @@ struct ReportDetailDiffView: View {
                                     .padding(.vertical, 9.5)
                                     .background(Color(.systemGray4))
                                     .cornerRadius(30)
+                                    .onTapGesture {
+                                        viewModel.count += "10"
+                                    }
                             }
                         }
                     }
@@ -84,7 +90,7 @@ struct ReportDetailDiffView: View {
                     
                     VStack(alignment: .leading) {
                         
-                        ReportDetailDiffRowView(value: $viewModel.set)
+                        ReportDetailDiffRowView(title: "세트", value: $viewModel.set)
                             .frame(maxWidth: .infinity)
                         
                         LazyHGrid(rows: columns, spacing: 6) {
@@ -96,7 +102,9 @@ struct ReportDetailDiffView: View {
                                     .padding(.horizontal, 12.5)
                                     .padding(.vertical, 9.5)
                                     .background(Color(.systemGray4))
-                                    .cornerRadius(30)
+                                    .cornerRadius(30).onTapGesture {
+                                        viewModel.set += "1"
+                                    }
                             }
                         }
                     }
@@ -111,7 +119,7 @@ struct ReportDetailDiffView: View {
 
 struct ReportDetailDiffRowView: View {
     
-    var title: String = ""
+    var title: String
     var unit: String = ""
     
     @Binding var value: String
@@ -133,7 +141,7 @@ struct ReportDetailDiffRowView: View {
                         .background(.white)
                 }
                 
-                Text("kg")
+                Text(title)
                     .font(Font.pretendard(.semiBold, size: 14))
                     .foregroundColor(.white)
             }

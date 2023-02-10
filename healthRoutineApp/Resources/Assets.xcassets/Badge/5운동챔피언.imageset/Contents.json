@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "5운동챔피언.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "5운동챔피언 2.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "5운동챔피언 1.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "5운동챔피언 4.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

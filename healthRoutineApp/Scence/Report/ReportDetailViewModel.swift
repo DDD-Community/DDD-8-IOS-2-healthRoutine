@@ -7,9 +7,11 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 protocol UpdateProtocol: AnyObject {
     func update()
+    func add()
 }
 
 // 상상으로 데이터 모델 구현. 이후 서버 데이터에 맞춰서 변경할 예정.
@@ -44,12 +46,14 @@ let exercsieInfoSampleList = [ExerciseInfo("스쿼트", "1"), ExerciseInfo("스�
 let partInfoSampleList = [PartInfo("어깨", "1", exercsieInfoSampleList), PartInfo("어깨", "1", exercsieInfoSampleList), PartInfo("어깨", "1", exercsieInfoSampleList), PartInfo("어깨", "1", exercsieInfoSampleList)]
 
 class ReportDetailViewModel: ObservableObject {
+    var cancellables: Set<AnyCancellable> = []
     weak var delegate: UpdateProtocol?
     
-    @Published var partArray: [PartInfo] = []
+    @Published var categoryArray: [DI_Category] = []
     
     
     // 아래는 임시
+    @Published var partArray: [PartInfo] = []
     @Published var exercise: Exercise.Part = .chest
     
     @Published var weight: String = ""
@@ -59,6 +63,24 @@ class ReportDetailViewModel: ObservableObject {
     func fetchExerciseInfo() {
         // fetch통신 로직
         self.partArray = partInfoSampleList
+    }
+    
+    func fetchList() {
+        APIService.fetchCategoryExerciseList()
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { (value: CategoryExerciseListResponse) in
+                self.categoryArray = value.result
+            }
+            .store(in: &cancellables)
     }
     
 }

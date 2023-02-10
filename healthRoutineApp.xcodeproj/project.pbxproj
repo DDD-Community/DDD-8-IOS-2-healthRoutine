@@ -64,6 +64,7 @@
 		91BE28B4298902C900352E69 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE28B3298902C900352E69 /* UIImage+Ext.swift */; };
 		91C77AA82969488400F578C8 /* TimerAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C77AA72969488400F578C8 /* TimerAddViewModel.swift */; };
 		91C856EE2948C49B000385C7 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C856ED2948C49B000385C7 /* Color+Ext.swift */; };
+		91F3F6E1299640100015403B /* DI_Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F3F6E0299640100015403B /* DI_Category.swift */; };
 		B6197CFA2937342E006A535D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6197CF92937342E006A535D /* SignInView.swift */; };
 		B623B0F3292F165100BA7BA7 /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B0F2292F165100BA7BA7 /* HomeMainView.swift */; };
 		B623B115292F3EC400BA7BA7 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B623B114292F3EC400BA7BA7 /* CalendarHelper.swift */; };
@@ -204,6 +205,7 @@
 		91BE28B3298902C900352E69 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		91C77AA72969488400F578C8 /* TimerAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAddViewModel.swift; sourceTree = "<group>"; };
 		91C856ED2948C49B000385C7 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		91F3F6E0299640100015403B /* DI_Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI_Category.swift; sourceTree = "<group>"; };
 		B6197CF92937342E006A535D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		B623B0EF292F12DB00BA7BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B623B0F2292F165100BA7BA7 /* HomeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainView.swift; sourceTree = "<group>"; };
@@ -874,6 +876,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A8250C298027A200AEF33A /* ExerciseResponse.swift */,
+				91F3F6E0299640100015403B /* DI_Category.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1173,6 +1176,7 @@
 				B69878AC2948079600C58869 /* CommonButtonView.swift in Sources */,
 				80708441296D6A070063D16D /* CustomTimerReadyView.swift in Sources */,
 				B6D677AB297A6C8F00A2939C /* WordLimit.swift in Sources */,
+				91F3F6E1299640100015403B /* DI_Category.swift in Sources */,
 				809FB26E29503C3E000E2EC6 /* Encodable+Ext.swift in Sources */,
 				B65AD9862954307F005AB105 /* MyPageViewModel.swift in Sources */,
 				B65B4F762967E19600C30B3E /* Exercise.swift in Sources */,
@@ -1319,7 +1323,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"healthRoutineApp/Preview Content\"";
-				DEVELOPMENT_TEAM = FUV2GHVQ46;
+				DEVELOPMENT_TEAM = XH6SZSQLGV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = healthRoutineApp/Info.plist;
