@@ -9,18 +9,14 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class CalendarContentCellViewModel: ObservableObject {
+final class CalendarContentViewModel: ObservableObject {
     
     var cancellables: Set<AnyCancellable> = []
     
-    var cellInfo = PassthroughSubject<Void, Never>()
-    
-    private func bind() {
-        
-    }
+    @Published var weekCnt: Int = 0
 }
 
-extension CalendarContentCellViewModel {
+extension CalendarContentViewModel {
     
     private func getMonthLevel() {
         
@@ -41,6 +37,8 @@ extension CalendarContentCellViewModel {
                 value.result.data.forEach { list in
                     self.fillColorCell(list.level)
                 }
+                
+                self.weekCnt = value.result.data.count
             }
             .store(in: &cancellables)
     }

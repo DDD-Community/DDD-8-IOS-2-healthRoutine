@@ -107,7 +107,7 @@
 		B668C8DA2993452000537F58 /* BadgeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668C8D92993452000537F58 /* BadgeItemViewModel.swift */; };
 		B668C8DD2993481300537F58 /* BadgeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668C8DC2993481300537F58 /* BadgeDetailViewModel.swift */; };
 		B6744A0329827C2B00B4BACB /* CommonAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6744A0229827C2B00B4BACB /* CommonAlertView.swift */; };
-		B68192612994B9BF00A32EAF /* CalendarContentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68192602994B9BF00A32EAF /* CalendarContentCellViewModel.swift */; };
+		B68192612994B9BF00A32EAF /* CalendarContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68192602994B9BF00A32EAF /* CalendarContentViewModel.swift */; };
 		B6841AF22982090D00A73A92 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF12982090D00A73A92 /* Water.swift */; };
 		B6841AF62982092A00A73A92 /* WaterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF52982092A00A73A92 /* WaterRequest.swift */; };
 		B6841AF82982099000A73A92 /* WaterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF72982099000A73A92 /* WaterResponse.swift */; };
@@ -248,7 +248,7 @@
 		B668C8D92993452000537F58 /* BadgeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeItemViewModel.swift; sourceTree = "<group>"; };
 		B668C8DC2993481300537F58 /* BadgeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDetailViewModel.swift; sourceTree = "<group>"; };
 		B6744A0229827C2B00B4BACB /* CommonAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAlertView.swift; sourceTree = "<group>"; };
-		B68192602994B9BF00A32EAF /* CalendarContentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContentCellViewModel.swift; sourceTree = "<group>"; };
+		B68192602994B9BF00A32EAF /* CalendarContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContentViewModel.swift; sourceTree = "<group>"; };
 		B6841AF12982090D00A73A92 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		B6841AF52982092A00A73A92 /* WaterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRequest.swift; sourceTree = "<group>"; };
 		B6841AF72982099000A73A92 /* WaterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterResponse.swift; sourceTree = "<group>"; };
@@ -490,7 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				91BD01E629740595006C47FA /* CalendarViewModel.swift */,
-				B68192602994B9BF00A32EAF /* CalendarContentCellViewModel.swift */,
+				B68192602994B9BF00A32EAF /* CalendarContentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1139,7 +1139,7 @@
 				B6A25C3D29838D8C002AD80E /* ToastView.swift in Sources */,
 				9150D9B8297C350900DF07F9 /* ReportDetailViewModel.swift in Sources */,
 				80122A1529762FFD00193EAC /* GifView.swift in Sources */,
-				B68192612994B9BF00A32EAF /* CalendarContentCellViewModel.swift in Sources */,
+				B68192612994B9BF00A32EAF /* CalendarContentViewModel.swift in Sources */,
 				B68B4F2B292E650700A9AE99 /* MyPageBadgeView.swift in Sources */,
 				8056B94B29767680008F0269 /* ReportMainRowView.swift in Sources */,
 				B69878AA2948068F00C58869 /* BottomButtonView.swift in Sources */,
