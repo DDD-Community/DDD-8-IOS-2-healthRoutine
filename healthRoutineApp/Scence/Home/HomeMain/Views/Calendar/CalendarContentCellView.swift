@@ -7,35 +7,15 @@
 
 import SwiftUI
 
-// MARK: Mock
-enum Level {
-    
-    case never
-    case rarely
-    case sometime
-    case often
-    case always
-    
-    var background: Color {
-        
-        switch self {
-        case .never: return Color(UIColor.green.withAlphaComponent(0.2))
-        case .rarely: return Color(UIColor.green.withAlphaComponent(0.4))
-        case .sometime: return Color(UIColor.green.withAlphaComponent(0.6))
-        case .often: return Color(UIColor.green.withAlphaComponent(0.8))
-        case .always: return Color(UIColor.green.withAlphaComponent(1.0))
-        }
-    }
-}
-
 struct CalendarContentCellView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
+    @ObservedObject var viewModel = CalendarContentCellViewModel()
     
     let count: Int
     let startingSpaces: Int
     let daysInMonth: Int
-    let dyasInPrevMonth: Int
+    let daysInPrevMonth: Int
     
     var body: some View {
         
@@ -75,6 +55,6 @@ struct CalendarContentCellView: View {
 
 struct CalendarContentCellView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarContentCellView(count: 1, startingSpaces: 1, daysInMonth: 1, dyasInPrevMonth: 1)
+        CalendarContentCellView(count: 1, startingSpaces: 1, daysInMonth: 1, daysInPrevMonth: 1)
     }
 }

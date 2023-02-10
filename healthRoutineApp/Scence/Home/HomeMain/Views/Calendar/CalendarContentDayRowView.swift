@@ -27,12 +27,13 @@ struct CalendarContentDayRowView: View {
                 HStack(spacing: 1) {
                     
                     ForEach(1..<8) { day in
-                        
+                    
                         let count = day + (week * 7)
+                             
                         CalendarContentCellView(count: count,
                                                 startingSpaces: startingSpaces,
                                                 daysInMonth: daysInMonth,
-                                                dyasInPrevMonth: daysInPrevMonth)
+                                                daysInPrevMonth: daysInPrevMonth)
                         .environmentObject(dateHolder)
                         
                     }

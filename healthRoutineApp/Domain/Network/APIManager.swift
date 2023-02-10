@@ -10,7 +10,6 @@ import Combine
 import Alamofire
 import UIKit
 
-
 enum APIError: Error {
     case http(ErrorData)
     case parsing(String)
