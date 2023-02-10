@@ -57,19 +57,24 @@ struct MyPageBadgeView: View {
 //                    }
 //                    
 //                }
-//                ForEach(Badge.allCases, id: \.self) { badge in
-//
-//                    Button {
-//
-//                    } label: {
-//
+                ForEach(Badge.allCases, id: \.self) { badge in
+
+                    Button {
+
+                    } label: {
+                        
+                        Image(uiImage: badge.icon(with: true)!)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80, height: 80)
+                        
 //                        Image(badge.icon)
 //                            .resizable()
 //                            .scaledToFit()
 //                            .frame(width: 80, height: 80)
-//                    }
-//
-//                }
+                    }
+
+                }
             }
         }
         .padding(.horizontal, 15)
