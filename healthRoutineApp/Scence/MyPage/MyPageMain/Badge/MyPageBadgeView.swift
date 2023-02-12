@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MyPageBadgeView: View {
     
-//    private let viewModel = BadgeViewModel()
+    @ObservedObject var viewModel = BadgeViewModel()
     
     private let rows = [
         GridItem(.flexible(minimum: 80, maximum: 80)),
@@ -43,37 +43,24 @@ struct MyPageBadgeView: View {
             }
             
             LazyHGrid(rows: rows, spacing: 0) {
-            
-//                ForEach(self.viewModel.gainBadges, id: \.self) { badge in
-//                    
-//                    Button {
-//                        
-//                    } label: {
-//                        
-//                        Image(badge.icon)
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width: 80, height: 80)
-//                    }
-//                    
-//                }
-                ForEach(Badge.allCases, id: \.self) { badge in
-
-                    Button {
-
-                    } label: {
-                        
-                        Image(uiImage: badge.icon(with: true)!)
+                
+                ForEach(self.viewModel.totalBadge, id: \.self) { badge in
+                    
+                    if let badge = badge {
+                     
+                        Image(uiImage: badge)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 80, height: 80)
                         
-//                        Image(badge.icon)
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width: 80, height: 80)
+                    } else {
+                        
+                        Image("자물쇠")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80, height: 80)
+                        
                     }
-
                 }
             }
         }
@@ -81,6 +68,7 @@ struct MyPageBadgeView: View {
         .frame(height: 395)
         .background(Color.box_color)
         .cornerRadius(10)
+        .onAppear { self.viewModel.fetchInfos() }
     }
 }
 

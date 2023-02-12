@@ -45,6 +45,7 @@ enum Badge: String, CaseIterable {
 extension Badge {
     
     private var icons: [UIImage] {
+        
         switch self {
         case .exerciseStart: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName: "1운동의시작")]
         case .exerciseHappy: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName: "2운동의기쁨")]
@@ -69,6 +70,7 @@ extension Badge {
         
         return self.icons[1]
     }
+    
     
     var title: String {
         
@@ -123,22 +125,4 @@ extension Badge {
         case .drinkHippo: return "물 기록 100회 사용"
         }
     }
-    
-//    var icon: String {
-//        
-//        switch self {
-//        case .exerciseStart: return "1운동의시작"
-//        case .exerciseHappy: return "2운동의기쁨"
-//        case .exerciseHolic: return "3운동홀릭"
-//        case .exerciseMaster: return "4운동마스터"
-//        case .exerciseChampion: return "5운동챔피언"
-//        case .sincerityJunior: return "6성실주니어"
-//        case .sincerityPro: return "7성실프로"
-//        case .sincerityMaster: return "8성실마스터"
-//        case .sincerityChampion: return "9성실챔피언"
-//        case .drinkHoneyHoney: return "10꿀컵꿀컵"
-//        case .drinkBulkUpBulkUp: return "11벌컵벌컵"
-//        case .drinkHippo: return "12물먹는하마"
-//        }
-//    }
 }

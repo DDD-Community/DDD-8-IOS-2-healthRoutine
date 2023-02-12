@@ -9,34 +9,44 @@ import SwiftUI
 
 struct HomeBadgeRowView: View {
     
-//    @ObservedObject private var viewModel = BadgeViewModel()
+    @ObservedObject private var viewModel = BadgeViewModel()
     
     var body: some View {
         
-        HStack(spacing: 16) {
+        HStack(spacing: 4) {
             
-            Image("물음표")
-                .resizable()
-                .frame(width: 66, height: 66)
-                .cornerRadius(33)
-            
+            if let latesteBadge = viewModel.latestBadge {
+                
+                Image(uiImage: latesteBadge.icon(with: true)!)
+                    .resizable()
+                    .frame(width: 90, height: 90)
+                
+            } else {
+                
+                Image("자물쇠")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 90, height: 90)
+            }
+           
             VStack(spacing: 8) {
                 
-                Text("나의 배지")
+                Text(self.viewModel.latestBadge?.title ?? "나의 배지")
                     .font(Font.pretendard(.bold, size: 20))
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(hex: "F9F9F9"))
                 
-                Text("운동을 하여 배지를 획득해 보세요!")
+                Text(self.viewModel.latestBadge?.desc ?? "운동을 하여 배지를 획득해 보세요!")
                     .font(.system(size: 16, weight: .medium))
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(hex: "FFFFFF"))
             }
         }
-        .padding(24)
+        .padding(17) // 이미지 자체 패딩으로 인한 24 -> 17 (Figma)
         .frame(maxWidth: .infinity, maxHeight: 120, alignment: .leading)
         .background(Color.box_color)
         .cornerRadius(10)
+        .onAppear { self.viewModel.fetchInfos() }
     }
 }
 

@@ -15,10 +15,10 @@ struct MyPageBadgeDetailView: View {
         
         VStack {
             
-//            Image(uiImage: badge.icon)
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 120, height: 120)
+            Image(uiImage: badge.icon(with: true)!)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 120, height: 120)
             
             Text(badge.title)
                 .foregroundColor(.white_text)
