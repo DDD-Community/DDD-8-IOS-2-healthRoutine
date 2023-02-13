@@ -15,7 +15,7 @@ final class BadgeViewModel: ObservableObject {
     
     @Published var gainBadgeIcons: [UIImage?] = []
     @Published var challengeBadgeIcons: [UIImage?] = []
-    @Published var totalBadge: [UIImage?] = [nil]
+    @Published var totalBadge: [UIImage?] = []
     @Published var latestBadge: Badge?
     
     func fetchInfos() {
@@ -33,8 +33,27 @@ final class BadgeViewModel: ObservableObject {
                 }
             } receiveValue: { (value: BadgeListResponse) in
                 
-                self.updateHomeBadgeRowView(value.result)
                 self.updateBadgeDetailView(value.result)
+            }
+            .store(in: &cancellables)
+    }
+    
+    func fetchLatestBadgeInfo() {
+        
+        APIService.getBadgeList()
+            .sink {  completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { (value: BadgeListResponse) in
+                
+                self.updateHomeBadgeRowView(value.result)
             }
             .store(in: &cancellables)
     }
@@ -45,6 +64,7 @@ final class BadgeViewModel: ObservableObject {
         guard let wBadgeName = badgeInfo.waitingBadge else { return }
         
         self.gainBadgeIcons = mBadgeName.map { Badge(rawValue: $0) }.map { $0?.icon(with: true) }
+//        self.challengeBadgeIcons = wBadgeName.map { _ in UIImage(named: "자물쇠") }
         self.challengeBadgeIcons = wBadgeName.map { Badge(rawValue: $0) }.map { $0?.icon(with: false) }
         
         self.totalBadge.append(contentsOf: self.gainBadgeIcons)

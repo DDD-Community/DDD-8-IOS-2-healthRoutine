@@ -46,7 +46,7 @@ struct HomeBadgeRowView: View {
         .frame(maxWidth: .infinity, maxHeight: 120, alignment: .leading)
         .background(Color.box_color)
         .cornerRadius(10)
-        .onAppear { self.viewModel.fetchInfos() }
+        .onAppear { self.viewModel.fetchLatestBadgeInfo() }
     }
 }
 

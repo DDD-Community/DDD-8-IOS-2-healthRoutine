@@ -10,18 +10,18 @@ import UIKit
 
 enum Badge: String, CaseIterable {
     
-    case exerciseStart = "ExerciseStart"
-    case exerciseHappy = "ExerciseHappy"
-    case exerciseHolic = "ExerciseHolic"
-    case exerciseMaster = "ExerciseMaster"
-    case exerciseChampion = "ExerciseChampion"
-    case sincerityJunior = "SincerityJunior"
-    case sincerityPro = "SincerityPro"
-    case sincerityMaster = "SincerityMaster"
-    case sincerityChampion = "SincerityChampion"
-    case drinkHoneyHoney = "DrinkHoneyHoney"
-    case drinkBulkUpBulkUp = "DrinkBulkUpBulkUp"
-    case drinkHippo = "DrinkHippo"
+    case exerciseStart = "exerciseStart"
+    case exerciseHappy = "exerciseHappy"
+    case exerciseHolic = "exerciseHolic"
+    case exerciseMaster = "exerciseMaster"
+    case exerciseChampion = "exerciseChampio"
+    case sincerityJunior = "sincerityJunior"
+    case sincerityPro = "sincerityPro"
+    case sincerityMaster = "sincerityMaster"
+    case sincerityChampion = "sincerityChampi"
+    case drinkHoneyHoney = "drinkHoneyHoney"
+    case drinkBulkUpBulkUp = "drinkBulkUpBulk"
+    case drinkHippo = "drinkHippo"
     
     var index: Int {
 
@@ -63,12 +63,7 @@ extension Badge {
     }
     
     func icon(with badge: Bool) -> UIImage? {
-        
-        guard badge else {
-            return self.icons[0]
-        }
-        
-        return self.icons[1]
+        return badge ? self.icons[1] : self.icons[0]
     }
     
     

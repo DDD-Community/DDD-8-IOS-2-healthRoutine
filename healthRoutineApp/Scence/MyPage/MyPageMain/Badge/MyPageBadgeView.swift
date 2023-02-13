@@ -11,6 +11,12 @@ struct MyPageBadgeView: View {
     
     @ObservedObject var viewModel = BadgeViewModel()
     
+    init(viewModel: BadgeViewModel = BadgeViewModel()) {
+        self.viewModel = viewModel
+        
+        self.viewModel.fetchInfos()
+    }
+    
     private let rows = [
         GridItem(.flexible(minimum: 80, maximum: 80)),
         GridItem(.flexible(minimum: 80, maximum: 80)),
@@ -68,7 +74,6 @@ struct MyPageBadgeView: View {
         .frame(height: 395)
         .background(Color.box_color)
         .cornerRadius(10)
-        .onAppear { self.viewModel.fetchInfos() }
     }
 }
 
