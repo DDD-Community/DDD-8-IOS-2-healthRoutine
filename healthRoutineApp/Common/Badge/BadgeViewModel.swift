@@ -41,6 +41,7 @@ final class BadgeViewModel: ObservableObject {
     func fetchLatestBadgeInfo() {
         
         APIService.getBadgeList()
+            .receive(on: RunLoop.main)
             .sink {  completion in
                 switch completion {
                 case .failure(let error):
@@ -63,9 +64,8 @@ final class BadgeViewModel: ObservableObject {
         guard let mBadgeName = badgeInfo.myBadge else { return }
         guard let wBadgeName = badgeInfo.waitingBadge else { return }
         
-        self.gainBadgeIcons = mBadgeName.map { Badge(rawValue: $0) }.map { $0?.icon(with: true) }
-//        self.challengeBadgeIcons = wBadgeName.map { _ in UIImage(named: "자물쇠") }
         self.challengeBadgeIcons = wBadgeName.map { Badge(rawValue: $0) }.map { $0?.icon(with: false) }
+        self.gainBadgeIcons = mBadgeName.map { Badge(rawValue: $0) }.map { $0?.icon(with: true) }
         
         self.totalBadge.append(contentsOf: self.gainBadgeIcons)
         self.totalBadge.append(contentsOf: self.challengeBadgeIcons)

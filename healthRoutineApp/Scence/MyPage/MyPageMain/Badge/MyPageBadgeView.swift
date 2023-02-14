@@ -50,23 +50,12 @@ struct MyPageBadgeView: View {
             
             LazyHGrid(rows: rows, spacing: 0) {
                 
-                ForEach(self.viewModel.totalBadge, id: \.self) { badge in
+                ForEach(self.viewModel.totalBadge.indices, id: \.self) { index in
                     
-                    if let badge = badge {
-                     
-                        Image(uiImage: badge)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 80, height: 80)
-                        
-                    } else {
-                        
-                        Image("자물쇠")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 80, height: 80)
-                        
-                    }
+                    Image(uiImage: self.viewModel.totalBadge[index]!)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 80, height: 80)
                 }
             }
         }
