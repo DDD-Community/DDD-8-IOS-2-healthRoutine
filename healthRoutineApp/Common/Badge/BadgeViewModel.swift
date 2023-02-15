@@ -31,8 +31,9 @@ final class BadgeViewModel: ObservableObject {
     @Published var latestBadge: Badge?
 
     @Published var selectedBadge: BadgeInfo?
-//    var selectedBadge = PassthroughSubject<BadgeInfo?, Never>()
-    @Published var isPreseted: Bool = false
+//    @Published var isPreseted: Bool = false
+    
+    var isPreseted = PassthroughSubject<Bool, Never>()
     
     func fetchInfos() {
         
@@ -91,7 +92,8 @@ final class BadgeViewModel: ObservableObject {
         guard let wBadgeName = badgeInfo.waitingBadge else { return }
         
         self.challengeBadgeIcons = wBadgeName.map { Badge(rawValue: $0) }.map { $0?.icon(with: false) }
-        self.gainBadgeIcons = mBadgeName.map { Badge(rawValue: $0) }.map { $0?.icon(with: true) }
+        self.gainBadgeIcons =
+        mBadgeName.map { Badge(rawValue: $0) }.map { $0?.icon(with: true) }
         
         self.totalBadge.append(contentsOf: self.gainBadgeIcons)
         self.totalBadge.append(contentsOf: self.challengeBadgeIcons)
@@ -109,16 +111,14 @@ final class BadgeViewModel: ObservableObject {
         
         if gainBadgeCnt >= idx {
             
-            withAnimation {
-                self.isPreseted.toggle()
-            }
-            
             guard let info = self.gainBadge[idx], let icon = info.icon(with: true) else {
                 return
             }
             
             let badgeInfo = BadgeInfo(image: icon, title: info.title, desc: info.desc, subDesc: info.subDesc)
             self.selectedBadge = badgeInfo
+            
+            self.isPreseted.send(true)
         }
     }
 }

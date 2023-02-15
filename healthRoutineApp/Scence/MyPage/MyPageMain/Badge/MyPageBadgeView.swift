@@ -11,6 +11,8 @@ struct MyPageBadgeView: View {
     
     @ObservedObject var viewModel = BadgeViewModel()
     
+    @State var isPresented: Bool = false
+    
     init(viewModel: BadgeViewModel = BadgeViewModel()) {
         self.viewModel = viewModel
         
@@ -63,24 +65,30 @@ struct MyPageBadgeView: View {
                             .scaledToFit()
                             .frame(width: 80, height: 80)
                     }
+                    
                 }
             }
+            .halfSheet(showSheet: self.$isPresented) {
+                
+                ZStack {
+                    Color.box_color
+                    MyPageBadgeDetailView(viewModel: self.viewModel)
+                }
+                .ignoresSafeArea()
+               
+            } onEnd: {  }
         }
         .padding(.horizontal, 15)
         .frame(height: 395)
         .background(Color.box_color)
         .cornerRadius(10)
-        .halfSheet(showSheet: self.$viewModel.isPreseted) {
+        .onAppear {
             
-            ZStack {
-                
-                Color.box_color
-                MyPageBadgeDetailView(viewModel: self.viewModel)
-                
-            }
-            .ignoresSafeArea()
-           
-        } onEnd: { }
+            self.viewModel.isPreseted
+                .receive(on: RunLoop.main)
+                .sink(receiveValue: { self.isPresented = $0 })
+                .store(in: &self.viewModel.cancellables)
+        }
     }
 }
 
