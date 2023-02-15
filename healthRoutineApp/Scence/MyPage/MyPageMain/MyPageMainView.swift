@@ -10,8 +10,9 @@ import SwiftUI
 struct MyPageMainView: View {
     
     @ObservedObject private var viewModel = MyPageViewModel()
+    @ObservedObject private var badgeViewModel = BadgeViewModel()
+    
     @EnvironmentObject private var viewRouter: ViewRouter
-    @State private var isPresented = false
     
     var body: some View {
         
@@ -35,22 +36,6 @@ struct MyPageMainView: View {
                     }
                     .customNavigationBarBackButtonHidden(true)
                     .customNavigationTitle("마이페이지")
-                    
-                    .halfSheet(showSheet: $isPresented) {
-                        
-                        ZStack {
-                            
-                            Color.box_color
-                            
-                            MyPageBadgeDetailView()
-                        }
-                        .ignoresSafeArea()
-                       
-                    } onEnd: {
-                        
-                        print("dismiss")
-                    }
-                    .onAppear { UIView.setAnimationsEnabled(true) }
                 }
             }
         }

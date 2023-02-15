@@ -52,10 +52,17 @@ struct MyPageBadgeView: View {
                 
                 ForEach(self.viewModel.totalBadge.indices, id: \.self) { index in
                     
-                    Image(uiImage: self.viewModel.totalBadge[index]!)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80, height: 80)
+                    Button {
+                        
+                        self.viewModel.showDetailView(index)
+                        
+                    } label: {
+                        
+                        Image(uiImage: self.viewModel.totalBadge[index]!)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80, height: 80)
+                    }
                 }
             }
         }
@@ -63,6 +70,17 @@ struct MyPageBadgeView: View {
         .frame(height: 395)
         .background(Color.box_color)
         .cornerRadius(10)
+        .halfSheet(showSheet: self.$viewModel.isPreseted) {
+            
+            ZStack {
+                
+                Color.box_color
+                MyPageBadgeDetailView(viewModel: self.viewModel)
+                
+            }
+            .ignoresSafeArea()
+           
+        } onEnd: { }
     }
 }
 
