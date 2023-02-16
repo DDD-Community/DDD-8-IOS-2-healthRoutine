@@ -31,7 +31,6 @@ final class BadgeViewModel: ObservableObject {
     @Published var latestBadge: Badge?
 
     @Published var selectedBadge: BadgeInfo?
-//    @Published var isPreseted: Bool = false
     
     var isPreseted = PassthroughSubject<Bool, Never>()
     

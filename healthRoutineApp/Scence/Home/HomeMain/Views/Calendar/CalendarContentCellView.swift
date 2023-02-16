@@ -7,29 +7,12 @@
 
 import SwiftUI
 
-enum Level {
-    
-    case never
-    case rarely
-    case sometime
-    case often
-    case always
-    
-    var background: Color {
-        switch self {
-        case .never: return Color.init(hex: "F9F9F9")
-        case .rarely: return Color.init(hex: "CAFFEB")
-        case .sometime: return Color.init(hex: "6AFFC9")
-        case .often: return Color.init(hex: "00FFA3")
-        case .always: return Color.init(hex: "363740")
-        }
-    }
-}
-
 struct CalendarContentCellView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
     @ObservedObject var viewModel = CalendarContentViewModel()
+    
+    @State var isHidden: Bool = false
     
     let count: Int
     let startingSpaces: Int
@@ -38,17 +21,32 @@ struct CalendarContentCellView: View {
     
     var body: some View {
         
+//        if monthStruct().monthType == .current {
+//         
+//            ZStack {
+//                
+//                Rectangle()
+//                    .foregroundColor(Color(hex: "363749"))
+//                    .frame(width: 34, height: 34)
+//                    .cornerRadius(10)
+//                
+//                Text(monthStruct().getDay())
+//    //                .foregroundColor(monthStruct().setLevelTitle())
+//                    .foregroundColor(Color(hex: "6D6D6D"))
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//            }
+//        }
+        
         ZStack {
-            
+
             Rectangle()
-                .foregroundColor(monthStruct().setLevel())
-//                .foregroundColor(Color(hex: "363749"))
+                .foregroundColor(Color(hex: "363749"))
                 .frame(width: 34, height: 34)
                 .cornerRadius(10)
-            
+
             Text(monthStruct().getDay())
-                .foregroundColor(monthStruct().setLevelTitle())
-//                .foregroundColor(Color(hex: "6D6D6D"))
+//                .foregroundColor(monthStruct().setLevelTitle())
+                .foregroundColor(Color(hex: "6D6D6D"))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .opacity(monthStruct().monthType == .current ? 1 : 0)
@@ -56,7 +54,7 @@ struct CalendarContentCellView: View {
     
     private func monthStruct() -> Month {
         
-        let start = startingSpaces == 1 ? startingSpaces + 7 : startingSpaces
+        let start = startingSpaces == 0 ? startingSpaces + 7 : startingSpaces
         
         if count <= start {
             

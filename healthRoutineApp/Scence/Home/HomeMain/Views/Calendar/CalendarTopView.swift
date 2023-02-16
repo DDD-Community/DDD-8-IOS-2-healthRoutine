@@ -18,7 +18,7 @@ struct CalendarTopView: View {
             Spacer()
             
             Button(action: self.goToPrevMonth) {
-                
+
                 Image("leftAngleBracket")
                     .resizable()
                     .scaledToFit()

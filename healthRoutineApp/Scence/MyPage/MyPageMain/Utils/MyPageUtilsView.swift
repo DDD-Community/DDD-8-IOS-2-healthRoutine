@@ -54,6 +54,7 @@ struct MyPageUtilsView: View {
                 }))
                 .background(ClearBackgroundView())
             }
+            .onAppear { UIView.setAnimationsEnabled(false) }
         }
     }
 }
