@@ -11,8 +11,9 @@ import Combine
 
 enum ExerciseAPI {
     
+    case montly // 메인 월 별 잔디
     case todayExerciseList
-    case montly
+    
     
     var url: String {
         
@@ -26,8 +27,9 @@ enum ExerciseAPI {
 
 extension APIService {
     
-    static func getMonthlyExerciseInfo() -> AnyPublisher<MonthlyExerciseListResponse, APIError> {
+    static func getMonthlyExerciseInfo(_ parm: MonthExerciseFetchRequest) -> AnyPublisher<MonthlyExerciseListResponse, APIError> {
         
+        // MARK: Token
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
         }

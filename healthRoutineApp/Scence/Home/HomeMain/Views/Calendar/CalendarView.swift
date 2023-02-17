@@ -16,6 +16,7 @@ struct CalendarView: View {
         
         LazyVStack {
             
+            // TODO: 상세에서 사용하는 title과 메인에서 사용하는 title 변경해야 함
             Text("\(viewModel.getNickName())오늘도 움직여 볼까요?")
                 .font(Font.pretendard(.bold, size: 20))
                 .foregroundColor(.white)

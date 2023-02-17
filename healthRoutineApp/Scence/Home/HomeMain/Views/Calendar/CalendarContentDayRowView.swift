@@ -30,7 +30,6 @@ struct CalendarContentDayRowView: View {
                     ForEach(1..<8) { day in
                     
                         let count = day + (week * 7)
-//                        let count = self.viewModel.weekCnt
                              
                         CalendarContentCellView(count: count,
                                                 startingSpaces: startingSpaces,

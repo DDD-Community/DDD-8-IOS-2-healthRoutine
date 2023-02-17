@@ -59,7 +59,7 @@ struct MonthlyExerciseListResult: Codable {
     
     let year: Int
     let month: Int
-    let message: String
+    let welcomeMessage: String
     let data: [MonthList]
 }
 
@@ -69,3 +69,9 @@ struct MonthlyExerciseListResponse: Codable {
     let message: String
     let result: MonthlyExerciseListResult
 }
+
+// MARK: 운동 리스트 API
+
+// MARK: 개인 운동 추가 API
+
+// MARK: 개인 운동 삭제 API

@@ -27,3 +27,10 @@ struct ExerciseFetchReqeust: Codable {
 }
 
 
+// MARK: 메인 월 별 잔디 API
+struct MonthExerciseFetchRequest: Codable {
+    
+    let year: Int
+    let month: Int
+}
+

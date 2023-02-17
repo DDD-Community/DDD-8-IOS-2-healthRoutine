@@ -12,11 +12,13 @@ import Combine
 enum WaterAPI {
     
     case updateWaterAmount
+    case detailWaterAmount
     
     var url: String {
         
         switch self {
-        case .updateWaterAmount: return  "\(HealthRoutineAPI.baseURL)/water"
+        case .updateWaterAmount: return "\(HealthRoutineAPI.baseURL)/water/today" // 기존 (금일)
+        case .detailWaterAmount: return "\(HealthRoutineAPI.baseURL)/water"       // 상세
         }
     }
 }
