@@ -57,3 +57,15 @@ extension CalendarHelper {
         return calendar.date(from: components)!
     }
 }
+
+extension CalendarHelper {
+    
+    func getMonth(_ date: Date) -> Int {
+        return calendar.component(.month, from: date)
+    }
+    
+    func getYear(_ date: Date) -> Int {
+        return calendar.component(.year, from: date)
+    }
+}
+

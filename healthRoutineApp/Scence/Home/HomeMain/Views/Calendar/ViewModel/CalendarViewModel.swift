@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 final class CalendarViewModel: ObservableObject {
     
@@ -38,13 +39,21 @@ final class CalendarViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { (value: MonthlyExerciseListResponse) in
-              
+                
+                self.updateView(value.result.data)
             }
             .store(in: &cancellables)
     }
     
     // TODO: 레벨 색상에 맞게 Cell 색칠하기
-    
+    func updateView(_ list: [MonthList]) {
+        
+        let levels = list.map { $0.level }
+        
+        for (index, level) in levels.enumerated() {
+            print("\(index + 1), \(level)")
+        }
+    }
     
     // TODO: 오늘이후 날짜 값 변경 처리
 }

@@ -14,7 +14,7 @@ struct CalendarView: View {
     
     var body: some View {
         
-        LazyVStack {
+        VStack {
             
             // TODO: 상세에서 사용하는 title과 메인에서 사용하는 title 변경해야 함
             Text("\(viewModel.getNickName())오늘도 움직여 볼까요?")
@@ -38,6 +38,11 @@ struct CalendarView: View {
         .padding(24)
         .background(Color.box_color)
         .cornerRadius(16)
+        .onAppear {
+            self.viewModel.fetchInfo(year: CalendarHelper().getYear(dateHolder.date),
+                                     month: CalendarHelper().getMonth(dateHolder.date))
+            
+        }
     }
 }
 

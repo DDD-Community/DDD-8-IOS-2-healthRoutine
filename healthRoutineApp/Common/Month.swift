@@ -31,9 +31,9 @@ struct Month {
     }
     
     func setLevelTitle() -> Color {
-        // 여기서 요일 넣고 색 넣으면 될듯
+        
         switch dayInt {
-        case 1...10: return Color(hex: "181818")
+        case 1...dayInt: return Color(hex: "181818")
         default: return Color(hex: "6D6D6D") // 비활성화 인 경우
         }
     }

@@ -21,22 +21,6 @@ struct CalendarContentCellView: View {
     
     var body: some View {
         
-//        if monthStruct().monthType == .current {
-//         
-//            ZStack {
-//                
-//                Rectangle()
-//                    .foregroundColor(Color(hex: "363749"))
-//                    .frame(width: 34, height: 34)
-//                    .cornerRadius(10)
-//                
-//                Text(monthStruct().getDay())
-//    //                .foregroundColor(monthStruct().setLevelTitle())
-//                    .foregroundColor(Color(hex: "6D6D6D"))
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-//            }
-//        }
-        
         ZStack {
 
             Rectangle()
@@ -45,8 +29,7 @@ struct CalendarContentCellView: View {
                 .cornerRadius(10)
 
             Text(monthStruct().getDay())
-//                .foregroundColor(monthStruct().setLevelTitle())
-                .foregroundColor(Color(hex: "6D6D6D"))
+                .foregroundColor(monthStruct().setLevelTitle())
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .opacity(monthStruct().monthType == .current ? 1 : 0)

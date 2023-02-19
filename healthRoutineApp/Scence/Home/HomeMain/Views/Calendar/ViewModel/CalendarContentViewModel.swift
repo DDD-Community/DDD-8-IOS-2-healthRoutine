@@ -18,30 +18,30 @@ final class CalendarContentViewModel: ObservableObject {
 
 extension CalendarContentViewModel {
     
-    private func getMonthLevel() {
-        
-        APIService.getMonthlyExerciseInfo()
-            .receive(on: RunLoop.main)
-            .sink {  completion in
-                switch completion {
-                case .failure(let error):
-                    switch error {
-                    case .http: do {}
-                    default: do {}
-                    }
-                case .finished:
-                    break
-                }
-            } receiveValue: { (value: MonthlyExerciseListResponse) in
-                
-                value.result.data.forEach { list in
-                    self.fillColorCell(list.level)
-                }
-                
-                self.weekCnt = value.result.data.count
-            }
-            .store(in: &cancellables)
-    }
+//    private func getMonthLevel() {
+//        
+//        APIService.getMonthlyExerciseInfo(<#MonthExerciseFetchRequest#>)
+//            .receive(on: RunLoop.main)
+//            .sink {  completion in
+//                switch completion {
+//                case .failure(let error):
+//                    switch error {
+//                    case .http: do {}
+//                    default: do {}
+//                    }
+//                case .finished:
+//                    break
+//                }
+//            } receiveValue: { (value: MonthlyExerciseListResponse) in
+//                
+//                value.result.data.forEach { list in
+//                    self.fillColorCell(list.level)
+//                }
+//                
+//                self.weekCnt = value.result.data.count
+//            }
+//            .store(in: &cancellables)
+//    }
     
     private func fillColorCell(_ level: Int) -> Color {
         
