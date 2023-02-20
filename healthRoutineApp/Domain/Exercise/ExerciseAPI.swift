@@ -12,7 +12,8 @@ import Combine
 enum ExerciseAPI {
     
     case montly // 메인 월 별 잔디
-    case todayExerciseList
+    case todayExerciseList // 오늘 운동기록
+    case exercise // 전체 운동기록
     
     
     var url: String {
@@ -20,6 +21,7 @@ enum ExerciseAPI {
         switch self {
             
         case .todayExerciseList: return "\(HealthRoutineAPI.baseURL)/exercise/today"
+        case .exercise: return "\(HealthRoutineAPI.baseURL)/exercise"
         case .montly: return "\(HealthRoutineAPI.baseURL)/exercise/monthly"
         }
     }

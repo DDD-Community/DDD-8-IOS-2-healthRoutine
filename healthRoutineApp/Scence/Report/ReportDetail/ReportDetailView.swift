@@ -10,13 +10,10 @@ import SwiftUI
 struct ReportDetailView: View {
     @ObservedObject var viewModel: ReportDetailViewModel
     @Environment(\.presentationMode) var presentationMode
-    
-    // 임시추가
-    @State var flag: Bool = false
-    
+
     init(viewModel: ReportDetailViewModel) {
         self.viewModel = viewModel
-        self.viewModel.fetchExerciseInfo()
+        self.viewModel.fetchList()
     }
     
     var body: some View {
@@ -27,19 +24,21 @@ struct ReportDetailView: View {
                 ScrollView {
 
                     VStack(spacing: 16) {
-                        ReportDetailPartView(flag: $flag) // 부위
-                        ReportDetailKindView(flag: $flag) // 종류
+                        ReportDetailPartView(categoryList: viewModel.categoryArray, selectedCategory: viewModel.selectedCategory) // 부위
+                        ReportDetailKindView(exerciseList: viewModel.selectedCategory?.exerciseList ?? [], selectedExercise: viewModel.selectedExercise) // 종류
                         ReportDetailDiffView() // 상세
                     }
                 }
 
                 BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true) {
+                    self.viewModel.addRepport()
                     self.viewModel.delegate?.add()
                     self.presentationMode.wrappedValue.dismiss()
                 }
                 .frame(height: 84)
             }
         }
+        .onAppear { self.viewModel.fetchList() }
     }
 }
 

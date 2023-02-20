@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ReportDetailPartView: View {
-    
-    @State var selected: String?
-    @Binding var flag: Bool
+
+    var categoryList: [DI_Category] = []
+
+    @State var selectedCategory: DI_Category?
     
     private let columns = [
         GridItem(.flexible()),GridItem(.flexible()),
@@ -28,19 +29,18 @@ struct ReportDetailPartView: View {
             
             LazyVGrid(columns: columns, spacing: 6) {
                 
-                ForEach(ExPart.allCases, id: \.self) { part in
+                ForEach(self.categoryList, id: \.self) { category in
                     
                     Button(action: {
-                        self.selected = part.localized
-                        self.flag.toggle()
+                        self.selectedCategory = category
                     }) {
                         
-                        Text(part.localized)
+                        Text(category.subject)
                             .font(Font.pretendard(.semiBold, size: 14))
                             .frame(maxWidth: .infinity)
                             .padding(12)
                             .foregroundColor(.background_black)
-                            .background(selected == part.localized ? Color.main_green : Color.background_gray)
+                            .background(selectedCategory == category ? Color.main_green : Color.background_gray)
                             .cornerRadius(10)
                     }
                 }
@@ -51,11 +51,5 @@ struct ReportDetailPartView: View {
         .frame(maxWidth: .infinity, maxHeight: 170)
         .background(Color(hex: "272830"))
         .cornerRadius(16)
-    }
-}
-
-struct ReportDetailPartView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReportDetailPartView(flag: .constant(false))
     }
 }

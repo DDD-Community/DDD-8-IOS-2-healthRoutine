@@ -47,18 +47,18 @@ extension Badge {
     private var icons: [UIImage] {
         
         switch self {
-        case .exerciseStart: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName: "1운동의시작")]
-        case .exerciseHappy: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName: "2운동의기쁨")]
-        case .exerciseHolic: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"3운동홀릭")]
-        case .exerciseMaster: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"4운동마스터")]
-        case .exerciseChampion: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"5운동챔피언")]
-        case .sincerityJunior: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"6성실주니어")]
-        case .sincerityPro: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"7성실프로")]
-        case .sincerityMaster: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"8성실마스터")]
-        case .sincerityChampion: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"9성실챔피언")]
-        case .drinkHoneyHoney: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"10꿀컵꿀컵")]
-        case .drinkBulkUpBulkUp: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"11벌컵벌컵")]
-        case .drinkHippo: return [#imageLiteral(resourceName: "자물쇠"), #imageLiteral(resourceName:"12물먹는하마")]
+        case .exerciseStart: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName: "exerciseStart")]
+        case .exerciseHappy: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName: "exerciseHappy")]
+        case .exerciseHolic: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName:"exerciseHolic")]
+        case .exerciseMaster: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName:"exerciseMaster")]
+        case .exerciseChampion: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName:"exerciseChampion")]
+        case .sincerityJunior: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName:"sincerityJunior")]
+        case .sincerityPro: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName:"sincerityPro")]
+        case .sincerityMaster: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName:"sincerityMaster")]
+        case .sincerityChampion: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName:"sincerityChampion")]
+        case .drinkHoneyHoney: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName:"drinkHoneyHoney")]
+        case .drinkBulkUpBulkUp: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName:"drinkBulkUpBulkUp")]
+        case .drinkHippo: return [#imageLiteral(resourceName: "lockMark"), #imageLiteral(resourceName:"drinkHippo")]
         }
     }
     

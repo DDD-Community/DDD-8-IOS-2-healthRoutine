@@ -9,12 +9,11 @@ import SwiftUI
 
 struct ReportDetailKindView: View {
 
-    @State var selected: String?
+    var exerciseList: [DI_Exercise] = []
+    @State var selectedExercise: DI_Exercise?
+
     @State var isPresentPopup: Bool = false
-    
-    // 임시
-    @Binding var flag: Bool
-    
+
     private let columns = [GridItem(.flexible()),GridItem(.flexible())]
     
     var exPart: ExPart = .chest
@@ -48,64 +47,24 @@ struct ReportDetailKindView: View {
             .onAppear { UIView.setAnimationsEnabled(false) }
             
             LazyVGrid(columns: columns, spacing: 6) {
-                
-                if flag {
-                    ForEach(ExPart.chest.subPart, id: \.self) { exercise in
-                        Button(action: {
-                            self.selected = exercise
-                        }) {
-                            
-                            Text(exercise)
-                                .font(Font.pretendard(.semiBold, size: 14))
-                                .frame(maxWidth: .infinity)
-                                .padding(12)
-                                .foregroundColor(.background_black)
-                                .background(selected == exercise ? Color.main_green : Color.background_gray)
-                                .cornerRadius(10)
-                        }
+                ForEach(self.exerciseList, id: \.self) { exercise in
+                    Button(action: {
+                        self.selectedExercise = exercise
+                    }) {
+
+                        Text(exercise.subject)
+                            .font(Font.pretendard(.semiBold, size: 14))
+                            .frame(maxWidth: .infinity)
+                            .padding(12)
+                            .foregroundColor(.background_black)
+                            .background(selectedExercise == exercise ? Color.main_green : Color.background_gray)
+                            .cornerRadius(10)
                     }
                 }
             }
-            
-//            LazyVGrid(columns: columns, spacing: 6) {
-//
-//                ForEach(ExPart.allCases, id: \.self) { part in
-//
-//                    Button(action: { self.selected = part.localized }) {
-//
-//                        HStack {
-//                            
-//                            Spacer()
-//                            
-//                            Text(part.localized)
-//                                .font(Font.pretendard(.regular, size: 13))
-//                                .frame(maxWidth: .infinity)
-//                                .frame(height: 40)
-//                                .lineLimit(2)
-//                            
-//                            Image("close")
-//                                .resizable()
-//                                .scaledToFit()
-//                                .frame(width: 10, height: 10)
-//                                .opacity(selected == part.localized ? 0 : 1)
-//                        }
-//                        .padding(.horizontal, 17)
-//                        .foregroundColor(.background_black)
-//                        .background(selected == part.localized ? Color.main_green : Color.background_gray)
-//                        .cornerRadius(10)
-//                    }
-//                }
-//            }
-//            .frame(maxWidth: .infinity)
         }
         .padding(20)
         .background(Color(hex: "272830"))
         .cornerRadius(16)
-    }
-}
-
-struct ReportDetailKindView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReportDetailKindView(flag: .constant(false))
     }
 }

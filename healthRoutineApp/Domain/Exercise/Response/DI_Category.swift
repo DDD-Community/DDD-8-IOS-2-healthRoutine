@@ -7,13 +7,39 @@
 
 import Foundation
 
-struct DI_Category: Codable {
+class DI_Category: Codable, Hashable {
+    static func == (lhs: DI_Category, rhs: DI_Category) -> Bool {
+        if lhs.id == rhs.id {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
     let id: Int
     let subject: String
     let exerciseList: [DI_Exercise]
 }
 
-struct DI_Exercise: Codable {
+class DI_Exercise: Codable, Hashable {
+    static func == (lhs: DI_Exercise, rhs: DI_Exercise) -> Bool {
+        if lhs.id == rhs.id {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
     let id: Int
     let subject: String
 }

@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "물음표 4.png",
+      "filename" : "exerciseChampion.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "물음표 3.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "물음표.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

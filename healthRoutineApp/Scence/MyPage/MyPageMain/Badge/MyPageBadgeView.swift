@@ -31,7 +31,7 @@ struct MyPageBadgeView: View {
             
             HStack(spacing: 3) {
                 
-                Image("물음표")
+                Image("questionMark")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80, height: 80)
