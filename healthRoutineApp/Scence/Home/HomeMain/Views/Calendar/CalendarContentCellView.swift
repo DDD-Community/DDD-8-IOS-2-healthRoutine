@@ -10,7 +10,7 @@ import SwiftUI
 struct CalendarContentCellView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
-    @ObservedObject var viewModel = CalendarContentViewModel()
+    @ObservedObject var viewModel = CalendarViewModel()
     
     @State var isHidden: Bool = false
     
@@ -24,15 +24,16 @@ struct CalendarContentCellView: View {
         ZStack {
 
             Rectangle()
-                .foregroundColor(Color(hex: "363749"))
+//                .foregroundColor(Color(hex: "363749"))
+                .foregroundColor(monthStruct().setBackground(self.viewModel.level))
                 .frame(width: 34, height: 34)
                 .cornerRadius(10)
 
             Text(monthStruct().getDay())
-                .foregroundColor(monthStruct().setLevelTitle())
+                .foregroundColor(monthStruct().setForeground(dateHolder.date))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .opacity(monthStruct().monthType == .current ? 1 : 0)
+//        .opacity(monthStruct().monthType == .current ? 1 : 0)
     }
     
     private func monthStruct() -> Month {
@@ -42,11 +43,14 @@ struct CalendarContentCellView: View {
         if count <= start {
             
             let day = daysInMonth + count - start
+            
+            debugPrint("day111: \(day)")
             return Month(monthType: MonthType.previous, dayInt: day)
             
         } else if count - start > daysInMonth {
             
             let day = count - start - daysInMonth
+            debugPrint("day222: \(day)")
             return Month(monthType: MonthType.next, dayInt: day)
         }
         

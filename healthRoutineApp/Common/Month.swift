@@ -10,6 +10,8 @@ import SwiftUI
 
 struct Month {
     
+    @EnvironmentObject var dateHolder: DateHolder
+    
     var monthType: MonthType
     var dayInt: Int
     
@@ -17,30 +19,31 @@ struct Month {
         return String(dayInt)
     }
     
-    func setLevel() -> Color {
-        // 여기서 요일 넣고 색 넣으면 될듯 
-        switch dayInt {
+    func setBackground(_ level: Int) -> Color {
+        
+        switch level {
         case 0: return Color(hex: "F9F9F9")
-        case 1...3: return Color(hex: "00FFA3")
-        case 5,6: return Color(hex: "F9F9F9")
-        case 4,7: return Color(hex: "7A7A7E")
-        case 8: return Color(hex: "6AFFC9")
-        case 9...10: return Color(hex: "00FFA3")
-        default: return Color(hex: "363740") // 비활성화 인 경우
+        case 1: return Color(hex: "CAFFEB")
+        case 2: return Color(hex: "6AFFC9")
+        case 3: return Color(hex: "00FFA3")
+        default: return Color(hex: "363740")
         }
     }
     
-    func setLevelTitle() -> Color {
+    func setForeground(_ date: Date) -> Color {
         
-        switch dayInt {
-        case 1...dayInt: return Color(hex: "181818")
-        default: return Color(hex: "6D6D6D") // 비활성화 인 경우
+        let day = CalendarHelper().getDay(date)
+        let month = CalendarHelper().getMonth(date)
+
+        if dayInt > day {
+            return Color(hex: "6D6D6D")
+        } else {
+            return Color(hex: "181818")
         }
     }
 }
 
 enum MonthType {
-    
     case previous
     case current
     case next

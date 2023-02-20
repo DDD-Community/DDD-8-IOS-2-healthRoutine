@@ -67,5 +67,9 @@ extension CalendarHelper {
     func getYear(_ date: Date) -> Int {
         return calendar.component(.year, from: date)
     }
+    
+    func getDay(_ date: Date) -> Int {
+        return calendar.component(.day, from: date)
+    }
 }
 
