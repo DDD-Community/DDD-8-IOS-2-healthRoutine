@@ -11,7 +11,6 @@ struct CalendarTopView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
     
-    
     var body: some View {
         
         HStack {

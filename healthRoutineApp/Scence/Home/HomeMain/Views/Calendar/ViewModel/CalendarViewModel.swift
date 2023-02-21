@@ -14,7 +14,7 @@ final class CalendarViewModel: ObservableObject {
     var cancellables: Set<AnyCancellable> = []
     
     @Published var day: Int = 0
-    @Published var level: Int = 4
+    @Published var level: Int = 0
     
     func getNickName() -> String {
         
