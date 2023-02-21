@@ -20,8 +20,8 @@ struct CalendarContentDayRowView: View {
             let firstDayOfMonth = CalendarHelper().firstOfMonth(dateHolder.date)
             let startingSpaces = CalendarHelper().weekDay(firstDayOfMonth)
             
-            let prevMonth = CalendarHelper().getPrevMonth(dateHolder.date)
-            let daysInPrevMonth = CalendarHelper().daysInMonth(prevMonth)
+//            let prevMonth = CalendarHelper().getPrevMonth(dateHolder.date)
+//            let daysInPrevMonth = CalendarHelper().daysInMonth(prevMonth)
             
             ForEach(0..<5) { week in
                 

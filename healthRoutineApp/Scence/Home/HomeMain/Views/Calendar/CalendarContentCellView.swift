@@ -17,7 +17,6 @@ struct CalendarContentCellView: View {
     let count: Int
     let startingSpaces: Int
     let daysInMonth: Int
-//    let level: Int
     
     var body: some View {
         
@@ -42,7 +41,7 @@ struct CalendarContentCellView: View {
         let start = startingSpaces
         
         debugPrint("start: \(start)") // 시작되는 요일 index
-        debugPrint("count: \(count)") // 6주 갯수 42개
+        debugPrint("count: \(count)") // 5주 갯수 35개
         
         if count <= start {
             
