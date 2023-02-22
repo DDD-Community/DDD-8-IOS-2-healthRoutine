@@ -33,16 +33,16 @@ struct CalendarView: View {
                 .frame(minHeight: 20)
             
             CalendarContentDayRowView() // 날짜
+                .onAppear {
+                    self.viewModel.fetchInfo(year: CalendarHelper().getYear(dateHolder.date),
+                                             month: CalendarHelper().getMonth(dateHolder.date))
+                    
+                }
         }
         .frame(maxWidth: .infinity, maxHeight: 350)
         .padding(24)
         .background(Color.box_color)
         .cornerRadius(16)
-        .onAppear {
-            self.viewModel.fetchInfo(year: CalendarHelper().getYear(dateHolder.date),
-                                     month: CalendarHelper().getMonth(dateHolder.date))
-            
-        }
     }
 }
 

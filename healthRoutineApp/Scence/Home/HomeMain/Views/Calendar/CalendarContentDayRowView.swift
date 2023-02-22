@@ -21,9 +21,6 @@ struct CalendarContentDayRowView: View {
             let firstDayOfMonth = CalendarHelper().firstOfMonth(dateHolder.date)
             let startingSpaces = CalendarHelper().weekDay(firstDayOfMonth)
             
-//            let prevMonth = CalendarHelper().getPrevMonth(dateHolder.date)
-//            let daysInPrevMonth = CalendarHelper().daysInMonth(prevMonth)
-            
             ForEach(0..<5) { week in
                 
                 HStack(spacing: 1) {
@@ -31,15 +28,9 @@ struct CalendarContentDayRowView: View {
                     ForEach(1..<8) { day in
                     
                         let count = day + (week * 7)
-                             
-//                        CalendarContentCellView(count: count,
-//                                                startingSpaces: startingSpaces,
-//                                                daysInMonth: daysInMonth,
-//                                                daysInPrevMonth: daysInPrevMonth)
-                        
+                            
                         CalendarContentCellView(count: count,
                                                 startingSpaces: startingSpaces,
-
                                                 daysInMonth: daysInMonth)
                         
                         .environmentObject(dateHolder)
