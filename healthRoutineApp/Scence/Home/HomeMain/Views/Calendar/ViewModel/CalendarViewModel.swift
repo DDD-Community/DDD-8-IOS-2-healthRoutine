@@ -16,6 +16,8 @@ final class CalendarViewModel: ObservableObject {
     @Published var day: Int = 0
     @Published var level: Int = 4
     
+    @Published var dayOfLevel: [String: Int] = [:]
+    
     func getNickName() -> String {
         
         let nickname = UserDefaults.standard.string(forKey: NICKNAME_KEY)
@@ -42,22 +44,21 @@ final class CalendarViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { (value: MonthlyExerciseListResponse) in
-                self.fetchInfos(value.result.data)
+                self.getDayOfLevel(value.result.data)
             }
             .store(in: &cancellables)
     }
     
     // TODO: 레벨 색상에 맞게 Cell 색칠하기
-    func fetchInfos(_ list: [MonthList]) {
-        
+    private func getDayOfLevel(_ list: [MonthList]) {
+                
+        let dayToStringArr = list.map { "\($0.day)" }
         let levels = list.map { $0.level }
         
-        for (index, level) in levels.enumerated() {
-            
-            self.day = index + 1
-            self.level = level
+        for (index, key) in dayToStringArr.enumerated() {
+            self.dayOfLevel[key] = levels[index]
         }
+        
+        debugPrint("dayOfLevel: \(self.dayOfLevel)")
     }
-    
-    // TODO: 오늘이후 날짜 값 변경 처리
 }

@@ -32,7 +32,6 @@ struct Month {
     
     func setForeground(_ date: Date) -> Color {
 
-        
         // 달력으로 부터 얻어오는 년월일
         let day = CalendarHelper().getDay(date)
         let month = CalendarHelper().getMonth(date)
