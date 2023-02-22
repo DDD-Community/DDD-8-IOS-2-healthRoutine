@@ -29,15 +29,27 @@ struct ReportDetailView: View {
                     }
                 }
 
-                BottomButton_BackView(buttonTitle: "운동기록 추가하기", isable: true) {
+                BottomButtonView(buttonTitle: "운동기록 추가하기", isable: viewModel.isAddAble) {
                     self.viewModel.addRepport()
-                    self.viewModel.delegate?.add()
-                    self.presentationMode.wrappedValue.dismiss()
                 }
                 .frame(height: 84)
             }
         }
-        .onAppear { self.viewModel.fetchList() }
+        .onAppear {
+            self.bindView()
+        }
+    }
+
+    private func bindView() {
+        self.viewModel.addFinished
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { _ in
+                self.viewModel.delegate?.add()
+                self.presentationMode.wrappedValue.dismiss()
+            })
+            .store(in: &self.viewModel.cancellables)
+
+        self.viewModel.fetchList()
     }
 }
 

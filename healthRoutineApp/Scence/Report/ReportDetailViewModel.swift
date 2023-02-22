@@ -15,7 +15,7 @@ protocol UpdateProtocol: AnyObject {
 }
 
 class ReportDetailViewModel: ObservableObject {
-    private var cancellables: Set<AnyCancellable> = []
+    var cancellables: Set<AnyCancellable> = []
     weak var delegate: UpdateProtocol?
     
     @Published var categoryArray: [DI_Category] = []
@@ -25,11 +25,24 @@ class ReportDetailViewModel: ObservableObject {
     // 선택된 운동
     @Published var selectedExercise: DI_Exercise?
 
-    @Published var weight: Int = 0
-    @Published var count: Int = 0
-    @Published var set: Int = 0
+    @Published var weight: String = ""
+    @Published var count: String = ""
+    @Published var set: String = ""
+    @Published var isAddAble: Bool = false
 
-    
+    var addFinished = PassthroughSubject<Bool, Never>()
+
+    init() {
+        self.bind()
+    }
+
+    func bind() {
+        $selectedExercise
+            .map { $0 != nil }
+            .assign(to: \.isAddAble, on: self)
+            .store(in: &cancellables)
+    }
+
     func fetchList() {
         APIService.fetchCategoryExerciseList()
             .sink { completion in
@@ -49,7 +62,26 @@ class ReportDetailViewModel: ObservableObject {
     }
 
     func addRepport() {
-        // 운동 추가 통신
+        guard let selectedExercise = selectedExercise else { return }
+        let weight: Int? = self.weight.toInt() == 0 ? nil : self.weight.toInt()
+        let set: Int? = self.set.toInt() == 0 ? nil : self.set.toInt()
+        let reps: Int? = self.count.toInt() == 0 ? nil : self.count.toInt()
+
+        let requestData = ExerciseTotalAddRequest(exerciseId: selectedExercise.id, weight: weight, set: set, reps: reps)
+        APIService.addExerciseReport(requestData)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { _ in
+                self.addFinished.send(true)
+            }
+            .store(in: &cancellables)
     }
-    
 }

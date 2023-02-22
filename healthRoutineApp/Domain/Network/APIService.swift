@@ -114,4 +114,14 @@ extension APIService {
         return APIManager.request(ExerciseAPI.exercise.url, method: .get, headers: headers)
     }
 
+    static func addExerciseReport(_ param: ExerciseTotalAddRequest) -> AnyPublisher<DI_Base, APIError> {
+        guard let token = KeychainService.shared.loadToken() else {
+            return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
+        }
+
+        let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
+
+        return APIManager.request(ExerciseAPI.history.url, method: .post, parameters: param.intDictionary, headers: headers)
+    }
+
 }

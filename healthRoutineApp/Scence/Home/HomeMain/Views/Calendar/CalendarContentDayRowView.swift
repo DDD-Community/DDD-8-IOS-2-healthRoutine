@@ -41,7 +41,6 @@ struct CalendarContentDayRowView: View {
                                                 startingSpaces: startingSpaces,
 
                                                 daysInMonth: daysInMonth)
-                        
                         .environmentObject(dateHolder)
                     }
                 }

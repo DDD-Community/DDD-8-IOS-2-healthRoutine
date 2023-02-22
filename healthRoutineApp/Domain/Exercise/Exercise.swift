@@ -84,11 +84,11 @@ enum Exercise {
         }
 
         
-        enum Count: CaseIterable {
-            case one
-            case three
-            case five
-            case ten
+        enum Count: Int, CaseIterable {
+            case one = 1
+            case three = 3
+            case five = 5
+            case ten = 10
             
             var localized: String {
                 
@@ -102,12 +102,12 @@ enum Exercise {
             }
         }
         
-        enum Set: CaseIterable {
+        enum Set: Int, CaseIterable {
             
-            case one
-            case three
-            case five
-            case six
+            case one = 1
+            case three = 3
+            case five = 5
+            case ten = 10
             
             var localized: String {
                 
@@ -116,7 +116,7 @@ enum Exercise {
                 case .one: return "+1세트"
                 case .three: return "+3세트"
                 case .five: return "+5세트"
-                case .six: return "+6세트"
+                case .ten: return "+10세트"
                 }
             }
         }
