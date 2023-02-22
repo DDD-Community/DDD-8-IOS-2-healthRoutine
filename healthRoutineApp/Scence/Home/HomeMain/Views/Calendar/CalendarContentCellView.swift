@@ -17,7 +17,6 @@ struct CalendarContentCellView: View {
     let count: Int
     let startingSpaces: Int
     let daysInMonth: Int
-    let daysInPrevMonth: Int
     
     var body: some View {
         
@@ -38,19 +37,25 @@ struct CalendarContentCellView: View {
     
     private func monthStruct() -> Month {
         
-        let start = startingSpaces == 0 ? startingSpaces + 7 : startingSpaces
+//        let start = startingSpaces == 0 ? startingSpaces + 7 : startingSpaces
+        let start = startingSpaces
+        
+        debugPrint("start: \(start)") // 시작되는 요일 index
+        debugPrint("count: \(count)") // 5주 갯수 35개
         
         if count <= start {
             
             let day = daysInMonth + count - start
             
-            debugPrint("day111: \(day)")
+
+            debugPrint("day111: \(day)") // 지난달 요일
             return Month(monthType: MonthType.previous, dayInt: day)
             
         } else if count - start > daysInMonth {
             
             let day = count - start - daysInMonth
-            debugPrint("day222: \(day)")
+
+            debugPrint("day222: \(day)") // 다음달 요일
             return Month(monthType: MonthType.next, dayInt: day)
         }
         
@@ -61,6 +66,7 @@ struct CalendarContentCellView: View {
 
 struct CalendarContentCellView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarContentCellView(count: 1, startingSpaces: 1, daysInMonth: 1, daysInPrevMonth: 1)
+//        CalendarContentCellView(count: 1, startingSpaces: 1, daysInMonth: 1, daysInPrevMonth: 1)
+        CalendarContentCellView(count: 1, startingSpaces: 1, daysInMonth: 1)
     }
 }

@@ -31,11 +31,20 @@ struct Month {
     }
     
     func setForeground(_ date: Date) -> Color {
+
         
+        // 달력으로 부터 얻어오는 년월일
         let day = CalendarHelper().getDay(date)
         let month = CalendarHelper().getMonth(date)
-
-        if dayInt > day {
+//        let year = CalendarHelper().getYear(date)
+        
+        let realDate = Date()
+        let calendar = Calendar.current
+        // 실제 현재 년월일
+        let realmonth = calendar.component(.month, from: realDate)
+//        let realYear = calendar.component(.year, from: date)
+        
+        if dayInt > day || month != realmonth {
             return Color(hex: "6D6D6D")
         } else {
             return Color(hex: "181818")
