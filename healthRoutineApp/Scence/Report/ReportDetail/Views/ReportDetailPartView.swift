@@ -11,7 +11,7 @@ struct ReportDetailPartView: View {
 
     var categoryList: [DI_Category] = []
 
-    @State var selectedCategory: DI_Category?
+    @Binding var selectedCategory: DI_Category?
     
     private let columns = [
         GridItem(.flexible()),GridItem(.flexible()),

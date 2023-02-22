@@ -39,15 +39,16 @@ struct ReportDetailDiffView: View {
                             
                             ForEach(ExWeight.allCases, id: \.self) { weight in
                                 
-                                Text(weight.localized)
-                                    .font(Font.pretendard(.semiBold, size: 13))
-                                    .padding(.horizontal, 12.5)
-                                    .padding(.vertical, 9.5)
-                                    .background(Color(.systemGray4))
-                                    .cornerRadius(30)
-                                    .onTapGesture {
-                                        viewModel.weight += "2"
-                                    }
+                                Button {
+                                    viewModel.weight += weight.rawValue
+                                } label : {
+                                    Text(weight.localized)
+                                        .font(Font.pretendard(.semiBold, size: 13))
+                                        .padding(.horizontal, 12.5)
+                                        .padding(.vertical, 9.5)
+                                        .background(Color(.systemGray4))
+                                        .cornerRadius(30)
+                                }
                             }
                         }
                     }
@@ -75,7 +76,7 @@ struct ReportDetailDiffView: View {
                                     .background(Color(.systemGray4))
                                     .cornerRadius(30)
                                     .onTapGesture {
-                                        viewModel.count += "10"
+                                        viewModel.count += 0
                                     }
                             }
                         }
@@ -103,7 +104,7 @@ struct ReportDetailDiffView: View {
                                     .padding(.vertical, 9.5)
                                     .background(Color(.systemGray4))
                                     .cornerRadius(30).onTapGesture {
-                                        viewModel.set += "1"
+                                        viewModel.set += 0
                                     }
                             }
                         }
@@ -122,7 +123,7 @@ struct ReportDetailDiffRowView: View {
     var title: String
     var unit: String = ""
     
-    @Binding var value: String
+    @Binding var value: Int
     
     var body: some View {
         
@@ -132,9 +133,9 @@ struct ReportDetailDiffRowView: View {
             
                 VStack {
                     
-                    TextField("", text: $value)
-                        .foregroundColor(Color.main_green)
-                        .font(Font.pretendard(.bold, size: 24))
+//                    TextField("", text: $value)
+//                        .foregroundColor(Color.main_green)
+//                        .font(Font.pretendard(.bold, size: 24))
                         
                     Divider()
                         .frame(height: 2)

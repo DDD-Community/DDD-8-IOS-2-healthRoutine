@@ -85,7 +85,6 @@ enum APIManager {
     
     private static func handleResponse<T: Decodable>(result: DataResponsePublisher<Data>.Output,
                                                      decoder: JSONDecoder = JSONDecoder()) throws -> T {
-        print(result.debugDescription)
         if let error = result.error {
             if let responseCode = error.responseCode {
                 throw APIError.http(ErrorData(errorCode: responseCode, errorDescription: error.errorDescription))

@@ -13,6 +13,9 @@ final class CalendarViewModel: ObservableObject {
     
     var cancellables: Set<AnyCancellable> = []
     
+    @Published var day: Int = 0
+    @Published var level: Int = 4
+    
     func getNickName() -> String {
         
         let nickname = UserDefaults.standard.string(forKey: NICKNAME_KEY)
@@ -39,19 +42,20 @@ final class CalendarViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { (value: MonthlyExerciseListResponse) in
-                
-                self.updateView(value.result.data)
+                self.fetchInfos(value.result.data)
             }
             .store(in: &cancellables)
     }
     
     // TODO: 레벨 색상에 맞게 Cell 색칠하기
-    func updateView(_ list: [MonthList]) {
+    func fetchInfos(_ list: [MonthList]) {
         
         let levels = list.map { $0.level }
         
         for (index, level) in levels.enumerated() {
-            print("\(index + 1), \(level)")
+            
+            self.day = index + 1
+            self.level = level
         }
     }
     

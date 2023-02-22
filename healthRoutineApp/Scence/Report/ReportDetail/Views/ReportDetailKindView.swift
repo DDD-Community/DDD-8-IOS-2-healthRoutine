@@ -10,14 +10,12 @@ import SwiftUI
 struct ReportDetailKindView: View {
 
     var exerciseList: [DI_Exercise] = []
-    @State var selectedExercise: DI_Exercise?
+    @Binding var selectedExercise: DI_Exercise?
 
     @State var isPresentPopup: Bool = false
 
     private let columns = [GridItem(.flexible()),GridItem(.flexible())]
-    
-    var exPart: ExPart = .chest
-    
+        
     var body: some View {
     
         LazyVStack {
@@ -53,8 +51,8 @@ struct ReportDetailKindView: View {
                     }) {
 
                         Text(exercise.subject)
-                            .font(Font.pretendard(.semiBold, size: 14))
-                            .frame(maxWidth: .infinity)
+                            .font(Font.pretendard(.semiBold, size: 13))
+                            .frame(maxWidth: .infinity, maxHeight: 40)
                             .padding(12)
                             .foregroundColor(.background_black)
                             .background(selectedExercise == exercise ? Color.main_green : Color.background_gray)

@@ -22,12 +22,12 @@ class ReportDetailViewModel: ObservableObject {
 
     // 선택된 카테고리(부위)
     @Published var selectedCategory: DI_Category?
+    // 선택된 운동
     @Published var selectedExercise: DI_Exercise?
 
-
-    @Published var weight: String = ""
-    @Published var count: String = ""
-    @Published var set: String = ""
+    @Published var weight: Int = 0
+    @Published var count: Int = 0
+    @Published var set: Int = 0
 
     
     func fetchList() {

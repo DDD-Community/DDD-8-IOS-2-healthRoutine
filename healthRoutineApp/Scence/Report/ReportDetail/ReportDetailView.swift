@@ -13,7 +13,6 @@ struct ReportDetailView: View {
 
     init(viewModel: ReportDetailViewModel) {
         self.viewModel = viewModel
-        self.viewModel.fetchList()
     }
     
     var body: some View {
@@ -24,8 +23,8 @@ struct ReportDetailView: View {
                 ScrollView {
 
                     VStack(spacing: 16) {
-                        ReportDetailPartView(categoryList: viewModel.categoryArray, selectedCategory: viewModel.selectedCategory) // 부위
-                        ReportDetailKindView(exerciseList: viewModel.selectedCategory?.exerciseList ?? [], selectedExercise: viewModel.selectedExercise) // 종류
+                        ReportDetailPartView(categoryList: viewModel.categoryArray, selectedCategory: $viewModel.selectedCategory) // 부위
+                        ReportDetailKindView(exerciseList: viewModel.selectedCategory?.exercise ?? [], selectedExercise: $viewModel.selectedExercise) // 종류
                         ReportDetailDiffView() // 상세
                     }
                 }
