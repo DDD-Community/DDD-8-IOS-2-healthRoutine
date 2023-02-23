@@ -37,6 +37,14 @@ struct CalendarView: View {
                     self.viewModel.fetchInfo(year: CalendarHelper().getYear(dateHolder.date),
                                              month: CalendarHelper().getMonth(dateHolder.date))
                     
+                    self.viewModel.dayToLevel
+                        .sink(receiveValue: { dicts in
+                            
+                            for dict in dicts {
+                                self.viewModel.level = dict.value
+                            }
+                        })
+                        .store(in: &self.viewModel.cancellables)
                 }
         }
         .frame(maxWidth: .infinity, maxHeight: 350)

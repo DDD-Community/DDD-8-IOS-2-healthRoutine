@@ -23,43 +23,32 @@ struct CalendarContentCellView: View {
         ZStack {
 
             Rectangle()
-                .foregroundColor(monthStruct().setBackground(self.viewModel.level))
+                .foregroundColor(monthStruct().setBackground(monthStruct().getDay()))
                 .frame(width: 34, height: 34)
                 .cornerRadius(10)
 
             Text(monthStruct().getDay())
                 .foregroundColor(monthStruct().setForeground(dateHolder.date))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
         }
-        .onAppear { self.updateView() }
-//        .opacity(monthStruct().monthType == .current ? 1 : 0)
-    }
-    
-    private func updateView() {
-        
-        let nowDay = monthStruct().getDay()
-        
-        debugPrint("nowDay: \(nowDay)")
-        
-        if let value = self.viewModel.dayOfLevel[nowDay] {
-            debugPrint("value: \(value)")
-        }
+        .opacity(monthStruct().monthType == .current ? 1 : 0)
     }
     
     private func monthStruct() -> Month {
         
         let start = startingSpaces
             
-//        if count <= start {
-//
-//            let day = daysInMonth + count - start
-//            return Month(monthType: MonthType.previous, dayInt: day)
-//
-//        } else if count - start > daysInMonth {
-//
-//            let day = count - start - daysInMonth
-//            return Month(monthType: MonthType.next, dayInt: day)
-//        }
+        if count <= start {
+
+            let day = daysInMonth + count - start
+            return Month(monthType: MonthType.previous, dayInt: day)
+
+        } else if count - start > daysInMonth {
+
+            let day = count - start - daysInMonth
+            return Month(monthType: MonthType.next, dayInt: day)
+        }
         
         let day = count - start
         return Month(monthType: MonthType.current, dayInt: day)

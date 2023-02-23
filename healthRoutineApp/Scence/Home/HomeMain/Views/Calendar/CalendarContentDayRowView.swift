@@ -10,7 +10,6 @@ import SwiftUI
 struct CalendarContentDayRowView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
-
     @ObservedObject var viewModel = CalendarViewModel()
 
     var body: some View {
@@ -43,7 +42,6 @@ struct CalendarContentDayRowView: View {
 struct CalendarContentDayRowView_Previews: PreviewProvider {
     
     static var previews: some View {
-                
         CalendarContentDayRowView().environmentObject(DateHolder())
     }
 }

@@ -11,6 +11,7 @@ import SwiftUI
 struct Month {
     
     @EnvironmentObject var dateHolder: DateHolder
+    @ObservedObject var viewModel = CalendarViewModel()
     
     var monthType: MonthType
     var dayInt: Int
@@ -19,15 +20,25 @@ struct Month {
         return String(dayInt)
     }
     
-    func setBackground(_ level: Int) -> Color {
+    func setBackground(_ date: String) -> Color {
         
-        switch level {
-        case 0: return Color(hex: "F9F9F9")
-        case 1: return Color(hex: "CAFFEB")
-        case 2: return Color(hex: "6AFFC9")
-        case 3: return Color(hex: "00FFA3")
-        default: return Color(hex: "363740")
+        // TODO: 요일을 가져와서 맞춰서 출력
+        let value = self.viewModel.dayToLevel.values
+        
+        self.viewModel.dayToLevel.sink { dicts in
+        
         }
+        .store(in: &self.viewModel.cancellables)
+        
+//        switch level {
+//        case 0: return Color(hex: "F9F9F9")
+//        case 1: return Color(hex: "CAFFEB")
+//        case 2: return Color(hex: "6AFFC9")
+//        case 3: return Color(hex: "00FFA3")
+//        default: return Color(hex: "363740")
+//        }
+        
+        return Color(hex: "363740")
     }
     
     func setForeground(_ date: Date) -> Color {

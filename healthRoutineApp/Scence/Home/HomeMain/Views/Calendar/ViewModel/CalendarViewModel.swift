@@ -14,9 +14,10 @@ final class CalendarViewModel: ObservableObject {
     var cancellables: Set<AnyCancellable> = []
     
     @Published var day: Int = 0
-    @Published var level: Int = 4
+    @Published var level: Int = 0
     
-    @Published var dayOfLevel: [String: Int] = [:]
+    var dayToLevel =  PassthroughSubject<[String: Int], Never>()
+    private var dayOfLevel: [String: Int] = [:]
     
     func getNickName() -> String {
         
@@ -59,6 +60,6 @@ final class CalendarViewModel: ObservableObject {
             self.dayOfLevel[key] = levels[index]
         }
         
-        debugPrint("dayOfLevel: \(self.dayOfLevel)")
+        self.dayToLevel.send(dayOfLevel)
     }
 }
