@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ReportDetailPopupView: View {
     
-    // 운동종류를 받아서 -> title, ScrollView 내부 값 변경하면 될 듯?
-//    @Environment(\.dismiss) var dismiss
+    @ObservedObject var viewModel: ReportDetailViewModel
+
     @State var value: String = ""
     @Environment(\.presentationMode) var presentationMode
+
+    let textLimit = 20
     
     var body: some View {
         
@@ -44,6 +47,7 @@ struct ReportDetailPopupView: View {
                             .foregroundColor(Color.disabled_button_field)
                     }
                     .foregroundColor(Color(hex: "FFFFFF"))
+                    .onReceive(Just(value)) { _ in limitText(textLimit) }
                 
                 Divider()
                     .frame(maxWidth: .infinity, maxHeight: 1)
@@ -55,11 +59,11 @@ struct ReportDetailPopupView: View {
                 
                 LazyVStack(spacing: 16) {
                     
-                    ForEach(ExPart.allCases, id: \.self) { part in
+                    ForEach(self.viewModel.selectedCategory?.exercise ?? [], id: \.self) { exercise in
                         
-                        Button(action: { self.value = part.localized }) {
+                        Button(action: { self.value = exercise.subject }) {
                             
-                            Text(part.localized)
+                            Text(exercise.subject)
                                 .foregroundColor(.black)
                                 .font(Font.pretendard(.semiBold, size: 14))
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -86,6 +90,9 @@ struct ReportDetailPopupView: View {
                     .padding(.vertical, 13)
                     .background(Color.background_gray)
                     .cornerRadius(10)
+                    .onTapGesture {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
                 
                 Text("추가하기")
                     .font(Font.pretendard(.regular, size: 13))
@@ -94,17 +101,32 @@ struct ReportDetailPopupView: View {
                     .padding(.vertical, 13)
                     .background(Color.main_green)
                     .cornerRadius(10)
+                    .onTapGesture {
+                        self.viewModel.addCustomExercise(self.value)
+                    }
             }
             
         }
         .padding(24)
         .background(Color.box_color)
         .cornerRadius(16)
+        .onAppear {
+            self.bindView()
+        }
     }
-}
 
-struct ReportDetailPopupView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReportDetailPopupView(value: "어깨")
+    func limitText(_ upper: Int) {
+        if value.count > upper {
+            value = String(value.prefix(upper))
+        }
+    }
+
+    private func bindView() {
+        self.viewModel.customExerciseAddFinished
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { _ in
+                self.presentationMode.wrappedValue.dismiss()
+            })
+            .store(in: &self.viewModel.cancellables)
     }
 }

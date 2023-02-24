@@ -30,7 +30,11 @@ class ReportDetailViewModel: ObservableObject {
     @Published var set: String = ""
     @Published var isAddAble: Bool = false
 
+    @Published var toggle: Bool = false
+
     var addFinished = PassthroughSubject<Bool, Never>()
+    var customExerciseAddFinished = PassthroughSubject<Bool, Never>()
+
 
     init() {
         self.bind()
@@ -43,7 +47,7 @@ class ReportDetailViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    func fetchList() {
+    func fetchList(_ completeClosure: VoidClosure? = nil) {
         APIService.fetchCategoryExerciseList()
             .sink { completion in
                 switch completion {
@@ -57,6 +61,7 @@ class ReportDetailViewModel: ObservableObject {
                 }
             } receiveValue: { (value: CategoryExerciseListResponse) in
                 self.categoryArray = value.result
+                self.toggle.toggle()
             }
             .store(in: &cancellables)
     }
@@ -79,9 +84,55 @@ class ReportDetailViewModel: ObservableObject {
                 case .finished:
                     break
                 }
-            } receiveValue: { _ in
+            } receiveValue: { [weak self] _ in
+                guard let self = self else { return }
                 self.addFinished.send(true)
             }
             .store(in: &cancellables)
     }
+
+    func deleteCustomExercise(_ id: Int) {
+        APIService.deleteCustomExercise(id)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { [weak self] _ in
+                guard let self = self, let selectedCategory = self.selectedCategory else { return }
+                for (idx, exercise) in selectedCategory.exercise.enumerated() {
+                    if exercise.id == id {
+                        selectedCategory.exercise.remove(at: idx)
+                    }
+                }
+            }
+            .store(in: &cancellables)
+    }
+
+    func addCustomExercise(_ subject: String) {
+        guard let selectedCategory = selectedCategory else { return }
+        APIService.addCustomExercise(selectedCategory.id, subject)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { [weak self] _ in
+                guard let self = self else { return }
+                self.customExerciseAddFinished.send(true)
+            }
+            .store(in: &cancellables)
+    }
+
+
 }

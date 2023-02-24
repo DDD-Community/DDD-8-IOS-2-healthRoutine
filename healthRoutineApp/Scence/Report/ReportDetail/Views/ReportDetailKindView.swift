@@ -9,54 +9,66 @@ import SwiftUI
 
 struct ReportDetailKindView: View {
 
-    var exerciseList: [DI_Exercise] = []
     @Binding var selectedExercise: DI_Exercise?
 
     @State var isPresentPopup: Bool = false
 
     private let columns = [GridItem(.flexible()),GridItem(.flexible())]
-        
+
+    @ObservedObject var viewModel: ReportDetailViewModel
+
     var body: some View {
-    
+
         LazyVStack {
             
             Text("운동 종류를 선택해주세요")
                 .foregroundColor(.white)
-                .font(Font.pretendard(.bold, size: 20))
+                .font(Font.pretendard(.semiBold, size: 20))
                 .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Button {
-                
-                self.isPresentPopup.toggle()
-                
-            } label: {
-                Text("추가하기 +")
-                    .frame(maxWidth: .infinity, minHeight: 40)
-                    .font(Font.pretendard(.semiBold, size: 14))
-                    .foregroundColor(.white)
-                    .background(Color.background_gray3)
-                    .cornerRadius(10)
-            }
-            .fullScreenCover(isPresented: $isPresentPopup) {
-                
-                ReportDetailPopupView(value: "")
-                    .background(ClearBackgroundView())
-            }
-            .onAppear { UIView.setAnimationsEnabled(false) }
-            
-            LazyVGrid(columns: columns, spacing: 6) {
-                ForEach(self.exerciseList, id: \.self) { exercise in
-                    Button(action: {
-                        self.selectedExercise = exercise
-                    }) {
+            if viewModel.selectedCategory != nil {
+                Button {
 
+                    self.isPresentPopup.toggle()
+
+                } label: {
+                    Text("추가하기 +")
+                        .frame(maxWidth: .infinity, minHeight: 40)
+                        .font(Font.pretendard(.semiBold, size: 14))
+                        .foregroundColor(.white)
+                        .background(Color.background_gray3)
+                        .cornerRadius(10)
+                }
+                .fullScreenCover(isPresented: $isPresentPopup) {
+
+                    ReportDetailPopupView(viewModel: self.viewModel, value: "")
+                        .background(ClearBackgroundView())
+                }
+                .onAppear { UIView.setAnimationsEnabled(false) }
+            }
+
+            LazyVGrid(columns: columns, spacing: 6) {
+                ForEach(viewModel.selectedCategory?.exercise.prefix(6) ?? [], id: \.self) { exercise in
+                    HStack(alignment: .center, spacing: 3) {
                         Text(exercise.subject)
-                            .font(Font.pretendard(.semiBold, size: 13))
-                            .frame(maxWidth: .infinity, maxHeight: 40)
-                            .padding(12)
+                            .font(Font.pretendard(.semiBold, size: 12))
+                            .frame(maxWidth: .infinity)
                             .foregroundColor(.background_black)
-                            .background(selectedExercise == exercise ? Color.main_green : Color.background_gray)
-                            .cornerRadius(10)
+
+                        Image("close")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 10, height: 10)
+                            .onTapGesture {
+                                self.viewModel.deleteCustomExercise(exercise.id)
+                            }
+                    }
+                    .padding(.vertical, 5)
+                    .padding(.horizontal, 15)
+                    .frame(height: 40)
+                    .background(selectedExercise == exercise ? Color.main_green : Color.background_gray)
+                    .cornerRadius(10)
+                    .onTapGesture {
+                        self.selectedExercise = exercise
                     }
                 }
             }

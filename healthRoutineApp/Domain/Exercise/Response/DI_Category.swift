@@ -23,7 +23,7 @@ class DI_Category: Codable, Hashable {
 
     let id: Int
     let subject: String
-    let exercise: [DI_Exercise]
+    var exercise: [DI_Exercise]
 }
 
 class DI_Exercise: Codable, Hashable {

@@ -124,4 +124,27 @@ extension APIService {
         return APIManager.request(ExerciseAPI.history.url, method: .post, parameters: param.intDictionary, headers: headers)
     }
 
+    static func deleteCustomExercise(_ id: Int) -> AnyPublisher<DI_Base, APIError> {
+        guard let token = KeychainService.shared.loadToken() else {
+            return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
+        }
+
+        let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
+
+        return APIManager.request("\(ExerciseAPI.exercise.url)/\(id)", method: .delete, headers: headers)
+    }
+
+    static func addCustomExercise(_ categoryId: Int, _ subject: String) -> AnyPublisher<DI_Base, APIError> {
+        guard let token = KeychainService.shared.loadToken() else {
+            return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
+        }
+
+        let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
+
+        var parameters = Parameters()
+        parameters["categoryId"] = categoryId
+        parameters["subject"] = subject
+
+        return APIManager.request((ExerciseAPI.exercise.url), method: .post, parameters: parameters, headers: headers)
+    }
 }

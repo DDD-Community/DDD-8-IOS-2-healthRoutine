@@ -24,7 +24,7 @@ struct ReportDetailView: View {
 
                     VStack(spacing: 16) {
                         ReportDetailPartView(categoryList: viewModel.categoryArray, selectedCategory: $viewModel.selectedCategory) // 부위
-                        ReportDetailKindView(exerciseList: viewModel.selectedCategory?.exercise ?? [], selectedExercise: $viewModel.selectedExercise) // 종류
+                        ReportDetailKindView(selectedExercise: $viewModel.selectedExercise, viewModel: viewModel) // 종류
                         ReportDetailDiffView() // 상세
                     }
                 }
@@ -48,6 +48,16 @@ struct ReportDetailView: View {
                 self.presentationMode.wrappedValue.dismiss()
             })
             .store(in: &self.viewModel.cancellables)
+
+        self.viewModel.customExerciseAddFinished
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { _ in
+                self.viewModel.fetchList() {
+                    print("fetch")
+                }
+            })
+            .store(in: &self.viewModel.cancellables)
+
 
         self.viewModel.fetchList()
     }
