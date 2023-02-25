@@ -39,7 +39,6 @@ class ReportViewModel: ObservableObject {
                 }
             } receiveValue: { (value: TodayExerciseListResponse) in
                 self.exerciseArray = value.result
-                self.exerciseArray = [TodayExerciseListResult(id: "1", exerciseSubject: "덤벨 숄더 프레스", categorySubject: "어깨", weight: 5, reps: 10, set: 3), TodayExerciseListResult(id: "1", exerciseSubject: "덤벨 플라이", categorySubject: "가슴", weight: 20, reps: 10, set: 3)]
             }
             .store(in: &cancellables)
     }
@@ -85,7 +84,7 @@ extension ReportViewModel: UpdateProtocol {
     }
     
     func add() {
-        self.exerciseArray.append(TodayExerciseListResult(id: "1", exerciseSubject: "덤벨 플라이", categorySubject: "가슴", weight: 2, reps: 10, set: 3))
+        self.fetchList()
     }
 }
  

@@ -35,11 +35,16 @@ class DI_Exercise: Codable, Hashable {
             return false
         }
     }
-
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
-
+    
     let id: Int
     let subject: String
+    
+    init(_ id: Int, _ subject: String) {
+        self.id = id
+        self.subject = subject
+    }
 }

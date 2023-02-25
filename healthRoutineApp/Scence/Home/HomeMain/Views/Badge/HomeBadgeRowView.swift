@@ -23,7 +23,7 @@ struct HomeBadgeRowView: View {
                 
             } else {
                 
-                Image("자물쇠")
+                Image("lockMark")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 90, height: 90)

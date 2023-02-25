@@ -73,5 +73,12 @@ struct MonthlyExerciseListResponse: Codable {
 // MARK: 운동 리스트 API
 
 // MARK: 개인 운동 추가 API
+struct AddCustomExerciseResponse: Codable {
+    let code: Int
+    let message: String
+    let result: AddCustomExerciseResult
+}
 
-// MARK: 개인 운동 삭제 API
+struct AddCustomExerciseResult: Codable {
+    let id: Int
+}

@@ -95,7 +95,7 @@ extension APIService {
         return APIManager.request(ExerciseAPI.todayExerciseList.url, method: .get, parameters: param.intDictionary, encoding: URLEncoding.queryString, headers: headers)
     }
     
-    static func deleteReport(_ healthId: String) -> AnyPublisher<DI_Base, APIError> {
+    static func deleteReport(_ healthId: String) -> AnyPublisher<Alamofire.Empty, APIError> {
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
         }
@@ -124,7 +124,7 @@ extension APIService {
         return APIManager.request(ExerciseAPI.history.url, method: .post, parameters: param.intDictionary, headers: headers)
     }
 
-    static func deleteCustomExercise(_ id: Int) -> AnyPublisher<DI_Base, APIError> {
+    static func deleteCustomExercise(_ id: Int) -> AnyPublisher<Alamofire.Empty, APIError> {
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
         }
@@ -134,7 +134,7 @@ extension APIService {
         return APIManager.request("\(ExerciseAPI.exercise.url)/\(id)", method: .delete, headers: headers)
     }
 
-    static func addCustomExercise(_ categoryId: Int, _ subject: String) -> AnyPublisher<DI_Base, APIError> {
+    static func addCustomExercise(_ categoryId: Int, _ subject: String) -> AnyPublisher<AddCustomExerciseResponse, APIError> {
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
         }

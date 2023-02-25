@@ -103,13 +103,14 @@ class ReportDetailViewModel: ObservableObject {
                 case .finished:
                     break
                 }
-            } receiveValue: { [weak self] _ in
+            } receiveValue: { [weak self ] _ in
                 guard let self = self, let selectedCategory = self.selectedCategory else { return }
                 for (idx, exercise) in selectedCategory.exercise.enumerated() {
                     if exercise.id == id {
                         selectedCategory.exercise.remove(at: idx)
                     }
                 }
+                self.toggle.toggle()
             }
             .store(in: &cancellables)
     }
@@ -127,12 +128,13 @@ class ReportDetailViewModel: ObservableObject {
                 case .finished:
                     break
                 }
-            } receiveValue: { [weak self] _ in
+            } receiveValue: { [weak self] value in
                 guard let self = self else { return }
+                guard let selectedCategory = self.selectedCategory else { return }
+                selectedCategory.exercise.insert(DI_Exercise(value.result.id, subject), at: 0)
                 self.customExerciseAddFinished.send(true)
+                self.toggle.toggle()
             }
             .store(in: &cancellables)
     }
-
-
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReportDetailDiffView: View {
     
-    @ObservedObject private var viewModel = ReportDetailViewModel()
+    @ObservedObject var viewModel: ReportDetailViewModel
 
     private let columns = [GridItem(.flexible())]
     
@@ -171,6 +171,6 @@ struct ReportDetailDiffRowView: View {
 
 struct ReportDetailDiffView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportDetailDiffView()
+        ReportDetailDiffView(viewModel: ReportDetailViewModel())
     }
 }
