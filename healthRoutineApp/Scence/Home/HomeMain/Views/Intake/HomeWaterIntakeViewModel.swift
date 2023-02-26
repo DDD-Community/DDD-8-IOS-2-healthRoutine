@@ -40,10 +40,11 @@ final class HomeWaterIntakeViewModel: ObservableObject {
     func fetchInfos() {
         
         let date = Date()
+        let calendar = Calendar.current
     
-        let year = CalendarHelper().getYear(date)
-        let month = CalendarHelper().getMonth(date)
-        let day = CalendarHelper().getDay(date)
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
         
         let request = WaterAmountRequest(year: year, month: month, day: day)
         
@@ -61,6 +62,8 @@ final class HomeWaterIntakeViewModel: ObservableObject {
                 }
             } receiveValue: { (value: WaterAmountResponse) in
                 self.waterAmount = value.result.capacity
+                
+                print("waterAmount: \(self.waterAmount)")
             }
             .store(in: &cancellables)
 

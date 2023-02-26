@@ -32,7 +32,7 @@ extension APIService {
 
         let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
 
-        return APIManager.request(WaterAPI.waterAmount.url, method: .get, encoding: URLEncoding.queryString, headers: headers)
+        return APIManager.request(WaterAPI.waterAmount.url, method: .get, parameters: param.intDictionary, encoding: URLEncoding.queryString, headers: headers)
     }
 
     // MARK: 오늘 마신 물 추가 및 업데이트
