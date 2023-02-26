@@ -27,7 +27,7 @@ class APIService {
         return APIManager.request(AccountAPI.signUp.url, method: .post, parameters: param.dictionary)
     }
     
-    static func withdraw() -> AnyPublisher<AccountResponse, APIError> {
+    static func withdraw() -> AnyPublisher<DI_Base, APIError> {
         
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()

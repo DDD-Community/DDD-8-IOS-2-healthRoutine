@@ -12,18 +12,16 @@ struct MyPageUtilsView: View {
     @State var isPresented: Bool = false
     @State var showToast: Bool = false
     
+    @ObservedObject private var viewModel = MyPageUtilsViewModel()
+    @EnvironmentObject private var viewRouter: ViewRouter
+    
     var body: some View {
       
         VStack {
             
             Button {
                 
-                self.showToast = true
-                
-//                viewModel.logout() {
-//                    viewRouter.currentView = .account
-//                    viewRouter.changeFlag.toggle()
-//                }
+                self.viewModel.signOutFinished.send(true)
                 
             } label: {
                 
@@ -52,13 +50,48 @@ struct MyPageUtilsView: View {
             .fullScreenCover(isPresented: $isPresented) {
                 
                 CommonAlertView(info: AlertorViewInfo(title: "회원탈퇴", message: "정말 우리를 떠나실건가요?\n탈퇴 후 회원 정보는 복구가 불가능해요.", okTitle: "탈퇴하기", cancelTitle: "취소", okCompletion: {
-                    self.isPresented.toggle()
+                    
+                    self.viewModel.withDraw()
+                    
                 }, cancelCompletion: {
+                    
                     self.isPresented.toggle()
                 }))
                 .background(ClearBackgroundView())
             }
             .onAppear { UIView.setAnimationsEnabled(false) }
+        }
+        .onAppear {
+            
+            self.viewModel.signOutFinished
+                .receive(on: RunLoop.main)
+                .sink(receiveValue: {
+                    self.showToast = $0
+                    self.viewModel.showToastView.send($0)
+                })
+                .store(in: &self.viewModel.cancellables)
+            
+            self.viewModel.withdrawFinished
+                .receive(on: RunLoop.main)
+                .sink(receiveValue: { _ in
+                    
+                    self.isPresented.toggle()
+                    
+                    viewRouter.changeFlag.toggle()
+                    viewRouter.currentView = .account
+                })
+                .store(in: &self.viewModel.cancellables)
+            
+            self.viewModel.showToastView
+                .delay(for: .seconds(1), scheduler: DispatchQueue.main)
+                .receive(on: RunLoop.main)
+                .sink(receiveValue: { _ in
+                    
+                    // TODO: Access Token Delete -> 테스트 위해 화면 이동만 처리
+                    viewRouter.changeFlag.toggle()
+                    viewRouter.currentView = .account
+                })
+                .store(in: &self.viewModel.cancellables)
         }
     }
 }
