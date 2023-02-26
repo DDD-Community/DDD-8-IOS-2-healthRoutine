@@ -32,6 +32,7 @@ struct HomeMainView: View {
                     }
                     .customNavigationBarBackButtonHidden(true)
                     .customNavigationTitle("DKDK")
+                    .customNaviagationLogoButtonHidden(true)
                 }
         }
     }

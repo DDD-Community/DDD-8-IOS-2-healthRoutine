@@ -12,6 +12,7 @@ struct CustomNavigationBarContainerView<Content: View>: View {
     let content: Content
     
     @State private var showBackButton: Bool = true
+    @State private var showLogo: Bool = false
     @State private var title: String? = nil
     
     init(@ViewBuilder content: () -> Content) {
@@ -20,11 +21,13 @@ struct CustomNavigationBarContainerView<Content: View>: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            CustomNavigationBarView(showBackButton: showBackButton, title: title)
+            
+            CustomNavigationBarView(showBackButton: showBackButton, showLogo: showLogo, title: title)
             content
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .onPreferenceChange(CustomNavigationBarTitlePreferenceKey.self) { self.title = $0 }
+        .onPreferenceChange(CustomNavigationLogoHiddenPreferenceKey.self) { self.showLogo = $0 }
         .onPreferenceChange(CustomNavigationBarBackButtonHiddenPreferenceKey.self) { self.showBackButton = !$0 }
     }
 }

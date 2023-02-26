@@ -12,6 +12,7 @@ struct CustomNavigationBarView: View {
     @Environment(\.presentationMode) var presentationMode
     
     let showBackButton: Bool
+    let showLogo: Bool
     let title: String?
     
     var body: some View {
@@ -22,7 +23,11 @@ struct CustomNavigationBarView: View {
                 backButton
             }
             
-            titleSection
+            if showLogo {
+                logoSeciton
+            } else {
+                titleSection
+            }
             
             Spacer()
             
@@ -42,7 +47,7 @@ struct CustomNavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
         
         VStack {
-            CustomNavigationBarView(showBackButton: true, title: "Text Title")
+            CustomNavigationBarView(showBackButton: true, showLogo: false, title: "Text Title")
             Spacer()
         }
     }

@@ -26,6 +26,15 @@ struct CustomNavigationBarBackButtonHiddenPreferenceKey: PreferenceKey {
     }
 }
 
+struct CustomNavigationLogoHiddenPreferenceKey: PreferenceKey {
+
+    static var defaultValue: Bool = false
+    
+    static func reduce(value: inout Bool, nextValue: () -> Bool) {
+        value = nextValue()
+    }
+}
+
 extension View {
     
     func customNavigationTitle(_ title: String?) -> some View {
@@ -34,6 +43,10 @@ extension View {
     
     func customNavigationBarBackButtonHidden(_ hidden: Bool) -> some View {
         self.preference(key: CustomNavigationBarBackButtonHiddenPreferenceKey.self, value: hidden)
+    }
+    
+    func customNaviagationLogoButtonHidden(_ hidden: Bool) -> some View {
+        self.preference(key: CustomNavigationLogoHiddenPreferenceKey.self, value: hidden)
     }
     
     func customNavigationBarItems(title: String? = nil, backButtonHidden: Bool = false) -> some View {
