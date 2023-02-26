@@ -16,14 +16,15 @@ enum WaterAPI {
     var url: String {
         
         switch self {
-        case .waterAmount: return "\(HealthRoutineAPI.baseURL)/water"       // 상세
+        case .waterAmount: return "\(HealthRoutineAPI.baseURL)/water"
         }
     }
 }
 
 extension APIService {
     
-    static func getWaterAmount() -> AnyPublisher<WaterAmountResponse, APIError> {
+    // MARK: 물 섭취량 확인
+    static func getWaterAmount(_ param: WaterAmountRequest) -> AnyPublisher<WaterAmountResponse, APIError> {
 
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
@@ -31,9 +32,10 @@ extension APIService {
 
         let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
 
-        return APIManager.request(WaterAPI.waterAmount.url, method: .get, headers: headers)
+        return APIManager.request(WaterAPI.waterAmount.url, method: .get, encoding: URLEncoding.queryString, headers: headers)
     }
 
+    // MARK: 오늘 마신 물 추가 및 업데이트
     static func updateWaterAmount(_ param: WaterAmountUpdateRequest) -> AnyPublisher<DI_Base, APIError> {
 
         guard let token = KeychainService.shared.loadToken() else {

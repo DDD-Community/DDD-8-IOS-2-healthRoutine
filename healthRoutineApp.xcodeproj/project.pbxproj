@@ -105,7 +105,6 @@
 		B66169FA29501DBA000474A9 /* HomeBadgeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66169F929501DBA000474A9 /* HomeBadgeRowView.swift */; };
 		B66578642978208C009FE02F /* MyPageBadgeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */; };
 		B6744A0329827C2B00B4BACB /* CommonAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6744A0229827C2B00B4BACB /* CommonAlertView.swift */; };
-		B6841AF22982090D00A73A92 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF12982090D00A73A92 /* Water.swift */; };
 		B6841AF62982092A00A73A92 /* WaterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF52982092A00A73A92 /* WaterRequest.swift */; };
 		B6841AF82982099000A73A92 /* WaterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF72982099000A73A92 /* WaterResponse.swift */; };
 		B6841AFA29820A3E00A73A92 /* WaterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6841AF929820A3E00A73A92 /* WaterAPI.swift */; };
@@ -241,7 +240,6 @@
 		B66169F929501DBA000474A9 /* HomeBadgeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBadgeRowView.swift; sourceTree = "<group>"; };
 		B66578632978208C009FE02F /* MyPageBadgeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBadgeDetailView.swift; sourceTree = "<group>"; };
 		B6744A0229827C2B00B4BACB /* CommonAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAlertView.swift; sourceTree = "<group>"; };
-		B6841AF12982090D00A73A92 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		B6841AF52982092A00A73A92 /* WaterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRequest.swift; sourceTree = "<group>"; };
 		B6841AF72982099000A73A92 /* WaterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterResponse.swift; sourceTree = "<group>"; };
 		B6841AF929820A3E00A73A92 /* WaterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterAPI.swift; sourceTree = "<group>"; };
@@ -751,7 +749,6 @@
 			children = (
 				B6841AF42982091D00A73A92 /* Response */,
 				B6841AF32982091700A73A92 /* Request */,
-				B6841AF12982090D00A73A92 /* Water.swift */,
 				B6841AF929820A3E00A73A92 /* WaterAPI.swift */,
 			);
 			path = Water;
@@ -1105,7 +1102,6 @@
 				B65208DB2949C8670095DAB4 /* CustomNavigationBarPreferenceKey.swift in Sources */,
 				B6DF8D8529694E9A006C2C89 /* ReportDetailKindView.swift in Sources */,
 				B65208CE29498D1E0095DAB4 /* AccountErrors.swift in Sources */,
-				B6841AF22982090D00A73A92 /* Water.swift in Sources */,
 				B68B4F27292E634D00A9AE99 /* MyPageProfileView.swift in Sources */,
 				B6D2889D294AB0370072C347 /* RegExp.swift in Sources */,
 				B68CC7ED29309CEA009A0A2F /* HomeWaterIntakeView.swift in Sources */,

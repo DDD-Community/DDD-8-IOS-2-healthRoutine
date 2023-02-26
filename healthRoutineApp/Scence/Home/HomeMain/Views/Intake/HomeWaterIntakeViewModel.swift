@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class HomeWaterIntakeViewModel: ObservableObject {
+final class HomeWaterIntakeViewModel: ObservableObject {
 
     var cancellables: Set<AnyCancellable> = []
     
@@ -39,7 +39,15 @@ class HomeWaterIntakeViewModel: ObservableObject {
     
     func fetchInfos() {
         
-        APIService.getWaterAmount()
+        let date = Date()
+    
+        let year = CalendarHelper().getYear(date)
+        let month = CalendarHelper().getMonth(date)
+        let day = CalendarHelper().getDay(date)
+        
+        let request = WaterAmountRequest(year: year, month: month, day: day)
+        
+        APIService.getWaterAmount(request)
             .receive(on: RunLoop.main)
             .sink {  completion in
                 switch completion {

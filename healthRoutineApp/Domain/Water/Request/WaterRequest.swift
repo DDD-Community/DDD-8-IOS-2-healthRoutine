@@ -10,3 +10,10 @@ import Foundation
 struct WaterAmountUpdateRequest: Codable {
     let capacity: Int
 }
+
+struct WaterAmountRequest: Codable {
+    
+    let year: Int
+    let month: Int
+    let day: Int
+}
