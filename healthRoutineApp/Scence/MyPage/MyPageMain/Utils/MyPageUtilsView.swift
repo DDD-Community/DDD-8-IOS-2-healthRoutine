@@ -10,12 +10,15 @@ import SwiftUI
 struct MyPageUtilsView: View {
     
     @State var isPresented: Bool = false
+    @State var showToast: Bool = false
     
     var body: some View {
       
         VStack {
             
             Button {
+                
+                self.showToast = true
                 
 //                viewModel.logout() {
 //                    viewRouter.currentView = .account
@@ -31,6 +34,7 @@ struct MyPageUtilsView: View {
                     .background(Color(hex: "4B4C55"))
                     .cornerRadius(10)
             }
+            .toast(isShowing: $showToast, text: "로그아웃 되었습니다.")
             
             Button {
                 
