@@ -10,6 +10,7 @@ import SwiftUI
 struct CalendarTopView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
+    private var viewModel = CalendarViewModel()
     
     var body: some View {
         
@@ -51,11 +52,19 @@ extension CalendarTopView {
     private func gotToNextMonth() {
         
         self.dateHolder.date = CalendarHelper().getNextMonth(dateHolder.date)
+        
+        let year = CalendarHelper().getYear(dateHolder.date)
+        let month = CalendarHelper().getMonth(dateHolder.date)
+        self.viewModel.fetchInfo(year: year, month: month)
     }
     
     private func goToPrevMonth() {
         
         self.dateHolder.date = CalendarHelper().getPrevMonth(dateHolder.date)
+        
+        let year = CalendarHelper().getYear(dateHolder.date)
+        let month = CalendarHelper().getMonth(dateHolder.date)
+        self.viewModel.fetchInfo(year: year, month: month)
     }
 }
 

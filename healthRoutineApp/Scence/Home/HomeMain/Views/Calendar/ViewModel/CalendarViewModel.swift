@@ -17,7 +17,7 @@ final class CalendarViewModel: ObservableObject {
     @Published var level: Int = 0
     
     var dayToLevel =  PassthroughSubject<[String: Int], Never>()
-    private var dayOfLevel: [String: Int] = [:]
+    @Published var dayOfLevel: [String: Int] = [:]
     
     func getNickName() -> String {
         
@@ -45,7 +45,10 @@ final class CalendarViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { (value: MonthlyExerciseListResponse) in
+                
+                debugPrint("value: \(value.result.data)")
                 self.getDayOfLevel(value.result.data)
+                
             }
             .store(in: &cancellables)
     }

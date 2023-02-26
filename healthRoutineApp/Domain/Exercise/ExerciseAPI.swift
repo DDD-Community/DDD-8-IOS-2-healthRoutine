@@ -40,6 +40,6 @@ extension APIService {
 
         let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
         
-        return APIManager.request(ExerciseAPI.montly.url, method: .get, encoding: URLEncoding.queryString, headers: headers)
+        return APIManager.request(ExerciseAPI.montly.url, method: .get, parameters: parm.intDictionary, encoding: URLEncoding.queryString, headers: headers)
     }
 }

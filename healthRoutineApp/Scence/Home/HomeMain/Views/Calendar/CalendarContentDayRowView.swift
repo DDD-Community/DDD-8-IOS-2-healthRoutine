@@ -14,13 +14,13 @@ struct CalendarContentDayRowView: View {
 
     var body: some View {
         
-        LazyVStack {
+        VStack {
             
             let daysInMonth = CalendarHelper().daysInMonth(dateHolder.date)
             let firstDayOfMonth = CalendarHelper().firstOfMonth(dateHolder.date)
             let startingSpaces = CalendarHelper().weekDay(firstDayOfMonth)
             
-            ForEach(0..<5) { week in
+            ForEach(0..<6) { week in
                 
                 HStack(spacing: 1) {
                     

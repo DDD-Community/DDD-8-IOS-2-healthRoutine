@@ -32,19 +32,12 @@ struct CalendarView: View {
                 .padding(.bottom, 8)
                 .frame(minHeight: 20)
             
-            CalendarContentDayRowView() // 날짜
+            CalendarContentDayRowView()
                 .onAppear {
-                    self.viewModel.fetchInfo(year: CalendarHelper().getYear(dateHolder.date),
-                                             month: CalendarHelper().getMonth(dateHolder.date))
                     
-                    self.viewModel.dayToLevel
-                        .sink(receiveValue: { dicts in
-                            
-                            for dict in dicts {
-                                self.viewModel.level = dict.value
-                            }
-                        })
-                        .store(in: &self.viewModel.cancellables)
+                    let year = CalendarHelper().getYear(dateHolder.date)
+                    let month = CalendarHelper().getMonth(dateHolder.date)
+                    self.viewModel.fetchInfo(year: year, month: month)
                 }
         }
         .frame(maxWidth: .infinity, maxHeight: 350)
