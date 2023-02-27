@@ -72,6 +72,7 @@ extension CustomNavigationBarView {
             .resizable()
             .scaledToFit()
             .frame(width: 60, height: 45)
+            .padding(.bottom, -17) // 이미지 자체 패딩 이슈
     }
     
     private var titleSection: some View {

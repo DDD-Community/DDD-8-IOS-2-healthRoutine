@@ -13,11 +13,8 @@ final class CalendarViewModel: ObservableObject {
     
     var cancellables: Set<AnyCancellable> = []
     
-    @Published var day: Int = 0
-    @Published var level: Int = 0
-    
-    var dayToLevel =  PassthroughSubject<[String: Int], Never>()
     @Published var dayOfLevel: [String: Int] = [:]
+    @State var isActive: Bool = false
     
     func getNickName() -> String {
         
@@ -46,9 +43,7 @@ final class CalendarViewModel: ObservableObject {
                 }
             } receiveValue: { (value: MonthlyExerciseListResponse) in
                 
-                debugPrint("value: \(value.result.data)")
                 self.getDayOfLevel(value.result.data)
-                
             }
             .store(in: &cancellables)
     }
@@ -62,7 +57,5 @@ final class CalendarViewModel: ObservableObject {
         for (index, key) in dayToStringArr.enumerated() {
             self.dayOfLevel[key] = levels[index]
         }
-        
-        self.dayToLevel.send(dayOfLevel)
     }
 }

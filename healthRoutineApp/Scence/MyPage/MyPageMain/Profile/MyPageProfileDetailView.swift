@@ -77,7 +77,6 @@ struct MyPageProfileDetailView: View {
                     .cornerRadius(10)
                     .onTapGesture {
                         self.viewModel.updateProfileImage()
-                        debugPrint("수정하기")
                     }
                 
                 Spacer()

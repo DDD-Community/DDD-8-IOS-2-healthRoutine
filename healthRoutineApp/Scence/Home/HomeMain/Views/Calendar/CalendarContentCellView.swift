@@ -16,6 +16,8 @@ struct CalendarContentCellView: View {
     let startingSpaces: Int
     let daysInMonth: Int
     
+    @State var backColor: Color?
+    
     var body: some View {
         
         ZStack {
@@ -30,11 +32,6 @@ struct CalendarContentCellView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .opacity(monthStruct().monthType == .current ? 1 : 0)
-//        .onAppear {
-//            let year = CalendarHelper().getYear(dateHolder.date)
-//            let month = CalendarHelper().getMonth(dateHolder.date)
-//            self.viewModel.fetchInfo(year: year, month: month)
-//        }
     }
     
     private func updateCell(_ date: String) -> Color {
@@ -75,8 +72,8 @@ struct CalendarContentCellView: View {
     }
 }
 
-struct CalendarContentCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarContentCellView(count: 1, startingSpaces: 1, daysInMonth: 1)
-    }
-}
+//struct CalendarContentCellView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CalendarContentCellView(count: 1, startingSpaces: 1, daysInMonth: 1)
+//    }
+//}

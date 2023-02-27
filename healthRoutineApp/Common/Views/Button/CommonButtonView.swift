@@ -20,9 +20,7 @@ struct CommonButtonView: ButtonStyle {
 
 struct CommonButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        Button("로그인") {
-            debugPrint("Button Action")
-        }
+        Button("로그인") { }
         .buttonStyle(CommonButtonView())
     }
 }

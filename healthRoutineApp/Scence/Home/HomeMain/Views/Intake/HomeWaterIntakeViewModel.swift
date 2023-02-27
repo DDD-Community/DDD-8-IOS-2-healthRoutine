@@ -25,7 +25,6 @@ final class HomeWaterIntakeViewModel: ObservableObject {
             .removeDuplicates()
             .filter { $0 >= 0 }
             .receive(on: RunLoop.main)
-            .share()
         
         waterAmountStream
             .map { self.updateGIFView($0) }

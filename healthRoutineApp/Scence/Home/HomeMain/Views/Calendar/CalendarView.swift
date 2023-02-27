@@ -34,7 +34,6 @@ struct CalendarView: View {
             
             CalendarContentDayRowView()
                 .onAppear {
-                    
                     let year = CalendarHelper().getYear(dateHolder.date)
                     let month = CalendarHelper().getMonth(dateHolder.date)
                     self.viewModel.fetchInfo(year: year, month: month)
