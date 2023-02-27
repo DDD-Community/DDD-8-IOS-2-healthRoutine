@@ -33,16 +33,17 @@ struct CalendarView: View {
                 .frame(minHeight: 20)
             
             CalendarContentDayRowView()
-                .onAppear {
-                    let year = CalendarHelper().getYear(dateHolder.date)
-                    let month = CalendarHelper().getMonth(dateHolder.date)
-                    self.viewModel.fetchInfo(year: year, month: month)
-                }
         }
         .frame(maxWidth: .infinity, maxHeight: 350)
         .padding(24)
         .background(Color.box_color)
         .cornerRadius(16)
+        .onAppear {
+            
+            let year = CalendarHelper().getYear(dateHolder.date)
+            let month = CalendarHelper().getMonth(dateHolder.date)
+            self.viewModel.fetchInfo(year: year, month: month)
+        }
     }
 }
 

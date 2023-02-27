@@ -12,34 +12,39 @@ struct CalendarContentCellView: View {
     @EnvironmentObject var dateHolder: DateHolder
     @ObservedObject var viewModel = CalendarViewModel()
     
-    let count: Int
-    let startingSpaces: Int
-    let daysInMonth: Int
-    
-    @State var backColor: Color?
+    let count: Int // 전체갯수
+    let startingSpaces: Int // 시작 인덱스
+    let daysInMonth: Int // 28
     
     var body: some View {
         
         ZStack {
 
             Rectangle()
-                .foregroundColor(updateCell(monthStruct().getDay()))
+                .foregroundColor(self.updateCell(monthStruct().getDay()))
+//                .foregroundColor(self.viewModel.backColor)
                 .frame(width: 34, height: 34)
                 .cornerRadius(10)
-
+        
             Text(monthStruct().getDay())
                 .foregroundColor(monthStruct().setForeground(dateHolder.date))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .opacity(monthStruct().monthType == .current ? 1 : 0)
+        .onAppear {
+
+            let year = CalendarHelper().getYear(dateHolder.date)
+            let month = CalendarHelper().getMonth(dateHolder.date)
+            self.viewModel.fetchInfo(year: year, month: month)
+        }
     }
-    
+
     private func updateCell(_ date: String) -> Color {
-        
+
         let level = self.viewModel.dayOfLevel[date]
-        
+
         if monthStruct().monthType == .current {
-            
+
             switch level {
             case 0: return Color(hex: "F9F9F9")
             case 1: return Color(hex: "CAFFEB")
@@ -58,6 +63,7 @@ struct CalendarContentCellView: View {
             
         if count <= start {
 
+            print("daysInMonth: \(daysInMonth)")
             let day = daysInMonth + count - start
             return Month(monthType: MonthType.previous, dayInt: day)
 

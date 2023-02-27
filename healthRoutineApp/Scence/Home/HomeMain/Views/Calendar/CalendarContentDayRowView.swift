@@ -14,7 +14,7 @@ struct CalendarContentDayRowView: View {
 
     var body: some View {
         
-        VStack {
+        LazyVStack {
             
             let daysInMonth = CalendarHelper().daysInMonth(dateHolder.date)
             let firstDayOfMonth = CalendarHelper().firstOfMonth(dateHolder.date)
