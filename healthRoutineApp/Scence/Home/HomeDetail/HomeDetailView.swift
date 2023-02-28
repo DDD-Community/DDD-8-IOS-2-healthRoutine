@@ -12,7 +12,7 @@ struct HomeDetailView: View {
         BaseView {
             ScrollView {
                 VStack(spacing: 16) {
-                    CalendarView()
+                    CalendarView(isMainView: false)
                             .environmentObject(DateHolder())
                     HomeDetailTabView()
                 }

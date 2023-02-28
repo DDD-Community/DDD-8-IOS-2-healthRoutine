@@ -12,32 +12,50 @@ struct CalendarTopView: View {
     @EnvironmentObject var dateHolder: DateHolder
     private var viewModel = CalendarViewModel()
     
+    private var isMainView: Bool = false
+    
+    init(isMainView: Bool) {
+        self.isMainView = isMainView
+    }
+    
     var body: some View {
         
         HStack {
             
             Spacer()
             
-            Button(action: self.goToPrevMonth) {
-
-                Image("leftAngleBracket")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 16, height: 16)
+            if isMainView {
+                
+                Text(CalendarHelper().monthYearString(dateHolder.date))
+                    .foregroundColor(.white)
+                    .font(Font.pretendard(.bold, size: 20))
+                    .animation(.none)
+                    .frame(maxWidth: .infinity)
             }
             
-            Text(CalendarHelper().monthYearString(dateHolder.date))
-                .foregroundColor(.white)
-                .font(Font.pretendard(.bold, size: 20))
-                .animation(.none)
-                .frame(maxWidth: .infinity)
-            
-            Button(action: self.gotToNextMonth) {
+            else {
                 
-                Image("rightAngleBracket")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 16, height: 16)
+                Button(action: self.goToPrevMonth) {
+
+                    Image("leftAngleBracket")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 16, height: 16)
+                }
+                
+                Text(CalendarHelper().monthYearString(dateHolder.date))
+                    .foregroundColor(.white)
+                    .font(Font.pretendard(.bold, size: 20))
+                    .animation(.none)
+                    .frame(maxWidth: .infinity)
+                
+                Button(action: self.gotToNextMonth) {
+                    
+                    Image("rightAngleBracket")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 16, height: 16)
+                }
             }
             
             Spacer()
@@ -75,6 +93,6 @@ extension CalendarTopView {
 
 struct CalendarTopView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarTopView().environmentObject(DateHolder())
+        CalendarTopView(isMainView: false).environmentObject(DateHolder())
     }
 }

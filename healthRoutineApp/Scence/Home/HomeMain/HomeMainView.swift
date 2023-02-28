@@ -20,7 +20,7 @@ struct HomeMainView: View {
                         VStack(spacing: 16) {
                             
                             CustomNavigationLink(destination: HomeDetailView()) {
-                                CalendarView()
+                                CalendarView(isMainView: true)
                                     .environmentObject(DateHolder())
                             }
                             

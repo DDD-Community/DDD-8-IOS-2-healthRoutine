@@ -12,9 +12,9 @@ struct CalendarContentCellView: View {
     @EnvironmentObject var dateHolder: DateHolder
     @ObservedObject var viewModel = CalendarViewModel()
     
-    let count: Int // 전체갯수
-    let startingSpaces: Int // 시작 인덱스
-    let daysInMonth: Int // 28
+    let count: Int
+    let startingSpaces: Int
+    let daysInMonth: Int
     
     var body: some View {
         
@@ -22,7 +22,6 @@ struct CalendarContentCellView: View {
 
             Rectangle()
                 .foregroundColor(self.updateCell(monthStruct().getDay()))
-//                .foregroundColor(self.viewModel.backColor)
                 .frame(width: 34, height: 34)
                 .cornerRadius(10)
         
@@ -32,7 +31,7 @@ struct CalendarContentCellView: View {
         }
         .opacity(monthStruct().monthType == .current ? 1 : 0)
         .onAppear {
-
+            
             let year = CalendarHelper().getYear(dateHolder.date)
             let month = CalendarHelper().getMonth(dateHolder.date)
             self.viewModel.fetchInfo(year: year, month: month)
@@ -63,7 +62,6 @@ struct CalendarContentCellView: View {
             
         if count <= start {
 
-            print("daysInMonth: \(daysInMonth)")
             let day = daysInMonth + count - start
             return Month(monthType: MonthType.previous, dayInt: day)
 
@@ -78,8 +76,8 @@ struct CalendarContentCellView: View {
     }
 }
 
-//struct CalendarContentCellView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CalendarContentCellView(count: 1, startingSpaces: 1, daysInMonth: 1)
-//    }
-//}
+struct CalendarContentCellView_Previews: PreviewProvider {
+    static var previews: some View {
+        CalendarContentCellView(count: 1, startingSpaces: 1, daysInMonth: 1)
+    }
+}
