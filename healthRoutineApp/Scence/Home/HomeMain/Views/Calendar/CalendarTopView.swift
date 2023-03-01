@@ -74,8 +74,6 @@ extension CalendarTopView {
         let year = CalendarHelper().getYear(dateHolder.date)
         let month = CalendarHelper().getMonth(dateHolder.date)
         
-        debugPrint("nextYearMonth: \(year) -\(month)")
-        
         self.viewModel.fetchInfo(year: year, month: month)
     }
     
@@ -86,7 +84,6 @@ extension CalendarTopView {
         let year = CalendarHelper().getYear(dateHolder.date)
         let month = CalendarHelper().getMonth(dateHolder.date)
         
-        debugPrint("prevYearMonth: \(year) -\(month)")
         self.viewModel.fetchInfo(year: year, month: month)
     }
 }

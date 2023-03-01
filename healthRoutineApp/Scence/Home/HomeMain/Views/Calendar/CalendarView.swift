@@ -23,10 +23,9 @@ struct CalendarView: View {
         VStack {
             
             // TODO: 상세에서 사용하는 title과 메인에서 사용하는 title 변경해야 함
-            
             if isMainView {
                 
-                Text("\(viewModel.getNickName())오늘도 움직여 볼까요?")
+                Text(viewModel.getNickName())
                     .font(Font.pretendard(.bold, size: 20))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -45,7 +44,7 @@ struct CalendarView: View {
                 
             } else {
                 
-                Text("\(viewModel.getNickName())오늘도 움직여 볼까요?")
+                Text("\(CalendarHelper().getMonth(dateHolder.date))월은 벌컵 벌컵 하셨군요!")
                     .font(Font.pretendard(.bold, size: 20))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)

@@ -14,14 +14,13 @@ final class CalendarViewModel: ObservableObject {
     var cancellables: Set<AnyCancellable> = []
     
     @Published var dayOfLevel: [String: Int] = [:]
-    @Published var backColor = Color.yellow
     
     func getNickName() -> String {
         
         let nickname = UserDefaults.standard.string(forKey: NICKNAME_KEY)
         
         guard let nickname = nickname else { return "" }
-        return "\(nickname)님 "
+        return "\(nickname)님 오늘도 움직여 볼까요?"
     }
     
     // TODO: 통신 값 받아서 결과처리하기
@@ -52,6 +51,8 @@ final class CalendarViewModel: ObservableObject {
     
     // TODO: 레벨 색상에 맞게 Cell 색칠하기
     private func getDayOfLevel(_ list: [MonthList]) {
+        
+        debugPrint("list: \(list)")
         
         let dayToStringArr = list.map { "\($0.day)" }
         let levels = list.map { $0.level }
