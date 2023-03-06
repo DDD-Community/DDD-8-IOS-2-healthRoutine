@@ -15,27 +15,27 @@ final class HomeWaterIntakeViewModel: ObservableObject {
     @Published var waterAmount: Int = 0
     @Published var gifName: String = ""
     
-    init() {
-        self.bind()
-    }
-    
-    private func bind() {
-        
-        let waterAmountStream = $waterAmount
-//            .removeDuplicates()
-            .filter { $0 >= 0 }
-            .receive(on: RunLoop.main)
-        
-        waterAmountStream
-            .map { self.updateGIFView($0) }
-            .assign(to: \.gifName, on: self)
-            .store(in: &cancellables)
-        
-        waterAmountStream
-            .removeDuplicates()
-            .sink { self.updateInfos($0) }
-            .store(in: &cancellables)
-    }
+//    init() {
+//        self.bind()
+//    }
+//
+//    private func bind() {
+//
+//        let waterAmountStream = $waterAmount
+////            .removeDuplicates()
+//            .filter { $0 >= 0 }
+//            .receive(on: RunLoop.main)
+//
+//        waterAmountStream
+//            .map { self.updateGIFView($0) }
+//            .assign(to: \.gifName, on: self)
+//            .store(in: &cancellables)
+//
+//        waterAmountStream
+////            .removeDuplicates()
+//            .sink { self.updateInfos($0) }
+//            .store(in: &cancellables)
+//    }
     
     func fetchInfos() {
         
@@ -61,12 +61,12 @@ final class HomeWaterIntakeViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { (value: WaterAmountResponse) in
-                self.waterAmount = value.result.capacity
                 
+                self.waterAmount = value.result.capacity
+                self.updateView(self.waterAmount)
                 print("waterAmount: \(self.waterAmount)")
             }
             .store(in: &cancellables)
-
     }
     
     func updateInfos(_ amount: Int) {
@@ -122,5 +122,23 @@ extension HomeWaterIntakeViewModel {
         if self.waterAmount < 0 {
             self.waterAmount = 0
         }
+    }
+    
+    func updateView(_ waterAmount: Int) {
+        
+        let waterAmountStream = $waterAmount
+//            .removeDuplicates()
+            .filter { $0 >= 0 }
+            .receive(on: RunLoop.main)
+        
+        waterAmountStream
+            .map { self.updateGIFView($0) }
+            .assign(to: \.gifName, on: self)
+            .store(in: &cancellables)
+        
+        waterAmountStream
+//            .removeDuplicates()
+            .sink { self.updateInfos($0) }
+            .store(in: &cancellables)
     }
 }

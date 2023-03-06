@@ -52,7 +52,7 @@ final class CalendarViewModel: ObservableObject {
     // TODO: 레벨 색상에 맞게 Cell 색칠하기
     private func getDayOfLevel(_ list: [MonthList]) {
         
-        debugPrint("list: \(list)")
+//        debugPrint("list: \(list)")
         
         let dayToStringArr = list.map { "\($0.day)" }
         let levels = list.map { $0.level }
