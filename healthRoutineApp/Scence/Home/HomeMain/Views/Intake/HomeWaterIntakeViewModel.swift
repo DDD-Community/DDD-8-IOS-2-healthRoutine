@@ -22,7 +22,7 @@ final class HomeWaterIntakeViewModel: ObservableObject {
     private func bind() {
         
         let waterAmountStream = $waterAmount
-            .removeDuplicates()
+//            .removeDuplicates()
             .filter { $0 >= 0 }
             .receive(on: RunLoop.main)
         
@@ -32,6 +32,7 @@ final class HomeWaterIntakeViewModel: ObservableObject {
             .store(in: &cancellables)
         
         waterAmountStream
+            .removeDuplicates()
             .sink { self.updateInfos($0) }
             .store(in: &cancellables)
     }
