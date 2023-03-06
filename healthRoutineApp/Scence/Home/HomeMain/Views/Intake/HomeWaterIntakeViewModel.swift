@@ -49,6 +49,7 @@ final class HomeWaterIntakeViewModel: ObservableObject {
         let request = WaterAmountRequest(year: year, month: month, day: day)
         
         APIService.getWaterAmount(request)
+            .removeDuplicates()
             .receive(on: RunLoop.main)
             .sink {  completion in
                 switch completion {
@@ -127,7 +128,7 @@ extension HomeWaterIntakeViewModel {
     func updateView(_ waterAmount: Int) {
         
         let waterAmountStream = $waterAmount
-//            .removeDuplicates()
+            .removeDuplicates()
             .filter { $0 >= 0 }
             .receive(on: RunLoop.main)
         
@@ -137,7 +138,6 @@ extension HomeWaterIntakeViewModel {
             .store(in: &cancellables)
         
         waterAmountStream
-//            .removeDuplicates()
             .sink { self.updateInfos($0) }
             .store(in: &cancellables)
     }
