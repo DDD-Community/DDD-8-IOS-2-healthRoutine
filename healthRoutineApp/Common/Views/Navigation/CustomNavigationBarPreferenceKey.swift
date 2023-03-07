@@ -49,8 +49,9 @@ extension View {
         self.preference(key: CustomNavigationLogoHiddenPreferenceKey.self, value: hidden)
     }
     
-    func customNavigationBarItems(title: String? = nil, backButtonHidden: Bool = false) -> some View {
+    func customNavigationBarItems(title: String? = nil, backButtonHidden: Bool = false, logoButtonHidden: Bool = false) -> some View {
         self.customNavigationTitle(title)
             .customNavigationBarBackButtonHidden(backButtonHidden)
+            .customNaviagationLogoButtonHidden(logoButtonHidden)
     }
 }
