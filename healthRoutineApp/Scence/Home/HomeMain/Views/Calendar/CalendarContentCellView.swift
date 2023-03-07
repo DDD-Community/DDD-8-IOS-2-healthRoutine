@@ -45,12 +45,13 @@ struct CalendarContentCellView: View {
         if monthStruct().monthType == .current {
 
             switch level {
-            case 0: return Color(hex: "F9F9F9")
-            case 1: return Color(hex: "CAFFEB")
-            case 2: return Color(hex: "6AFFC9")
-            case 3: return Color(hex: "00FFA3")
+            case 1: return Color(hex: "F9F9F9")
+            case 2: return Color(hex: "CAFFEB")
+            case 3: return Color(hex: "6AFFC9")
+            case 4: return Color(hex: "00FFA3")
             default: return Color(hex: "363740")
             }
+            
         } else {
             return Color(hex: "363740")
         }

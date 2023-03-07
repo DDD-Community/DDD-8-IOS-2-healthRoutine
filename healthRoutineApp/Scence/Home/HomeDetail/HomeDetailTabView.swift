@@ -15,7 +15,9 @@ struct HomeDetailTabView: View {
         VStack(spacing: 2) {
             tabBarView
             TabView(selection: self.$currentTab, content: {
+                
                 Text("오늘의 운동을 기록해주세요").tag(0)
+                
                 GIFView(name: "water-2000")
                     .frame(maxWidth: .infinity, maxHeight: 51)
                     .overlay {

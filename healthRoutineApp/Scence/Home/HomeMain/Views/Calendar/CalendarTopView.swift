@@ -41,6 +41,7 @@ struct CalendarTopView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 16, height: 16)
+                    
                 }
                 
                 Text(CalendarHelper().monthYearString(dateHolder.date))
