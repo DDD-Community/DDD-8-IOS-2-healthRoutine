@@ -36,6 +36,17 @@ struct CalendarContentCellView: View {
             let month = CalendarHelper().getMonth(dateHolder.date)
             self.viewModel.fetchInfo(year: year, month: month)
         }
+        .onTapGesture {
+            
+            let year = CalendarHelper().getYear(dateHolder.date)
+            let month = CalendarHelper().getMonth(dateHolder.date)
+            
+            let day = monthStruct().getDay()
+            
+            print("year: \(year)")
+            print("month \(month)")
+            print("day: \(day)")
+        }
     }
 
     private func updateCell(_ date: String) -> Color {

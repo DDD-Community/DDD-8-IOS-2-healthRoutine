@@ -14,6 +14,7 @@ final class CalendarViewModel: ObservableObject {
     var cancellables: Set<AnyCancellable> = []
     
     @Published var dayOfLevel: [String: Int] = [:]
+    @Published var exerciseArray: [TodayExerciseListResult] = []
     
     func getNickName() -> String {
         
@@ -49,11 +50,30 @@ final class CalendarViewModel: ObservableObject {
         }
     }
     
+    func fetchTodayExerciseList() {
+        
+        let param = ExerciseFetchReqeust(time: Int(Date().millisecondsSince1970))
+        
+        APIService.fetchTodayExerciseList(param)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { (value: TodayExerciseListResponse) in
+                self.exerciseArray = value.result
+            }
+            .store(in: &cancellables)
+    }
+    
     // TODO: 레벨 색상에 맞게 Cell 색칠하기
     private func getDayOfLevel(_ list: [MonthList]) {
-        
-//        debugPrint("list: \(list)")
-        
+    
         let dayToStringArr = list.map { "\($0.day)" }
         let levels = list.map { $0.level }
         
