@@ -50,9 +50,9 @@ final class CalendarViewModel: ObservableObject {
         }
     }
     
-    func fetchTodayExerciseList() {
+    func fetchTodayExerciseList(_ year: Int, _ month: Int, day: Int) {
         
-        let param = ExerciseFetchReqeust(time: Int(Date().millisecondsSince1970))
+        let param = ExerciseFetchForDayReqeust(year: year, month: month, day: day)
         
         APIService.fetchTodayExerciseList(param)
             .sink { completion in

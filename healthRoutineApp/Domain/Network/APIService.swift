@@ -85,7 +85,19 @@ extension APIService {
 // MARK: - 운동기록
 extension APIService {
     
+    // MARK: 오늘 운동 조회
     static func fetchTodayExerciseList(_ param: ExerciseFetchReqeust) -> AnyPublisher<TodayExerciseListResponse, APIError> {
+        guard let token = KeychainService.shared.loadToken() else {
+            return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
+        }
+
+        let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
+        
+        return APIManager.request(ExerciseAPI.todayExerciseList.url, method: .get, parameters: param.intDictionary, encoding: URLEncoding.queryString, headers: headers)
+    }
+    
+    // MARK: 오늘 운동 조회 (년, 월, 일)
+    static func fetchTodayExerciseList(_ param: ExerciseFetchForDayReqeust) -> AnyPublisher<TodayExerciseListResponse, APIError> {
         guard let token = KeychainService.shared.loadToken() else {
             return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
         }

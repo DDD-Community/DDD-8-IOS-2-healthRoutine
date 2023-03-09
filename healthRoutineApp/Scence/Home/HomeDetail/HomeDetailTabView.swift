@@ -9,19 +9,31 @@ import Foundation
 import SwiftUI
 
 struct HomeDetailTabView: View {
+    
     @State var currentTab: Int = 0
+    @ObservedObject var calendarVM = CalendarViewModel()
+    @ObservedObject var waterVM = HomeWaterIntakeViewModel()
     
     var body: some View {
+        
         VStack(spacing: 2) {
+            
             tabBarView
+        
             TabView(selection: self.$currentTab, content: {
                 
                 Text("오늘의 운동을 기록해주세요").tag(0)
+//                ForEach(calendarVM.exerciseArray, id: \.self) { item in
+//                    ReportMainRowView(item: item)
+//                }
+//                .background(.red)
+//                .frame(height: 74)
+//                .tag(0)
                 
-                GIFView(name: "water-2000")
+                GIFView(name: self.waterVM.gifName)
                     .frame(maxWidth: .infinity, maxHeight: 51)
                     .overlay {
-                        Text("2000 ml")
+                        Text("\(self.waterVM.waterAmount) ml")
                             .font(Font.pretendard(.bold, size: 14))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, alignment: .center)
@@ -53,6 +65,7 @@ struct HomeDetailTabView: View {
         Button {
             self.currentTab = tab
         } label: {
+            
             VStack {
                 Text(string)
                     .font(Font.pretendard(.medium, size: 16))
