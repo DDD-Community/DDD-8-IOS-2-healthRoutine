@@ -11,24 +11,42 @@ import SwiftUI
 struct HomeDetailTabView: View {
     
     @State var currentTab: Int = 0
-    @ObservedObject var calendarVM = CalendarViewModel()
+    
     @ObservedObject var waterVM = HomeWaterIntakeViewModel()
+    @ObservedObject var calendarVM = CalendarViewModel()
+    @ObservedObject private var viewModel: ReportViewModel
+    
+    init() {
+        viewModel = ReportViewModel()
+        viewModel.fetchList()
+    }
     
     var body: some View {
         
         VStack(spacing: 2) {
             
             tabBarView
-        
+            
             TabView(selection: self.$currentTab, content: {
                 
-                Text("오늘의 운동을 기록해주세요").tag(0)
-//                ForEach(calendarVM.exerciseArray, id: \.self) { item in
-//                    ReportMainRowView(item: item)
-//                }
-//                .background(.red)
-//                .frame(height: 74)
-//                .tag(0)
+                VStack {
+                    
+                    ScrollView {
+                        
+                        ForEach(viewModel.exerciseArray, id: \.self) { item in
+                            ReportMainRowView(item: item)
+                                .frame(minHeight: 78)
+                                .padding(.horizontal, 24)
+                        }
+                        
+                        ForEach(calendarVM.exerciseArray, id: \.self) { item in
+                            ReportMainRowView(item: item)
+                                .frame(minHeight: 78)
+                                .padding(.horizontal, 24)
+                        }
+                    }
+                }
+                .tag(0)
                 
                 GIFView(name: self.waterVM.gifName)
                     .frame(maxWidth: .infinity, maxHeight: 51)
@@ -40,11 +58,20 @@ struct HomeDetailTabView: View {
                     }.tag(1)
             })
             .tabViewStyle(.page(indexDisplayMode: .never))
+            .frame(minHeight: 150)
         }
         .padding(.vertical, 16)
-        .frame(maxWidth: .infinity, minHeight: 148)
+//        .frame(maxWidth: .infinity, minHeight: 148)
         .background(Color.box_color)
         .cornerRadius(16)
+//        .onAppear {
+//            
+//            self.calendarVM.exerciseArrayStream
+//                .sink { result in
+//                    print("result Count: \(result)")
+//                }
+//                .store(in: &self.viewModel.cancellables)
+//        }
     }
     
     var tabBarView: some View {
@@ -53,7 +80,6 @@ struct HomeDetailTabView: View {
                 ForEach(Array(["운동하기", "물마시기"].enumerated()), id: \.1) {
                     index, name in
                     tabBarItem(string: name, tab: index)
-                    
                 }
             }
         }

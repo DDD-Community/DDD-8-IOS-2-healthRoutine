@@ -38,14 +38,13 @@ struct CalendarContentCellView: View {
         }
         .onTapGesture {
             
+            // TODO: 해당 요일에 해당하는 운동리스트 가져와서 보여주기
             let year = CalendarHelper().getYear(dateHolder.date)
             let month = CalendarHelper().getMonth(dateHolder.date)
             
-            let day = monthStruct().getDay()
+            guard let day = Int(monthStruct().getDay()) else { return }
             
-            print("year: \(year)")
-            print("month \(month)")
-            print("day: \(day)")
+            self.viewModel.fetchTodayExerciseList(year, month, day)
         }
     }
 

@@ -9,12 +9,14 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class CalendarViewModel: ObservableObject {
+class CalendarViewModel: ObservableObject {
     
     var cancellables: Set<AnyCancellable> = []
     
     @Published var dayOfLevel: [String: Int] = [:]
     @Published var exerciseArray: [TodayExerciseListResult] = []
+    
+    var exerciseArrayStream = PassthroughSubject<[TodayExerciseListResult], Never>()
     
     func getNickName() -> String {
         
@@ -50,11 +52,12 @@ final class CalendarViewModel: ObservableObject {
         }
     }
     
-    func fetchTodayExerciseList(_ year: Int, _ month: Int, day: Int) {
+    func fetchTodayExerciseList(_ year: Int, _ month: Int, _ day: Int) {
         
         let param = ExerciseFetchForDayReqeust(year: year, month: month, day: day)
         
         APIService.fetchTodayExerciseList(param)
+            .receive(on: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
@@ -66,7 +69,10 @@ final class CalendarViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { (value: TodayExerciseListResponse) in
+                
+                print("exerciseArray: \(value)")
                 self.exerciseArray = value.result
+                self.exerciseArrayStream.send(value.result)
             }
             .store(in: &cancellables)
     }
