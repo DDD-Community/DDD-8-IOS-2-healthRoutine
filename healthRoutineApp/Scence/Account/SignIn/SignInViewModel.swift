@@ -50,6 +50,7 @@ class SignInViewModel: ObservableObject {
         let request = AccountSignInRequest(email: self.email, password: self.password)
         
         APIService.signIn(request)
+            .receive(on: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):

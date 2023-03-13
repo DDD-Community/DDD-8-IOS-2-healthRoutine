@@ -21,46 +21,23 @@ struct CalendarView: View {
     var body: some View {
         
         VStack {
+
+            Text(self.updateTitle(isMainView))
+                .font(Font.pretendard(.bold, size: 20))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.bottom, 12)
             
-            // TODO: 상세에서 사용하는 title과 메인에서 사용하는 title 변경해야 함
-            if isMainView {
-                
-                Text(viewModel.getNickName())
-                    .font(Font.pretendard(.bold, size: 20))
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, 12)
-                
-                Spacer()
-                
-                CalendarTopView(isMainView: isMainView)
-                    .padding(.bottom, 8)
-                
-                CalendarContentWeekRowView() // 요일
-                    .padding(.bottom, 8)
-                    .frame(minHeight: 20)
-                
-                CalendarContentDayRowView()
-                
-            } else {
-                
-                Text("\(CalendarHelper().getMonth(dateHolder.date))월은 벌컵 벌컵 하셨군요!")
-                    .font(Font.pretendard(.bold, size: 20))
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, 12)
-                
-                Spacer()
-                
-                CalendarTopView(isMainView: isMainView)
-                    .padding(.bottom, 8)
-                
-                CalendarContentWeekRowView() // 요일
-                    .padding(.bottom, 8)
-                    .frame(minHeight: 20)
-                
-                CalendarContentDayRowView()
-            }
+            Spacer()
+            
+            CalendarTopView(isMainView: isMainView)
+                .padding(.bottom, 8)
+            
+            CalendarContentWeekRowView() // 요일
+                .padding(.bottom, 8)
+                .frame(minHeight: 20)
+            
+            CalendarContentDayRowView()
         }
         .frame(maxWidth: .infinity, maxHeight: 350)
         .padding(24)
@@ -72,6 +49,10 @@ struct CalendarView: View {
             let month = CalendarHelper().getMonth(dateHolder.date)
             self.viewModel.fetchInfo(year: year, month: month)
         }
+    }
+    
+    private func updateTitle(_ isMain: Bool) -> String {
+        return isMain ? viewModel.getNickName() : "\(CalendarHelper().getMonth(dateHolder.date))월은 벌컵 벌컵 하셨군요!"
     }
 }
 

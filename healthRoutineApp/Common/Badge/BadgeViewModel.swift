@@ -22,6 +22,8 @@ final class BadgeViewModel: ObservableObject {
     
     var cancellables: Set<AnyCancellable> = []
     
+    let queue = DispatchQueue(label: "Badge")
+    
     @Published var gainBadge: [Badge?] = []
     @Published var challengeBadge: [Badge?] = []
     
@@ -37,6 +39,7 @@ final class BadgeViewModel: ObservableObject {
     func fetchInfos() {
         
         APIService.getBadgeList()
+            .subscribe(on: queue)
             .sink {  completion in
                 switch completion {
                 case .failure(let error):
@@ -58,7 +61,7 @@ final class BadgeViewModel: ObservableObject {
     func fetchLatestBadgeInfo() {
         
         APIService.getBadgeList()
-            .receive(on: RunLoop.main)
+            .subscribe(on: queue)
             .sink {  completion in
                 switch completion {
                 case .failure(let error):
@@ -108,7 +111,7 @@ final class BadgeViewModel: ObservableObject {
         
         let gainBadgeCnt = self.gainBadgeIcons.count
         
-        if gainBadgeCnt >= idx {
+        if gainBadgeCnt > idx {
             
             guard let info = self.gainBadge[idx], let icon = info.icon(with: true) else {
                 return

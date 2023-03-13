@@ -9,11 +9,14 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class CalendarViewModel: ObservableObject {
+class CalendarViewModel: ObservableObject {
     
     var cancellables: Set<AnyCancellable> = []
     
     @Published var dayOfLevel: [String: Int] = [:]
+    @Published var exerciseArray: [TodayExerciseListResult] = []
+    
+    var exerciseArrayStream = PassthroughSubject<[TodayExerciseListResult], Never>()
     
     func getNickName() -> String {
         
@@ -49,11 +52,34 @@ final class CalendarViewModel: ObservableObject {
         }
     }
     
+    func fetchTodayExerciseList(_ year: Int, _ month: Int, _ day: Int) {
+        
+        let param = ExerciseFetchForDayReqeust(year: year, month: month, day: day)
+        
+        APIService.fetchTodayExerciseList(param)
+            .receive(on: RunLoop.main)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { (value: TodayExerciseListResponse) in
+                
+                print("exerciseArray: \(value)")
+                self.exerciseArray = value.result
+                self.exerciseArrayStream.send(value.result)
+            }
+            .store(in: &cancellables)
+    }
+    
     // TODO: 레벨 색상에 맞게 Cell 색칠하기
     private func getDayOfLevel(_ list: [MonthList]) {
-        
-        debugPrint("list: \(list)")
-        
+    
         let dayToStringArr = list.map { "\($0.day)" }
         let levels = list.map { $0.level }
         

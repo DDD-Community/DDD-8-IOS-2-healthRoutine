@@ -36,6 +36,16 @@ struct CalendarContentCellView: View {
             let month = CalendarHelper().getMonth(dateHolder.date)
             self.viewModel.fetchInfo(year: year, month: month)
         }
+        .onTapGesture {
+            
+            // TODO: 해당 요일에 해당하는 운동리스트 가져와서 보여주기
+            let year = CalendarHelper().getYear(dateHolder.date)
+            let month = CalendarHelper().getMonth(dateHolder.date)
+            
+            guard let day = Int(monthStruct().getDay()) else { return }
+            
+            self.viewModel.fetchTodayExerciseList(year, month, day)
+        }
     }
 
     private func updateCell(_ date: String) -> Color {
@@ -45,12 +55,13 @@ struct CalendarContentCellView: View {
         if monthStruct().monthType == .current {
 
             switch level {
-            case 0: return Color(hex: "F9F9F9")
-            case 1: return Color(hex: "CAFFEB")
-            case 2: return Color(hex: "6AFFC9")
-            case 3: return Color(hex: "00FFA3")
+            case 1: return Color(hex: "F9F9F9")
+            case 2: return Color(hex: "CAFFEB")
+            case 3: return Color(hex: "6AFFC9")
+            case 4: return Color(hex: "00FFA3")
             default: return Color(hex: "363740")
             }
+            
         } else {
             return Color(hex: "363740")
         }

@@ -14,6 +14,8 @@ final class MyPageViewModel: ObservableObject {
     
     var cancellables: Set<AnyCancellable> = []
     
+    let queue = DispatchQueue(label: "MyInfo")
+    
     // Profile
     @Published var nickname: String = UserDefaults.standard.string(forKey: NICKNAME_KEY)!
     @Published var recentImage: UIImage?
@@ -48,7 +50,7 @@ extension MyPageViewModel {
     func fetchProfile() {
         
         APIService.fetchProfileInfo()
-            .receive(on: RunLoop.main)
+            .subscribe(on: queue)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
@@ -60,6 +62,7 @@ extension MyPageViewModel {
                     break
                 }
             } receiveValue: { (value: AccountMyInfoProfileResponse) in
+                
                 self.updateInfo(value)
             }
             .store(in: &cancellables)
@@ -68,6 +71,7 @@ extension MyPageViewModel {
     func updateProfileImage() {
         
         APIService.updateProfileImage(recentImage)
+            .subscribe(on: queue)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
@@ -79,6 +83,7 @@ extension MyPageViewModel {
                     break
                 }
             } receiveValue: { (value: AccountMyInfoImageUploadResponse) in
+                
                 self.updateProfileFinished.send(true)
             }
             .store(in: &cancellables)
@@ -89,7 +94,8 @@ extension MyPageViewModel {
         let param = AccountProfileUpdateRequest(nickname: self.nickname)
         
         APIService.updateProfile(param)
-            .receive(on: RunLoop.main)
+            .subscribe(on: queue)
+//            .receive(on: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
@@ -116,7 +122,36 @@ extension MyPageViewModel {
             return
         }
         
-        self.recentImage = profileImage.load()
         self.nickname = response.result.nickname
+        self.loadImage(from: profileImage)
     }
+    
+    private func loadImage(from urlString: String) {
+        
+            guard let url = URL(string: urlString) else {
+                return
+            }
+
+            URLSession.shared.dataTaskPublisher(for: url)
+                .tryMap { data, response in
+                    guard let image = UIImage(data: data) else {
+                        throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid image data"])
+                    }
+                    return image
+                }
+                .mapError { $0 as Error }
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        print(error)
+                        break
+                    }
+                }, receiveValue: { [weak self] image in
+                    self?.recentImage = image
+                })
+                .store(in: &cancellables)
+        }
 }

@@ -22,10 +22,15 @@ struct ExerciseTotalAddRequest: Codable {
 }
 
 struct ExerciseFetchReqeust: Codable {
-    
     let time: Int
 }
 
+struct ExerciseFetchForDayReqeust: Codable {
+    
+    let year: Int
+    let month: Int
+    let day: Int
+}
 
 // MARK: 메인 월 별 잔디 API
 struct MonthExerciseFetchRequest: Codable {
