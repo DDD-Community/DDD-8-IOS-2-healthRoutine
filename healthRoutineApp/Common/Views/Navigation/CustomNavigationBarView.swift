@@ -68,7 +68,7 @@ extension CustomNavigationBarView {
     
     private var logoSeciton: some View {
         
-        Image("splash")
+        Image("Splash")
             .resizable()
             .scaledToFit()
             .frame(width: 60, height: 45)
