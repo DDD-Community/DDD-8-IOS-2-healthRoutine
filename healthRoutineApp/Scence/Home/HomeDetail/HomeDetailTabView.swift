@@ -36,27 +36,33 @@ struct HomeDetailTabView: View {
                         ForEach(viewModel.exerciseArray, id: \.self) { item in
                             ReportMainRowView(item: item)
                                 .frame(minHeight: 78)
-                                .padding(.horizontal, 24)
                         }
                         
                         ForEach(calendarVM.exerciseArray, id: \.self) { item in
                             ReportMainRowView(item: item)
                                 .frame(minHeight: 78)
-                                .padding(.horizontal, 24)
                         }
                     }
                 }
+                .padding(.vertical, 16)
                 .tag(0)
-                
-                GIFView(name: self.waterVM.gifName)
-                    .frame(maxWidth: .infinity, maxHeight: 51)
-                    .overlay {
-                        Text("\(self.waterVM.waterAmount) ml")
-                            .font(Font.pretendard(.bold, size: 14))
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                    }.tag(1)
+
+                VStack(alignment: .leading, spacing: 17) {
+                    Text("ddd")
+                        .foregroundColor(.white_text)
+                        .font(Font.pretendard(.medium, size: 14))
+                    GIFView(name: self.waterVM.gifName)
+                        .frame(maxWidth: .infinity)
+                        .overlay {
+                            Text("\(self.waterVM.waterAmount) ml")
+                                .font(Font.pretendard(.bold, size: 14))
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                        }
+                }
+                .tag(1)
             })
+            .padding(.horizontal, 24)
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(minHeight: 150)
         }
