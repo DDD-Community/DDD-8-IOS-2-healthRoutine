@@ -13,12 +13,19 @@ struct HomeDetailTabView: View {
     @State var currentTab: Int = 0
     
     @ObservedObject var waterVM = HomeWaterIntakeViewModel()
-    @ObservedObject var calendarVM = CalendarViewModel()
-    @ObservedObject private var viewModel: ReportViewModel
+    @ObservedObject var calendarVM: CalendarViewModel
+    //    @ObservedObject private var viewModel: ReportViewModel
     
     init() {
-        viewModel = ReportViewModel()
-        viewModel.fetchList()
+        //        viewModel = ReportViewModel()
+        calendarVM = CalendarViewModel()
+        
+        //        viewModel.fetchList()
+        
+        
+        calendarVM.fetchTodayExerciseList(2023, 3, 8)
+        
+        calendarVM.objectWillChange.send()
     }
     
     var body: some View {
@@ -29,55 +36,42 @@ struct HomeDetailTabView: View {
             
             TabView(selection: self.$currentTab, content: {
                 
+                
                 VStack {
                     
                     ScrollView {
                         
-                        ForEach(viewModel.exerciseArray, id: \.self) { item in
-                            ReportMainRowView(item: item)
+                        ForEach(calendarVM.exerciseArray, id: \.id) { item in
+                            ReportRowView(item: item)
                                 .frame(minHeight: 78)
                         }
                         
                         ForEach(calendarVM.exerciseArray, id: \.self) { item in
                             ReportMainRowView(item: item)
                                 .frame(minHeight: 78)
+                                .padding(.horizontal, 24)
                         }
                     }
                 }
-                .padding(.vertical, 16)
                 .tag(0)
-
-                VStack(alignment: .leading, spacing: 17) {
-                    Text("ddd")
-                        .foregroundColor(.white_text)
-                        .font(Font.pretendard(.medium, size: 14))
-                    GIFView(name: self.waterVM.gifName)
-                        .frame(maxWidth: .infinity)
-                        .overlay {
-                            Text("\(self.waterVM.waterAmount) ml")
-                                .font(Font.pretendard(.bold, size: 14))
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity, alignment: .center)
-                        }
-                }
-                .tag(1)
+                
+                GIFView(name: self.waterVM.gifName)
+                    .frame(maxWidth: .infinity, maxHeight: 51)
+                    .overlay {
+                        Text("\(self.waterVM.waterAmount) ml")
+                            .font(Font.pretendard(.bold, size: 14))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }.tag(1)
             })
             .padding(.horizontal, 24)
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(minHeight: 150)
         }
         .padding(.vertical, 16)
-//        .frame(maxWidth: .infinity, minHeight: 148)
         .background(Color.box_color)
         .cornerRadius(16)
-//        .onAppear {
-//            
-//            self.calendarVM.exerciseArrayStream
-//                .sink { result in
-//                    print("result Count: \(result)")
-//                }
-//                .store(in: &self.viewModel.cancellables)
-//        }
+        
     }
     
     var tabBarView: some View {

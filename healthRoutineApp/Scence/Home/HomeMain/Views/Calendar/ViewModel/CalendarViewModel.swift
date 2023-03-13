@@ -34,7 +34,6 @@ class CalendarViewModel: ObservableObject {
         if self.dayOfLevel.isEmpty {
          
             APIService.getMonthlyExerciseInfo(param)
-                .receive(on: RunLoop.main)
                 .sink { completion in
                     switch completion {
                     case .failure(let error):
@@ -54,10 +53,11 @@ class CalendarViewModel: ObservableObject {
     
     func fetchTodayExerciseList(_ year: Int, _ month: Int, _ day: Int) {
         
-        let param = ExerciseFetchForDayReqeust(year: year, month: month, day: day)
+        let param = ExerciseFetchForDayReqeust(year: year,
+                                               month: month,
+                                               day: day)
         
         APIService.fetchTodayExerciseList(param)
-            .receive(on: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
@@ -72,7 +72,9 @@ class CalendarViewModel: ObservableObject {
                 
                 print("exerciseArray: \(value)")
                 self.exerciseArray = value.result
-                self.exerciseArrayStream.send(value.result)
+                
+                self.objectWillChange.send()
+                
             }
             .store(in: &cancellables)
     }
