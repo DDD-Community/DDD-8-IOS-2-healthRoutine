@@ -11,9 +11,11 @@ struct CalendarContentDayRowView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
     @ObservedObject var viewModel: CalendarViewModel
+    @ObservedObject var waterVM: HomeWaterIntakeViewModel
     
-    init(viewModel: CalendarViewModel) {
+    init(viewModel: CalendarViewModel, waterVM: HomeWaterIntakeViewModel) {
         self.viewModel = viewModel
+        self.waterVM = waterVM
     }
 
     var body: some View {
@@ -32,7 +34,7 @@ struct CalendarContentDayRowView: View {
                     
                         let count = day + (week * 7)
                     
-                        CalendarContentCellView(viewModel: viewModel, count: count,
+                        CalendarContentCellView(viewModel: viewModel, waterVM: waterVM, count: count,
                                                 startingSpaces: startingSpaces,
                                                 daysInMonth: daysInMonth)
                         .environmentObject(dateHolder)

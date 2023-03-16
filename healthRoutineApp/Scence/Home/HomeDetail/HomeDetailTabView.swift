@@ -12,11 +12,12 @@ struct HomeDetailTabView: View {
     
     @State var currentTab: Int = 0
     
-    @ObservedObject var waterVM = HomeWaterIntakeViewModel()
+    @ObservedObject var waterVM: HomeWaterIntakeViewModel
     @ObservedObject var calendarVM: CalendarViewModel
     
-    init(viewModel: CalendarViewModel) {
+    init(viewModel: CalendarViewModel, waterVM: HomeWaterIntakeViewModel) {
         self.calendarVM = viewModel
+        self.waterVM = waterVM
     }
     
     var body: some View {

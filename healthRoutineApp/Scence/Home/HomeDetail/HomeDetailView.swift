@@ -10,18 +10,20 @@ import SwiftUI
 struct HomeDetailView: View {
     
     @ObservedObject var viewModel: CalendarViewModel
+    @ObservedObject var waterVM: HomeWaterIntakeViewModel
     
-    init(viewModel: CalendarViewModel) {
+    init(viewModel: CalendarViewModel, waterVM: HomeWaterIntakeViewModel) {
         self.viewModel = viewModel
+        self.waterVM = waterVM
     }
     
     var body: some View {
         BaseView {
             ScrollView {
                 VStack(spacing: 16) {
-                    CalendarView(viewModel: viewModel, isMainView: false)
+                    CalendarView(viewModel: viewModel, waterVM: waterVM, isMainView: false)
                             .environmentObject(DateHolder())
-                    HomeDetailTabView(viewModel: viewModel)
+                    HomeDetailTabView(viewModel: viewModel, waterVM: waterVM)
                 }
             }
         }

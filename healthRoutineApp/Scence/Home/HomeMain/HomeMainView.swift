@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeMainView: View {
     
     @ObservedObject var viewModel = CalendarViewModel()
+    @ObservedObject var waterVM = HomeWaterIntakeViewModel()
  
     var body: some View {
         
@@ -21,12 +22,12 @@ struct HomeMainView: View {
                         
                         VStack(spacing: 16) {
                             
-                            CustomNavigationLink(destination: HomeDetailView(viewModel: viewModel)) {
-                                CalendarView(viewModel: viewModel, isMainView: true)
+                            CustomNavigationLink(destination: HomeDetailView(viewModel: viewModel, waterVM: waterVM)) {
+                                CalendarView(viewModel: viewModel, waterVM: waterVM, isMainView: true)
                                     .environmentObject(DateHolder())
                             }
                             
-                            HomeWaterIntakeView()
+                            HomeWaterIntakeView(viewModel: waterVM)
                             
                             HomeBadgeRowView()
                                 .padding(.bottom, 16)

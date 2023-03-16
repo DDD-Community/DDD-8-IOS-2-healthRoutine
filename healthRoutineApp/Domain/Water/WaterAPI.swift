@@ -46,4 +46,16 @@ extension APIService {
 
         return APIManager.request(WaterAPI.waterAmount.url, method: .post, parameters: param.intDictionary, headers: headers)
     }
+    
+    
+    // MARK: 오늘 물량 조회 (년, 월, 일)
+    static func fetchTodayWaterAmount(_ param: WaterAmountRequest) -> AnyPublisher<WaterAmountResponse, APIError> {
+        guard let token = KeychainService.shared.loadToken() else {
+            return Fail(error: NSError(domain: "Missing Token", code: -10001, userInfo: nil) as! APIError).eraseToAnyPublisher()
+        }
+
+        let headers: HTTPHeaders? = HTTPHeaders([HealthRoutineAPI.Header.authFieldName: HealthRoutineAPI.Header.auth(token).value])
+        
+        return APIManager.request(WaterAPI.waterAmount.url, method: .get, parameters: param.intDictionary, encoding: URLEncoding.queryString, headers: headers)
+    }
 }

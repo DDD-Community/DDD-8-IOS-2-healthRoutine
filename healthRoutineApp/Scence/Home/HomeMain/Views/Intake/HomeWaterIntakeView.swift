@@ -10,7 +10,11 @@ import FLAnimatedImage
 
 struct HomeWaterIntakeView: View {
     
-    @ObservedObject private var viewModel = HomeWaterIntakeViewModel()
+    @ObservedObject var viewModel: HomeWaterIntakeViewModel
+    
+    init(viewModel: HomeWaterIntakeViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         
@@ -52,11 +56,5 @@ struct HomeWaterIntakeView: View {
         .background(Color.box_color)
         .cornerRadius(16)
         .onAppear { self.viewModel.fetchInfos() }
-    }
-}
-
-struct HomeWaterIntakeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeWaterIntakeView()
     }
 }

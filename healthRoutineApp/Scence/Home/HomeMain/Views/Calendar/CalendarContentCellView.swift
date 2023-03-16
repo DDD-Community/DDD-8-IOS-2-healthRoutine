@@ -11,6 +11,7 @@ struct CalendarContentCellView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
     @ObservedObject var viewModel: CalendarViewModel
+    @ObservedObject var waterVM: HomeWaterIntakeViewModel
     
     let count: Int
     let startingSpaces: Int
@@ -45,6 +46,7 @@ struct CalendarContentCellView: View {
             guard let day = Int(monthStruct().getDay()) else { return }
             
             self.viewModel.fetchTodayExerciseList(year, month, day)
+            self.waterVM.fetchTodayWaterAmount(year, month, day)
         }
     }
 

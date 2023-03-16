@@ -10,12 +10,14 @@ import SwiftUI
 struct CalendarView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
-    private var viewModel: CalendarViewModel
+    @ObservedObject private var viewModel: CalendarViewModel
+    @ObservedObject var waterVM: HomeWaterIntakeViewModel
     
     private var isMainView: Bool = false
     
-    init(viewModel: CalendarViewModel, isMainView: Bool) {
+    init(viewModel: CalendarViewModel, waterVM: HomeWaterIntakeViewModel, isMainView: Bool) {
         self.viewModel = viewModel
+        self.waterVM = waterVM
         self.isMainView = isMainView
     }
     
@@ -38,7 +40,7 @@ struct CalendarView: View {
                 .padding(.bottom, 8)
                 .frame(minHeight: 20)
             
-            CalendarContentDayRowView(viewModel: self.viewModel)
+            CalendarContentDayRowView(viewModel: self.viewModel, waterVM: waterVM)
         }
         .frame(maxWidth: .infinity, maxHeight: 350)
         .padding(24)

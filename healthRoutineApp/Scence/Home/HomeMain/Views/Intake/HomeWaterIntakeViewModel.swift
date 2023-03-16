@@ -48,6 +48,32 @@ final class HomeWaterIntakeViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    func fetchTodayWaterAmount(_ year: Int, _ month: Int, _ day: Int) {
+        
+        let param = WaterAmountRequest(year: year, month: month, day: day)
+        
+        APIService.getWaterAmount(param)
+            .removeDuplicates()
+            .receive(on: RunLoop.main)
+            .sink {  completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { (value: WaterAmountResponse) in
+                
+                self.waterAmount = value.result.capacity
+                self.updateView(self.waterAmount)
+                print("waterAmount: \(self.waterAmount)")
+            }
+            .store(in: &cancellables)
+    }
+    
     func updateInfos(_ amount: Int) {
         
         let param = WaterAmountUpdateRequest(capacity: amount)
