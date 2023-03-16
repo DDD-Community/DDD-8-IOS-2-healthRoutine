@@ -34,15 +34,9 @@ struct HomeDetailTabView: View {
                         
                         ForEach(calendarVM.exerciseArray, id: \.id) { item in
                             ReportRowView(item: item)
-                                .frame(minHeight: 78)
-                        }
-                        
-                        ForEach(calendarVM.exerciseArray, id: \.self) { item in
-                            ReportMainRowView(item: item)
-                                .frame(minHeight: 78)
-                                .padding(.horizontal, 24)
                         }
                     }
+                    .padding(.top, 16)
                 }
                 .tag(0)
                 

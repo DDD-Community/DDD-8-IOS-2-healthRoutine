@@ -11,10 +11,10 @@ struct ReportMainRowView: View {
     
     var item: TodayExerciseListResult
     var deleteClosure: StringClosure?
-
+    
     @State var offset = CGSize.zero
     @State var deleteButton: Bool = false
-
+    
     var body: some View {
         GeometryReader { geo in
             HStack(spacing: -22) {
@@ -28,13 +28,13 @@ struct ReportMainRowView: View {
                         }
                         .foregroundColor(.background_gray)
                         .cornerRadius(10)
-
+                    
                     VStack(alignment: .leading) {
-
+                        
                         Text(item.exerciseSubject)
                             .font(Font.pretendard(.semiBold, size: 14))
                             .foregroundColor(.white_text)
-
+                        
                         HStack {
                             
                             Text(item.getInfoStr())
@@ -42,7 +42,7 @@ struct ReportMainRowView: View {
                                 .foregroundColor(.white_text)
                         }
                     }
-
+                    
                     Spacer()
                 }
                 .padding(.horizontal, 12)
@@ -50,7 +50,7 @@ struct ReportMainRowView: View {
                 .background(Color.background_gray3)
                 .cornerRadius(10)
                 .zIndex(1)
-
+                
                 // 삭제버튼
                 if deleteButton {
                     ZStack {
@@ -113,18 +113,17 @@ struct ReportRowView: View {
                     .font(Font.pretendard(.semiBold, size: 14))
                     .foregroundColor(.white_text)
                 
-                HStack {
-                    
-                    Text(item.getInfoStr())
-                        .font(Font.pretendard(.semiBold, size: 14))
-                        .foregroundColor(.white_text)
-                }
                 
-                Spacer()
+                Text(item.getInfoStr())
+                    .font(Font.pretendard(.semiBold, size: 14))
+                    .foregroundColor(.white_text)
             }
+            .frame(maxWidth: .infinity, minHeight: 54, alignment: .leading)
             .padding(.horizontal, 12)
             .background(Color.background_gray3)
             .cornerRadius(10)
+            
+            Spacer()
         }
     }
 }

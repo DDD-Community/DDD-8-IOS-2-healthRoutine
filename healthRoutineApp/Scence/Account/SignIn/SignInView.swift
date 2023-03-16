@@ -19,7 +19,7 @@ struct SignInView: View {
         BaseView {
             VStack(alignment: .center, spacing: 30) {
 
-                Image("Splash")
+                Image("splash")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 240, height: 180)
