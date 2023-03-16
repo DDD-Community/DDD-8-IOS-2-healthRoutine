@@ -15,28 +15,6 @@ final class HomeWaterIntakeViewModel: ObservableObject {
     @Published var waterAmount: Int = 0
     @Published var gifName: String = ""
     
-//    init() {
-//        self.bind()
-//    }
-//
-//    private func bind() {
-//
-//        let waterAmountStream = $waterAmount
-////            .removeDuplicates()
-//            .filter { $0 >= 0 }
-//            .receive(on: RunLoop.main)
-//
-//        waterAmountStream
-//            .map { self.updateGIFView($0) }
-//            .assign(to: \.gifName, on: self)
-//            .store(in: &cancellables)
-//
-//        waterAmountStream
-////            .removeDuplicates()
-//            .sink { self.updateInfos($0) }
-//            .store(in: &cancellables)
-//    }
-    
     func fetchInfos() {
         
         let date = Date()

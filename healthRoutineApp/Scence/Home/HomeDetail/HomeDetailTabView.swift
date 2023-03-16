@@ -27,16 +27,26 @@ struct HomeDetailTabView: View {
             
             TabView(selection: self.$currentTab, content: {
                 
-                
+
                 VStack {
                     
-                    ScrollView {
+                    if calendarVM.exerciseArray.count > 0 {
                         
-                        ForEach(calendarVM.exerciseArray, id: \.id) { item in
-                            ReportRowView(item: item)
+                        ScrollView {
+                            
+                            ForEach(calendarVM.exerciseArray, id: \.id) { item in
+                                ReportRowView(item: item)
+                            }
                         }
+                        .padding(.top, 16)
                     }
-                    .padding(.top, 16)
+                       
+                    else {
+                        
+                        Text("건강을 위해 운동을 해보세요 !")
+                            .foregroundColor(.white_text)
+                            .font(Font.pretendard(.medium, size: 14))
+                    }
                 }
                 .tag(0)
                 
