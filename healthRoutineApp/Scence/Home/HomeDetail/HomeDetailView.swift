@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct HomeDetailView: View {
+    
+    @ObservedObject var viewModel: CalendarViewModel
+    
+    init(viewModel: CalendarViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         BaseView {
             ScrollView {
                 VStack(spacing: 16) {
-                    CalendarView(isMainView: false)
+                    CalendarView(viewModel: viewModel, isMainView: false)
                             .environmentObject(DateHolder())
-                    HomeDetailTabView()
+                    HomeDetailTabView(viewModel: viewModel)
                 }
             }
         }
-    }
-}
-
-struct HomeDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeDetailView()
     }
 }

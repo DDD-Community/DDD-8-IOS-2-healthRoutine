@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeMainView: View {
+    
+    @ObservedObject var viewModel = CalendarViewModel()
  
     var body: some View {
         
@@ -19,8 +21,8 @@ struct HomeMainView: View {
                         
                         VStack(spacing: 16) {
                             
-                            CustomNavigationLink(destination: HomeDetailView()) {
-                                CalendarView(isMainView: true)
+                            CustomNavigationLink(destination: HomeDetailView(viewModel: viewModel)) {
+                                CalendarView(viewModel: viewModel, isMainView: true)
                                     .environmentObject(DateHolder())
                             }
                             

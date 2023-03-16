@@ -10,11 +10,12 @@ import SwiftUI
 struct CalendarView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
-    private var viewModel = CalendarViewModel()
+    private var viewModel: CalendarViewModel
     
     private var isMainView: Bool = false
     
-    init(isMainView: Bool) {
+    init(viewModel: CalendarViewModel, isMainView: Bool) {
+        self.viewModel = viewModel
         self.isMainView = isMainView
     }
     
@@ -37,7 +38,7 @@ struct CalendarView: View {
                 .padding(.bottom, 8)
                 .frame(minHeight: 20)
             
-            CalendarContentDayRowView()
+            CalendarContentDayRowView(viewModel: self.viewModel)
         }
         .frame(maxWidth: .infinity, maxHeight: 350)
         .padding(24)
@@ -53,11 +54,5 @@ struct CalendarView: View {
     
     private func updateTitle(_ isMain: Bool) -> String {
         return isMain ? viewModel.getNickName() : "\(CalendarHelper().getMonth(dateHolder.date))월은 벌컵 벌컵 하셨군요!"
-    }
-}
-
-struct CalendarView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarView(isMainView: false).environmentObject(DateHolder())
     }
 }

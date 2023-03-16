@@ -14,18 +14,9 @@ struct HomeDetailTabView: View {
     
     @ObservedObject var waterVM = HomeWaterIntakeViewModel()
     @ObservedObject var calendarVM: CalendarViewModel
-    //    @ObservedObject private var viewModel: ReportViewModel
     
-    init() {
-        //        viewModel = ReportViewModel()
-        calendarVM = CalendarViewModel()
-        
-        //        viewModel.fetchList()
-        
-        
-        calendarVM.fetchTodayExerciseList(2023, 3, 8)
-        
-        calendarVM.objectWillChange.send()
+    init(viewModel: CalendarViewModel) {
+        self.calendarVM = viewModel
     }
     
     var body: some View {
@@ -104,11 +95,5 @@ struct HomeDetailTabView: View {
             }
         }
         .buttonStyle(.plain)
-    }
-}
-
-struct HomeDetailTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeDetailTabView()
     }
 }

@@ -10,7 +10,11 @@ import SwiftUI
 struct CalendarContentDayRowView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
-    @ObservedObject var viewModel = CalendarViewModel()
+    @ObservedObject var viewModel: CalendarViewModel
+    
+    init(viewModel: CalendarViewModel) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         
@@ -27,8 +31,8 @@ struct CalendarContentDayRowView: View {
                     ForEach(1..<8) { day in
                     
                         let count = day + (week * 7)
-                            
-                        CalendarContentCellView(count: count,
+                    
+                        CalendarContentCellView(viewModel: viewModel, count: count,
                                                 startingSpaces: startingSpaces,
                                                 daysInMonth: daysInMonth)
                         .environmentObject(dateHolder)
@@ -36,12 +40,5 @@ struct CalendarContentDayRowView: View {
                 }
             }
         }
-    }
-}
-
-struct CalendarContentDayRowView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        CalendarContentDayRowView().environmentObject(DateHolder())
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct CalendarContentCellView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
-    @ObservedObject var viewModel = CalendarViewModel()
+    @ObservedObject var viewModel: CalendarViewModel
     
     let count: Int
     let startingSpaces: Int
@@ -84,11 +84,5 @@ struct CalendarContentCellView: View {
         
         let day = count - start
         return Month(monthType: MonthType.current, dayInt: day)
-    }
-}
-
-struct CalendarContentCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarContentCellView(count: 1, startingSpaces: 1, daysInMonth: 1)
     }
 }
