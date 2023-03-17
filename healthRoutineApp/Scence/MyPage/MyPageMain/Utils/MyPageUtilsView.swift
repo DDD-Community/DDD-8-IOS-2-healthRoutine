@@ -74,6 +74,7 @@ struct MyPageUtilsView: View {
             self.viewModel.withdrawFinished
                 .receive(on: RunLoop.main)
                 .sink(receiveValue: { _ in
+                    KeychainService.shared.deleteToken()
                     
                     self.isPresented.toggle()
                     
