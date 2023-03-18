@@ -13,6 +13,7 @@ final class HomeWaterIntakeViewModel: ObservableObject {
     var cancellables: Set<AnyCancellable> = []
     
     @Published var waterAmount: Int = 0
+    @Published var todayWaterAmount: Int = 0
     @Published var gifName: String = ""
     
     func fetchInfos() {
@@ -67,9 +68,8 @@ final class HomeWaterIntakeViewModel: ObservableObject {
                 }
             } receiveValue: { (value: WaterAmountResponse) in
                 
-                self.waterAmount = value.result.capacity
-                self.updateView(self.waterAmount)
-                print("waterAmount: \(self.waterAmount)")
+                self.todayWaterAmount = value.result.capacity
+                self.updateTodayView(self.todayWaterAmount)
             }
             .store(in: &cancellables)
     }
@@ -117,6 +117,24 @@ extension HomeWaterIntakeViewModel {
         return "water-500"
     }
     
+    private func updateTodayGIFView(_ amount: Int) -> String {
+        
+        if amount >= 2000 {
+            
+            return "water-2000"
+            
+        } else if amount < 2000 && amount > 500 {
+            
+            return "water-1000"
+            
+        } else if amount <= 500 {
+            
+            return "water-500"
+        }
+        
+        return "water-500"
+    }
+    
     func plusAmount() {
         self.waterAmount += 250
     }
@@ -143,6 +161,17 @@ extension HomeWaterIntakeViewModel {
         
         waterAmountStream
             .sink { self.updateInfos($0) }
+            .store(in: &cancellables)
+    }
+    
+    func updateTodayView(_ waterAmount: Int) {
+        
+         $todayWaterAmount
+            .removeDuplicates()
+            .filter { $0 >= 0 }
+            .receive(on: RunLoop.main)
+            .map { self.updateTodayGIFView($0) }
+            .assign(to: \.gifName, on: self)
             .store(in: &cancellables)
     }
 }

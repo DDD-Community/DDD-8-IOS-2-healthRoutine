@@ -54,7 +54,7 @@ struct HomeDetailTabView: View {
                 GIFView(name: self.waterVM.gifName)
                     .frame(maxWidth: .infinity, maxHeight: 51)
                     .overlay {
-                        Text("\(self.waterVM.waterAmount) ml")
+                        Text("\(self.waterVM.todayWaterAmount) ml")
                             .font(Font.pretendard(.bold, size: 14))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, alignment: .center)

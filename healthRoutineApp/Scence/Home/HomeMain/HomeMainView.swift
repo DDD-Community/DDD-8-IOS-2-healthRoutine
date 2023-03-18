@@ -40,14 +40,14 @@ struct HomeMainView: View {
                 .customNaviagationLogoButtonHidden(true)
             }
         }
-        .onAppear {
-            
-            let year = CalendarHelper().getYear(dateHolder.date)
-            let month = CalendarHelper().getMonth(dateHolder.date)
-            
-            self.viewModel.fetchInfo(year: year, month: month)
-            self.waterVM.fetchInfos()
-        }
+//        .onAppear {
+//            
+//            let year = CalendarHelper().getYear(dateHolder.date)
+//            let month = CalendarHelper().getMonth(dateHolder.date)
+//            
+//            self.viewModel.fetchInfo(year: year, month: month)
+//            self.waterVM.fetchInfos()
+//        }
     }
 }
 
