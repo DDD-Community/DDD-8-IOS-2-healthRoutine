@@ -26,9 +26,7 @@ struct Month {
         if monthType == .current {
             
             let level = self.viewModel.dayOfLevel[date]
-//            let level = ["21": 1, "23": 1, "26": 2, "2": 1, "9": 1, "1": 1, "24": 1, "13": 1, "14": 1, "15": 1, "16": 1, "25": 2, "6": 1, "17": 1, "27": 0, "12": 1, "22": 2, "19": 1, "11": 1, "3": 1, "4": 1, "8": 1, "28": 0, "7": 1, "5": 1, "10": 1, "20": 1, "18": 1]
             
-//            switch level[date] {
             switch level {
             case 0: return Color(hex: "F9F9F9")
             case 1: return Color(hex: "CAFFEB")

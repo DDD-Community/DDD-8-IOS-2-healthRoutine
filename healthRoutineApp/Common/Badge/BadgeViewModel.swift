@@ -94,8 +94,7 @@ final class BadgeViewModel: ObservableObject {
         guard let wBadgeName = badgeInfo.waitingBadge else { return }
         
         self.challengeBadgeIcons = wBadgeName.map { Badge(rawValue: $0) }.map { $0?.icon(with: false) }
-        self.gainBadgeIcons =
-        mBadgeName.map { Badge(rawValue: $0) }.map { $0?.icon(with: true) }
+        self.gainBadgeIcons = mBadgeName.map { Badge(rawValue: $0) }.map { $0?.icon(with: true) }
         
         self.totalBadge.append(contentsOf: self.gainBadgeIcons)
         self.totalBadge.append(contentsOf: self.challengeBadgeIcons)

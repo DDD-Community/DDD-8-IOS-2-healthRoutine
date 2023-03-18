@@ -31,15 +31,8 @@ struct CalendarContentCellView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .opacity(monthStruct().monthType == .current ? 1 : 0)
-        .onAppear {
-            
-            let year = CalendarHelper().getYear(dateHolder.date)
-            let month = CalendarHelper().getMonth(dateHolder.date)
-            self.viewModel.fetchInfo(year: year, month: month)
-        }
         .onTapGesture {
             
-            // TODO: 해당 요일에 해당하는 운동리스트 가져와서 보여주기
             let year = CalendarHelper().getYear(dateHolder.date)
             let month = CalendarHelper().getMonth(dateHolder.date)
             
@@ -54,19 +47,27 @@ struct CalendarContentCellView: View {
 
         let level = self.viewModel.dayOfLevel[date]
 
-        if monthStruct().monthType == .current {
-
-            switch level {
-            case 1: return Color(hex: "F9F9F9")
-            case 2: return Color(hex: "CAFFEB")
-            case 3: return Color(hex: "6AFFC9")
-            case 4: return Color(hex: "00FFA3")
-            default: return Color(hex: "363740")
-            }
-            
-        } else {
-            return Color(hex: "363740")
+        switch level {
+        case 1: return Color(hex: "F9F9F9")
+        case 2: return Color(hex: "CAFFEB")
+        case 3: return Color(hex: "6AFFC9")
+        case 4: return Color(hex: "00FFA3")
+        default: return Color(hex: "363740")
         }
+        
+//        if monthStruct().monthType == .current {
+//
+//            switch level {
+//            case 1: return Color(hex: "F9F9F9")
+//            case 2: return Color(hex: "CAFFEB")
+//            case 3: return Color(hex: "6AFFC9")
+//            case 4: return Color(hex: "00FFA3")
+//            default: return Color(hex: "363740")
+//            }
+//
+//        } else {
+//            return Color(hex: "363740")
+//        }
     }
     
     private func monthStruct() -> Month {

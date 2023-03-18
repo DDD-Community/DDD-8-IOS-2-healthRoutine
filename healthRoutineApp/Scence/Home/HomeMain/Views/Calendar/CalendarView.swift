@@ -46,12 +46,6 @@ struct CalendarView: View {
         .padding(24)
         .background(Color.box_color)
         .cornerRadius(16)
-        .onAppear {
-            
-            let year = CalendarHelper().getYear(dateHolder.date)
-            let month = CalendarHelper().getMonth(dateHolder.date)
-            self.viewModel.fetchInfo(year: year, month: month)
-        }
     }
     
     private func updateTitle(_ isMain: Bool) -> String {

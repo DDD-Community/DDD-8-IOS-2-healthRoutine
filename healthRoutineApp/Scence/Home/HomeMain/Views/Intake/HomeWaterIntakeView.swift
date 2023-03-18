@@ -55,6 +55,5 @@ struct HomeWaterIntakeView: View {
         .frame(maxWidth: .infinity, maxHeight: 135)
         .background(Color.box_color)
         .cornerRadius(16)
-        .onAppear { self.viewModel.fetchInfos() }
     }
 }

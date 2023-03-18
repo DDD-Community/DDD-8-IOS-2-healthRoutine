@@ -9,7 +9,11 @@ import SwiftUI
 
 struct HomeBadgeRowView: View {
     
-    @ObservedObject private var viewModel = BadgeViewModel()
+    @ObservedObject var viewModel: BadgeViewModel
+    
+    init(viewModel: BadgeViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         
@@ -47,12 +51,6 @@ struct HomeBadgeRowView: View {
         .background(Color.box_color)
         .cornerRadius(10)
         .onAppear { self.viewModel.fetchLatestBadgeInfo() }
-    }
-}
-
-struct HomeBadgeRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeBadgeRowView()
     }
 }
 

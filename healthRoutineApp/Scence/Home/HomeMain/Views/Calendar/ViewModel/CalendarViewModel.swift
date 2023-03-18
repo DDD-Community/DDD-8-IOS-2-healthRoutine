@@ -31,24 +31,27 @@ class CalendarViewModel: ObservableObject {
         
         let param = MonthExerciseFetchRequest(year: year, month: month)
         
-        if self.dayOfLevel.isEmpty {
-         
-            APIService.getMonthlyExerciseInfo(param)
-                .sink { completion in
-                    switch completion {
-                    case .failure(let error):
-                        switch error {
-                        case .http: do {}
-                        default: do {}
-                        }
-                    case .finished:
-                        break
+        debugPrint("22222: \(dayOfLevel.count)")
+        
+        //        if self.dayOfLevel.isEmpty {
+        
+        APIService.getMonthlyExerciseInfo(param)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    switch error {
+                    case .http: do {}
+                    default: do {}
                     }
-                } receiveValue: { (value: MonthlyExerciseListResponse) in
-                    self.getDayOfLevel(value.result.data)
+                case .finished:
+                    break
                 }
-                .store(in: &cancellables)
-        }
+            } receiveValue: { (value: MonthlyExerciseListResponse) in
+                self.getDayOfLevel(value.result.data)
+                self.objectWillChange.send()
+            }
+            .store(in: &cancellables)
+        //        }
     }
     
     func fetchTodayExerciseList(_ year: Int, _ month: Int, _ day: Int) {
@@ -70,18 +73,15 @@ class CalendarViewModel: ObservableObject {
                 }
             } receiveValue: { (value: TodayExerciseListResponse) in
                 
-                print("exerciseArray: \(value)")
                 self.exerciseArray = value.result
-                
                 self.objectWillChange.send()
-                
             }
             .store(in: &cancellables)
     }
     
     // TODO: 레벨 색상에 맞게 Cell 색칠하기
     private func getDayOfLevel(_ list: [MonthList]) {
-    
+        
         let dayToStringArr = list.map { "\($0.day)" }
         let levels = list.map { $0.level }
         
