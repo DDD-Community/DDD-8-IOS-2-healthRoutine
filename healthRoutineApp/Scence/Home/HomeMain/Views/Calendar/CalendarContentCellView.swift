@@ -46,7 +46,7 @@ struct CalendarContentCellView: View {
     private func updateCell(_ date: String) -> Color {
 
         let level = self.viewModel.dayOfLevel[date]
-
+        
         switch level {
         case 1: return Color(hex: "F9F9F9")
         case 2: return Color(hex: "CAFFEB")
@@ -54,20 +54,6 @@ struct CalendarContentCellView: View {
         case 4: return Color(hex: "00FFA3")
         default: return Color(hex: "363740")
         }
-        
-//        if monthStruct().monthType == .current {
-//
-//            switch level {
-//            case 1: return Color(hex: "F9F9F9")
-//            case 2: return Color(hex: "CAFFEB")
-//            case 3: return Color(hex: "6AFFC9")
-//            case 4: return Color(hex: "00FFA3")
-//            default: return Color(hex: "363740")
-//            }
-//
-//        } else {
-//            return Color(hex: "363740")
-//        }
     }
     
     private func monthStruct() -> Month {
@@ -77,15 +63,15 @@ struct CalendarContentCellView: View {
         if count <= start {
 
             let day = daysInMonth + count - start
-            return Month(monthType: MonthType.previous, dayInt: day)
+            return Month(viewModel: viewModel, monthType: MonthType.previous, dayInt: day)
 
         } else if count - start > daysInMonth {
 
             let day = count - start - daysInMonth
-            return Month(monthType: MonthType.next, dayInt: day)
+            return Month(viewModel: viewModel, monthType: MonthType.next, dayInt: day)
         }
         
         let day = count - start
-        return Month(monthType: MonthType.current, dayInt: day)
+        return Month(viewModel: viewModel, monthType: MonthType.current, dayInt: day)
     }
 }

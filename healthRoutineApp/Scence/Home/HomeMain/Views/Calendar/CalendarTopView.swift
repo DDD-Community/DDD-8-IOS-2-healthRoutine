@@ -10,11 +10,12 @@ import SwiftUI
 struct CalendarTopView: View {
     
     @EnvironmentObject var dateHolder: DateHolder
-    private var viewModel = CalendarViewModel()
+    private var viewModel: CalendarViewModel
     
     private var isMainView: Bool = false
     
-    init(isMainView: Bool) {
+    init(viewModel: CalendarViewModel, isMainView: Bool) {
+        self.viewModel = viewModel
         self.isMainView = isMainView
     }
     
@@ -57,6 +58,7 @@ struct CalendarTopView: View {
                         .scaledToFit()
                         .frame(width: 16, height: 16)
                 }
+                .opacity(showNextMonthButton())
             }
             
             Spacer()
@@ -75,7 +77,10 @@ extension CalendarTopView {
         let year = CalendarHelper().getYear(dateHolder.date)
         let month = CalendarHelper().getMonth(dateHolder.date)
         
-        self.viewModel.fetchInfo(year: year, month: month)
+//        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+//            self.viewModel.fetchInfo(year: year, month: month)
+//        }
+        // self.viewModel.fetchInfo(year: year, month: month)
     }
     
     private func goToPrevMonth() {
@@ -84,13 +89,32 @@ extension CalendarTopView {
         
         let year = CalendarHelper().getYear(dateHolder.date)
         let month = CalendarHelper().getMonth(dateHolder.date)
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            self.viewModel.fetchInfo(year: year, month: month)
+//        }
+    }
+    
+    private func showNextMonthButton() -> Double {
         
-        self.viewModel.fetchInfo(year: year, month: month)
+        let realDate = Date()
+        let calendar = Calendar.current
+        
+        let realYear = calendar.component(.year, from: realDate)
+        let realmonth = calendar.component(.month, from: realDate)
+        
+        let year = CalendarHelper().getYear(dateHolder.date)
+        let month = CalendarHelper().getMonth(dateHolder.date)
+        
+        debugPrint("month: \(month)")
+        debugPrint("realmonth: \(realmonth)")
+        
+        return (month >= realmonth && year >= realYear) ? 0 : 1
     }
 }
 
-struct CalendarTopView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarTopView(isMainView: false).environmentObject(DateHolder())
-    }
-}
+//struct CalendarTopView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CalendarTopView(isMainView: false).environmentObject(DateHolder())
+//    }
+//}
