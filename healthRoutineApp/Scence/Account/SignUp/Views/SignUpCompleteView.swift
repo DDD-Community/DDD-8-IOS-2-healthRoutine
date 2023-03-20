@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct SignUpCompleteView: View {
-    @EnvironmentObject private var viewRouter: ViewRouter
+    @State var pushView = false
+    @Binding var isRootVisible : Bool
+
+
     var body: some View {
         BaseView {
             VStack(alignment: .center) {
+                NavigationLink(destination:
+                                ContentView(isRootVisible: $isRootVisible),
+                   isActive: self.$pushView) {
+                     EmptyView()
+                }.hidden()
                 Text("Let's get \nStarted!")
                     .font(Font.pretendard(.bold, size: 36))
                     .foregroundColor(.main_green)
@@ -32,7 +40,7 @@ struct SignUpCompleteView: View {
                 Spacer()
 
                 BottomButtonView(buttonTitle: "메인으로 이동", isable: true) {
-                    viewRouter.currentView = .home
+                    self.pushView = true
                 }
                 .frame(maxHeight: 84) // 60 + 24
             }
@@ -40,8 +48,8 @@ struct SignUpCompleteView: View {
     }
 }
 
-struct SignUpCompleteView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignUpCompleteView()
-    }
-}
+//struct SignUpCompleteView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SignUpCompleteView()
+//    }
+//}

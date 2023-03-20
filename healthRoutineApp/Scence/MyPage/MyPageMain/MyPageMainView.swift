@@ -11,9 +11,8 @@ struct MyPageMainView: View {
     
     @ObservedObject private var viewModel = MyPageViewModel()
     @ObservedObject private var badgeViewModel = BadgeViewModel()
-    
-    @EnvironmentObject private var viewRouter: ViewRouter
-    
+    @Binding var isRootVisible : Bool
+        
     var body: some View {
         
         ZStack {
@@ -30,7 +29,7 @@ struct MyPageMainView: View {
                                 
                                 MyPageProfileView() // 프로필 변경
                                 MyPageBadgeView() // 배지
-                                MyPageUtilsView() // 로그아웃, 회원탈퇴
+                                MyPageUtilsView(isRootVisible: $isRootVisible) // 로그아웃, 회원탈퇴
                             }
                         }
                     }
@@ -44,6 +43,6 @@ struct MyPageMainView: View {
 
 struct MyPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPageMainView()
+        MyPageMainView(isRootVisible: .constant(true))
     }
 }

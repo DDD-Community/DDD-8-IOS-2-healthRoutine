@@ -6,50 +6,69 @@
 //
 
 import SwiftUI
+import Combine
 
 struct SplashView: View {
     
     @State private var isActive: Bool = false
     @EnvironmentObject var dateHolder: DateHolder
+    @State var isRootVisible : Bool = false
     @EnvironmentObject private var viewRouter: ViewRouter
     
-    var body: some View {
-        
-        if isActive {
-            if viewRouter.currentView == .home {
-                ContentView().environmentObject(dateHolder)
-            }
-            else {
-                AccountMainView()
-            }
+//    init() {
+//        viewRouter.$changeFlag.sink(receiveValue: {_ in
+//            isRootVisible = true
+//        })
+//    }
 
-        } else {
-            
-            ZStack {
-                
-                VStack {
-                    
-                    Image("splash")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 240, height: 180)
-                }
-                .onAppear {
-                    
-                    if UserDefaults.isFirstAppLaunch() {
-                        KeychainService.shared.deleteToken()
+    var body: some View {
+            if isActive {
+                NavigationView {
+                    NavigationLink(destination: {
+                        VStack{
+                            if KeychainService.shared.isTokenValidate() {
+                                ContentView(isRootVisible: $isRootVisible)
+                            }
+                            else {
+                                AccountMainView(isRootVisible: $isRootVisible)
+                            }
+                        }
+                    }(), isActive: $isRootVisible) {
+                        EmptyView()
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
-                        withAnimation {
-                            self.isActive = true
+                    .navigationBarBackButtonHidden(true)
+                    .hidden()
+                }
+            } else {
+                
+                ZStack {
+                    
+                    VStack {
+                        
+                        Image("splash")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 240, height: 180)
+                    }
+                    .onAppear {
+                        
+                        if UserDefaults.isFirstAppLaunch() {
+                            KeychainService.shared.deleteToken()
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                            withAnimation {
+                                self.isActive = true
+                            }
                         }
                     }
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.background_black)
+                .edgesIgnoringSafeArea(.all)
+                .onAppear {
+                    self.isRootVisible = true
+                }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.background_black)
-            .edgesIgnoringSafeArea(.all)
-        }
     }
 }
 

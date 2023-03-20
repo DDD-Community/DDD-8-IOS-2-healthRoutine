@@ -11,9 +11,10 @@ struct MyPageUtilsView: View {
     
     @State var isPresented: Bool = false
     @State var showToast: Bool = false
+    @Binding var isRootVisible : Bool
+    @EnvironmentObject private var viewRouter: ViewRouter
     
     @ObservedObject private var viewModel = MyPageUtilsViewModel()
-    @EnvironmentObject private var viewRouter: ViewRouter
     
     var body: some View {
       
@@ -77,9 +78,8 @@ struct MyPageUtilsView: View {
                     KeychainService.shared.deleteToken()
                     
                     self.isPresented.toggle()
-                    
+                    self.isRootVisible = false
                     viewRouter.changeFlag.toggle()
-                    viewRouter.currentView = .account
                 })
                 .store(in: &self.viewModel.cancellables)
             
@@ -88,17 +88,15 @@ struct MyPageUtilsView: View {
                 .receive(on: RunLoop.main)
                 .sink(receiveValue: { _ in
                     
-                    // TODO: Access Token Delete -> 테스트 위해 화면 이동만 처리
-                    viewRouter.changeFlag.toggle()
-                    viewRouter.currentView = .account
+                    self.isRootVisible = false
                 })
                 .store(in: &self.viewModel.cancellables)
         }
     }
 }
 
-struct MyPageUtilsView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyPageUtilsView()
-    }
-}
+//struct MyPageUtilsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyPageUtilsView()
+//    }
+//}

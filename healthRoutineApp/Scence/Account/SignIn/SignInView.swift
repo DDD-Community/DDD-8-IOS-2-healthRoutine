@@ -11,13 +11,19 @@ import Combine
 struct SignInView: View {
     
     @ObservedObject private var viewModel = SignInViewModel()
-    @EnvironmentObject private var viewRouter: ViewRouter
 
     var cancellables: Set<AnyCancellable> = []
+    @State var pushView = false
+    @Binding var isRootVisible : Bool
     
     var body: some View {
+        
         BaseView {
             VStack(alignment: .center, spacing: 30) {
+                NavigationLink(destination:
+                                ContentView(isRootVisible: $isRootVisible)) {
+                     EmptyView()
+                }.hidden()
 
                 Image("splash")
                     .resizable()
@@ -43,7 +49,9 @@ struct SignInView: View {
      
         self.viewModel.signInFinished
             .receive(on: RunLoop.main)
-            .sink(receiveValue: { _ in viewRouter.currentView = .home })
+            .sink(receiveValue: { _ in
+                self.pushView = true
+            })
             .store(in: &self.viewModel.cancellables)
     }
 }
@@ -87,11 +95,5 @@ struct SignInInputView: View {
                 .frame(height: 1)
                 .background(self.isAble ? Color.main_green : Color.gray_888)
         }
-    }
-}
-
-struct LogInView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignInView()
     }
 }

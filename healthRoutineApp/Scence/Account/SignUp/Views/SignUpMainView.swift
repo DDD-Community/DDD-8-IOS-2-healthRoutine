@@ -12,6 +12,7 @@ import Combine
 struct SignUpMainView: View {
     @ObservedObject private var viewModel = SignUpViewModel()
     @Environment(\.presentationMode) var presentationMode
+    @Binding var isRootVisible : Bool
 
     var body: some View {
         BaseView {
@@ -22,7 +23,7 @@ struct SignUpMainView: View {
                 Spacer()
 
                 // MARK: - 회원가입 뷰 이동 처리
-                CustomNavigationLink(destination: NickNameView(viewModel: self.viewModel).customNavigationTitle("회원가입")) {
+                CustomNavigationLink(destination: NickNameView(viewModel: self.viewModel, isRootVisible: $isRootVisible).customNavigationTitle("회원가입")) {
                     BottomButtonView(buttonTitle: "다음", isable: viewModel.canNextNicknameStep, preventButtonAction: true)
                 }
                 .frame(maxHeight: 84) // 60 + 24
@@ -32,8 +33,8 @@ struct SignUpMainView: View {
     }
 }
 
-struct SignUpMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignUpMainView()
-    }
-}
+//struct SignUpMainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SignUpMainView()
+//    }
+//}

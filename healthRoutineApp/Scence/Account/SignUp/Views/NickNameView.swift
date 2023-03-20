@@ -11,14 +11,14 @@ import SwiftUI
 struct NickNameView: View {
     @ObservedObject var viewModel: SignUpViewModel
     @State private var selection: String? = nil
+    @Binding var isRootVisible : Bool
     
     var body: some View {
         BaseView {
             VStack {
                 SignUpInputView(placeholder: SignUpStringType.nickname.getPlaceHolderStr(), inputStr: $viewModel.nickname, infoStr: viewModel.nicknameInfo, inputStateType: $viewModel.nicknameState)
                 Spacer()
-                NavigationLink(destination: SignUpCompleteView().navigationBarBackButtonHidden(true), tag: "1", selection: $selection) { EmptyView() }
-                NavigationLink(destination: AccountMainView().navigationBarBackButtonHidden(true), tag: "2", selection: $selection) { EmptyView() }
+                NavigationLink(destination: SignUpCompleteView(isRootVisible: $isRootVisible).navigationBarBackButtonHidden(true), tag: "1", selection: $selection) { EmptyView() }
                 BottomButtonView(buttonTitle: "다음", isable: viewModel.canNextCompleteStep) {
                     self.handleNextButton()
                 }
@@ -32,14 +32,8 @@ struct NickNameView: View {
                 self.selection = "1"
             }
             else {
-                self.selection = "2"
+                self.isRootVisible = false
             }
         }
-    }
-}
-
-struct NickNameView_Previews: PreviewProvider {
-    static var previews: some View {
-        NickNameView(viewModel: SignUpViewModel())
     }
 }

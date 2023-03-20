@@ -11,6 +11,7 @@ import Combine
 struct AccountMainView: View {
         
     private let boardInfo: [OnBoarding] = [.workout, .drink, .routine]
+    @Binding var isRootVisible : Bool
     
     var body: some View {
         
@@ -35,7 +36,7 @@ struct AccountMainView: View {
                     VStack(spacing: 16) {
                         
                         // MARK: - 로그인 뷰 이동 처리
-                        CustomNavigationLink(destination: SignInView())  {
+                        CustomNavigationLink(destination: SignInView(isRootVisible: $isRootVisible))  {
                             Text("로그인")
                                 .frame(maxWidth: .infinity, maxHeight: 60)
                                 .font(Font.pretendard(.bold, size: 18))
@@ -44,7 +45,7 @@ struct AccountMainView: View {
                                 .cornerRadius(10)
                         }
                         // MARK: - 회원가입 뷰 이동 처리
-                        CustomNavigationLink(destination: SignUpMainView().customNavigationTitle("회원가입")) {
+                        CustomNavigationLink(destination: SignUpMainView(isRootVisible: $isRootVisible).customNavigationTitle("회원가입")) {
                             Text("회원가입")
                                 .frame(maxWidth: .infinity, maxHeight: 60)
                                 .font(Font.pretendard(.bold, size: 18))
@@ -65,12 +66,6 @@ struct AccountMainView: View {
         
         UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color.main_green)
         UIPageControl.appearance().pageIndicatorTintColor = UIColor(Color.white_text)
-    }
-}
-
-struct AccountMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        AccountMainView()
     }
 }
 

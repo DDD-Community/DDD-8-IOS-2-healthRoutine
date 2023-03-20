@@ -15,8 +15,6 @@ struct MyPageBadgeView: View {
     
     init(viewModel: BadgeViewModel = BadgeViewModel()) {
         self.viewModel = viewModel
-        
-        self.viewModel.fetchInfos()
     }
     
     private let rows = [
@@ -88,6 +86,8 @@ struct MyPageBadgeView: View {
                 .receive(on: RunLoop.main)
                 .sink(receiveValue: { self.isPresented = $0 })
                 .store(in: &self.viewModel.cancellables)
+            
+            self.viewModel.fetchInfos()            
         }
     }
 }

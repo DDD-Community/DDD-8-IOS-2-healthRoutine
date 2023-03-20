@@ -11,10 +11,7 @@ struct ContentView: View {
     var tabItems = TabItem.allCases
     
     @State var selected: TabItem = .home
-    
-    init() {
-        UITabBar.appearance().isHidden = true
-    }
+    @Binding var isRootVisible : Bool
     
     var body: some View {
         
@@ -29,16 +26,19 @@ struct ContentView: View {
             TimerMainView()
                 .tag(tabItems[2])
             
-            MyPageMainView()
+            MyPageMainView(isRootVisible: $isRootVisible)
                 .tag(tabItems[3])
         }
         Spacer(minLength: 0)
         CustomTabbarView(tabItems: tabItems, selected: $selected)
+        .onAppear {
+            UITabBar.appearance().isHidden = true
+        }
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
