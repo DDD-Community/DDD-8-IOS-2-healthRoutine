@@ -91,7 +91,7 @@ extension CalendarTopView {
         let month = CalendarHelper().getMonth(dateHolder.date)
 //
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            self.viewModel.fetchInfo(year: year, month: month)
+            self.viewModel.fetchInfo(year: year, month: month)
 //        }
     }
     
@@ -105,9 +105,6 @@ extension CalendarTopView {
         
         let year = CalendarHelper().getYear(dateHolder.date)
         let month = CalendarHelper().getMonth(dateHolder.date)
-        
-        debugPrint("month: \(month)")
-        debugPrint("realmonth: \(realmonth)")
         
         return (month >= realmonth && year >= realYear) ? 0 : 1
     }

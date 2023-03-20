@@ -33,7 +33,7 @@ struct HomeDetailTabView: View {
                     
                     if calendarVM.exerciseArray.count > 0 {
                         
-                        ScrollView {
+                        ScrollView(showsIndicators: false) {
                             
                             ForEach(calendarVM.exerciseArray, id: \.id) { item in
                                 ReportRowView(item: item)

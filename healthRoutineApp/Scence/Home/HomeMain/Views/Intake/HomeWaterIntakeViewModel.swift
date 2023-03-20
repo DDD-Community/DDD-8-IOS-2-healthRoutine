@@ -44,7 +44,6 @@ final class HomeWaterIntakeViewModel: ObservableObject {
                 
                 self.waterAmount = value.result.capacity
                 self.updateView(self.waterAmount)
-                print("waterAmount: \(self.waterAmount)")
             }
             .store(in: &cancellables)
     }
@@ -91,7 +90,7 @@ final class HomeWaterIntakeViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { (value: DI_Base) in
-                print(value.code)
+                
             }
             .store(in: &cancellables)
     }

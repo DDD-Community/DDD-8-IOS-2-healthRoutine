@@ -19,7 +19,7 @@ struct HomeDetailView: View {
     
     var body: some View {
         BaseView {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack(spacing: 16) {
                     CalendarView(viewModel: viewModel, waterVM: waterVM, isMainView: false)
                             .environmentObject(DateHolder())

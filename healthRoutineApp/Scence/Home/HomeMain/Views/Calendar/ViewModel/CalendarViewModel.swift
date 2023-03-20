@@ -45,8 +45,6 @@ class CalendarViewModel: ObservableObject {
             } receiveValue: { (value: MonthlyExerciseListResponse) in
                 
                 self.getDayOfLevel(value.result.data)
-                
-                debugPrint("11111: \(value.result.data)")
                 self.objectWillChange.send()
             }
             .store(in: &cancellables)

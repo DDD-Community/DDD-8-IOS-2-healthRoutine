@@ -25,7 +25,7 @@ struct CalendarView: View {
         
         VStack {
 
-            Text(self.updateTitle(isMainView))
+            Text(updateTitle(isMainView))
                 .font(Font.pretendard(.bold, size: 20))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
