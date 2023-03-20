@@ -77,10 +77,7 @@ extension CalendarTopView {
         let year = CalendarHelper().getYear(dateHolder.date)
         let month = CalendarHelper().getMonth(dateHolder.date)
         
-//        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
-//            self.viewModel.fetchInfo(year: year, month: month)
-//        }
-        // self.viewModel.fetchInfo(year: year, month: month)
+        self.viewModel.fetchInfo(year: year, month: month)
     }
     
     private func goToPrevMonth() {
@@ -89,10 +86,8 @@ extension CalendarTopView {
         
         let year = CalendarHelper().getYear(dateHolder.date)
         let month = CalendarHelper().getMonth(dateHolder.date)
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.viewModel.fetchInfo(year: year, month: month)
-//        }
+
+        self.viewModel.fetchInfo(year: year, month: month)
     }
     
     private func showNextMonthButton() -> Double {

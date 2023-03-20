@@ -14,6 +14,9 @@ class CalendarViewModel: ObservableObject {
     var cancellables: Set<AnyCancellable> = []
     
     @Published var dayOfLevel: [String: Int] = [:]
+    
+    var dayOfLevelStream = PassthroughSubject<[String: Int], Never>()
+    
     @Published var exerciseArray: [TodayExerciseListResult] = []
     
     var exerciseArrayStream = PassthroughSubject<[TodayExerciseListResult], Never>()
@@ -45,7 +48,7 @@ class CalendarViewModel: ObservableObject {
             } receiveValue: { (value: MonthlyExerciseListResponse) in
                 
                 self.getDayOfLevel(value.result.data)
-                self.objectWillChange.send()
+//                self.objectWillChange.send()
             }
             .store(in: &cancellables)
 
@@ -82,6 +85,10 @@ class CalendarViewModel: ObservableObject {
         let dayToStringArr = list.map { "\($0.day)" }
         let levels = list.map { $0.level }
         
-        dayOfLevel = Dictionary(uniqueKeysWithValues: zip(dayToStringArr, levels))
+        debugPrint("1111 - dayToStringArr: \(dayToStringArr)")
+        debugPrint("1111 - levels: \(levels)")
+        //        dayOfLevel = Dictionary(uniqueKeysWithValues: zip(dayToStringArr, levels))
+        let input = Dictionary(uniqueKeysWithValues: zip(dayToStringArr, levels))
+        self.dayOfLevelStream.send(input)
     }
 }

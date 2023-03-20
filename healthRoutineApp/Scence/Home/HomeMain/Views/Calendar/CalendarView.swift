@@ -36,7 +36,7 @@ struct CalendarView: View {
             CalendarTopView(viewModel: viewModel, isMainView: isMainView)
                 .padding(.bottom, 8)
             
-            CalendarContentWeekRowView() // 요일
+            CalendarContentWeekRowView()
                 .padding(.bottom, 8)
                 .frame(minHeight: 20)
             

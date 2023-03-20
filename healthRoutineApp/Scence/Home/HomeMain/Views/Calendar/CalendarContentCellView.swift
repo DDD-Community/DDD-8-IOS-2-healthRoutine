@@ -17,12 +17,16 @@ struct CalendarContentCellView: View {
     let startingSpaces: Int
     let daysInMonth: Int
     
+    @State var level: Int = 0
+    @State var forgroundColor: Color = .yellow
+    
     var body: some View {
         
         ZStack {
 
             Rectangle()
                 .foregroundColor(self.updateCell(monthStruct().getDay()))
+//                .foregroundColor(self.forgroundColor)
                 .frame(width: 34, height: 34)
                 .cornerRadius(10)
         
@@ -45,7 +49,14 @@ struct CalendarContentCellView: View {
 
     private func updateCell(_ date: String) -> Color {
 
-        let level = self.viewModel.dayOfLevel[date]
+//        let level = self.viewModel.dayOfLevel[date]
+        
+        self.viewModel.dayOfLevelStream
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { dicts in
+                level = dicts[date] ?? -10
+            })
+            .store(in: &self.viewModel.cancellables)
         
         switch level {
         case 1: return Color(hex: "F9F9F9")
@@ -54,6 +65,10 @@ struct CalendarContentCellView: View {
         case 4: return Color(hex: "00FFA3")
         default: return Color(hex: "363740")
         }
+    }
+    
+    private func getColor(_ level: Int) {
+        
     }
     
     private func monthStruct() -> Month {
