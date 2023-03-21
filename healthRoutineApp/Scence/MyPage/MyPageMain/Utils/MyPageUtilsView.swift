@@ -74,12 +74,14 @@ struct MyPageUtilsView: View {
             self.viewModel.withdrawFinished
                 .receive(on: RunLoop.main)
                 .sink(receiveValue: { _ in
-                    KeychainService.shared.deleteToken()
                     
-                    self.isPresented.toggle()
+
+//                    self.isPresented.toggle()
                     
                     viewRouter.changeFlag.toggle()
                     viewRouter.currentView = .account
+                    
+                    self.viewModel.deletAccessToken.send(true)
                 })
                 .store(in: &self.viewModel.cancellables)
             
@@ -92,6 +94,12 @@ struct MyPageUtilsView: View {
                     viewRouter.changeFlag.toggle()
                     viewRouter.currentView = .account
                 })
+                .store(in: &self.viewModel.cancellables)
+            
+            self.viewModel.deletAccessToken
+//                .filter { $0 }
+                .delay(for: .seconds(1), scheduler: DispatchQueue.main)
+                .sink(receiveValue: { _ in KeychainService.shared.deleteToken() })
                 .store(in: &self.viewModel.cancellables)
         }
     }

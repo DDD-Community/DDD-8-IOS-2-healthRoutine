@@ -35,6 +35,7 @@ class CalendarViewModel: ObservableObject {
         let param = MonthExerciseFetchRequest(year: year, month: month)
         
         APIService.getMonthlyExerciseInfo(param)
+            .delay(for: .seconds(1), scheduler: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):

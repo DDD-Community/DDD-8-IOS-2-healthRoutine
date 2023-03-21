@@ -16,6 +16,7 @@ final class MyPageUtilsViewModel: ObservableObject {
     var showToastView = PassthroughSubject<Bool, Never>()
     var signOutFinished = PassthroughSubject<Bool, Never>()
     var withdrawFinished = PassthroughSubject<Bool, Never>()
+    var deletAccessToken = PassthroughSubject<Bool, Never>()
     
     func withDraw() {
         

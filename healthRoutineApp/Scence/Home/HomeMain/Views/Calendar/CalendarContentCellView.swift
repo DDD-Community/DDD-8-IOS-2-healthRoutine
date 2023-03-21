@@ -67,8 +67,15 @@ struct CalendarContentCellView: View {
         }
     }
     
-    private func getColor(_ level: Int) {
+    private func getColor(_ level: Int) -> Color {
         
+        switch level {
+        case 1: return Color(hex: "F9F9F9")
+        case 2: return Color(hex: "CAFFEB")
+        case 3: return Color(hex: "6AFFC9")
+        case 4: return Color(hex: "00FFA3")
+        default: return Color(hex: "363740")
+        }
     }
     
     private func monthStruct() -> Month {
