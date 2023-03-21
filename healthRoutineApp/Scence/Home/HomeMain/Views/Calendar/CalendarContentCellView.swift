@@ -18,15 +18,15 @@ struct CalendarContentCellView: View {
     let daysInMonth: Int
     
     @State var level: Int = 0
-    @State var forgroundColor: Color = .yellow
+    @State var color: Color?
     
     var body: some View {
         
         ZStack {
 
             Rectangle()
-                .foregroundColor(self.updateCell(monthStruct().getDay()))
-//                .foregroundColor(self.forgroundColor)
+//                .foregroundColor(self.updateCell(monthStruct().getDay()))
+                .foregroundColor(self.color)
                 .frame(width: 34, height: 34)
                 .cornerRadius(10)
         
@@ -45,38 +45,46 @@ struct CalendarContentCellView: View {
             self.viewModel.fetchTodayExerciseList(year, month, day)
             self.waterVM.fetchTodayWaterAmount(year, month, day)
         }
-    }
-
-    private func updateCell(_ date: String) -> Color {
-
-//        let level = self.viewModel.dayOfLevel[date]
-        
-        self.viewModel.dayOfLevelStream
-            .receive(on: RunLoop.main)
-            .sink(receiveValue: { dicts in
-                level = dicts[date] ?? -10
-            })
-            .store(in: &self.viewModel.cancellables)
-        
-        switch level {
-        case 1: return Color(hex: "F9F9F9")
-        case 2: return Color(hex: "CAFFEB")
-        case 3: return Color(hex: "6AFFC9")
-        case 4: return Color(hex: "00FFA3")
-        default: return Color(hex: "363740")
+        .onAppear {
+            
+            self.viewModel.dayOfLevelStream
+                .receive(on: DispatchQueue.main)
+                .sink(receiveValue: { dicts in
+                    
+                    let level = dicts[monthStruct().getDay()]
+                    
+                    switch level {
+                    case 1: return self.color = Color(hex: "F9F9F9")
+                    case 2: return self.color = Color(hex: "CAFFEB")
+                    case 3: return self.color = Color(hex: "6AFFC9")
+                    case 4: return self.color = Color(hex: "00FFA3")
+                    default: return self.color = Color(hex: "363740")
+                    }
+                })
+                .store(in: &self.viewModel.cancellables)
         }
     }
-    
-    private func getColor(_ level: Int) -> Color {
-        
-        switch level {
-        case 1: return Color(hex: "F9F9F9")
-        case 2: return Color(hex: "CAFFEB")
-        case 3: return Color(hex: "6AFFC9")
-        case 4: return Color(hex: "00FFA3")
-        default: return Color(hex: "363740")
-        }
-    }
+
+//    private func updateCell(_ date: String) -> Color {
+//
+////        let level = self.viewModel.dayOfLevel[date]
+//
+//        self.viewModel.dayOfLevelStream
+//            .receive(on: DispatchQueue.global())
+//            .sink(receiveValue: { dicts in
+//                level = dicts[date] ?? -10
+//                debugPrint("level: \(level)")
+//            })
+//            .store(in: &self.viewModel.cancellables)
+//
+//        switch level {
+//        case 1: return Color(hex: "F9F9F9")
+//        case 2: return Color(hex: "CAFFEB")
+//        case 3: return Color(hex: "6AFFC9")
+//        case 4: return Color(hex: "00FFA3")
+//        default: return Color(hex: "363740")
+//        }
+//    }
     
     private func monthStruct() -> Month {
         

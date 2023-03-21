@@ -35,7 +35,7 @@ class CalendarViewModel: ObservableObject {
         let param = MonthExerciseFetchRequest(year: year, month: month)
         
         APIService.getMonthlyExerciseInfo(param)
-            .delay(for: .seconds(1), scheduler: DispatchQueue.main)
+            .receive(on: DispatchQueue.global())
             .sink { completion in
                 switch completion {
                 case .failure(let error):
@@ -49,7 +49,6 @@ class CalendarViewModel: ObservableObject {
             } receiveValue: { (value: MonthlyExerciseListResponse) in
                 
                 self.getDayOfLevel(value.result.data)
-//                self.objectWillChange.send()
             }
             .store(in: &cancellables)
 
@@ -86,8 +85,6 @@ class CalendarViewModel: ObservableObject {
         let dayToStringArr = list.map { "\($0.day)" }
         let levels = list.map { $0.level }
         
-        debugPrint("1111 - dayToStringArr: \(dayToStringArr)")
-        debugPrint("1111 - levels: \(levels)")
         //        dayOfLevel = Dictionary(uniqueKeysWithValues: zip(dayToStringArr, levels))
         let input = Dictionary(uniqueKeysWithValues: zip(dayToStringArr, levels))
         self.dayOfLevelStream.send(input)
