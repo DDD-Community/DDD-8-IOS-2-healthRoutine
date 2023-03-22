@@ -59,7 +59,7 @@ struct MyPageUtilsView: View {
                 }))
                 .background(ClearBackgroundView())
             }
-            .onAppear { UIView.setAnimationsEnabled(false) }
+//            .onAppear { UIView.setAnimationsEnabled(false) }
         }
         .onAppear {
             
@@ -75,7 +75,6 @@ struct MyPageUtilsView: View {
                 .receive(on: RunLoop.main)
                 .sink(receiveValue: { _ in
                     
-
 //                    self.isPresented.toggle()
                     
                     viewRouter.changeFlag.toggle()

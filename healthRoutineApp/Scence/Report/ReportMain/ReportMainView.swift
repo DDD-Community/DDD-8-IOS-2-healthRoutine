@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct ReportMainView: View {
-    @ObservedObject private var viewModel: ReportViewModel
     
-    init() {
-        viewModel = ReportViewModel()
-        viewModel.fetchList()
-    }
-
+    @ObservedObject private var viewModel = ReportViewModel()
+    
     var body: some View {
         
         CustomNavigationView {
@@ -49,6 +45,7 @@ struct ReportMainView: View {
                     .customNavigationTitle("기록")
                     .customNavigationBarBackButtonHidden(true)
                 }
+                .onAppear { viewModel.fetchList() }
             }
         }
     }

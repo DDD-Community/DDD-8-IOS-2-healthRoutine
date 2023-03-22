@@ -18,7 +18,7 @@ struct CalendarContentCellView: View {
     let daysInMonth: Int
     
     @State var level: Int = 0
-    @State var color: Color?
+    @State var color: Color = Color(hex: "363740")
     
     var body: some View {
         
