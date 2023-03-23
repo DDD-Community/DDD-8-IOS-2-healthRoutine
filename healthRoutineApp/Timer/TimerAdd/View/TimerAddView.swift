@@ -19,19 +19,19 @@ struct TimerAddView: View {
                             TimerPatternView(viewType: type, timerData: timerData)
                         }
                     }
+                    Button {
+                        addTimer()
+                    } label: {
+                        Text("타이머 추가하기")
+                            .frame(maxWidth: .infinity, minHeight: 60)
+                            .font(Font.pretendard(.bold, size: 18))
+                            .background(timerData.isAvailableButton ? Color.main_green : Color.button_disabled)
+                            .foregroundColor(timerData.isAvailableButton ? Color.background_black : Color.gray_888)
+                            .cornerRadius(10)
+                            .padding(.bottom, 10)
+                    }
+                    .disabled(!timerData.isAvailableButton)
                 }
-                Button {
-                    addTimer()
-                } label: {
-                    Text("타이머 추가하기")
-                        .frame(maxWidth: .infinity, minHeight: 60)
-                        .font(Font.pretendard(.bold, size: 18))
-                        .background(timerData.isAvailableButton ? Color.main_green : Color.button_disabled)
-                        .foregroundColor(timerData.isAvailableButton ? Color.background_black : Color.gray_888)
-                        .cornerRadius(10)
-                        .padding(.bottom, 10)
-                }
-                .disabled(!timerData.isAvailableButton)
             }
         }
     }

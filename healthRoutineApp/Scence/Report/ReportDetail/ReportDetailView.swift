@@ -27,12 +27,11 @@ struct ReportDetailView: View {
                         ReportDetailKindView(selectedExercise: $viewModel.selectedExercise, viewModel: viewModel) // 종류
                         ReportDetailDiffView(viewModel: viewModel) // 상세
                     }
+                    BottomButtonView(buttonTitle: "운동기록 추가하기", isable: viewModel.isAddAble) {
+                        self.viewModel.addRepport()
+                    }
+                    .frame(height: 84)
                 }
-
-                BottomButtonView(buttonTitle: "운동기록 추가하기", isable: viewModel.isAddAble) {
-                    self.viewModel.addRepport()
-                }
-                .frame(height: 84)
             }
         }
         .onAppear {

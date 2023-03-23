@@ -140,9 +140,9 @@ struct ReportDetailDiffRowView: View {
     
     var title: String
     var unit: String = ""
-    
+
     @Binding var value: String
-    
+
     var body: some View {
         
         VStack {
@@ -150,17 +150,16 @@ struct ReportDetailDiffRowView: View {
             HStack {
             
                 VStack {
-                    
-                    TextField("", text: $value)
-                        .foregroundColor(Color.main_green)
-                        .font(Font.pretendard(.bold, size: 24))
-                        .keyboardType(.decimalPad)
-                        
+
+                    TextField("", value: $value, formatter: NumberFormatter())
+                            .foregroundColor(Color.main_green)
+                            .font(Font.pretendard(.bold, size: 24))
+
                     Divider()
                         .frame(height: 2)
                         .background(value.isValid ? Color.main_green : .white_text)
                 }
-                
+
                 Text(title)
                     .font(Font.pretendard(.semiBold, size: 14))
                     .foregroundColor(.white)

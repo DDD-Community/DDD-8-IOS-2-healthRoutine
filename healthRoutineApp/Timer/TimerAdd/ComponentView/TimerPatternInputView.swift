@@ -54,6 +54,7 @@ struct UnderlineTextFieldView: View {
                VStack {
                    TextField("", value: $value, formatter: NumberFormatter())
                        .modifier(TimerPatternInputModifier())
+
                     Rectangle()
                          .frame(height: 1)
                          .foregroundColor(.main_green)

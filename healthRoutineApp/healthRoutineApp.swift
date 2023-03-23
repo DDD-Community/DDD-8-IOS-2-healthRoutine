@@ -15,12 +15,12 @@ struct healthRoutineApp: App {
     var body: some Scene {
         
         WindowGroup {
-            
             let dateHolder = DateHolder()
-            
+
             SplashView()
                 .environmentObject(dateHolder)
                 .environmentObject(viewRouter)
         }
+
     }
 }

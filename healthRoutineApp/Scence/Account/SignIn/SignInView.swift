@@ -19,7 +19,7 @@ struct SignInView: View {
         BaseView {
             VStack(alignment: .center, spacing: 30) {
 
-                Image("splash")
+                Image("Splash")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 240, height: 180)
@@ -34,6 +34,8 @@ struct SignInView: View {
                 BottomButtonView(buttonTitle: "로그인", isable: viewModel.canSubmit) {
                     self.viewModel.signInWith()
                 }
+                .contentShape(Rectangle())
+                .frame(maxWidth: .infinity, minHeight: 60)
             }
             .onAppear { self.bindView() }
         }
