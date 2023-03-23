@@ -9,8 +9,12 @@ import SwiftUI
 
 struct MyPageProfileDetailView: View {
     
-    @StateObject var viewModel = MyPageViewModel()
+    @ObservedObject var viewModel: MyPageViewModel
     @Environment(\.presentationMode) var presentationMode
+    
+    init(viewModel: MyPageViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         
@@ -80,12 +84,8 @@ struct MyPageProfileDetailView: View {
                     }
                 
                 Spacer()
-                
-//                ToastView(title: "닉네임 변경을 완료 했습니다")
             }
-            .onAppear {
-                self.bindView()
-            }
+            .onAppear { self.bindView() }
         }
     }
     
@@ -101,12 +101,12 @@ struct MyPageProfileDetailView: View {
             .sink(receiveValue: { _ in self.presentationMode.wrappedValue.dismiss() })
             .store(in: &self.viewModel.cancellables)
         
-        self.viewModel.fetchProfile() // 이미지 갱신이슈 때문에 일단 임시고 처리해볼게요
+//        self.viewModel.fetchProfile()
     }
 }
 
-struct MyPageProfileDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyPageProfileDetailView()
-    }
-}
+//struct MyPageProfileDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyPageProfileDetailView()
+//    }
+//}

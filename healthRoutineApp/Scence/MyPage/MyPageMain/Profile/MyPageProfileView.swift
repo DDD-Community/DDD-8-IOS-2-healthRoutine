@@ -46,7 +46,7 @@ struct MyPageProfileView: View {
             
             Spacer()
             
-            CustomNavigationLink(destination: MyPageProfileDetailView().customNavigationTitle("닉네임 수정")
+            CustomNavigationLink(destination: MyPageProfileDetailView(viewModel: viewModel).customNavigationTitle("닉네임 수정")
             ) {
                 Text("프로필 수정")
                     .frame(maxWidth: .infinity, minHeight: 46)

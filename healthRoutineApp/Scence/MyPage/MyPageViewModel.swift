@@ -17,7 +17,7 @@ final class MyPageViewModel: ObservableObject {
     let queue = DispatchQueue(label: "MyInfo")
     
     // Profile
-    @Published var nickname: String = UserDefaults.standard.string(forKey: NICKNAME_KEY)!
+    @Published var nickname: String = UserDefaults.standard.string(forKey: NICKNAME_KEY) ?? ""
     @Published var recentImage: UIImage?
     
     @Published var showImagePicker: Bool = false // 이미지 선택화면 여부
