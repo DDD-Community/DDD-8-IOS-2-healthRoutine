@@ -100,8 +100,6 @@ struct MyPageProfileDetailView: View {
             .receive(on: RunLoop.main)
             .sink(receiveValue: { _ in self.presentationMode.wrappedValue.dismiss() })
             .store(in: &self.viewModel.cancellables)
-        
-//        self.viewModel.fetchProfile()
     }
 }
 

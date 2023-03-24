@@ -12,7 +12,6 @@ enum Alertor {
     
     typealias OkCompletion = (() -> Void)?
     typealias CancelCompletion = (() -> Void)?
-//    typealias ResultCompletion = ((Bool) -> Void)
     
     struct ViewInfo {
         

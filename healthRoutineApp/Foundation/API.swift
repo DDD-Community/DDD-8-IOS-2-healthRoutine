@@ -33,14 +33,3 @@ struct APIMediaParameter {
     let fileURL: URL?
     let fileData: Data?
 }
-
-// MARK: API Specification
-struct APISpec {
-    let method: HTTPMethod
-    let url: String
-    
-    init(method: HTTPMethod, url: String) {
-        self.method = method
-        self.url = url
-    }
-}

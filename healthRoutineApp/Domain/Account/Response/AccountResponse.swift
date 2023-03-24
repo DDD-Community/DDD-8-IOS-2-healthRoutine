@@ -33,8 +33,6 @@ struct AccountMyInfoProfileResult: Codable {
     let profileImage: String?
 }
 
-
-// MARK: - update profile
 struct AccountMyInfoImageUploadResponse: Decodable {
     let code: Int
     let message: String

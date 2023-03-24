@@ -47,7 +47,6 @@ extension APIService {
         return APIManager.request(WaterAPI.waterAmount.url, method: .post, parameters: param.intDictionary, headers: headers)
     }
     
-    
     // MARK: 오늘 물량 조회 (년, 월, 일)
     static func fetchTodayWaterAmount(_ param: WaterAmountRequest) -> AnyPublisher<WaterAmountResponse, APIError> {
         guard let token = KeychainService.shared.loadToken() else {

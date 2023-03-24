@@ -31,11 +31,26 @@ struct SignInView: View {
                     .font(Font.pretendard(.regular, size: 13))
                     .foregroundColor(.error_red)
                 
-                BottomButtonView(buttonTitle: "로그인", isable: viewModel.canSubmit) {
-                    self.viewModel.signInWith()
+                Spacer()
+                
+                Button(action: self.viewModel.signInWith) {
+                    
+                    Text("로그인")
+                        .frame(maxWidth: .infinity, maxHeight: 60)
+                        .font(Font.pretendard(.bold, size: 18))
+                        .foregroundColor(.black)
+                        .background(viewModel.canSubmit ? Color.main_green : Color.button_disabled)
+                        .foregroundColor(viewModel.canSubmit ? Color.background_black : Color.gray_888)
+                        .cornerRadius(10)
                 }
-                .contentShape(Rectangle())
                 .frame(maxWidth: .infinity, minHeight: 60)
+                .disabled(!viewModel.canSubmit)
+                
+//                BottomButtonView(buttonTitle: "로그인", isable: viewModel.canSubmit) {
+//                    self.viewModel.signInWith()
+//                }
+//                .contentShape(Rectangle())
+//                .frame(maxWidth: .infinity, minHeight: 60)
             }
             .onAppear { self.bindView() }
         }

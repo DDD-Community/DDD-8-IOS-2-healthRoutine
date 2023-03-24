@@ -14,13 +14,10 @@ class CalendarViewModel: ObservableObject {
     var cancellables: Set<AnyCancellable> = []
     
     @Published var dayOfLevel: [String: Int] = [:]
-    
-    var dayOfLevelStream = PassthroughSubject<[String: Int], Never>()
-    
     @Published var exerciseArray: [TodayExerciseListResult] = []
     
-    var exerciseArrayStream = PassthroughSubject<[TodayExerciseListResult], Never>()
-    
+    var dayOfLevelStream = PassthroughSubject<[String: Int], Never>()
+
     func getNickName() -> String {
         
         let nickname = UserDefaults.standard.string(forKey: NICKNAME_KEY)
@@ -51,14 +48,11 @@ class CalendarViewModel: ObservableObject {
                 self.getDayOfLevel(value.result.data)
             }
             .store(in: &cancellables)
-
     }
     
     func fetchTodayExerciseList(_ year: Int, _ month: Int, _ day: Int) {
         
-        let param = ExerciseFetchForDayReqeust(year: year,
-                                               month: month,
-                                               day: day)
+        let param = ExerciseFetchForDayReqeust(year: year, month: month, day: day)
         
         APIService.fetchTodayExerciseList(param)
             .sink { completion in
@@ -85,7 +79,6 @@ class CalendarViewModel: ObservableObject {
         let dayToStringArr = list.map { "\($0.day)" }
         let levels = list.map { $0.level }
         
-        //        dayOfLevel = Dictionary(uniqueKeysWithValues: zip(dayToStringArr, levels))
         let input = Dictionary(uniqueKeysWithValues: zip(dayToStringArr, levels))
         self.dayOfLevelStream.send(input)
     }

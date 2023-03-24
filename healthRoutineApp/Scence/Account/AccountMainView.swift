@@ -92,9 +92,9 @@ enum OnBoarding {
     var title: String {
         
         switch self {
-        case .workout: return "Work out."
-        case .drink: return "Drink."
-        case .routine: return "Have Routine."
+        case .workout: return "Work out"
+        case .drink: return "Drink"
+        case .routine: return "Have Routine"
         }
     }
     

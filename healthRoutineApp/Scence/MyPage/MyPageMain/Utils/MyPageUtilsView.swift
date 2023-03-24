@@ -96,7 +96,6 @@ struct MyPageUtilsView: View {
                 .store(in: &self.viewModel.cancellables)
             
             self.viewModel.deletAccessToken
-//                .filter { $0 }
                 .delay(for: .seconds(1), scheduler: DispatchQueue.main)
                 .sink(receiveValue: { _ in KeychainService.shared.deleteToken() })
                 .store(in: &self.viewModel.cancellables)
