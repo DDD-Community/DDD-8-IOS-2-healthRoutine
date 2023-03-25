@@ -42,8 +42,8 @@ struct CalendarTopView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 16, height: 16)
-                    
                 }
+                .opacity(showPrevMonthButton())
                 
                 Text(CalendarHelper().monthYearString(dateHolder.date))
                     .foregroundColor(.white)
@@ -102,6 +102,18 @@ extension CalendarTopView {
         let month = CalendarHelper().getMonth(dateHolder.date)
         
         return (month >= realmonth && year >= realYear) ? 0 : 1
+    }
+    
+    private func showPrevMonthButton() -> Double {
+        
+        // TODO: 추후 가입 년, 월 받아서 openMonth, openYear에 대입해서 화살표 표출여부 표시
+        let openMonth = 3
+        let openYear = 2023
+        
+        let year = CalendarHelper().getYear(dateHolder.date)
+        let month = CalendarHelper().getMonth(dateHolder.date)
+        
+        return (openMonth < month && openYear < year) ? 1 : 0
     }
 }
 

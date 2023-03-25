@@ -95,7 +95,6 @@ extension MyPageViewModel {
         
         APIService.updateProfile(param)
             .subscribe(on: queue)
-//            .receive(on: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):

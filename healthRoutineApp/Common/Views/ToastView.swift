@@ -16,6 +16,8 @@ struct ToastView: View {
         
         VStack {
             
+            Spacer()
+            
             Text(title)
                 .font(Font.pretendard(.semiBold, size: 16))
                 .foregroundColor(.white)
@@ -59,6 +61,8 @@ struct Toast: ViewModifier {
             .overlay(
                 Group {
                     if isShowing {
+                        
+                        Spacer()
                         
                         ToastView(title: text)
                             .onAppear {

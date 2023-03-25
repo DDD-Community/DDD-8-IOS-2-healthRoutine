@@ -51,7 +51,11 @@ struct CalendarContentCellView: View {
                 .receive(on: DispatchQueue.main)
                 .sink(receiveValue: { dicts in
                     
+                    debugPrint("dicts: \(dicts)")
+                    
                     let level = dicts[monthStruct().getDay()]
+                    
+//                    debugPrint("level: \(level)")
                     
                     switch level {
                     case 1: return self.color = Color(hex: "F9F9F9")
@@ -64,27 +68,6 @@ struct CalendarContentCellView: View {
                 .store(in: &self.viewModel.cancellables)
         }
     }
-
-//    private func updateCell(_ date: String) -> Color {
-//
-////        let level = self.viewModel.dayOfLevel[date]
-//
-//        self.viewModel.dayOfLevelStream
-//            .receive(on: DispatchQueue.global())
-//            .sink(receiveValue: { dicts in
-//                level = dicts[date] ?? -10
-//                debugPrint("level: \(level)")
-//            })
-//            .store(in: &self.viewModel.cancellables)
-//
-//        switch level {
-//        case 1: return Color(hex: "F9F9F9")
-//        case 2: return Color(hex: "CAFFEB")
-//        case 3: return Color(hex: "6AFFC9")
-//        case 4: return Color(hex: "00FFA3")
-//        default: return Color(hex: "363740")
-//        }
-//    }
     
     private func monthStruct() -> Month {
         

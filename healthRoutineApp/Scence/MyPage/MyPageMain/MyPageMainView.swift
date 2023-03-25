@@ -9,11 +9,6 @@ import SwiftUI
 
 struct MyPageMainView: View {
     
-    @ObservedObject private var viewModel = MyPageViewModel()
-    @ObservedObject private var badgeViewModel = BadgeViewModel()
-    
-    @EnvironmentObject private var viewRouter: ViewRouter
-    
     var body: some View {
         
         ZStack {

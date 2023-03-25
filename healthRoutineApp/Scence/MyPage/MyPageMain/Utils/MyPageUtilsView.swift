@@ -32,7 +32,7 @@ struct MyPageUtilsView: View {
                     .background(Color(hex: "4B4C55"))
                     .cornerRadius(10)
             }
-            .toast(isShowing: $showToast, text: "로그아웃 되었습니다.")
+//            .toast(isShowing: $showToast, text: "로그아웃 되었습니다.")
             
             Button {
                 
@@ -47,6 +47,7 @@ struct MyPageUtilsView: View {
                     .background(Color(hex: "4B4C55"))
                     .cornerRadius(10)
             }
+            .toast(isShowing: $showToast, text: "로그아웃 되었습니다.")
             .fullScreenCover(isPresented: $isPresented) {
                 
                 CommonAlertView(info: AlertorViewInfo(title: "회원탈퇴", message: "정말 우리를 떠나실건가요?\n탈퇴 후 회원 정보는 복구가 불가능해요.", okTitle: "탈퇴하기", cancelTitle: "취소", okCompletion: {

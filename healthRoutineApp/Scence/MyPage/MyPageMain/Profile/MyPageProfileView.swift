@@ -10,7 +10,7 @@ import Kingfisher
 
 struct MyPageProfileView: View {
     
-    @StateObject private var viewModel = MyPageViewModel()
+    @ObservedObject private var viewModel = MyPageViewModel()
     
     var body: some View {
         

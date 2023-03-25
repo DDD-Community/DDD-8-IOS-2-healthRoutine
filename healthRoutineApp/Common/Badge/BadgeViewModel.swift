@@ -52,8 +52,10 @@ final class BadgeViewModel: ObservableObject {
                 }
             } receiveValue: { (value: BadgeListResponse) in
                 
-                self.updateBadgeDetailView(value.result)
                 self.getNowBadgeList(value.result)
+                
+                self.updateBadgeDetailView(value.result)
+               
             }
             .store(in: &cancellables)
     }
