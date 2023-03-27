@@ -76,5 +76,6 @@ struct ReportDetailKindView: View {
         .padding(20)
         .background(Color(hex: "272830"))
         .cornerRadius(16)
+        .onDisappear { UIView.setAnimationsEnabled(true) }
     }
 }

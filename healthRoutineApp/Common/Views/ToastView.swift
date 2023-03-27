@@ -65,6 +65,7 @@ struct Toast: ViewModifier {
                         Spacer()
                         
                         ToastView(title: text)
+                            .frame(maxHeight: 48)
                             .onAppear {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                                     withAnimation {

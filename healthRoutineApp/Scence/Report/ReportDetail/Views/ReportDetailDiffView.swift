@@ -112,8 +112,12 @@ struct ReportDetailDiffView: View {
                                 ForEach(ExSet.allCases, id: \.self) { exerciseSet in
 
                                     Button {
+                                        
                                         let value = viewModel.set.toInt() + exerciseSet.rawValue
+                                        
+                                        print("value: \(value)")
                                         viewModel.set = String(value)
+                                        
                                     } label : {
                                         Text(exerciseSet.localized)
                                             .font(Font.pretendard(.semiBold, size: 13))
