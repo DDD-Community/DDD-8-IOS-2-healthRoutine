@@ -11,15 +11,30 @@ struct CustomTimerView: View {
     @ObservedObject var timerViewModel: CustomTimerViewModel
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
-            if timerViewModel.mode == .ready {
+            
+            switch timerViewModel.mode {
+                
+            case .ready:
+                
                 CustomTimerReadyView(timerData: timerViewModel.timerData)
-            }
-            else {
+                
+            default:
+                 
                 if timerViewModel.timerData.cycle > 1 {
                     CustomTimerCycleView(timerViewModel: timerViewModel)
                 }
                 CustomTimerRunningView(timerViewModel: timerViewModel)
             }
+            
+//            if timerViewModel.mode == .ready {
+//                CustomTimerReadyView(timerData: timerViewModel.timerData)
+//            }
+//            else {
+//                if timerViewModel.timerData.cycle > 1 {
+//                    CustomTimerCycleView(timerViewModel: timerViewModel)
+//                }
+//                CustomTimerRunningView(timerViewModel: timerViewModel)
+//            }
             CustomTimerButtonView(timerData: timerViewModel)
         }
         .padding(.vertical, 24)

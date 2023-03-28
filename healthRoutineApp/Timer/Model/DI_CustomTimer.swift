@@ -31,7 +31,10 @@ class DI_Time: Codable {
     var isExerciseType: Bool = true // 운동 or 휴식
         
     func getTimeString() -> String {
-        return "\(String(format:"%.0f", minutes))분 \(String(format:"%.0f", seconds))초 \(isExerciseType ? "운동" : "휴식")"
+        
+        let minute = minutes == 0 ? "" : "\(String(format:"%.0f", minutes))분"
+        return "\(minute) \(String(format:"%.0f", seconds))초 \(isExerciseType ? "운동" : "휴식")"
+//        return "\(String(format:"%.0f", minutes))분 \(String(format:"%.0f", seconds))초 \(isExerciseType ? "운동" : "휴식")"
     }
     
     func changeTimeToSeconds() -> TimeInterval {
