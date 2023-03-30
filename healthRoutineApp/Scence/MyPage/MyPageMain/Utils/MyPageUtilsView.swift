@@ -76,8 +76,6 @@ struct MyPageUtilsView: View {
                 .receive(on: RunLoop.main)
                 .sink(receiveValue: { _ in
                     
-//                    self.isPresented.toggle()
-                    
                     viewRouter.changeFlag.toggle()
                     viewRouter.currentView = .account
                     

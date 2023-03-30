@@ -74,14 +74,14 @@ struct MyPageProfileDetailView: View {
                     }
                 }
                 
-                Text("프로필 수정")
-                    .frame(maxWidth: .infinity, minHeight: 60)
-                    .font(Font.pretendard(.bold, size: 18))
-                    .background(Color(hex: "3CF4B2"))
-                    .cornerRadius(10)
-                    .onTapGesture {
-                        self.viewModel.updateProfileImage()
-                    }
+                Button(action: self.viewModel.updateProfileImage) {
+                    
+                    Text("프로필 수정")
+                        .frame(maxWidth: .infinity, minHeight: 60)
+                        .font(Font.pretendard(.bold, size: 18))
+                        .background(Color(hex: "3CF4B2"))
+                        .cornerRadius(10)
+                }
                 
                 Spacer()
             }
@@ -102,9 +102,3 @@ struct MyPageProfileDetailView: View {
             .store(in: &self.viewModel.cancellables)
     }
 }
-
-//struct MyPageProfileDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MyPageProfileDetailView()
-//    }
-//}

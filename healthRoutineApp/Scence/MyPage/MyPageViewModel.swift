@@ -16,7 +16,6 @@ final class MyPageViewModel: ObservableObject {
     
     let queue = DispatchQueue(label: "MyInfo")
     
-    // Profile
     @Published var nickname: String = UserDefaults.standard.string(forKey: NICKNAME_KEY) ?? ""
     @Published var recentImage: UIImage?
     
@@ -25,9 +24,6 @@ final class MyPageViewModel: ObservableObject {
     
     var updateProfileFinished = PassthroughSubject<Bool, Never>()
     var updateFinished = PassthroughSubject<Bool, Never>()
-    
-    // Badge
-    @Published var badges: [Badge] = []
 
     func actionSheet() -> ActionSheet {
         

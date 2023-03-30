@@ -12,8 +12,6 @@ struct SignInView: View {
     
     @ObservedObject private var viewModel = SignInViewModel()
     @EnvironmentObject private var viewRouter: ViewRouter
-
-    var cancellables: Set<AnyCancellable> = []
     
     var body: some View {
         BaseView {
@@ -45,12 +43,6 @@ struct SignInView: View {
                 }
                 .frame(maxWidth: .infinity, minHeight: 60)
                 .disabled(!viewModel.canSubmit)
-                
-//                BottomButtonView(buttonTitle: "로그인", isable: viewModel.canSubmit) {
-//                    self.viewModel.signInWith()
-//                }
-//                .contentShape(Rectangle())
-//                .frame(maxWidth: .infinity, minHeight: 60)
             }
             .onAppear { self.bindView() }
         }
