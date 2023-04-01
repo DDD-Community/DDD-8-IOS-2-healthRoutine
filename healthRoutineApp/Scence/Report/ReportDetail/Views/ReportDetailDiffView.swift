@@ -155,7 +155,7 @@ struct ReportDetailDiffRowView: View {
             
                 VStack {
 
-                    TextField("", value: $value, formatter: NumberFormatter())
+                    TextField("", text: $value)
                             .foregroundColor(Color.main_green)
                             .font(Font.pretendard(.bold, size: 24))
 
