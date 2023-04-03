@@ -77,6 +77,7 @@ struct MyPageProfileDetailView: View {
                 Button(action: self.viewModel.updateProfileImage) {
                     
                     Text("프로필 수정")
+                        .foregroundColor(.black)
                         .frame(maxWidth: .infinity, minHeight: 60)
                         .font(Font.pretendard(.bold, size: 18))
                         .background(Color(hex: "3CF4B2"))

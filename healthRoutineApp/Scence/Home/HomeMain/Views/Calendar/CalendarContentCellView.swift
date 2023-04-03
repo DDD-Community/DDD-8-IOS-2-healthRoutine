@@ -25,7 +25,6 @@ struct CalendarContentCellView: View {
         ZStack {
 
             Rectangle()
-//                .foregroundColor(self.updateCell(monthStruct().getDay()))
                 .foregroundColor(self.color)
                 .frame(width: 34, height: 34)
                 .cornerRadius(10)
@@ -51,12 +50,7 @@ struct CalendarContentCellView: View {
                 .receive(on: DispatchQueue.main)
                 .sink(receiveValue: { dicts in
                     
-                    debugPrint("dicts: \(dicts)")
-                    
                     let level = dicts[monthStruct().getDay()]
-                    
-//                    debugPrint("level: \(level)")
-                    
                     switch level {
                     case 1: return self.color = Color(hex: "F9F9F9")
                     case 2: return self.color = Color(hex: "CAFFEB")

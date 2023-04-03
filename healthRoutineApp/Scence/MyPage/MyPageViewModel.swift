@@ -95,7 +95,7 @@ extension MyPageViewModel {
                 switch completion {
                 case .failure(let error):
                     switch error {
-                    case .http: do {}
+                    case .http: do { self.updateFinished.send(false) }
                     default: do {}
                     }
                 case .finished:

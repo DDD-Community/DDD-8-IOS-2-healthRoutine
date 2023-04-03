@@ -62,6 +62,7 @@ struct CommonAlertView: View {
             .cornerRadius(16)
             .padding(24)
         }
+        
     }
 }
 
