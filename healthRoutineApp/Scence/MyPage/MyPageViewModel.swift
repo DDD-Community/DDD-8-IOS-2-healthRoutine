@@ -90,7 +90,7 @@ extension MyPageViewModel {
         let param = AccountProfileUpdateRequest(nickname: self.nickname)
         
         APIService.updateProfile(param)
-            .subscribe(on: queue)
+            .subscribe(on: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
